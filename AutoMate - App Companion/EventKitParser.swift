@@ -15,8 +15,24 @@ public protocol EventParser: Parser {
     typealias T = EKEvent
 
     // MARK: Properties
+    /// `EKEventStore` in which parsed `EKEvent`s will be created and saved.
     var eventStore: EKEventStore { get }
+    /// `EKEvents` calendar for new events.
     var calendar: EKCalendar { get }
+}
+
+public extension EventParser {
+
+    /// Will access all 
+    ///
+    /// - Parameters:
+    ///   - resources: Array of resources discribing path to events data.
+    ///   - span: _Values for controlling what occurrences to affect in a recurring event._ `.futureEvents` by default.
+    /// - Throws: `ParserError` if data has unexpected format or standard `Error` for saving and commiting in EventKit.
+    public func parseAndSave(resources: [LaunchEnviromentResource], with span: EKSpan = .futureEvents) throws {
+        try parsed(resources: resources).forEach { try eventStore.save($0, span: span) }
+        try eventStore.commit()
+    }
 }
 
 // MARK: - Event Dictionary Parser
@@ -38,56 +54,36 @@ public struct EventDictionaryParser: EventParser {
             throw ParserError(message: "Expected dictionary, given \(data)")
         }
 
+        let eventIdentifier: String? = try jsonDict.fetchOptional("eventIdentifier")
+        let organizer = try jsonDict.fetchOptional("organizer").flatMap { try EKParticipant.from(json: $0) }
+        let creationDate = try jsonDict.fetchOptional("creationDate") { Date.from(representation: $0) }
+        let startDate = try jsonDict.fetch("startDate") { Date.from(representation: $0) }
+        let endDate = try jsonDict.fetch("endDate") { Date.from(representation: $0) }
+        let attendees = try jsonDict.fetchOptionalArray("attendees") { try EKParticipant.from(json: $0) }
+        let recurrenceRules = try jsonDict.fetchOptionalArray("recurrenceRules") { try recurrenceRule(from: $0) }
+
         let event = EKEvent(eventStore: eventStore)
         event.calendar = calendar
         event.title = try jsonDict.fetch("title")
-
-        let identifier = try jsonDict.fetchOptional("eventIdentifier") { participant(with: $0) }
-        event.setValue(identifier, forKey: "eventIdentifier")
-
-        let organizer = try jsonDict.fetchOptional("organizer") { participant(with: $0) }
-        event.setValue(organizer, forKey: "organizer")
-
         event.location = try jsonDict.fetchOptional("location")
         event.notes = try jsonDict.fetchOptional("notes")
-        let creationDate = try jsonDict.fetchOptional("creationDate") { date(from: $0) }
+        event.setValue(eventIdentifier, forKey: "eventIdentifier")
+        event.setValue(organizer, forKey: "organizer")
         event.setValue(creationDate, forKey: "creationDate")
-
-        let startDate = try jsonDict.fetch("startDate") { date(from: $0) }
-        let endDate = try jsonDict.fetch("endDate") { date(from: $0) }
         event.setValuesForKeys([
-                                   "startDate": startDate,
-                                   "endDate": endDate
-                               ])
-
-        let attendees = try jsonDict.fetchArray("attendees") { participant(with: $0) }
+            "startDate": startDate,
+            "endDate": endDate
+            ])
         event.setValue(attendees, forKey: "attendees")
-
-        try jsonDict.fetchArray("recurrenceRules", transformation: { $0 })
-            .forEach { (object: [String: Any]) in
-                let rule = try recurrenceRule(from: object)
-                event.addRecurrenceRule(rule)
-        }
+        recurrenceRules?.forEach { event.addRecurrenceRule($0) }
 
         return event
     }
 
     // MARK: Private methods
-    private func participant(with name: String?) -> EKParticipant {
-        let participant = EKParticipant()
-        participant.setValue(name, forKey: "name")
-        return participant
-    }
-
-    private func date(from string: String) -> Date? {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy MM dd k:mm:ss"
-        return dateFormatter.date(from: string)
-    }
-
-    private func recurrenceRule(from json: [String: Any]) throws -> EKRecurrenceRule {
+    private func recurrenceRule(from json: [String: Any]) throws -> EKRecurrenceRule? {
         guard let frequency = EKRecurrenceFrequency(rawValue: try json.fetch("frequency")) else {
-            preconditionFailure("Couldn't initialize EKRecurrenceFrequency - corrupted value")
+            return nil
         }
 
         return EKRecurrenceRule(recurrenceWith: frequency,
@@ -103,7 +99,7 @@ public struct EventDictionaryParser: EventParser {
 
     private func recurrenceEnd(with json: [String: Any]) throws -> EKRecurrenceEnd? {
 
-        if let endDate = try json.fetchOptional("endDate") { date(from: $0) } {
+        if let endDate = try json.fetchOptional("endDate") { Date.from(representation: $0) } {
             return EKRecurrenceEnd(end: endDate)
         } else if let occurrenceCount = try json.fetchOptional("occurrenceCount") as Int? {
             return EKRecurrenceEnd(occurrenceCount: occurrenceCount)

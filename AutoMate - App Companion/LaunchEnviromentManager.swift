@@ -9,14 +9,20 @@
 import Foundation
 
 // MARK: - Launch Enviroment Manager
-public final class LaunchEnviromentManager {
+public final class LaunchEnvironmentManager {
 
     // MARK: Properties
     private var handlers: [LaunchOptionKey: Handler] = [:]
+    private let enviroment: [String: String]
+
+    // MARK: Initialization
+    public init(enviroment: [String: String] = ProcessInfo.processInfo.environment) {
+        self.enviroment = enviroment
+    }
 
     // MARK: Methods
     public func setup() {
-        for (key, value) in ProcessInfo.processInfo.environment {
+        for (key, value) in enviroment {
             for (launchOptionKey, handler) in handlers where launchOptionKey == key {
                 handler.handle(key: launchOptionKey, value: value)
             }

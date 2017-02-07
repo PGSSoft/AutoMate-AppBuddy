@@ -11,20 +11,29 @@
 		E43192281E2E108E00B019C1 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43192271E2E108E00B019C1 /* Parser.swift */; };
 		E431922A1E2E113B00B019C1 /* EventKitParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43192291E2E113B00B019C1 /* EventKitParser.swift */; };
 		E442564B1E3B7B7200B2D83B /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E442564A1E3B7B7200B2D83B /* Bundle.swift */; };
-		E46B799A1E28ECEF00BC36B4 /* AutoMateAppCompanion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E46B79901E28ECEF00BC36B4 /* AutoMateAppCompanion.framework */; };
 		E46B79A11E28ECEF00BC36B4 /* AutoMate - App Companion.h in Headers */ = {isa = PBXBuildFile; fileRef = E46B79931E28ECEF00BC36B4 /* AutoMate - App Companion.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E46B79AB1E28F3D800BC36B4 /* EventKitHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46B79AA1E28F3D800BC36B4 /* EventKitHandler.swift */; };
 		E4932BB11E2E40A000FB8244 /* LaunchEnviromentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4932BB01E2E40A000FB8244 /* LaunchEnviromentManager.swift */; };
 		E4932BB31E2E467D00FB8244 /* LaunchOptionsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4932BB21E2E467D00FB8244 /* LaunchOptionsKeys.swift */; };
+		E49E84591E434389008A13AE /* AutoMateAppCompanionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49E84581E434389008A13AE /* AutoMateAppCompanionTests.swift */; };
+		E49E845B1E434389008A13AE /* AutoMateAppCompanion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E46B79901E28ECEF00BC36B4 /* AutoMateAppCompanion.framework */; };
+		E49E84621E4343AE008A13AE /* LaunchEnvironmentManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49E84611E4343AE008A13AE /* LaunchEnvironmentManagerTests.swift */; };
+		E49E846B1E485E93008A13AE /* EventKitParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49E846A1E485E93008A13AE /* EventKitParserTests.swift */; };
+		E49E846D1E486869008A13AE /* EventKitHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49E846C1E486869008A13AE /* EventKitHandlerTests.swift */; };
+		E49E84701E486EAD008A13AE /* Handlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49E84681E434ACC008A13AE /* Handlers.swift */; };
+		E49E84711E486EB8008A13AE /* test_events.json in Resources */ = {isa = PBXBuildFile; fileRef = E49E84641E4343C2008A13AE /* test_events.json */; };
+		E49E84731E487D5A008A13AE /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49E84721E487D5A008A13AE /* Date.swift */; };
+		E49E84771E48AAB5008A13AE /* EKParticipant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49E84751E4887A0008A13AE /* EKParticipant.swift */; };
+		E49E84791E48B78D008A13AE /* EKEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49E84781E48B78D008A13AE /* EKEvents.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		E46B799B1E28ECEF00BC36B4 /* PBXContainerItemProxy */ = {
+		E49E845C1E434389008A13AE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E46B79871E28ECEF00BC36B4 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = E46B798F1E28ECEF00BC36B4;
-			remoteInfo = "AutoMate - App Companion";
+			remoteInfo = "AutoMate App Companion";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -36,11 +45,21 @@
 		E46B79901E28ECEF00BC36B4 /* AutoMateAppCompanion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AutoMateAppCompanion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E46B79931E28ECEF00BC36B4 /* AutoMate - App Companion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AutoMate - App Companion.h"; sourceTree = "<group>"; };
 		E46B79941E28ECEF00BC36B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E46B79991E28ECEF00BC36B4 /* AutoMate App CompanionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AutoMate App CompanionTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E46B79A01E28ECEF00BC36B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E46B79AA1E28F3D800BC36B4 /* EventKitHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventKitHandler.swift; sourceTree = "<group>"; };
 		E4932BB01E2E40A000FB8244 /* LaunchEnviromentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchEnviromentManager.swift; sourceTree = "<group>"; };
 		E4932BB21E2E467D00FB8244 /* LaunchOptionsKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchOptionsKeys.swift; sourceTree = "<group>"; };
+		E49E84561E434389008A13AE /* AutoMateAppCompanionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutoMateAppCompanionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E49E84581E434389008A13AE /* AutoMateAppCompanionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoMateAppCompanionTests.swift; sourceTree = "<group>"; };
+		E49E845A1E434389008A13AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E49E84611E4343AE008A13AE /* LaunchEnvironmentManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LaunchEnvironmentManagerTests.swift; path = "Test Cases/LaunchEnvironmentManagerTests.swift"; sourceTree = "<group>"; };
+		E49E84641E4343C2008A13AE /* test_events.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test_events.json; sourceTree = "<group>"; };
+		E49E84681E434ACC008A13AE /* Handlers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Handlers.swift; path = Factories/Handlers.swift; sourceTree = "<group>"; };
+		E49E846A1E485E93008A13AE /* EventKitParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventKitParserTests.swift; path = "Test Cases/EventKitParserTests.swift"; sourceTree = "<group>"; };
+		E49E846C1E486869008A13AE /* EventKitHandlerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventKitHandlerTests.swift; path = "Test Cases/EventKitHandlerTests.swift"; sourceTree = "<group>"; };
+		E49E84721E487D5A008A13AE /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Date.swift; path = "Foundation Extensions/Date.swift"; sourceTree = "<group>"; };
+		E49E84751E4887A0008A13AE /* EKParticipant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EKParticipant.swift; path = "EventKit Extensions/EKParticipant.swift"; sourceTree = "<group>"; };
+		E49E84781E48B78D008A13AE /* EKEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EKEvents.swift; path = Factories/EKEvents.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,11 +70,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E46B79961E28ECEF00BC36B4 /* Frameworks */ = {
+		E49E84531E434389008A13AE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E46B799A1E28ECEF00BC36B4 /* AutoMateAppCompanion.framework in Frameworks */,
+				E49E845B1E434389008A13AE /* AutoMateAppCompanion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				E442564A1E3B7B7200B2D83B /* Bundle.swift */,
+				E49E84721E487D5A008A13AE /* Date.swift */,
 			);
 			name = "Foundation Extensions";
 			sourceTree = "<group>";
@@ -94,6 +114,7 @@
 			children = (
 				E46B79921E28ECEF00BC36B4 /* AutoMate - App Companion */,
 				E46B799D1E28ECEF00BC36B4 /* AutoMate - App CompanionTests */,
+				E49E84571E434389008A13AE /* AutoMateAppCompanionTests */,
 				E46B79911E28ECEF00BC36B4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -102,7 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				E46B79901E28ECEF00BC36B4 /* AutoMateAppCompanion.framework */,
-				E46B79991E28ECEF00BC36B4 /* AutoMate App CompanionTests.xctest */,
+				E49E84561E434389008A13AE /* AutoMateAppCompanionTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -110,6 +131,7 @@
 		E46B79921E28ECEF00BC36B4 /* AutoMate - App Companion */ = {
 			isa = PBXGroup;
 			children = (
+				E49E84741E48873C008A13AE /* EventKit Extensions */,
 				E46B79931E28ECEF00BC36B4 /* AutoMate - App Companion.h */,
 				E44256491E3B7B4F00B2D83B /* Foundation Extensions */,
 				E46B79941E28ECEF00BC36B4 /* Info.plist */,
@@ -123,9 +145,56 @@
 		E46B799D1E28ECEF00BC36B4 /* AutoMate - App CompanionTests */ = {
 			isa = PBXGroup;
 			children = (
+				E49E84671E434AAA008A13AE /* Factories */,
+				E49E84661E4343C7008A13AE /* Test Cases */,
 				E46B79A01E28ECEF00BC36B4 /* Info.plist */,
+				E49E84631E4343C2008A13AE /* Test Data */,
 			);
 			path = "AutoMate - App CompanionTests";
+			sourceTree = "<group>";
+		};
+		E49E84571E434389008A13AE /* AutoMateAppCompanionTests */ = {
+			isa = PBXGroup;
+			children = (
+				E49E84581E434389008A13AE /* AutoMateAppCompanionTests.swift */,
+				E49E845A1E434389008A13AE /* Info.plist */,
+			);
+			path = AutoMateAppCompanionTests;
+			sourceTree = "<group>";
+		};
+		E49E84631E4343C2008A13AE /* Test Data */ = {
+			isa = PBXGroup;
+			children = (
+				E49E84641E4343C2008A13AE /* test_events.json */,
+			);
+			path = "Test Data";
+			sourceTree = "<group>";
+		};
+		E49E84661E4343C7008A13AE /* Test Cases */ = {
+			isa = PBXGroup;
+			children = (
+				E49E84611E4343AE008A13AE /* LaunchEnvironmentManagerTests.swift */,
+				E49E846A1E485E93008A13AE /* EventKitParserTests.swift */,
+				E49E846C1E486869008A13AE /* EventKitHandlerTests.swift */,
+			);
+			name = "Test Cases";
+			sourceTree = "<group>";
+		};
+		E49E84671E434AAA008A13AE /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				E49E84681E434ACC008A13AE /* Handlers.swift */,
+				E49E84781E48B78D008A13AE /* EKEvents.swift */,
+			);
+			name = Factories;
+			sourceTree = "<group>";
+		};
+		E49E84741E48873C008A13AE /* EventKit Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E49E84751E4887A0008A13AE /* EKParticipant.swift */,
+			);
+			name = "EventKit Extensions";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,22 +229,22 @@
 			productReference = E46B79901E28ECEF00BC36B4 /* AutoMateAppCompanion.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		E46B79981E28ECEF00BC36B4 /* AutoMate App CompanionTests */ = {
+		E49E84551E434389008A13AE /* AutoMateAppCompanionTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E46B79A71E28ECEF00BC36B4 /* Build configuration list for PBXNativeTarget "AutoMate App CompanionTests" */;
+			buildConfigurationList = E49E845E1E434389008A13AE /* Build configuration list for PBXNativeTarget "AutoMateAppCompanionTests" */;
 			buildPhases = (
-				E46B79951E28ECEF00BC36B4 /* Sources */,
-				E46B79961E28ECEF00BC36B4 /* Frameworks */,
-				E46B79971E28ECEF00BC36B4 /* Resources */,
+				E49E84521E434389008A13AE /* Sources */,
+				E49E84531E434389008A13AE /* Frameworks */,
+				E49E84541E434389008A13AE /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				E46B799C1E28ECEF00BC36B4 /* PBXTargetDependency */,
+				E49E845D1E434389008A13AE /* PBXTargetDependency */,
 			);
-			name = "AutoMate App CompanionTests";
-			productName = "AutoMate - App CompanionTests";
-			productReference = E46B79991E28ECEF00BC36B4 /* AutoMate App CompanionTests.xctest */;
+			name = AutoMateAppCompanionTests;
+			productName = AutoMateAppCompanionTests;
+			productReference = E49E84561E434389008A13AE /* AutoMateAppCompanionTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -193,7 +262,7 @@
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
-					E46B79981E28ECEF00BC36B4 = {
+					E49E84551E434389008A13AE = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
 					};
@@ -212,7 +281,7 @@
 			projectRoot = "";
 			targets = (
 				E46B798F1E28ECEF00BC36B4 /* AutoMate App Companion */,
-				E46B79981E28ECEF00BC36B4 /* AutoMate App CompanionTests */,
+				E49E84551E434389008A13AE /* AutoMateAppCompanionTests */,
 			);
 		};
 /* End PBXProject section */
@@ -225,10 +294,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E46B79971E28ECEF00BC36B4 /* Resources */ = {
+		E49E84541E434389008A13AE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E49E84711E486EB8008A13AE /* test_events.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,27 +312,35 @@
 				E43192261E2E102900B019C1 /* Dictionary+SafeAccess.swift in Sources */,
 				E442564B1E3B7B7200B2D83B /* Bundle.swift in Sources */,
 				E46B79AB1E28F3D800BC36B4 /* EventKitHandler.swift in Sources */,
+				E49E84731E487D5A008A13AE /* Date.swift in Sources */,
 				E4932BB11E2E40A000FB8244 /* LaunchEnviromentManager.swift in Sources */,
+				E49E84771E48AAB5008A13AE /* EKParticipant.swift in Sources */,
 				E4932BB31E2E467D00FB8244 /* LaunchOptionsKeys.swift in Sources */,
 				E431922A1E2E113B00B019C1 /* EventKitParser.swift in Sources */,
 				E43192281E2E108E00B019C1 /* Parser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E46B79951E28ECEF00BC36B4 /* Sources */ = {
+		E49E84521E434389008A13AE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E49E846D1E486869008A13AE /* EventKitHandlerTests.swift in Sources */,
+				E49E84621E4343AE008A13AE /* LaunchEnvironmentManagerTests.swift in Sources */,
+				E49E84791E48B78D008A13AE /* EKEvents.swift in Sources */,
+				E49E84701E486EAD008A13AE /* Handlers.swift in Sources */,
+				E49E846B1E485E93008A13AE /* EventKitParserTests.swift in Sources */,
+				E49E84591E434389008A13AE /* AutoMateAppCompanionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		E46B799C1E28ECEF00BC36B4 /* PBXTargetDependency */ = {
+		E49E845D1E434389008A13AE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E46B798F1E28ECEF00BC36B4 /* AutoMate App Companion */;
-			targetProxy = E46B799B1E28ECEF00BC36B4 /* PBXContainerItemProxy */;
+			targetProxy = E49E845C1E434389008A13AE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -407,25 +485,23 @@
 			};
 			name = Release;
 		};
-		E46B79A81E28ECEF00BC36B4 /* Debug */ = {
+		E49E845F1E434389008A13AE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				INFOPLIST_FILE = "AutoMate - App CompanionTests/Info.plist";
+				INFOPLIST_FILE = AutoMateAppCompanionTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.pgs-soft.AutoMate---App-CompanionTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pgs-soft.AutoMateAppCompanionTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
-		E46B79A91E28ECEF00BC36B4 /* Release */ = {
+		E49E84601E434389008A13AE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				INFOPLIST_FILE = "AutoMate - App CompanionTests/Info.plist";
+				INFOPLIST_FILE = AutoMateAppCompanionTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.pgs-soft.AutoMate---App-CompanionTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pgs-soft.AutoMateAppCompanionTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -452,11 +528,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E46B79A71E28ECEF00BC36B4 /* Build configuration list for PBXNativeTarget "AutoMate App CompanionTests" */ = {
+		E49E845E1E434389008A13AE /* Build configuration list for PBXNativeTarget "AutoMateAppCompanionTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E46B79A81E28ECEF00BC36B4 /* Debug */,
-				E46B79A91E28ECEF00BC36B4 /* Release */,
+				E49E845F1E434389008A13AE /* Debug */,
+				E49E84601E434389008A13AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
