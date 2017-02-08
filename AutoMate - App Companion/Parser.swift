@@ -8,8 +8,13 @@
 
 import Foundation
 
+
+protocol ErrorWithMessage: Error {
+    var message: String { get }
+}
+
 // MARK: Parser Error
-public struct ParserError: Error {
+public struct ParserError: ErrorWithMessage {
 
     // MARK: Properties
     let message: String

@@ -19,7 +19,7 @@ internal extension DateFormatter {
 
     internal static let defaultJsonDateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy MM dd k:mm:ss"
+        dateFormatter.dateFormat = "yyyy-MM-dd k:mm:ss"
         return dateFormatter
     }()
 }

@@ -24,10 +24,6 @@ enum EventFactory {
             "startDate": "2017-01-22 13:45:00",
             "endDate": "2017-01-22 14:30:00",
             "notes": "Everybody are welcome",
-            "organizer": [
-                "name": "Johny Ive",
-                "role": 1
-            ],
             "recurrenceRules": [
                 [
                     "frequency": 2,
@@ -46,14 +42,6 @@ enum EventFactory {
             "startDate": "2017-01-22 13:45:00",
             "endDate": "2017-01-22 14:30:00",
             "notes": "Everybody are welcome",
-            "organizer": [
-                "name": "Johny Ive",
-                "status": 0,
-                "type": 3,
-                "role": 1,
-                "contactPredicate": "firstName == Johny AND lastName == Ive",
-                "isCurrentUser": false
-            ],
             "recurrenceRules": [
                 [
                     "frequency": 1,
@@ -68,32 +56,6 @@ enum EventFactory {
                     "daysOfTheWeek": [5],
                     "occurrenceCount": 17,
                     "setPositions": [-2, 13, 57, -200]
-                ]
-            ],
-            "attendees": [
-                [
-                    "name": "John Apple",
-                    "status": 0,
-                    "type": 3,
-                    "role": 1,
-                    "contactPredicate": "firstName == Johny AND lastName == Ive",
-                    "isCurrentUser": false
-                ],
-                [
-                    "name": "Taylor Swift",
-                    "status": 1,
-                    "type": 0,
-                    "role": 2,
-                    "contactPredicate": "firstName == Taylor AND lastName == Swift",
-                    "isCurrentUser": true
-                ],
-                [
-                    "name": "Tim Cook",
-                    "status": 3,
-                    "type": 4,
-                    "role": 3,
-                    "contactPredicate": "firstName == Tim AND lastName == Cook",
-                    "isCurrentUser": false
                 ]
             ]
         ]

@@ -59,7 +59,7 @@ public extension Dictionary {
 
     public func fetchOptionalArray<V, U>(_ key: Key, transformation: (V) throws -> U?) throws -> [U]? {
 
-        guard let fetched: [V] = try fetch(key) else {
+        guard let fetched: [V] = try fetchOptional(key) else {
             return nil
         }
         return try fetched.flatMap(transformation)

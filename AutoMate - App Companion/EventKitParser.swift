@@ -54,12 +54,9 @@ public struct EventDictionaryParser: EventParser {
             throw ParserError(message: "Expected dictionary, given \(data)")
         }
 
-        let eventIdentifier: String? = try jsonDict.fetchOptional("eventIdentifier")
-        let organizer = try jsonDict.fetchOptional("organizer").flatMap { try EKParticipant.from(json: $0) }
         let creationDate = try jsonDict.fetchOptional("creationDate") { Date.from(representation: $0) }
         let startDate = try jsonDict.fetch("startDate") { Date.from(representation: $0) }
         let endDate = try jsonDict.fetch("endDate") { Date.from(representation: $0) }
-        let attendees = try jsonDict.fetchOptionalArray("attendees") { try EKParticipant.from(json: $0) }
         let recurrenceRules = try jsonDict.fetchOptionalArray("recurrenceRules") { try recurrenceRule(from: $0) }
 
         let event = EKEvent(eventStore: eventStore)
@@ -67,14 +64,11 @@ public struct EventDictionaryParser: EventParser {
         event.title = try jsonDict.fetch("title")
         event.location = try jsonDict.fetchOptional("location")
         event.notes = try jsonDict.fetchOptional("notes")
-        event.setValue(eventIdentifier, forKey: "eventIdentifier")
-        event.setValue(organizer, forKey: "organizer")
         event.setValue(creationDate, forKey: "creationDate")
         event.setValuesForKeys([
             "startDate": startDate,
             "endDate": endDate
             ])
-        event.setValue(attendees, forKey: "attendees")
         recurrenceRules?.forEach { event.addRecurrenceRule($0) }
 
         return event
@@ -88,7 +82,7 @@ public struct EventDictionaryParser: EventParser {
 
         return EKRecurrenceRule(recurrenceWith: frequency,
                                 interval: try json.fetch("interval"),
-                                daysOfTheWeek: try json.fetchOptional("daysOfTheWeek"),
+                                daysOfTheWeek: try json.fetchOptionalArray("daysOfTheWeek") { try dayOfTheWeek(from: $0) },
                                 daysOfTheMonth: try json.fetchOptional("daysOfTheMonth"),
                                 monthsOfTheYear: try json.fetchOptional("monthsOfTheYear"),
                                 weeksOfTheYear: try json.fetchOptional("weeksOfTheYear"),
@@ -106,5 +100,12 @@ public struct EventDictionaryParser: EventParser {
         }
 
         return nil
+    }
+
+    private func dayOfTheWeek(from dayNo: Int) throws -> EKRecurrenceDayOfWeek {
+        guard let weekday = EKWeekday(rawValue: dayNo) else {
+            throw ParserError(message: "Day \(dayNo) out of range of week.")
+        }
+        return EKRecurrenceDayOfWeek(weekday)
     }
 }
