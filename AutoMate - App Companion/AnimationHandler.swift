@@ -13,7 +13,10 @@ public struct AnimationHandler: Handler {
     // MARK: Properties
     public static let key = AutoMateLaunchOptionKey.animation
 
-    //MARK: Handler
+    // MARK: Initialization
+    public init() { }
+
+    // MARK: Handler
     public func handle(key: String, value: String) {
         guard let animation = value.toBool() else {
             assertionFailure("Cannot convert \(AnimationHandler.key) to Bool")

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		96420E061E4C801400901C50 /* AnimationHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96420E051E4C801400901C50 /* AnimationHandlerTests.swift */; };
 		96AB73F51E44C83300FA811A /* AnimationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB73F41E44C83300FA811A /* AnimationHandler.swift */; };
 		96AB73F71E44CDD800FA811A /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB73F61E44CDD800FA811A /* String.swift */; };
 		E43192261E2E102900B019C1 /* Dictionary+SafeAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43192251E2E102900B019C1 /* Dictionary+SafeAccess.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		96420E051E4C801400901C50 /* AnimationHandlerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationHandlerTests.swift; sourceTree = "<group>"; };
 		96AB73F41E44C83300FA811A /* AnimationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationHandler.swift; sourceTree = "<group>"; };
 		96AB73F61E44CDD800FA811A /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		E43192251E2E102900B019C1 /* Dictionary+SafeAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+SafeAccess.swift"; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 		E49E84871E4B43DF008A13AE /* Test Cases */ = {
 			isa = PBXGroup;
 			children = (
+				96420E051E4C801400901C50 /* AnimationHandlerTests.swift */,
 				E49E84881E4B43DF008A13AE /* EventKitParserTests.swift */,
 				E49E84891E4B43DF008A13AE /* LaunchEnviromentResourceTests.swift */,
 				E49E848A1E4B43DF008A13AE /* LaunchEnvironmentManagerTests.swift */,
@@ -201,6 +204,7 @@
 				E46B798C1E28ECEF00BC36B4 /* Frameworks */,
 				E46B798D1E28ECEF00BC36B4 /* Headers */,
 				E46B798E1E28ECEF00BC36B4 /* Resources */,
+				969A79451E4C662200904F4E /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -286,6 +290,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		969A79451E4C662200904F4E /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E46B798B1E28ECEF00BC36B4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -313,6 +334,7 @@
 				E49E84911E4B43DF008A13AE /* LaunchEnviromentResourceTests.swift in Sources */,
 				E49E84901E4B43DF008A13AE /* EventKitParserTests.swift in Sources */,
 				E49E848E1E4B43DF008A13AE /* Handlers.swift in Sources */,
+				96420E061E4C801400901C50 /* AnimationHandlerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

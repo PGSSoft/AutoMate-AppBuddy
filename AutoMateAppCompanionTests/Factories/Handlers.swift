@@ -17,7 +17,7 @@ class MockHandler: Handler {
     var key: String {
         return "RESOURCE_KEY_\(instanceNumber)"
     }
-    private(set) var received: (key: String, value: String)? = nil
+    private(set) var received: (key: String, value: String)?
     private let instanceNumber: Int
 
     // MARK: Initialization

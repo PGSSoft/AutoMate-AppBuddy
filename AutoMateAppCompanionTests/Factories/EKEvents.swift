@@ -14,7 +14,7 @@ enum EventFactory {
         return [
             "title": "Minimal Event Title",
             "startDate": "2017-01-22 13:45:00",
-            "endDate": "2017-01-22 14:30:00",
+            "endDate": "2017-01-22 14:30:00"
         ]
     }()
 
@@ -28,7 +28,7 @@ enum EventFactory {
                 [
                     "frequency": 2,
                     "interval": 3,
-                    "daysOfTheMonth": [15, 16, 20],
+                    "daysOfTheMonth": [15, 16, 20]
                 ]
             ]
         ]
