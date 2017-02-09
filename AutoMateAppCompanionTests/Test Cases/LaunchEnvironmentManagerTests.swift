@@ -62,5 +62,3 @@ class LaunchEnvironmentManagerTests: XCTestCase {
         XCTAssertNil(handler.received, "Handler with key \(handler.key) called for environment with key \(handler.received!.key).")
     }
 }
-
-
