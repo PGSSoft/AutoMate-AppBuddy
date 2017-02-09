@@ -12,54 +12,54 @@ import XCTest
 class LaunchEnvironmentManagerTests: XCTestCase {
 
     // MARK: Tests
-    func testWithEmptyEnviroment() {
+    func testWithEmptyEnvironment() {
         let handler = MockHandler()
-        let enviroment: [String: String] = [:]
-        let manager = launchEnvironmentManager(withHandlers: [handler], enviroment: enviroment)
+        let environment: [String: String] = [:]
+        let manager = launchEnvironmentManager(withHandlers: [handler], environment: environment)
         manager.setup()
 
-        assert(nil: handler, in: enviroment)
+        assert(nil: handler, in: environment)
     }
 
-    func testWithEnviromentForLessHandlersThenAdded() {
+    func testWithEnvironmentForLessHandlersThenAdded() {
         let firstHandler = MockHandler()
         let secondHandler = MockHandler()
-        let enviroment = [firstHandler.key: "1st_mocked_value"]
-        let manager = launchEnvironmentManager(withHandlers: [firstHandler, secondHandler], enviroment: enviroment)
+        let environment = [firstHandler.key: "1st_mocked_value"]
+        let manager = launchEnvironmentManager(withHandlers: [firstHandler, secondHandler], environment: environment)
         manager.setup()
 
-        assert(nil: secondHandler, in: enviroment)
-        assert(notNil: firstHandler, in: enviroment)
+        assert(nil: secondHandler, in: environment)
+        assert(notNil: firstHandler, in: environment)
     }
 
-    func testWithEnviromentAllHandlersAdded() {
+    func testWithEnvironmentAllHandlersAdded() {
         let firstHandler = MockHandler()
         let secondHandler = MockHandler()
-        let enviroment = [secondHandler.key: "2nd_mocked_value", firstHandler.key: "1st_mocked_value"]
-        let manager = launchEnvironmentManager(withHandlers: [firstHandler, secondHandler], enviroment: enviroment)
+        let environment = [secondHandler.key: "2nd_mocked_value", firstHandler.key: "1st_mocked_value"]
+        let manager = launchEnvironmentManager(withHandlers: [firstHandler, secondHandler], environment: environment)
         manager.setup()
 
-        assert(notNil: firstHandler, in: enviroment)
-        assert(notNil: secondHandler, in: enviroment)
+        assert(notNil: firstHandler, in: environment)
+        assert(notNil: secondHandler, in: environment)
     }
 
     // MARK: Helpers
-    private func launchEnvironmentManager(withHandlers handlers: [MockHandler], enviroment: [String: String]) -> LaunchEnvironmentManager {
-        let launchEnvironmentManager = LaunchEnvironmentManager(enviroment: enviroment)
+    private func launchEnvironmentManager(withHandlers handlers: [MockHandler], environment: [String: String]) -> LaunchEnvironmentManager {
+        let launchEnvironmentManager = LaunchEnvironmentManager(environment: environment)
         for handler in handlers {
             launchEnvironmentManager.add(handler: handler, for: handler.key)
         }
         return launchEnvironmentManager
     }
 
-    private func assert(notNil handler: MockHandler, in enviroment: [String: String]) {
+    private func assert(notNil handler: MockHandler, in environment: [String: String]) {
         XCTAssertNotNil(handler.received, "Handler with key \(handler.key) wasn't called.")
-        XCTAssertEqual(handler.received!.key, handler.key, "Handler with key \(handler.key) called for enviroment with key \(handler.received!.key).")
-        XCTAssertEqual(handler.received!.value, enviroment[handler.key]!, "Handler with key \(handler.key) called with value \(handler.received!.value) instead of \(enviroment[handler.key]!).")
+        XCTAssertEqual(handler.received!.key, handler.key, "Handler with key \(handler.key) called for environment with key \(handler.received!.key).")
+        XCTAssertEqual(handler.received!.value, environment[handler.key]!, "Handler with key \(handler.key) called with value \(handler.received!.value) instead of \(environment[handler.key]!).")
     }
 
-    private func assert(nil handler: MockHandler, in enviroment: [String: String]) {
-        XCTAssertNil(handler.received, "Handler with key \(handler.key) called for enviroment with key \(handler.received!.key).")
+    private func assert(nil handler: MockHandler, in environment: [String: String]) {
+        XCTAssertNil(handler.received, "Handler with key \(handler.key) called for environment with key \(handler.received!.key).")
     }
 }
 

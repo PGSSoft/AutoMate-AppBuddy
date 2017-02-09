@@ -22,7 +22,7 @@ public struct EventKitHandler<P: EventParser>: Handler {
 
     // MARK: Methods
     public func handle(key: String, value: String) {
-        let resources = LaunchEnviromentResource.resources(from: value)
+        let resources = LaunchEnvironmentResource.resources(from: value)
         try? parser.parseAndSave(resources: resources)
     }
 }

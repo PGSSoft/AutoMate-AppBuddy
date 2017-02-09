@@ -26,10 +26,10 @@ public extension EventParser {
     /// Will access all
     ///
     /// - Parameters:
-    ///   - resources: Array of resources discribing path to events data.
+    ///   - resources: Array of resources describing path to events data.
     ///   - span: _Values for controlling what occurrences to affect in a recurring event._ `.futureEvents` by default.
     /// - Throws: `ParserError` if data has unexpected format or standard `Error` for saving and commiting in EventKit.
-    public func parseAndSave(resources: [LaunchEnviromentResource], with span: EKSpan = .futureEvents) throws {
+    public func parseAndSave(resources: [LaunchEnvironmentResource], with span: EKSpan = .futureEvents) throws {
         try parsed(resources: resources).forEach { try eventStore.save($0, span: span) }
         try eventStore.commit()
     }

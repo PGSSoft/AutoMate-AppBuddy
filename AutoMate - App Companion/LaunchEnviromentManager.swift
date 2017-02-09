@@ -1,5 +1,5 @@
 //
-//  LaunchEnviromentManager.swift
+//  LaunchEnvironmentManager.swift
 //  AutoMate App Companion
 //
 //  Created by Joanna Bednarz on 17/01/2017.
@@ -8,21 +8,21 @@
 
 import Foundation
 
-// MARK: - Launch Enviroment Manager
+// MARK: - Launch Environment Manager
 public final class LaunchEnvironmentManager {
 
     // MARK: Properties
     private var handlers: [LaunchOptionKey: Handler] = [:]
-    private let enviroment: [String: String]
+    private let environment: [String: String]
 
     // MARK: Initialization
-    public init(enviroment: [String: String] = ProcessInfo.processInfo.environment) {
-        self.enviroment = enviroment
+    public init(environment: [String: String] = ProcessInfo.processInfo.environment) {
+        self.environment = environment
     }
 
     // MARK: Methods
     public func setup() {
-        for (key, value) in enviroment {
+        for (key, value) in environment {
             for (launchOptionKey, handler) in handlers where launchOptionKey == key {
                 handler.handle(key: launchOptionKey, value: value)
             }

@@ -41,7 +41,7 @@ class EventKitParserTests: XCTestCase {
 
     func testParseEventsFromJSONFile() {
         var events = [EKEvent]()
-        let resource = LaunchEnviromentResource(bundle: "com.pgs-soft.AutoMateAppCompanionTests", name: "test_events")!
+        let resource = LaunchEnvironmentResource(bundle: "com.pgs-soft.AutoMateAppCompanionTests", name: "test_events")!
         assertNotThrows(expr: events = try dictionaryParser.parsed(resources: [resource]), "Data format corrupted.")
 
         XCTAssertEqual(events.count, 3, "Expected 3 events, got \(events.count)")

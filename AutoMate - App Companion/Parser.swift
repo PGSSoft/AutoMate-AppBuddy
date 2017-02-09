@@ -33,15 +33,15 @@ public protocol Parser {
 public extension Parser {
 
     // MARK: Methods
-    public func parsed(resources: [LaunchEnviromentResource]) throws -> [Self.T] {
+    public func parsed(resources: [LaunchEnvironmentResource]) throws -> [Self.T] {
         let jsonsData = resources.flatMap { $0.bundle.jsonArray(with: $0.name) }
         let flattenData = jsonsData.reduce([], +)
         return try flattenData.flatMap { return try parse($0) }
     }
 }
 
-// MARK: - Launch Enviroment Resource
-public struct LaunchEnviromentResource {
+// MARK: - Launch Environment Resource
+public struct LaunchEnvironmentResource {
 
     // MARK: Properties
     public let bundle: Bundle
@@ -57,7 +57,7 @@ public struct LaunchEnviromentResource {
     }
 
     // MARK: Static methods
-    public static func resources(from resourcesString: String) -> [LaunchEnviromentResource] {
+    public static func resources(from resourcesString: String) -> [LaunchEnvironmentResource] {
         let pairs = resourcesString.components(separatedBy: ",")
 
         return pairs.flatMap {
@@ -65,7 +65,7 @@ public struct LaunchEnviromentResource {
             let bundleName = pair.first != nil && pair.first != "nil" ? pair.first : nil
 
             guard let resourceName = pair.last,
-                let resource = LaunchEnviromentResource(bundle: bundleName, name: resourceName) else {
+                let resource = LaunchEnvironmentResource(bundle: bundleName, name: resourceName) else {
                     return nil
             }
             return resource
