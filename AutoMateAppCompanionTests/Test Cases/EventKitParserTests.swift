@@ -21,21 +21,21 @@ class EventKitParserTests: XCTestCase {
     func testParseEventWithMinimalInfo() {
         let eventDict = EventFactory.eventWithMinimalInformations
         var event: EKEvent!
-        assertNotThrows(expr: event = try dictionaryParser.parse(eventDict),  "Data format corrupted.")
+        assertNotThrows(expr: event = try dictionaryParser.parse(eventDict), "Parser failed for \(eventDict).")
         assert(event, with: eventDict)
     }
 
     func testParseEventWithRandomInfo() {
         let eventDict = EventFactory.eventWithRandomInformations
         var event: EKEvent!
-        assertNotThrows(expr: event = try dictionaryParser.parse(eventDict), "Data format corrupted.")
+        assertNotThrows(expr: event = try dictionaryParser.parse(eventDict), "Parser failed for \(eventDict).")
         assert(event, with: eventDict)
     }
 
     func testParseEventWithAllInfo() {
         let eventDict = EventFactory.eventWithAllInformations
         var event: EKEvent!
-        assertNotThrows(expr: event = try dictionaryParser.parse(eventDict), "Data format corrupted.")
+        assertNotThrows(expr: event = try dictionaryParser.parse(eventDict), "Parser failed for \(eventDict).")
         assert(event, with: eventDict)
     }
 
@@ -59,7 +59,7 @@ class EventKitParserTests: XCTestCase {
     func assertThrows<E: ErrorWithMessage>(expr expression: (@autoclosure () throws -> Void), errorType: E.Type, _ message: (@autoclosure () -> String)) {
         do {
             try expression()
-        }  catch let error {
+        } catch let error {
             XCTAssertTrue(error is E, "\(message()) Failed with unexpected error \(error).")
         }
     }
