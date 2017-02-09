@@ -27,47 +27,14 @@ class AnimationHandlerTests: XCTestCase {
     }
 
     // MARK: Tests
-    func testAnimationHandler() {
+    func testDisableAnimation() {
         animationHandler.handle(key: AutoMateLaunchOptionKey.animation.rawValue, value: "false")
         XCTAssertFalse(UIView.areAnimationsEnabled)
     }
 
-    func testDisableAnimation01() {
-        animationHandler.handle(key: AutoMateLaunchOptionKey.animation.rawValue, value: "FALSE")
-        XCTAssertFalse(UIView.areAnimationsEnabled)
-    }
-
-    func testDisableAnimation02() {
-        animationHandler.handle(key: AutoMateLaunchOptionKey.animation.rawValue, value: "0")
-        XCTAssertFalse(UIView.areAnimationsEnabled)
-    }
-
-    func testDisableAnimation03() {
-        animationHandler.handle(key: AutoMateLaunchOptionKey.animation.rawValue, value: "No")
-        XCTAssertFalse(UIView.areAnimationsEnabled)
-    }
-
-    func testEnableAnimation01() {
+    func testEnableAnimation() {
         UIView.setAnimationsEnabled(false)
         animationHandler.handle(key: AutoMateLaunchOptionKey.animation.rawValue, value: "true")
-        XCTAssertTrue(UIView.areAnimationsEnabled)
-    }
-
-    func testEnableAnimation02() {
-        UIView.setAnimationsEnabled(false)
-        animationHandler.handle(key: AutoMateLaunchOptionKey.animation.rawValue, value: "TRUE")
-        XCTAssertTrue(UIView.areAnimationsEnabled)
-    }
-
-    func testEnableAnimation03() {
-        UIView.setAnimationsEnabled(false)
-        animationHandler.handle(key: AutoMateLaunchOptionKey.animation.rawValue, value: "1")
-        XCTAssertTrue(UIView.areAnimationsEnabled)
-    }
-
-    func testEnableAnimation04() {
-        UIView.setAnimationsEnabled(false)
-        animationHandler.handle(key: AutoMateLaunchOptionKey.animation.rawValue, value: "YES")
         XCTAssertTrue(UIView.areAnimationsEnabled)
     }
 }

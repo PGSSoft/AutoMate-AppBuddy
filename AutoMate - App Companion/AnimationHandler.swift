@@ -18,7 +18,7 @@ public struct AnimationHandler: Handler {
 
     // MARK: Handler
     public func handle(key: String, value: String) {
-        guard let animation = value.toBool() else {
+        guard let animation = value.boolValue else {
             assertionFailure("Cannot convert \(AnimationHandler.key) to Bool")
             return
         }
