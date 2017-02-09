@@ -21,40 +21,46 @@ class EventKitParserTests: XCTestCase {
     func testParseEventWithMinimalInfo() {
         let eventDict = EventFactory.eventWithMinimalInformations
         var event: EKEvent!
-        assert(errorOfType: ParserError.self, expr: event = try dictionaryParser.parse(eventDict), "Data format corrupted.")
+        assertNotThrows(expr: event = try dictionaryParser.parse(eventDict),  "Data format corrupted.")
         assert(event, with: eventDict)
     }
 
     func testParseEventWithRandomInfo() {
         let eventDict = EventFactory.eventWithRandomInformations
         var event: EKEvent!
-        assert(errorOfType: ParserError.self, expr: event = try dictionaryParser.parse(eventDict), "Data format corrupted.")
+        assertNotThrows(expr: event = try dictionaryParser.parse(eventDict), "Data format corrupted.")
         assert(event, with: eventDict)
     }
 
     func testParseEventWithAllInfo() {
         let eventDict = EventFactory.eventWithAllInformations
         var event: EKEvent!
-        assert(errorOfType: ParserError.self, expr: event = try dictionaryParser.parse(eventDict), "Data format corrupted.")
+        assertNotThrows(expr: event = try dictionaryParser.parse(eventDict), "Data format corrupted.")
         assert(event, with: eventDict)
     }
 
     func testParseEventsFromJSONFile() {
         var events = [EKEvent]()
         let resource = LaunchEnviromentResource(bundle: "com.pgs-soft.AutoMateAppCompanionTests", name: "test_events")!
-        assert(errorOfType: ParserError.self, expr: events = try dictionaryParser.parsed(resources: [resource]), "Data format corrupted.")
+        assertNotThrows(expr: events = try dictionaryParser.parsed(resources: [resource]), "Data format corrupted.")
 
         XCTAssertEqual(events.count, 3, "Expected 3 events, got \(events.count)")
     }
 
     // MARK: Helpers
-    func assert<E: ErrorWithMessage>(expected: Bool = false, errorOfType type: E.Type, expr expression: (@autoclosure () throws -> Void), _ message: (@autoclosure () -> String)) {
+    func assertNotThrows(expr expression: (@autoclosure () throws -> Void), _ message: (@autoclosure () -> String)) {
         do {
             try expression()
-        } catch let error as E {
-            XCTAssertTrue(expected, "\(message()) \(error.message)")
         } catch let error {
             XCTFail("\(message()) Failed with unexpected error \(error).")
+        }
+    }
+
+    func assertThrows<E: ErrorWithMessage>(expr expression: (@autoclosure () throws -> Void), errorType: E.Type, _ message: (@autoclosure () -> String)) {
+        do {
+            try expression()
+        }  catch let error {
+            XCTAssertTrue(error is E, "\(message()) Failed with unexpected error \(error).")
         }
     }
 
