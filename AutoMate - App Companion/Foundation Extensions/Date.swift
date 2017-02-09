@@ -10,16 +10,16 @@ import Foundation
 
 internal extension Date {
 
-    internal static func from(representation string: String) -> Date? {
-        return DateFormatter.defaultJsonDateFormatter.date(from: string)
-    }
+	internal static func from(representation string: String) -> Date? {
+		return DateFormatter.defaultJsonDateFormatter.date(from: string)
+	}
 }
 
 internal extension DateFormatter {
 
-    internal static let defaultJsonDateFormatter: DateFormatter = {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd k:mm:ss"
-        return dateFormatter
-    }()
+	internal static let defaultJsonDateFormatter: DateFormatter = {
+		let dateFormatter = DateFormatter()
+		dateFormatter.dateFormat = "yyyy-MM-dd k:mm:ss"
+		return dateFormatter
+	}()
 }

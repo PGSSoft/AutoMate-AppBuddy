@@ -79,7 +79,6 @@
 		E43192241E2E0DAE00B019C1 /* Parsers */ = {
 			isa = PBXGroup;
 			children = (
-				E43192251E2E102900B019C1 /* Dictionary+SafeAccess.swift */,
 				E43192291E2E113B00B019C1 /* EventKitParser.swift */,
 				E43192271E2E108E00B019C1 /* Parser.swift */,
 			);
@@ -98,6 +97,7 @@
 		E44256491E3B7B4F00B2D83B /* Foundation Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				E43192251E2E102900B019C1 /* Dictionary+SafeAccess.swift */,
 				E442564A1E3B7B7200B2D83B /* Bundle.swift */,
 				E49E84721E487D5A008A13AE /* Date.swift */,
 			);
