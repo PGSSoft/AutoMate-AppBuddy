@@ -11,16 +11,16 @@ import Foundation
 // MARK: - Bundle
 public extension Bundle {
 
-	// MARK: Methods
-	public func jsonArray(with name: String) -> [Any]? {
+    // MARK: Methods
+    public func jsonArray(with name: String) -> [Any]? {
 
-		guard let url = url(forResource: name, withExtension: "json"),
-			let data = try? Data(contentsOf: url),
-			let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments),
-			let jsonArray = json as? [Any] else {
-				return nil
-		}
+        guard let url = url(forResource: name, withExtension: "json"),
+            let data = try? Data(contentsOf: url),
+            let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments),
+            let jsonArray = json as? [Any] else {
+                return nil
+        }
 
-		return jsonArray
-	}
+        return jsonArray
+    }
 }

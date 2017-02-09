@@ -11,20 +11,20 @@ import EventKit
 // MARK: - Event Kit Handler
 public struct EventKitHandler<P: EventParser>: Handler {
 
-	// MARK: Properties
-	public let parser: P
-	public let key: AutoMateLaunchOptionKey = .events
+    // MARK: Properties
+    public let parser: P
+    public let key: AutoMateLaunchOptionKey = .events
 
-	// MARK: Initialization
-	public init(parser: P) {
-		self.parser = parser
-	}
+    // MARK: Initialization
+    public init(parser: P) {
+        self.parser = parser
+    }
 
-	// MARK: Methods
-	public func handle(key: String, value: String) {
-		let resources = LaunchEnviromentResource.resources(from: value)
-		try? parser.parseAndSave(resources: resources)
-	}
+    // MARK: Methods
+    public func handle(key: String, value: String) {
+        let resources = LaunchEnviromentResource.resources(from: value)
+        try? parser.parseAndSave(resources: resources)
+    }
 }
 
 // MARK: - Default Event Kit Handler
