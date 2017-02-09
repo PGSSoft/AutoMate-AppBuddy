@@ -244,7 +244,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0820;
-				ORGANIZATIONNAME = "Joanna Bednarz";
+				ORGANIZATIONNAME = "PGS Software";
 				TargetAttributes = {
 					E46B798F1E28ECEF00BC36B4 = {
 						CreatedOnToolsVersion = 8.2.1;

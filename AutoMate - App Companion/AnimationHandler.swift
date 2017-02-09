@@ -3,7 +3,7 @@
 //  AutoMate App Companion
 //
 //  Created by Bartosz Janda on 03.02.2017.
-//  Copyright © 2017 Joanna Bednarz. All rights reserved.
+//  Copyright © 2017 PGS Software. All rights reserved.
 //
 
 import UIKit
