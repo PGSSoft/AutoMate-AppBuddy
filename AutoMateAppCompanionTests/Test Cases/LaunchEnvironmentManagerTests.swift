@@ -3,7 +3,7 @@
 //  AutoMate App Companion
 //
 //  Created by Joanna Bednarz on 02/02/2017.
-//  Copyright © 2017 Joanna Bednarz. All rights reserved.
+//  Copyright © 2017 PGS Software. All rights reserved.
 //
 
 import XCTest
