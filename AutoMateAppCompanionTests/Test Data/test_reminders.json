@@ -2,9 +2,9 @@
   {
     "title": "All Info Event Title",
     "location": "Conference room",
-    "startDate": "2017-01-22 13:45:00",
-    "endDate": "2017-01-22 14:30:00",
     "notes": "Everybody are welcome",
+    "priority": 1,
+    "isCompleted": true,
     "recurrenceRules": [
       {
         "frequency": 1,
@@ -36,13 +36,36 @@
           -200
         ]
       }
-    ]
+    ],
+    "startDateComponents": {
+      "timeZone": {
+        "identifier": "America/Los_Angeles",
+      },
+      "year": 2017,
+      "month": 10,
+      "day": 24,
+      "hour": 12,
+      "minute": 25,
+      "second": 0
+    },
+    "dueDateComponents": {
+      "timeZone": {
+        "secondsFromGMT": 3000
+      },
+      "year": 2018,
+      "month": 1,
+      "day": 2,
+      "hour": 23,
+      "minute": 50,
+      "second": 0
+    },
+    "completionDate": "2017-01-22 14:30:00"
   },
   {
     "title": "Random Event Title",
-    "startDate": "2017-01-22 13:45:00",
-    "endDate": "2017-01-22 14:30:00",
     "notes": "Everybody are welcome",
+    "priority": 11,
+    "isCompleted": true,
     "recurrenceRules": [
       {
         "frequency": 2,
@@ -53,11 +76,11 @@
           20
         ]
       }
-    ]
+    ],
+    "completionDate": "2016-12-22 14:30:00"
   },
   {
     "title": "Minimal Event Title",
-    "startDate": "2017-01-22 13:45:00",
-    "endDate": "2017-01-22 14:30:00"
+    "priority": 3
   }
 ]

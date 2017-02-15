@@ -42,17 +42,17 @@ public extension Dictionary {
         return typed
     }
 
-    public func fetch<V, U>(_ key: Key, transformation: (V) -> U?) throws -> U {
+    public func fetch<V, U>(_ key: Key, transformation: (V) throws -> U?) throws -> U {
         let fetched: V = try fetch(key)
 
-        guard let transformed = transformation(fetched) else {
+        guard let transformed = try transformation(fetched) else {
             throw ParserError(message: "The value \"\(fetched)\" at key \"\(key)\" could not be transformed.")
         }
 
         return transformed
     }
 
-    public func fetchOptional<V, U>(_ key: Key, transformation: (V) -> U?) throws -> U? {
+    public func fetchOptional<V, U>(_ key: Key, transformation: (V) throws -> U?) throws -> U? {
 
         return try fetchOptional(key).flatMap(transformation)
     }

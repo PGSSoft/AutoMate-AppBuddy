@@ -11,12 +11,20 @@
 		96AB73F51E44C83300FA811A /* AnimationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB73F41E44C83300FA811A /* AnimationHandler.swift */; };
 		96AB73F71E44CDD800FA811A /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB73F61E44CDD800FA811A /* String.swift */; };
 		96D1FA1A1E4C84B100257883 /* FoundationExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D1FA191E4C84B100257883 /* FoundationExtensionsTests.swift */; };
+		E42C2FA11E52F52B000F1D7C /* test_reminders.json in Resources */ = {isa = PBXBuildFile; fileRef = E42C2FA01E52F52B000F1D7C /* test_reminders.json */; };
+		E42C2FA31E52FAAF000F1D7C /* EKReccurrence+Parsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42C2FA21E52FAAF000F1D7C /* EKReccurrence+Parsers.swift */; };
+		E42C2FA51E52FB55000F1D7C /* DateComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42C2FA41E52FB55000F1D7C /* DateComponents.swift */; };
+		E42C2FA71E530D7D000F1D7C /* EKReminders.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42C2FA61E530D7D000F1D7C /* EKReminders.swift */; };
+		E42C2FA91E5440A1000F1D7C /* EKRecurrenceParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42C2FA81E5440A1000F1D7C /* EKRecurrenceParserTests.swift */; };
+		E42C2FAB1E5441F3000F1D7C /* EKRecurrence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42C2FAA1E5441F3000F1D7C /* EKRecurrence.swift */; };
+		E42C2FAD1E5447BE000F1D7C /* XCTestCase+AssertionHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42C2FAC1E5447BE000F1D7C /* XCTestCase+AssertionHelpers.swift */; };
 		E43192261E2E102900B019C1 /* Dictionary+SafeAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43192251E2E102900B019C1 /* Dictionary+SafeAccess.swift */; };
 		E43192281E2E108E00B019C1 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43192271E2E108E00B019C1 /* Parser.swift */; };
 		E431922A1E2E113B00B019C1 /* EventKitParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43192291E2E113B00B019C1 /* EventKitParser.swift */; };
 		E442564B1E3B7B7200B2D83B /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E442564A1E3B7B7200B2D83B /* Bundle.swift */; };
 		E46B79A11E28ECEF00BC36B4 /* AutoMate - App Companion.h in Headers */ = {isa = PBXBuildFile; fileRef = E46B79931E28ECEF00BC36B4 /* AutoMate - App Companion.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E46B79AB1E28F3D800BC36B4 /* EventKitHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46B79AA1E28F3D800BC36B4 /* EventKitHandler.swift */; };
+		E47CE9BF1E52E3F2004B0BB3 /* EventKit+Parsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47CE9BE1E52E3F2004B0BB3 /* EventKit+Parsers.swift */; };
 		E4932BB11E2E40A000FB8244 /* LaunchEnvironmentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4932BB01E2E40A000FB8244 /* LaunchEnvironmentManager.swift */; };
 		E4932BB31E2E467D00FB8244 /* LaunchOptionsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4932BB21E2E467D00FB8244 /* LaunchOptionsKeys.swift */; };
 		E49E845B1E434389008A13AE /* AutoMateAppCompanion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E46B79901E28ECEF00BC36B4 /* AutoMateAppCompanion.framework */; };
@@ -44,6 +52,13 @@
 		96AB73F41E44C83300FA811A /* AnimationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationHandler.swift; sourceTree = "<group>"; };
 		96AB73F61E44CDD800FA811A /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		96D1FA191E4C84B100257883 /* FoundationExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundationExtensionsTests.swift; sourceTree = "<group>"; };
+		E42C2FA01E52F52B000F1D7C /* test_reminders.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test_reminders.json; sourceTree = "<group>"; };
+		E42C2FA21E52FAAF000F1D7C /* EKReccurrence+Parsers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EKReccurrence+Parsers.swift"; sourceTree = "<group>"; };
+		E42C2FA41E52FB55000F1D7C /* DateComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateComponents.swift; sourceTree = "<group>"; };
+		E42C2FA61E530D7D000F1D7C /* EKReminders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EKReminders.swift; sourceTree = "<group>"; };
+		E42C2FA81E5440A1000F1D7C /* EKRecurrenceParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EKRecurrenceParserTests.swift; sourceTree = "<group>"; };
+		E42C2FAA1E5441F3000F1D7C /* EKRecurrence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EKRecurrence.swift; sourceTree = "<group>"; };
+		E42C2FAC1E5447BE000F1D7C /* XCTestCase+AssertionHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+AssertionHelpers.swift"; sourceTree = "<group>"; };
 		E43192251E2E102900B019C1 /* Dictionary+SafeAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+SafeAccess.swift"; sourceTree = "<group>"; };
 		E43192271E2E108E00B019C1 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		E43192291E2E113B00B019C1 /* EventKitParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventKitParser.swift; sourceTree = "<group>"; };
@@ -52,6 +67,7 @@
 		E46B79931E28ECEF00BC36B4 /* AutoMate - App Companion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AutoMate - App Companion.h"; sourceTree = "<group>"; };
 		E46B79941E28ECEF00BC36B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E46B79AA1E28F3D800BC36B4 /* EventKitHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventKitHandler.swift; sourceTree = "<group>"; };
+		E47CE9BE1E52E3F2004B0BB3 /* EventKit+Parsers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EventKit+Parsers.swift"; sourceTree = "<group>"; };
 		E4932BB01E2E40A000FB8244 /* LaunchEnvironmentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchEnvironmentManager.swift; sourceTree = "<group>"; };
 		E4932BB21E2E467D00FB8244 /* LaunchOptionsKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchOptionsKeys.swift; sourceTree = "<group>"; };
 		E49E84561E434389008A13AE /* AutoMateAppCompanionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutoMateAppCompanionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,6 +126,7 @@
 				E442564A1E3B7B7200B2D83B /* Bundle.swift */,
 				E49E84721E487D5A008A13AE /* Date.swift */,
 				96AB73F61E44CDD800FA811A /* String.swift */,
+				E42C2FA41E52FB55000F1D7C /* DateComponents.swift */,
 			);
 			name = "Foundation Extensions";
 			sourceTree = "<group>";
@@ -135,6 +152,7 @@
 		E46B79921E28ECEF00BC36B4 /* AutoMate - App Companion */ = {
 			isa = PBXGroup;
 			children = (
+				E47CE9BD1E52E3C9004B0BB3 /* EventKit Extensions */,
 				E46B79931E28ECEF00BC36B4 /* AutoMate - App Companion.h */,
 				E44256491E3B7B4F00B2D83B /* Foundation Extensions */,
 				E46B79941E28ECEF00BC36B4 /* Info.plist */,
@@ -145,6 +163,15 @@
 			path = "AutoMate - App Companion";
 			sourceTree = "<group>";
 		};
+		E47CE9BD1E52E3C9004B0BB3 /* EventKit Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E47CE9BE1E52E3F2004B0BB3 /* EventKit+Parsers.swift */,
+				E42C2FA21E52FAAF000F1D7C /* EKReccurrence+Parsers.swift */,
+			);
+			name = "EventKit Extensions";
+			sourceTree = "<group>";
+		};
 		E49E84821E4B43DF008A13AE /* AutoMateAppCompanionTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +179,7 @@
 				E49E84861E4B43DF008A13AE /* Info.plist */,
 				E49E84871E4B43DF008A13AE /* Test Cases */,
 				E49E848B1E4B43DF008A13AE /* Test Data */,
+				E42C2FAC1E5447BE000F1D7C /* XCTestCase+AssertionHelpers.swift */,
 			);
 			path = AutoMateAppCompanionTests;
 			sourceTree = "<group>";
@@ -161,6 +189,8 @@
 			children = (
 				E49E84841E4B43DF008A13AE /* EKEvents.swift */,
 				E49E84851E4B43DF008A13AE /* Handlers.swift */,
+				E42C2FA61E530D7D000F1D7C /* EKReminders.swift */,
+				E42C2FAA1E5441F3000F1D7C /* EKRecurrence.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -173,6 +203,7 @@
 				96D1FA191E4C84B100257883 /* FoundationExtensionsTests.swift */,
 				E49E84891E4B43DF008A13AE /* LaunchEnvironmentResourceTests.swift */,
 				E49E848A1E4B43DF008A13AE /* LaunchEnvironmentManagerTests.swift */,
+				E42C2FA81E5440A1000F1D7C /* EKRecurrenceParserTests.swift */,
 			);
 			path = "Test Cases";
 			sourceTree = "<group>";
@@ -181,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				E49E848C1E4B43DF008A13AE /* test_events.json */,
+				E42C2FA01E52F52B000F1D7C /* test_reminders.json */,
 			);
 			path = "Test Data";
 			sourceTree = "<group>";
@@ -288,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E49E84931E4B43DF008A13AE /* test_events.json in Resources */,
+				E42C2FA11E52F52B000F1D7C /* test_reminders.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,11 +352,14 @@
 				E442564B1E3B7B7200B2D83B /* Bundle.swift in Sources */,
 				E46B79AB1E28F3D800BC36B4 /* EventKitHandler.swift in Sources */,
 				E49E84731E487D5A008A13AE /* Date.swift in Sources */,
+				E42C2FA51E52FB55000F1D7C /* DateComponents.swift in Sources */,
 				96AB73F71E44CDD800FA811A /* String.swift in Sources */,
 				E4932BB11E2E40A000FB8244 /* LaunchEnvironmentManager.swift in Sources */,
 				E4932BB31E2E467D00FB8244 /* LaunchOptionsKeys.swift in Sources */,
 				E431922A1E2E113B00B019C1 /* EventKitParser.swift in Sources */,
 				E43192281E2E108E00B019C1 /* Parser.swift in Sources */,
+				E47CE9BF1E52E3F2004B0BB3 /* EventKit+Parsers.swift in Sources */,
+				E42C2FA31E52FAAF000F1D7C /* EKReccurrence+Parsers.swift in Sources */,
 				96AB73F51E44C83300FA811A /* AnimationHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,10 +371,14 @@
 				E49E84921E4B43DF008A13AE /* LaunchEnvironmentManagerTests.swift in Sources */,
 				E49E848D1E4B43DF008A13AE /* EKEvents.swift in Sources */,
 				E49E84911E4B43DF008A13AE /* LaunchEnvironmentResourceTests.swift in Sources */,
+				E42C2FAB1E5441F3000F1D7C /* EKRecurrence.swift in Sources */,
 				E49E84901E4B43DF008A13AE /* EventKitParserTests.swift in Sources */,
 				E49E848E1E4B43DF008A13AE /* Handlers.swift in Sources */,
+				E42C2FA71E530D7D000F1D7C /* EKReminders.swift in Sources */,
 				96420E061E4C801400901C50 /* AnimationHandlerTests.swift in Sources */,
 				96D1FA1A1E4C84B100257883 /* FoundationExtensionsTests.swift in Sources */,
+				E42C2FAD1E5447BE000F1D7C /* XCTestCase+AssertionHelpers.swift in Sources */,
+				E42C2FA91E5440A1000F1D7C /* EKRecurrenceParserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

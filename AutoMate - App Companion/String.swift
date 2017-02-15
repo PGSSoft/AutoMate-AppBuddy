@@ -12,7 +12,7 @@ extension String {
 
     /// Return Bool value for given string
     ///
-    /// - Returns: `true`, `false`, or `.none`, if cannot match to Bool value 
+    /// - Returns: `true`, `false`, or `.none`, if cannot match to Bool value
     var boolValue: Bool? {
         switch self.lowercased() {
         case "true", "yes", "1":
