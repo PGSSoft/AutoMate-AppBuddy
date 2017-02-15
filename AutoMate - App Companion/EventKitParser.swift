@@ -94,7 +94,7 @@ public struct ReminderDictionaryParser: ReminderParser {
     // MARK: Initialization
     public init(with eventStore: EKEventStore, calendar: EKCalendar? = nil) {
         self.eventStore = eventStore
-        self.calendar = calendar ?? eventStore.defaultCalendarForNewEvents
+        self.calendar = calendar ?? eventStore.defaultCalendarForNewReminders()
     }
 
     // MARK: Public methods
