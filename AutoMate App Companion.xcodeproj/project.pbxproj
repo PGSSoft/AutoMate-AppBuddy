@@ -199,11 +199,11 @@
 			isa = PBXGroup;
 			children = (
 				96420E051E4C801400901C50 /* AnimationHandlerTests.swift */,
+				E42C2FA81E5440A1000F1D7C /* EKRecurrenceParserTests.swift */,
 				E49E84881E4B43DF008A13AE /* EventKitParserTests.swift */,
 				96D1FA191E4C84B100257883 /* FoundationExtensionsTests.swift */,
-				E49E84891E4B43DF008A13AE /* LaunchEnvironmentResourceTests.swift */,
 				E49E848A1E4B43DF008A13AE /* LaunchEnvironmentManagerTests.swift */,
-				E42C2FA81E5440A1000F1D7C /* EKRecurrenceParserTests.swift */,
+				E49E84891E4B43DF008A13AE /* LaunchEnvironmentResourceTests.swift */,
 			);
 			path = "Test Cases";
 			sourceTree = "<group>";

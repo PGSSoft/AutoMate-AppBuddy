@@ -12,4 +12,5 @@ import Foundation
 public enum AutoMateLaunchOptionKey: LaunchOptionKey {
     case events = "AM_EVENTS_KEY"
     case animation = "AM_ANIMATION_KEY"
+    case reminders = "AM_REMINDERS_KEY"
 }

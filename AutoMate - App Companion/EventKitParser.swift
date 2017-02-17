@@ -17,6 +17,9 @@ public protocol EventParser: Parser {
     // MARK: Properties
     /// `EKEventStore` in which parsed `EKEvent`s will be created and saved.
     var eventStore: EKEventStore { get }
+    /// _Values for controlling what occurrences to affect in a recurring event._ `.futureEvents` by default.
+    var span: EKSpan { get }
+
 }
 
 public extension EventParser {
@@ -25,9 +28,8 @@ public extension EventParser {
     ///
     /// - Parameters:
     ///   - resources: Array of resources describing path to events data.
-    ///   - span: _Values for controlling what occurrences to affect in a recurring event._ `.futureEvents` by default.
     /// - Throws: `ParserError` if data has unexpected format or standard `Error` for saving and commiting in EventKit.
-    public func parseAndSave(resources: [LaunchEnvironmentResource], with span: EKSpan = .futureEvents) throws {
+    public func parseAndSave(resources: [LaunchEnvironmentResource]) throws {
         try parsed(resources: resources).forEach { try eventStore.save($0, span: span) }
         try eventStore.commit()
     }
@@ -37,13 +39,15 @@ public extension EventParser {
 public struct EventDictionaryParser: EventParser {
 
     // MARK: Properties
-    public var eventStore: EKEventStore
-    public var calendar: EKCalendar
+    public let eventStore: EKEventStore
+    public let calendar: EKCalendar
+    public let span: EKSpan
 
     // MARK: Initialization
-    public init(with eventStore: EKEventStore, calendar: EKCalendar? = nil) {
+    public init(with eventStore: EKEventStore, calendar: EKCalendar? = nil, span: EKSpan = .futureEvents) {
         self.eventStore = eventStore
         self.calendar = calendar ?? eventStore.defaultCalendarForNewEvents
+        self.span = span
     }
 
     // MARK: Public methods
@@ -88,8 +92,8 @@ public extension ReminderParser {
 public struct ReminderDictionaryParser: ReminderParser {
 
     // MARK: Properties
-    public var eventStore: EKEventStore
-    public var calendar: EKCalendar
+    public let eventStore: EKEventStore
+    public let calendar: EKCalendar
 
     // MARK: Initialization
     public init(with eventStore: EKEventStore, calendar: EKCalendar? = nil) {
