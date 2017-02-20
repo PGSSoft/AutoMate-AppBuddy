@@ -20,21 +20,21 @@ class EventKitParserTests: XCTestCase {
 
     // MARK: Tests
     func testParseEventWithMinimalInfo() {
-        let eventDict = EventFactory.eventWithMinimalInformations
+        let eventDict = EventFactory.eventDictWithMinimalInformations
         var event: EKEvent!
         assertNotThrows(expr: event = try eventDictionaryParser.parse(eventDict), "Parser failed for \(eventDict).")
         assert(event, with: eventDict)
     }
 
     func testParseEventWithRandomInfo() {
-        let eventDict = EventFactory.eventWithRandomInformations
+        let eventDict = EventFactory.eventDictWithRandomInformations
         var event: EKEvent!
         assertNotThrows(expr: event = try eventDictionaryParser.parse(eventDict), "Parser failed for \(eventDict).")
         assert(event, with: eventDict)
     }
 
     func testParseEventWithAllInfo() {
-        let eventDict = EventFactory.eventWithAllInformations
+        let eventDict = EventFactory.eventDictWithAllInformations
         var event: EKEvent!
         assertNotThrows(expr: event = try eventDictionaryParser.parse(eventDict), "Parser failed for \(eventDict).")
         assert(event, with: eventDict)

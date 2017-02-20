@@ -43,6 +43,23 @@ class LaunchEnvironmentManagerTests: XCTestCase {
         assert(notNil: secondHandler, in: environment)
     }
 
+    func testWithEventKitEnvironmentOptions() {
+        let eventsParser = MockEventsParser()
+        let remindersParser = MockRemindersParser()
+        let eventKitHandler = EventKitHandler(withParsers: eventsParser, remindersParser)
+        let testBundleName = "com.pgs-soft.AutoMateAppCompanionTests:resource_from_test_bundle"
+        let environment = [AutoMateLaunchOptionKey.events.rawValue: "\(testBundleName):test_events", AutoMateLaunchOptionKey.reminders.rawValue: "\(testBundleName):test_reminders"]
+
+        let launchEnvironmentManager = LaunchEnvironmentManager(environment: environment)
+        launchEnvironmentManager.add(handler: eventKitHandler, for: .events)
+        launchEnvironmentManager.add(handler: eventKitHandler, for: .reminders)
+        launchEnvironmentManager.setup()
+
+        XCTAssertNotNil(eventsParser.dataRecived)
+        XCTAssertEqual(eventsParser.dataRecived.count, 3)
+        XCTAssertEqual(remindersParser.dataRecived.count, 3)
+    }
+
     // MARK: Helpers
     private func launchEnvironmentManager(withHandlers handlers: [MockHandler], environment: [String: String]) -> LaunchEnvironmentManager {
         let launchEnvironmentManager = LaunchEnvironmentManager(environment: environment)

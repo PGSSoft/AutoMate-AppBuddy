@@ -32,6 +32,10 @@ public final class LaunchEnvironmentManager {
     public func add(handler: Handler, for key: LaunchOptionKey) {
         handlers[key] = handler
     }
+
+    public func add(handler: Handler, for key: AutoMateLaunchOptionKey) {
+        handlers[key.rawValue] = handler
+    }
 }
 
 // MARK: - Handler

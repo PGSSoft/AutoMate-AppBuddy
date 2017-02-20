@@ -1,4 +1,4 @@
-  //
+//
 //  EventKitHandler.swift
 //  AutoMate - App Companion
 //
@@ -42,4 +42,4 @@ public struct EventKitHandler<E: EventParser, R: ReminderParser>: Handler {
 
 // MARK: - Default Event Kit Handler
 public let defaultEventKitHander = EventKitHandler(withParsers: EventDictionaryParser(with: EKEventStore()),
-                                            ReminderDictionaryParser(with: EKEventStore()))
+                                                   ReminderDictionaryParser(with: EKEventStore()))

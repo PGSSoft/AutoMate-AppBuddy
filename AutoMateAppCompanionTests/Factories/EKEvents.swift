@@ -6,11 +6,12 @@
 //  Copyright © 2017 PGS Software. All rights reserved.
 //
 
-import Foundation
+import EventKit
+import AutoMateAppCompanion
 
 enum EventFactory {
 
-    static let eventWithMinimalInformations: [String: Any] = {
+    static let eventDictWithMinimalInformations: [String: Any] = {
         return [
             "title": "Minimal Event Title",
             "startDate": "2017-01-22 13:45:00",
@@ -18,7 +19,7 @@ enum EventFactory {
         ]
     }()
 
-    static let eventWithRandomInformations: [String: Any] = {
+    static let eventDictWithRandomInformations: [String: Any] = {
         return [
             "title": "Random Event Title",
             "startDate": "2017-01-22 13:45:00",
@@ -34,7 +35,7 @@ enum EventFactory {
         ]
     }()
 
-    static let eventWithAllInformations: [String: Any] = {
+    static let eventDictWithAllInformations: [String: Any] = {
         return [
             "eventIdentifier": "AutoMate-retrospective",
             "title": "All Info Event Title",
