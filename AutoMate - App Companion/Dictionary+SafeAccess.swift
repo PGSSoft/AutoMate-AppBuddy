@@ -64,4 +64,16 @@ public extension Dictionary {
         }
         return try fetched.flatMap(transformation)
     }
+
+    public func fetchFirst() throws -> (key: Key, value: Value) {
+        guard let fetched = first else {
+            throw ParserError(message: "Missing key or value")
+        }
+        return fetched
+    }
+
+    public func fetchFirst<T>(transformation: (Key, Value) throws -> T) throws -> T {
+        let fetched = try fetchFirst()
+        return try transformation(fetched.key, fetched.value)
+    }
 }

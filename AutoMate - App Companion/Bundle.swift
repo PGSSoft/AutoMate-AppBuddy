@@ -23,4 +23,12 @@ public extension Bundle {
 
         return jsonArray
     }
+
+    public func data(with name: String) -> Data? {
+        guard let url = url(forResource: name, withExtension: nil),
+            let data = try? Data(contentsOf: url) else {
+                return nil
+        }
+        return data
+    }
 }

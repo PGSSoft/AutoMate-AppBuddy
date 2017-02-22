@@ -10,7 +10,8 @@ import Foundation
 
 // MARK: - Auto Mate Launch Option Key
 public enum AutoMateLaunchOptionKey: LaunchOptionKey {
-    case events = "AM_EVENTS_KEY"
     case animation = "AM_ANIMATION_KEY"
+    case contacts = "AM_CONTACTS_KEY"
+    case events = "AM_EVENTS_KEY"
     case reminders = "AM_REMINDERS_KEY"
 }

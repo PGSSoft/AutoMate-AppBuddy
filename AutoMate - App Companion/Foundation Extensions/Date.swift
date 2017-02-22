@@ -8,16 +8,16 @@
 
 import Foundation
 
-internal extension Date {
+extension Date {
 
-    internal static func from(representation string: String) -> Date? {
+    static func from(representation string: String) -> Date? {
         return DateFormatter.defaultJsonDateFormatter.date(from: string)
     }
 }
 
-internal extension DateFormatter {
+extension DateFormatter {
 
-    internal static let defaultJsonDateFormatter: DateFormatter = {
+    static let defaultJsonDateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd k:mm:ss"
         return dateFormatter

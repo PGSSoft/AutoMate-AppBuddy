@@ -12,7 +12,8 @@ import EventKit
 public protocol EventParser: Parser {
 
     // MARK: Typealiases
-    typealias T = EKEvent
+    typealias T = Any
+    typealias U = EKEvent
 
     // MARK: Properties
     /// `EKEventStore` in which parsed `EKEvent`s will be created and saved.
@@ -68,7 +69,8 @@ public struct EventDictionaryParser: EventParser {
 public protocol ReminderParser: Parser {
 
     // MARK: Typealiases
-    typealias T = EKReminder
+    typealias T = Any
+    typealias U = EKReminder
 
     // MARK: Properties
     /// `EKEventStore` in which parsed `EKEvent`s will be created and saved.

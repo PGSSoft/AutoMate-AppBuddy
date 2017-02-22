@@ -47,8 +47,8 @@ class LaunchEnvironmentManagerTests: XCTestCase {
         let eventsParser = MockEventsParser()
         let remindersParser = MockRemindersParser()
         let eventKitHandler = EventKitHandler(withParsers: eventsParser, remindersParser)
-        let testBundleName = "com.pgs-soft.AutoMateAppCompanionTests:resource_from_test_bundle"
-        let environment = [AutoMateLaunchOptionKey.events.rawValue: "\(testBundleName):test_events", AutoMateLaunchOptionKey.reminders.rawValue: "\(testBundleName):test_reminders"]
+        let testBundleName = "com.pgs-soft.AutoMateAppCompanionTests"
+        let environment = [AutoMateLaunchOptionKey.events.rawValue: "\(testBundleName):events", AutoMateLaunchOptionKey.reminders.rawValue: "\(testBundleName):reminders"]
 
         let launchEnvironmentManager = LaunchEnvironmentManager(environment: environment)
         launchEnvironmentManager.add(handler: eventKitHandler, for: .events)
@@ -58,6 +58,20 @@ class LaunchEnvironmentManagerTests: XCTestCase {
         XCTAssertNotNil(eventsParser.dataRecived)
         XCTAssertEqual(eventsParser.dataRecived.count, 3)
         XCTAssertEqual(remindersParser.dataRecived.count, 3)
+    }
+
+    func testWithContactsEnvironmentOptions() {
+        let contactParser = MockContactsParser()
+        let contactsHandler = ContactsHandler(withParser: contactParser)
+        let testBundleName = "com.pgs-soft.AutoMateAppCompanionTests"
+        let environment = [AutoMateLaunchOptionKey.contacts.rawValue: "\(testBundleName):contacts"]
+
+        let launchEnvironmentManager = LaunchEnvironmentManager(environment: environment)
+        launchEnvironmentManager.add(handler: contactsHandler, for: .contacts)
+        launchEnvironmentManager.setup()
+
+        XCTAssertNotNil(contactParser.dataRecived)
+        XCTAssertEqual(contactParser.dataRecived.count, 2)
     }
 
     // MARK: Helpers

@@ -11,6 +11,7 @@ import XCTest
 
 extension XCTestCase {
 
+    // MARK: Assertions
     func assertNotThrows(expr expression: (@autoclosure () throws -> Void), _ message: (@autoclosure () -> String)) {
         do {
             try expression()
@@ -22,12 +23,13 @@ extension XCTestCase {
     func assertThrows<E: ErrorWithMessage>(expr expression: (@autoclosure () throws -> Void), errorType: E.Type, _ message: (@autoclosure () -> String)) {
         do {
             try expression()
+            XCTFail("\(message()) Expressions didn't throw.")
         } catch let error {
             XCTAssertTrue(error is E, "\(message()) Failed with unexpected error \(error).")
         }
     }
 
-    func assertEqual<T: Equatable>(_ argument: T?, to expected: Any?) {
+    func assert<T: Equatable>(_ argument: T?, isEqual expected: Any?) {
         switch expected {
         case .none:
             XCTAssertNil(argument, "Argument is \(argument) while expected is .none.")
@@ -38,7 +40,7 @@ extension XCTestCase {
         }
     }
 
-    func assertEqual<T: Equatable>(array: [T]?, to expected: Any?) {
+    func assert<T: Equatable>(array: [T]?, isEqual expected: Any?) {
         switch expected {
         case .none:
             XCTAssertNil(array, "Argument is \(array) while expected is empty.")
@@ -49,6 +51,38 @@ extension XCTestCase {
         }
     }
 
+    func assert<C: Collection>(countOf argument: C?, isEqual expected: Any?) {
+        switch expected {
+        case .none:
+            XCTAssertNil(argument, "Argument is \(argument) while expected is .none")
+        case let aCollection as C:
+            XCTAssertEqual(aCollection.count, argument?.count, "Value count \(argument?.count) is not equal to expected \(aCollection.count).")
+        case .some:
+            XCTFail("Types \(argument) and \(expected) do not match.")
+        }
+    }
+
+    @nonobjc func assert(dateComponents: DateComponents?, isEqual expected: Any?) {
+        switch expected {
+        case .none:
+            XCTAssertNil(dateComponents, "Argument is \(dateComponents) while expected is .none")
+        case let expectedT as [String: Any]:
+            do {
+                let expectedDateComponents = try DateComponents.parse(from: expectedT)
+                XCTAssertEqual(dateComponents, expectedDateComponents)
+            } catch let error {
+                XCTFail("Failed with unexpected error \(error).")
+            }
+        case .some:
+            XCTFail("Types \(dateComponents) and \(expected) do not match.")
+        }
+    }
+
+    @nonobjc func assert(dateComponents: NSDateComponents?, isEqual expected: Any?) {
+        assert(dateComponents: dateComponents as DateComponents?, isEqual: expected)
+    }
+
+    // MARK: Helpers
     func date(from value: Any?) -> Date? {
         switch value {
         case .none:
@@ -58,17 +92,6 @@ extension XCTestCase {
         case .some:
             XCTFail("Wrong type of value \(value)")
             return nil
-        }
-    }
-
-    func assertCount<C: Collection>(of argument: C?, isEqual expected: Any?) {
-        switch expected {
-        case .none:
-            XCTAssertNil(argument, "Argument is \(argument) while expected is .none")
-        case let aCollection as C:
-            XCTAssertEqual(aCollection.count, argument?.count, "Value count \(argument?.count) is not equal to expected \(aCollection.count).")
-        case .some:
-            XCTFail("Types \(argument) and \(expected) do not match.")
         }
     }
 }

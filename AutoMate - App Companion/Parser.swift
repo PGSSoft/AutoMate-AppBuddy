@@ -24,19 +24,20 @@ public protocol Parser {
 
     // MARK: Associatedtypes
     associatedtype T
+    associatedtype U
 
     // MARK: Methods
-    func parse(_ data: Any) throws -> T
+    func parse(_ data: T) throws -> U
 }
 
 // MARK: Default implementations
-public extension Parser {
+public extension Parser where T == Any {
 
     // MARK: Methods
-    public func parsed(resources: [LaunchEnvironmentResource]) throws -> [Self.T] {
+    public func parsed(resources: [LaunchEnvironmentResource]) throws -> [Self.U] {
         let jsonsData = resources.flatMap { $0.bundle.jsonArray(with: $0.name) }
         let flattenData = jsonsData.reduce([], +)
-        return try flattenData.flatMap { return try parse($0) }
+        return try flattenData.flatMap { try parse($0) }
     }
 }
 
@@ -57,18 +58,20 @@ public struct LaunchEnvironmentResource {
     }
 
     // MARK: Static methods
+    public static func resource(from resourceString: String) -> LaunchEnvironmentResource? {
+        let pair = resourceString.components(separatedBy: ":")
+        let bundleName = pair.first != nil && pair.first != "nil" ? pair.first : nil
+
+        guard let resourceName = pair.last,
+            let resource = LaunchEnvironmentResource(bundle: bundleName, name: resourceName) else {
+                return nil
+        }
+        return resource
+    }
+
     public static func resources(from resourcesString: String) -> [LaunchEnvironmentResource] {
         let pairs = resourcesString.components(separatedBy: ",")
 
-        return pairs.flatMap {
-            let pair = $0.components(separatedBy: ":")
-            let bundleName = pair.first != nil && pair.first != "nil" ? pair.first : nil
-
-            guard let resourceName = pair.last,
-                let resource = LaunchEnvironmentResource(bundle: bundleName, name: resourceName) else {
-                    return nil
-            }
-            return resource
-        }
+        return pairs.flatMap { LaunchEnvironmentResource.resource(from: $0) }
     }
 }

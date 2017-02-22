@@ -17,28 +17,28 @@ class EKRecurrenceParserTests: XCTestCase {
         let ruleDict = EKRecurrenceFactory.dailyRecurenceRule
         var rule: EKRecurrenceRule!
         assertNotThrows(expr: rule = try EKRecurrenceRule.parse(from: ruleDict), "Parsing from \(ruleDict) failed.")
-        assert(rule, isEqual: ruleDict)
+        assert(rule: rule, isEqual: ruleDict)
     }
 
     func testWeeklyRecurrenceRuleParsing() {
         let ruleDict = EKRecurrenceFactory.weeklyRecurenceRule
         var rule: EKRecurrenceRule!
         assertNotThrows(expr: rule = try EKRecurrenceRule.parse(from: ruleDict), "Parsing from \(ruleDict) failed.")
-        assert(rule, isEqual: ruleDict)
+        assert(rule: rule, isEqual: ruleDict)
     }
 
     func testMonthlyRecurrenceRuleParsing() {
         let ruleDict = EKRecurrenceFactory.monthlyRecurenceRule
         var rule: EKRecurrenceRule!
         assertNotThrows(expr: rule = try EKRecurrenceRule.parse(from: ruleDict), "Parsing from \(ruleDict) failed.")
-        assert(rule, isEqual: ruleDict)
+        assert(rule: rule, isEqual: ruleDict)
     }
 
     func testYearlyRecurrenceRuleParsing() {
         let ruleDict = EKRecurrenceFactory.yearlyRecurenceRule
         var rule: EKRecurrenceRule!
         assertNotThrows(expr: rule = try EKRecurrenceRule.parse(from: ruleDict), "Parsing from \(ruleDict) failed.")
-        assert(rule, isEqual: ruleDict)
+        assert(rule: rule, isEqual: ruleDict)
     }
 
     func testRecurrenceDayOfWeekParsing() {
@@ -52,31 +52,31 @@ class EKRecurrenceParserTests: XCTestCase {
         let occurrenceCountRule = EKRecurrenceFactory.monthlyRecurenceRule
         var recurrenceEnd: EKRecurrenceEnd!
         assertNotThrows(expr: recurrenceEnd = try EKRecurrenceEnd.parse(from: occurrenceCountRule), "Parsing \(occurrenceCountRule) failed.")
-        assert(recurrenceEnd, isEqual: occurrenceCountRule)
+        assert(recurrenceEnd: recurrenceEnd, isEqual: occurrenceCountRule)
     }
 
     func testRecurrenceEndByEndDateParsing() {
         let endDateRule = EKRecurrenceFactory.yearlyRecurenceRule
         var recurrenceEnd: EKRecurrenceEnd!
         assertNotThrows(expr: recurrenceEnd = try EKRecurrenceEnd.parse(from: endDateRule), "Parsing \(endDateRule) failed.")
-        assert(recurrenceEnd, isEqual: endDateRule)
+        assert(recurrenceEnd: recurrenceEnd, isEqual: endDateRule)
     }
 
     // MARK: Helpers
-    @nonobjc func assert(_ rule: EKRecurrenceRule, isEqual expected: [String: Any]) {
-        assertEqual(rule.frequency.rawValue, to: expected["frequency"])
-        assertEqual(rule.interval, to: expected["interval"])
-        assertEqual(array: rule.daysOfTheMonth, to: expected["daysOfTheMonth"])
-        assertEqual(array: rule.daysOfTheYear, to: expected["daysOfTheYear"])
-        assertEqual(array: rule.monthsOfTheYear, to: expected["monthsOfTheYear"])
-        assertEqual(array: rule.weeksOfTheYear, to: expected["weeksOfTheYear"])
-        assertEqual(array: rule.setPositions, to: expected["setPositions"])
-        assertCount(of: rule.daysOfTheWeek?.map { $0.dayOfTheWeek.rawValue }, isEqual: expected["daysOfTheWeek"])
+    func assert(rule: EKRecurrenceRule, isEqual expected: [String: Any]) {
+        assert(rule.frequency.rawValue, isEqual: expected["frequency"])
+        assert(rule.interval, isEqual: expected["interval"])
+        assert(array: rule.daysOfTheMonth, isEqual: expected["daysOfTheMonth"])
+        assert(array: rule.daysOfTheYear, isEqual: expected["daysOfTheYear"])
+        assert(array: rule.monthsOfTheYear, isEqual: expected["monthsOfTheYear"])
+        assert(array: rule.weeksOfTheYear, isEqual: expected["weeksOfTheYear"])
+        assert(array: rule.setPositions, isEqual: expected["setPositions"])
+        assert(countOf: rule.daysOfTheWeek?.map { $0.dayOfTheWeek.rawValue }, isEqual: expected["daysOfTheWeek"])
         XCTAssertEqual(rule.recurrenceEnd != nil, expected["endDate"] != nil || expected["occurrenceCount"] != nil, "\(rule.recurrenceEnd) is not equal to expected \(expected["endDate"]) nor \(expected["occurrenceCount"])")
     }
 
-    @nonobjc func assert(_ recurrenceEnd: EKRecurrenceEnd, isEqual expected: [String: Any]) {
-        assertEqual(recurrenceEnd.occurrenceCount, to: expected["occurrenceCount"] ?? 0)
-        assertEqual(recurrenceEnd.endDate, to: date(from: expected["endDate"]))
+    func assert(recurrenceEnd: EKRecurrenceEnd, isEqual expected: [String: Any]) {
+        assert(recurrenceEnd.occurrenceCount, isEqual: expected["occurrenceCount"] ?? 0)
+        assert(recurrenceEnd.endDate, isEqual: date(from: expected["endDate"]))
     }
 }
