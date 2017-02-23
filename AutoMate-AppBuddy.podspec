@@ -1,0 +1,20 @@
+Pod::Spec.new do |s|
+  s.name         = "AutoMate-AppBuddy"
+  s.version      = "1.0.0"
+  s.summary      = "Helper framework for writing UI automation tests with AutoMate."
+  s.homepage     = "https://github.com/PGSSoft/AutoMate-AppBuddy"
+  s.license      = { :type => 'MIT', :file => 'LICENSE' }
+
+  s.authors      = {
+    "Joanna Bednarz"   => "jbednarz@pgs-soft.com",
+    "Bartosz Janda"    => "bjanda@pgs-soft.com"
+  }
+
+  s.ios.deployment_target = '9.2'
+
+  s.source          = { :git => "https://github.com/PGSSoft/AutoMate-AppBuddy.git", :tag => "#{s.version}" }
+
+  s.source_files    = "Classes", "AutoMate-AppBuddy/**/*.{swift}"
+
+  s.weak_frameworks =  "Contacts", "EventKit"
+end
