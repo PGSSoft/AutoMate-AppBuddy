@@ -1,0 +1,18 @@
+language: objective-c
+osx_image: xcode8.2
+
+env:
+  global:
+    - NSUnbufferedIO=YES
+  matrix:
+    - DESTINATION_NAME="iPhone 7"       DESTINATION_OS="10.2"
+
+before_script:
+  - bundle exec pod --version
+  - bundle exec fastlane --version
+  - bundle exec fastlane snapshot reset_simulators --force --ios ${DESTINATION_OS}
+
+script:
+  - bundle exec fastlane test "destination:platform=iOS Simulator,name=${DESTINATION_NAME},OS=${DESTINATION_OS}"
+  - bundle exec danger
+  - bundle exec pod lib lint
