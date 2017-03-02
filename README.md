@@ -6,7 +6,7 @@
       <a href="https://github.com/PGSSoft/AutoMate">AutoMate</a> &bull;
       <b>AppBuddy</b> &bull;
       <a href="https://github.com/PGSSoft/AutoMate-Templates">Templates</a> &bull;
-      <a href="https://github.com/PGSSoft/AutoMate-ModelGenerator">ModelGenerator</a>
+      <a href="https://github.com/PGSSoft/AutoMate-ModelGenie">ModelGenie</a>
     </p>
 </div>
 
