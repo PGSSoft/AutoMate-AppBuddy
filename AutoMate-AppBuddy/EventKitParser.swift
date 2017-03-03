@@ -18,22 +18,7 @@ public protocol EventParser: Parser {
     // MARK: Properties
     /// `EKEventStore` in which parsed `EKEvent`s will be created and saved.
     var eventStore: EKEventStore { get }
-    /// _Values for controlling what occurrences to affect in a recurring event._ `.futureEvents` by default.
-    var span: EKSpan { get }
 
-}
-
-public extension EventParser {
-
-    /// Will access all
-    ///
-    /// - Parameters:
-    ///   - resources: Array of resources describing path to events data.
-    /// - Throws: `ParserError` if data has unexpected format or standard `Error` for saving and commiting in EventKit.
-    public func parseAndSave(resources: [LaunchEnvironmentResource]) throws {
-        try parsed(resources: resources).forEach { try eventStore.save($0, span: span) }
-        try eventStore.commit()
-    }
 }
 
 // MARK: - Event Dictionary Parser
@@ -75,19 +60,6 @@ public protocol ReminderParser: Parser {
     // MARK: Properties
     /// `EKEventStore` in which parsed `EKEvent`s will be created and saved.
     var eventStore: EKEventStore { get }
-}
-
-public extension ReminderParser {
-
-    /// Will access all
-    ///
-    /// - Parameters:
-    ///   - resources: Array of resources describing path to reminders data.
-    /// - Throws: `ParserError` if data has unexpected format or standard `Error` for saving and commiting in EventKit.
-    public func parseAndSave(resources: [LaunchEnvironmentResource]) throws {
-        try parsed(resources: resources).forEach { try eventStore.save($0, commit: false) }
-        try eventStore.commit()
-    }
 }
 
 // MARK: - Reminder Dictionary Parser

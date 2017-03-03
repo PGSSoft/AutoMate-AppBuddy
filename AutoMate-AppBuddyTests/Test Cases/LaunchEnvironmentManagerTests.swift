@@ -46,7 +46,8 @@ class LaunchEnvironmentManagerTests: XCTestCase {
     func testWithEventKitEnvironmentOptions() {
         let eventsParser = MockEventsParser()
         let remindersParser = MockRemindersParser()
-        let eventKitHandler = EventKitHandler(withParsers: eventsParser, remindersParser)
+        let eventKitInterface = EventKitInterface()
+        let eventKitHandler = EventKitHandler(withParsers: eventsParser, remindersParser, eventKitInterface: eventKitInterface)
         let testBundleName = "com.pgs-soft.AutoMate-AppBuddyTests"
         let environment = [AutoMateLaunchOptionKey.events.rawValue: "\(testBundleName):events", AutoMateLaunchOptionKey.reminders.rawValue: "\(testBundleName):reminders"]
 
@@ -62,7 +63,8 @@ class LaunchEnvironmentManagerTests: XCTestCase {
 
     func testWithContactsEnvironmentOptions() {
         let contactParser = MockContactsParser()
-        let contactsHandler = ContactsHandler(withParser: contactParser)
+        let contactsInterface = ContactsInterface()
+        let contactsHandler = ContactsHandler(withParser: contactParser, contactsInterface: contactsInterface)
         let testBundleName = "com.pgs-soft.AutoMate-AppBuddyTests"
         let environment = [AutoMateLaunchOptionKey.contacts.rawValue: "\(testBundleName):contacts"]
 

@@ -23,6 +23,10 @@ class MockEventsParser: EventParser {
         dataRecived.append(data)
         return EKEvent(eventStore: eventStore)
     }
+
+    public func requestAccess(completion: @escaping (Bool, Error?) -> Void) {
+        completion(true, nil)
+    }
 }
 
 class MockRemindersParser: ReminderParser {
@@ -37,5 +41,9 @@ class MockRemindersParser: ReminderParser {
     func parse(_ data: Any) throws -> EKReminder {
         dataRecived.append(data)
         return EKReminder(eventStore: eventStore)
+    }
+
+    public func requestAccess(completion: @escaping (Bool, Error?) -> Void) {
+        completion(true, nil)
     }
 }

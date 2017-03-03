@@ -40,38 +40,3 @@ public extension Parser where T == Any {
         return try flattenData.flatMap { try parse($0) }
     }
 }
-
-// MARK: - Launch Environment Resource
-public struct LaunchEnvironmentResource {
-
-    // MARK: Properties
-    public let bundle: Bundle
-    public let name: String
-
-    // MARK: Initialization
-    public init?(bundle bundleName: String?, name: String) {
-        guard let bundle = bundleName != nil ? Bundle(identifier: bundleName!) : Bundle.main else {
-            return nil
-        }
-        self.bundle = bundle
-        self.name = name
-    }
-
-    // MARK: Static methods
-    public static func resource(from resourceString: String) -> LaunchEnvironmentResource? {
-        let pair = resourceString.components(separatedBy: ":")
-        let bundleName = pair.first != nil && pair.first != "nil" ? pair.first : nil
-
-        guard let resourceName = pair.last,
-            let resource = LaunchEnvironmentResource(bundle: bundleName, name: resourceName) else {
-                return nil
-        }
-        return resource
-    }
-
-    public static func resources(from resourcesString: String) -> [LaunchEnvironmentResource] {
-        let pairs = resourcesString.components(separatedBy: ",")
-
-        return pairs.flatMap { LaunchEnvironmentResource.resource(from: $0) }
-    }
-}

@@ -9,17 +9,19 @@
 import EventKit
 
 // MARK: - Event Kit Handler
-public struct EventKitHandler<E: EventParser, R: ReminderParser>: Handler {
+public struct EventKitHandler<E: EventParser, R: ReminderParser, I: EventKitInterfaceProtocol>: Handler {
 
     // MARK: Properties
     public let eventsParser: E
     public let remindersParser: R
+    public let eventKitInterface: I
     public let keys: [AutoMateLaunchOptionKey] = [.events, .reminders]
 
     // MARK: Initialization
-    public init(withParsers eventsParser: E, _ remindersParser: R) {
+    public init(withParsers eventsParser: E, _ remindersParser: R, eventKitInterface: I) {
         self.eventsParser = eventsParser
         self.remindersParser = remindersParser
+        self.eventKitInterface = eventKitInterface
     }
 
     // MARK: Methods
@@ -28,18 +30,39 @@ public struct EventKitHandler<E: EventParser, R: ReminderParser>: Handler {
             keys.contains(amKey) else {
                 return
         }
-        let resources = LaunchEnvironmentResource.resources(from: value)
+
+        let (resources, cleanFlag) = LaunchEnvironmentResource.resources(from: value)
+
         switch amKey {
         case .events:
-            try? eventsParser.parseAndSave(resources: resources)
+            let items = (try? self.eventsParser.parsed(resources: resources)) ?? []
+            handle(items, forType: .event, clean: cleanFlag)
         case .reminders:
-            try? remindersParser.parseAndSave(resources: resources)
+            let items = (try? self.remindersParser.parsed(resources: resources)) ?? []
+            handle(items, forType: .reminder, clean: cleanFlag)
         default:
             preconditionFailure("Not supported key")
         }
+    }
+
+    private func handle(_ items: [EKCalendarItem], forType type: EKEntityType, clean: Bool) {
+        eventKitInterface.requestAccess(forType: .event) { _, _ in
+            self.cleanCalendars(ifNeeded: clean, ofType: type) { _, _ in
+                self.eventKitInterface.addAll(items, forType: .event, completion: { _, _ in })
+            }
+        }
+    }
+
+    private func cleanCalendars(ifNeeded cleanNeeded: Bool, ofType type: EKEntityType, completion: @escaping (Bool, Error?) -> Void) {
+        guard cleanNeeded else {
+            completion(false, nil)
+            return
+        }
+
+        eventKitInterface.removeAll(ofType: type, completion: completion)
     }
 }
 
 // MARK: - Default Event Kit Handler
 public let defaultEventKitHander = EventKitHandler(withParsers: EventDictionaryParser(with: EKEventStore()),
-                                                   ReminderDictionaryParser(with: EKEventStore()))
+                                                   ReminderDictionaryParser(with: EKEventStore()), eventKitInterface: EventKitInterface())

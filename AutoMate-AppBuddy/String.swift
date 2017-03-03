@@ -23,4 +23,8 @@ extension String {
             return nil
         }
     }
+
+    var isCleanFlag: Bool {
+        return self == LaunchEnvironmentResource.CleanFlag
+    }
 }
