@@ -15,11 +15,17 @@ extension Date {
     }
 
     static let yearAgo: Date = {
-        return Date(timeIntervalSinceNow: -TimeInterval.year)
+        guard let date = Calendar(identifier: .gregorian).date(byAdding: .year, value: -1, to: Date()) else {
+            preconditionFailure("Date could not be calculated with the given input.")
+        }
+        return date
     }()
 
     static let nextYear: Date = {
-        return Date(timeIntervalSinceNow: TimeInterval.year)
+        guard let date = Calendar(identifier: .gregorian).date(byAdding: .year, value: 1, to: Date()) else {
+            preconditionFailure("Date could not be calculated with the given input.")
+        }
+        return date
     }()
 }
 
@@ -29,11 +35,5 @@ extension DateFormatter {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd k:mm:ss"
         return dateFormatter
-    }()
-}
-
-extension TimeInterval {
-    static let year: TimeInterval = {
-        return 60 * 60 * 24 * 365
     }()
 }

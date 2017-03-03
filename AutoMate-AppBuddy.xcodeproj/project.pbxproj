@@ -152,10 +152,10 @@
 			children = (
 				96AB73F41E44C83300FA811A /* AnimationHandler.swift */,
 				96EA13071E5DC3DC001DE308 /* ContactsHandler.swift */,
-				E46B79AA1E28F3D800BC36B4 /* EventKitHandler.swift */,
-				E4932BB01E2E40A000FB8244 /* LaunchEnvironmentManager.swift */,
-				E4D4E04D1E66B4F0006AE3B7 /* EventKitInterface.swift */,
 				E40226591E68191A007D15AB /* ContactsInterface.swift */,
+				E46B79AA1E28F3D800BC36B4 /* EventKitHandler.swift */,
+				E4D4E04D1E66B4F0006AE3B7 /* EventKitInterface.swift */,
+				E4932BB01E2E40A000FB8244 /* LaunchEnvironmentManager.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -196,13 +196,13 @@
 				E46B79931E28ECEF00BC36B4 /* AutoMate-AppBuddy.h */,
 				E46B79941E28ECEF00BC36B4 /* Info.plist */,
 				968837D31E5DA1FF00ED7CF0 /* Either.swift */,
+				E40226601E685285007D15AB /* LaunchEnviromentResource.swift */,
 				E4932BB21E2E467D00FB8244 /* LaunchOptionsKeys.swift */,
 				9606D1611E55E0AA00FC5130 /* Contacts Extensions */,
 				E47CE9BD1E52E3C9004B0BB3 /* EventKit Extensions */,
 				E44256491E3B7B4F00B2D83B /* Foundation Extensions */,
 				E431922B1E2E17A600B019C1 /* Managers */,
 				E43192241E2E0DAE00B019C1 /* Parsers */,
-				E40226601E685285007D15AB /* LaunchEnviromentResource.swift */,
 			);
 			path = "AutoMate-AppBuddy";
 			sourceTree = "<group>";
