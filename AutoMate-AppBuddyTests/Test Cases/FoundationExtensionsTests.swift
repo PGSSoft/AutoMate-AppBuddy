@@ -42,7 +42,7 @@ class FoundationExtensionsTests: XCTestCase {
         assertNotThrows(expr: try dc = DateComponents.parse(from: data), "Cannot create DateComponents")
         XCTAssertNotNil(dc.calendar)
         XCTAssertNil(dc.timeZone)
-        XCTAssertEqual(dc.date, Date(timeIntervalSinceReferenceDate: -63113909040.0))
+        XCTAssertEqual(dc.date, DateComponents.init(calendar: Calendar(identifier: .gregorian)).date)
 
         XCTAssertNil(dc.era)
         XCTAssertFalse(dc.isLeapMonth!)
