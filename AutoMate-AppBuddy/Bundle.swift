@@ -11,6 +11,18 @@ import Foundation
 // MARK: - Bundle
 public extension Bundle {
 
+    // MARK: Initialization
+    public convenience init?(stringDescription: String?) {
+        guard let description = stringDescription else {
+            return nil
+        }
+        if let url = Bundle.main.url(forResource: description, withExtension: "bundle") {
+            self.init(url: url)
+            return
+        }
+        self.init(identifier: description)
+    }
+
     // MARK: Methods
     public func jsonArray(with name: String) -> [Any]? {
 
@@ -30,5 +42,11 @@ public extension Bundle {
                 return nil
         }
         return data
+    }
+
+    // MARK: Static methods
+    public static func with(stringDescription description: String?) -> Bundle? {
+        guard let aDescription = description else { return Bundle.main }
+        return Bundle(stringDescription: aDescription)
     }
 }
