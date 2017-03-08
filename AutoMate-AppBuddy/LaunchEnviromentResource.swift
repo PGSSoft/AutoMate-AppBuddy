@@ -17,10 +17,8 @@ public struct LaunchEnvironmentResource {
     public let name: String
 
     // MARK: Initialization
-    public init?(bundle bundleName: String?, name: String) {
-        guard let bundle = bundleName != nil ? Bundle(identifier: bundleName!) : Bundle.main else {
-            return nil
-        }
+    public init?(bundle bundleDescription: String?, name: String) {
+        guard let bundle = Bundle.with(stringDescription: bundleDescription) else { return nil }
         self.bundle = bundle
         self.name = name
     }
