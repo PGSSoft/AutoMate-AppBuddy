@@ -14,7 +14,6 @@ import Foundation
 public extension Dictionary {
 
     // MARK: Methods
-
     /// Get a value for a given `key` and return as an object `V`.
     /// If the value is not of the type `V` throws an error.
     ///

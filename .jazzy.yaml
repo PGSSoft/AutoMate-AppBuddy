@@ -6,3 +6,12 @@ custom_categories:
       - ContactsHandler
       - EventKitHandler
       - Handler
+  - name: Parsers
+    children:
+      - ContactDictionaryParser
+      - EventDictionaryParser
+      - ReminderDictionaryParser
+      - Parser
+      - ContactParser
+      - EventParser
+      - ReminderParser

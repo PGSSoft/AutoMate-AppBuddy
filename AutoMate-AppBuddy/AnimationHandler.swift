@@ -8,11 +8,12 @@
 
 import UIKit
 
+// MARK: - AnimationHandler
 /// Handle enabling and disabling UIKit animations.
 ///
 /// Handler should be added to `LaunchEnvironmentManager`.
 ///
-/// Used key: `AM_ANIMATION_KEY` / `AutoMateLaunchOptionKey.animation`
+/// Used key: `AM_ANIMATION_KEY` / `AutoMateLaunchOptionKey.animation`.
 ///
 /// Supported values (case insensitive):
 ///
@@ -38,6 +39,8 @@ import UIKit
 /// - note:
 ///   `AnimationHandler` should be used with the `AM_ANIMATION_KEY` key, but its implementation doesn't require to use it.
 ///   Any key provided to the `LaunchEnvironmentManager.add(handler:for:)` method will be handled correctly.
+///
+/// - seealso: `LaunchEnvironmentManager`
 public struct AnimationHandler: Handler {
 
     // MARK: Initialization
@@ -45,7 +48,7 @@ public struct AnimationHandler: Handler {
     public init() { }
 
     // MARK: Handler
-    /// Handle value for `AM_ANIMATION_KEY` key and enable or disable UIKit animation.
+    /// Handle value for the `AM_ANIMATION_KEY` key and enable or disable UIKit animation.
     ///
     /// - note:
     ///   `AnimationHandler` should be used with the `AM_ANIMATION_KEY` key, but its implementation doesn't require to use it.

@@ -70,6 +70,8 @@ public final class LaunchEnvironmentManager {
 
 // MARK: - Handler
 /// Protocol defining necessary methods required by the `LaunchEnvironmentManager` to handle launch environments.
+///
+/// - seealso: `LaunchEnvironmentManager`
 public protocol Handler {
 
     // MARK: Methods

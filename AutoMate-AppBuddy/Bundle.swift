@@ -12,7 +12,6 @@ import Foundation
 public extension Bundle {
 
     // MARK: Initialization
-
     /// Initialize `Bundle` with a bundle name or a bundle identifier.
     ///
     /// - Parameter stringDescription: Bundle name or a bundle identifier.
