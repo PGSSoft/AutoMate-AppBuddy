@@ -12,6 +12,11 @@ import Foundation
 public extension Bundle {
 
     // MARK: Initialization
+
+    /// Initialize `Bundle` with a bundle name or a bundle identifier.
+    ///
+    /// - Parameter stringDescription: Bundle name or a bundle identifier.
+    /// - Returns: `nil` if cannot find a bundle with given name or identifier.
     public convenience init?(stringDescription: String?) {
         guard let description = stringDescription else {
             return nil
@@ -24,6 +29,13 @@ public extension Bundle {
     }
 
     // MARK: Methods
+    /// Returns array from JSON file.
+    ///
+    /// - note:
+    ///   The file have to have a `json` extension.
+    ///
+    /// - Parameter name: JSON file name withour extenstion.
+    /// - Returns: Array of objects, or `nil` if an error occurs.
     public func jsonArray(with name: String) -> [Any]? {
 
         guard let url = url(forResource: name, withExtension: "json"),
@@ -36,6 +48,10 @@ public extension Bundle {
         return jsonArray
     }
 
+    /// Returns data from file.
+    ///
+    /// - Parameter name: File name, with extension.
+    /// - Returns: File contents as `Data` or `nil` if file doesn't exists.
     public func data(with name: String) -> Data? {
         guard let url = url(forResource: name, withExtension: nil),
             let data = try? Data(contentsOf: url) else {
@@ -45,6 +61,12 @@ public extension Bundle {
     }
 
     // MARK: Static methods
+    /// Initialize `Bundle` with a bundle name or a bundle identifier.
+    /// If `nil` is passed, then `Bundle.main` is returned.
+    ///
+    /// - Parameter description: Bundle name, a bundle identifier or `nil`.
+    /// - Returns: `nil` if cannot find a bundle with given name or identifier.
+    ///   `Bundle.main` is `nil` is used as parameter.
     public static func with(stringDescription description: String?) -> Bundle? {
         guard let aDescription = description else { return Bundle.main }
         return Bundle(stringDescription: aDescription)

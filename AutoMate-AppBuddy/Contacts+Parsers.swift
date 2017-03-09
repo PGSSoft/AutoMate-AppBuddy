@@ -154,7 +154,7 @@ precedencegroup OptionalAssignment {
 
 infix operator ?= : OptionalAssignment
 
-public func ?= <T>(variable: inout T, value: T?) {
+func ?= <T>(variable: inout T, value: T?) {
     if let value = value {
         variable = value
     }
