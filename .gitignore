@@ -84,6 +84,10 @@ fastlane/test_output
 iOSInjectionProject/
 
 
+# Jazzy
+docs
+
+
 # Other temporary files
 *.o
 *.lo

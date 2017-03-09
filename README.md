@@ -17,6 +17,7 @@
 [![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat)](https://swift.org)
 [![Travis](https://img.shields.io/travis/PGSSoft/AutoMate-AppBuddy.svg)](https://travis-ci.org/PGSSoft/AutoMate-AppBuddy)
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/AutoMate-AppBuddy.svg)](https://cocoapods.org/pods/AutoMate-AppBuddy)
+[![CocoaPods](https://img.shields.io/cocoapods/metrics/doc-percent/AutoMate-AppBuddy.svg)](http://cocoadocs.org/docsets/AutoMate-AppBuddy)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Platform](https://img.shields.io/cocoapods/p/AutoMate-AppBuddy.svg)](http://cocoadocs.org/docsets/AutoMate-AppBuddy)
 [![License](https://img.shields.io/github/license/PGSSoft/AutoMate-AppBuddy.svg)](https://github.com/PGSSoft/AutoMate-AppBuddy/blob/master/LICENSE)
@@ -43,7 +44,16 @@ github "PGSSoft/AutoMate-AppBuddy"
 
 ## Usage
 
-TODO
+Full documentation is available at [CocoaDocs.org](http://cocoadocs.org/docsets/AutoMate-AppBuddy).
+
+1. Duplicate existing application target.
+2. Import `AutoMate_AppBuddy` framework to app delegate:
+
+    ```swift
+    import AutoMate_AppBuddy
+    ```
+
+3. ... TODO
 
 ## Features (or ToDo)
 
@@ -62,6 +72,8 @@ TODO
 [`AutoMate`](https://github.com/PGSSoft/AutoMate) repository contains example application under `AutoMateExample` directory. Structure of the application is simple, but the project contains extensive suite of UI tests to showcase capabilities of the library.
 
 ## Development
+
+Full documentation is available at [CocoaDocs.org](http://cocoadocs.org/docsets/AutoMate-AppBuddy).
 
 TODO
 
