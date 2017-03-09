@@ -9,8 +9,7 @@
 import Foundation
 
 // MARK: - Launch Environment Manager
-
-/// Handle launch environments passed by the UI test runner.
+/// Handles launch environments passed by the UI test runner.
 /// Launch environments passed by the [AutoMate](https://github.com/PGSSoft/AutoMate) are working.
 ///
 /// `LaunchEnvironmentManager` should be initialized in the application delegate
@@ -75,7 +74,7 @@ public final class LaunchEnvironmentManager {
 public protocol Handler {
 
     // MARK: Methods
-    /// Handle launch environment with given `key` and `value`.
+    /// Handles launch environment with given `key` and `value`.
     ///
     /// - Parameters:
     ///   - key: Key of the launch environment.

@@ -9,13 +9,13 @@
 import EventKit
 
 // MARK: - Event Kit Handler
-/// Handle events and reminders by using `EventKit` framework.
+/// Handles events and reminders by using `EventKit` framework.
 ///
 /// Handler should be added to `LaunchEnvironmentManager`.
 ///
 /// Used key: `AM_EVENTS_KEY`, `AM_REMINDERS_KEY` / `AutoMateLaunchOptionKey.events`, `AutoMateLaunchOptionKey.reminders`.
 ///
-/// Supported values: `LaunchEnvironmentResource` resources representation as string.
+/// Supported values: `LaunchEnvironmentResource` resources representation as a string.
 ///
 /// **Example:**
 ///
@@ -34,7 +34,7 @@ import EventKit
 ///
 /// - warning:
 ///   `EventKitHandler` is working only with the `AM_EVENTS_KEY` and `AM_REMINDERS_KEY` key.
-///   If any pther key will be used handler will throw an exception.
+///   If any other key will be used handler will throw an exception.
 ///
 /// - seealso: `LaunchEnvironmentManager`
 /// - seealso: `LaunchEnvironmentResource`
@@ -60,11 +60,11 @@ public struct EventKitHandler<E: EventParser, R: ReminderParser, I: EventKitInte
     /// and interface which is responsible for interacting with `EventKit`.
     ///
     /// - Parameters:
-    ///   - eventsParser: Events parser, an instance of the `EventParser` protocol.
+    ///   - eventsParser: Events parser, an instance of type that conforms to the `EventParser` protocol.
     ///     Responsible for transforming `Dictionary` to `EKEvent`.
-    ///   - remindersParser: Reminders parser, an instance of the `ReminderParser` protocol.
+    ///   - remindersParser: Reminders parser, an instance of type that conforms to the `ReminderParser` protocol.
     ///     Responsible for transforming `Dictionary` to `EKReminder`.
-    ///   - eventKitInterface: EventKit interface, an instance of the `EventKitInterfaceProtocol` protocol.
+    ///   - eventKitInterface: EventKit interface, an instance of type that conforms to the `EventKitInterfaceProtocol` protocol.
     ///     responsible for interacting with `EventKit`.
     public init(withParsers eventsParser: E, _ remindersParser: R, eventKitInterface: I) {
         self.eventsParser = eventsParser
@@ -73,11 +73,11 @@ public struct EventKitHandler<E: EventParser, R: ReminderParser, I: EventKitInte
     }
 
     // MARK: Methods
-    /// Handle value for the `AM_EVENTS_KEY` and the `AM_REMINDERS_KEY` keys and manage events and reminders.
+    /// Handles value for the `AM_EVENTS_KEY` and the `AM_REMINDERS_KEY` keys and manage events and reminders.
     ///
     /// - Parameters:
     ///   - key: `AM_EVENTS_KEY`, `AM_REMINDERS_KEY` / `AutoMateLaunchOptionKey.events`, `AutoMateLaunchOptionKey.reminders`.
-    ///   - value: `LaunchEnvironmentResource` resources representation as string.
+    ///   - value: `LaunchEnvironmentResource` resources representation as a string.
     public func handle(key: String, value: String) {
         guard let amKey = AutoMateLaunchOptionKey(rawValue: key),
             keys.contains(amKey) else {

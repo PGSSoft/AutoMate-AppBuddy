@@ -101,7 +101,7 @@ public extension Dictionary {
     /// Return first pair (key and value) from dictionary.
     ///
     /// - Returns: First pair (key and value) from dictionary.
-    /// - Throws: `ParserError` if dictionary jest empty.
+    /// - Throws: `ParserError` if dictionary is empty.
     public func fetchFirst() throws -> (key: Key, value: Value) {
         guard let fetched = first else {
             throw ParserError(message: "Missing key or value")
@@ -113,7 +113,7 @@ public extension Dictionary {
     ///
     /// - Parameter transformation: Transformation closure. Transorms key and value to the type `T`.
     /// - Returns: First pair (key and value) transformed to type `T`.
-    /// - Throws: `ParserError` if dictionary jest empty.
+    /// - Throws: `ParserError` if dictionary is empty.
     public func fetchFirst<T>(transformation: (Key, Value) throws -> T) throws -> T {
         let fetched = try fetchFirst()
         return try transformation(fetched.key, fetched.value)

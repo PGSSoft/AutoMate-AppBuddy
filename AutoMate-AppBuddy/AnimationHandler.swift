@@ -9,7 +9,7 @@
 import UIKit
 
 // MARK: - AnimationHandler
-/// Handle enabling and disabling UIKit animations.
+/// Handles enabling and disabling UIKit animations.
 ///
 /// Handler should be added to `LaunchEnvironmentManager`.
 ///
@@ -48,7 +48,7 @@ public struct AnimationHandler: Handler {
     public init() { }
 
     // MARK: Handler
-    /// Handle value for the `AM_ANIMATION_KEY` key and enable or disable UIKit animation.
+    /// Handles value for the `AM_ANIMATION_KEY` key and enables or disables UIKit animation.
     ///
     /// - note:
     ///   `AnimationHandler` should be used with the `AM_ANIMATION_KEY` key, but its implementation doesn't require to use it.

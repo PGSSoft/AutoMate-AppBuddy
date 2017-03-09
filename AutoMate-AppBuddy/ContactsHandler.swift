@@ -10,13 +10,13 @@ import Foundation
 import Contacts
 
 // MARK: - Contacts Handler
-/// Handle contacts by using `Contacts` framework.
+/// Handles contacts by using `Contacts` framework.
 ///
 /// Handler should be added to `LaunchEnvironmentManager`.
 ///
 /// Used key: `AM_CONTACTS_KEY` / `AutoMateLaunchOptionKey.contacts`.
 ///
-/// Supported values: `LaunchEnvironmentResource` resources representation as string.
+/// Supported values: `LaunchEnvironmentResource` resources representation as a string.
 ///
 /// **Example:**
 ///
@@ -53,9 +53,9 @@ public struct ContactsHandler<C: ContactParser, I: ContactsInterface>: Handler {
     /// and interface (which is responsible for interacting with `Contacts` framework).
     ///
     /// - Parameters:
-    ///   - contactParser: Contact parser, an instance of the `ContactParser` protocol.
+    ///   - contactParser: Contact parser, an instance of type that conforms to the `ContactParser` protocol.
     ///     Responsible for transforing `Dictionary` to `CNMutableContact`.
-    ///   - contactsInterface: Contact interface, an instance of the `ContactsInterface` protocol.
+    ///   - contactsInterface: Contact interface, an instance of type that conforms to the `ContactsInterface` protocol.
     ///     Responsible for interacting with `Contacts` framework
     public init(withParser contactParser: C, contactsInterface: I) {
         self.contactParser = contactParser
@@ -63,11 +63,11 @@ public struct ContactsHandler<C: ContactParser, I: ContactsInterface>: Handler {
     }
 
     // MARK: Methods
-    /// Handle value for the `AM_CONTACTS_KEY` key and manage contacts.
+    /// Handles value for the `AM_CONTACTS_KEY` key and manage contacts.
     ///
     /// - Parameters:
     ///   - key: `AM_CONTACTS_KEY` / `AutoMateLaunchOptionKey.contacts`.
-    ///   - value: `LaunchEnvironmentResource` resources representation as string.
+    ///   - value: `LaunchEnvironmentResource` resources representation as a string.
     public func handle(key: String, value: String) {
         let (resources, cleanFlag) = LaunchEnvironmentResource.resources(from: value)
         let contacts = (try? self.contactParser.parsed(resources: resources)) ?? []

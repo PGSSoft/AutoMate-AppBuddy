@@ -31,9 +31,9 @@ public extension Bundle {
     /// Returns array from JSON file.
     ///
     /// - note:
-    ///   The file have to have a `json` extension.
+    ///   The file has to have a `json` extension.
     ///
-    /// - Parameter name: JSON file name withour extenstion.
+    /// - Parameter name: JSON file name without extenstion.
     /// - Returns: Array of objects, or `nil` if an error occurs.
     public func jsonArray(with name: String) -> [Any]? {
 
