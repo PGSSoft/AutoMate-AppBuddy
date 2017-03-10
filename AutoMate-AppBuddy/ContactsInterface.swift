@@ -95,7 +95,7 @@ public class ContactsInterface: ContactsInterfaceProtocol {
             var contacts = [CNContact]()
             try contactStore.enumerateContacts(with: fetchRequest) { contacts.append($0.0) }
 
-            contacts.flatMap { $0 as? CNMutableContact }.forEach { saveRequest.delete($0) }
+            contacts.flatMap { $0.mutableCopy() as? CNMutableContact }.forEach { saveRequest.delete($0) }
             try contactStore.execute(saveRequest)
             completion(true, nil)
         } catch let error {
