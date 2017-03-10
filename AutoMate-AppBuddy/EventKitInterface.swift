@@ -11,6 +11,7 @@ import EventKit
 /// Define metohods required to interact with `EventKit` framework.
 ///
 /// - seealso: `EventKitInterface`
+/// - seealso: `EventKitHandler`
 public protocol EventKitInterfaceProtocol {
     typealias CompletionBlock = (Bool, Error?) -> Void
 
@@ -40,6 +41,8 @@ public protocol EventKitInterfaceProtocol {
 /// Provides a basic mechanism for interacting with the `EventKit` framework.
 ///
 /// Conforms to the `EventKitInterfaceProtocol` protocol.
+///
+/// - seealso: `EventKitHandler`
 public class EventKitInterface: EventKitInterfaceProtocol {
 
     // MARK: Properties

@@ -1,6 +1,6 @@
 [
   {
-    "title": "All Info Event Title",
+    "title": "All Info Reminder Title",
     "location": "Conference room",
     "notes": "Everybody are welcome",
     "priority": 1,
@@ -62,7 +62,7 @@
     "completionDate": "2017-01-22 14:30:00"
   },
   {
-    "title": "Random Event Title",
+    "title": "Random Reminder Title",
     "notes": "Everybody are welcome",
     "priority": 11,
     "isCompleted": true,
@@ -80,7 +80,7 @@
     "completionDate": "2016-12-22 14:30:00"
   },
   {
-    "title": "Minimal Event Title",
+    "title": "Minimal Reminder Title",
     "priority": 3
   }
 ]

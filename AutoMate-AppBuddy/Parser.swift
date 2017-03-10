@@ -41,7 +41,7 @@ public protocol Parser {
 public extension Parser where T == Any {
 
     // MARK: Methods
-    /// Extension of `parse(_:)` method, which reads JSON arrays from `LaunchEnvironmentResource`
+    /// Extension of the `parse(_:)` method, which reads JSON arrays from `LaunchEnvironmentResource`
     /// and returns a list of objects converted by `parse(_:)` method.
     ///
     /// - Parameter resources: A list of resources to parse.

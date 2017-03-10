@@ -11,6 +11,7 @@ import Contacts
 /// Define metohods required to interact with `Contacts` framework.
 ///
 /// - seealso: `ContactsInterface`
+/// - seealso: `ContactsHandler`
 public protocol ContactsInterfaceProtocol {
     typealias CompletionBlock = (Bool, Error?) -> Void
 
@@ -35,6 +36,8 @@ public protocol ContactsInterfaceProtocol {
 /// Provides a basic mechanism for interacting with the `Contacts` framework.
 ///
 /// Conforms to the `ContactsInterfaceProtocol` protocol.
+///
+/// - seealso: `ContactsHandler`
 public class ContactsInterface: ContactsInterfaceProtocol {
 
     // MARK: Properties
