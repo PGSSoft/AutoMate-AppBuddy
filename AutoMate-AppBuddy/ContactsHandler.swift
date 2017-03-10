@@ -37,8 +37,6 @@ import Contacts
 ///
 /// - seealso: `LaunchEnvironmentManager`
 /// - seealso: `LaunchEnvironmentResource`
-/// - seealso: `ContactParser`
-/// - seealso: `ContactsInterface`
 public struct ContactsHandler<C: ContactParser, I: ContactsInterface>: Handler {
 
     // MARK: Properties

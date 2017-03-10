@@ -8,13 +8,33 @@
 
 import Contacts
 
+/// Define metohods required to interact with `Contacts` framework.
+///
+/// - seealso: `ContactsInterface`
 public protocol ContactsInterfaceProtocol {
     typealias CompletionBlock = (Bool, Error?) -> Void
+
+    /// Adds all contacts to the `CNContactStore`.
+    ///
+    /// - Parameters:
+    ///   - contacts: List of contacts.
+    ///   - completion: Completion closure called after contacts were saved to the store.
     func addAll(_ contacts: [CNMutableContact], completion: @escaping CompletionBlock)
+
+    /// Remove all contacts from the `CNContactStore`.
+    ///
+    /// - Parameter completion: Completion closure called after contacts were removed from the store.
     func removeAll(completion: @escaping CompletionBlock)
+
+    /// Request access to the `Contacts` framework.
+    ///
+    /// - Parameter completion: Completion closure.
     func requestAccess(completion: @escaping CompletionBlock)
 }
 
+/// Provides a basic mechanism for interacting with the `Contacts` framework.
+///
+/// Conforms to the `ContactsInterfaceProtocol` protocol.
 public class ContactsInterface: ContactsInterfaceProtocol {
 
     // MARK: Properties
@@ -32,12 +52,26 @@ public class ContactsInterface: ContactsInterfaceProtocol {
     }()
 
     // MARK: Initialization
+    /// Initialize object with the `CNContactStore` and a fetch request.
+    ///
+    /// If the contact store is not provided a new one is created.
+    /// The fetch request is used for contacts removal. If not provided, the default fetch request will be used
+    /// which will match to all contacts on a device.
+    ///
+    /// - Parameters:
+    ///   - contactStore: A contact store used to communicate.
+    ///   - fetchRequest: A fetch request used for contacts removal.
     public init(contactStore: CNContactStore = CNContactStore(), fetchRequest: CNContactFetchRequest? = nil) {
         self.contactStore = contactStore
         self.fetchRequest ?= fetchRequest
     }
 
     // MARK: Methods
+    /// Adds all contacts to the `CNContactStore`.
+    ///
+    /// - Parameters:
+    ///   - contacts: List of contacts.
+    ///   - completion: Completion closure called after contacts were saved to the store.
     public func addAll(_ contacts: [CNMutableContact], completion: @escaping ContactsInterfaceProtocol.CompletionBlock) {
         do {
             let saveRequest = CNSaveRequest()
@@ -49,6 +83,9 @@ public class ContactsInterface: ContactsInterfaceProtocol {
         }
     }
 
+    /// Remove all contacts from the `CNContactStore`.
+    ///
+    /// - Parameter completion: Completion closure called after contacts were removed from the store.
     public func removeAll(completion: @escaping ContactsInterfaceProtocol.CompletionBlock) {
         do {
             let saveRequest = CNSaveRequest()
@@ -63,6 +100,9 @@ public class ContactsInterface: ContactsInterfaceProtocol {
         }
     }
 
+    /// Request access to the `Contacts` framework.
+    ///
+    /// - Parameter completion: Completion closure.
     public func requestAccess(completion: @escaping ContactsInterfaceProtocol.CompletionBlock) {
         contactStore.requestAccess(for: .contacts, completionHandler: completion)
     }

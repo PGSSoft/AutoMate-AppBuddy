@@ -38,9 +38,6 @@ import EventKit
 ///
 /// - seealso: `LaunchEnvironmentManager`
 /// - seealso: `LaunchEnvironmentResource`
-/// - seealso: `EventParser`
-/// - seealso: `ReminderParser`
-/// - seealso: `EventKitInterfaceProtocol`
 public struct EventKitHandler<E: EventParser, R: ReminderParser, I: EventKitInterfaceProtocol>: Handler {
 
     // MARK: Properties
