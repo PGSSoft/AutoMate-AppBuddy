@@ -56,7 +56,7 @@ public struct EventDictionaryParser: EventParser {
     ///
     /// - Parameters:
     ///   - eventStore: Events store used to create and save events.
-    ///   - calendar: alendar in which events will be saved.
+    ///   - calendar: Calendar in which events will be saved.
     ///     If `nil`, the `defaultCalendarForNewEvents` will be used.
     public init(with eventStore: EKEventStore, calendar: EKCalendar? = nil) {
         self.eventStore = eventStore
