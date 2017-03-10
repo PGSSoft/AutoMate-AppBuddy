@@ -88,4 +88,13 @@ public struct ContactsHandler<C: ContactParser, I: ContactsInterface>: Handler {
 }
 
 // MARK: - Default Contacts Handler
+/// Default `ContactsHandler` with default `ContactParser` and default `ContactsInterface`.
+///
+/// **Example:**
+///
+/// ```swift
+/// let launchManager = LaunchEnvironmentManager()
+/// launchManager.add(handler: defaultContactsHander, for: .contacts)
+/// launchManager.setup()
+/// ```
 public let defaultContactsHander = ContactsHandler(withParser: ContactDictionaryParser(with: CNContactStore()), contactsInterface: ContactsInterface())

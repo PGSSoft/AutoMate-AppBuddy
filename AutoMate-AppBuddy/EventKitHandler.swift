@@ -114,5 +114,15 @@ public struct EventKitHandler<E: EventParser, R: ReminderParser, I: EventKitInte
 }
 
 // MARK: - Default Event Kit Handler
+/// Default `EventKitHandler` with default `EventParser`, `ReminderParser` and `EventKitInterfaceProtocol`.
+///
+/// **Example:**
+///
+/// ```swift
+/// let launchManager = LaunchEnvironmentManager()
+/// launchManager.add(handler: defaultEventKitHander, for: .events)
+/// launchManager.add(handler: defaultEventKitHander, for: .reminders)
+/// launchManager.setup()
+/// ```
 public let defaultEventKitHander = EventKitHandler(withParsers: EventDictionaryParser(with: EKEventStore()),
                                                    ReminderDictionaryParser(with: EKEventStore()), eventKitInterface: EventKitInterface())

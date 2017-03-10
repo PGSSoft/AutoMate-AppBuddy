@@ -9,11 +9,13 @@
 import Foundation
 
 // MARK: - ErrorWithMessage
+/// Error used by the `AutoMate-AppBuddy`.
 protocol ErrorWithMessage: Error {
     var message: String { get }
 }
 
 // MARK: - Parser Error
+/// Error used by the `AutoMate-AppBuddy`.
 public struct ParserError: ErrorWithMessage {
 
     // MARK: Properties
