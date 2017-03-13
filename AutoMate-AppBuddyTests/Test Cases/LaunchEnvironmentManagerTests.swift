@@ -46,7 +46,7 @@ class LaunchEnvironmentManagerTests: XCTestCase {
     func testWithEventKitEnvironmentOptions() {
         let eventsParser = MockEventsParser()
         let remindersParser = MockRemindersParser()
-        let eventKitInterface = EventKitInterface()
+        let eventKitInterface = MockEventKitInterface()
         let eventKitHandler = EventKitHandler(withParsers: eventsParser, remindersParser, eventKitInterface: eventKitInterface)
         let testBundleName = "com.pgs-soft.AutoMate-AppBuddyTests"
         let environment = [AutoMateLaunchOptionKey.events.rawValue: "\(testBundleName):events", AutoMateLaunchOptionKey.reminders.rawValue: "\(testBundleName):reminders"]

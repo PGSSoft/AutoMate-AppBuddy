@@ -17,13 +17,11 @@ import EventKit
 public protocol EventParser: Parser {
 
     // MARK: Typealiases
-    typealias T = Any
     typealias U = EKEvent
 
     // MARK: Properties
     /// `EKEventStore` in which parsed `EKEvent`s will be created and saved.
-    var eventStore: EKEventStore { get }
-
+    var eventStore: EKEventStore! { get set }
 }
 
 // MARK: - Event Dictionary Parser
@@ -47,12 +45,12 @@ public struct EventDictionaryParser: EventParser {
 
     // MARK: Properties
     /// Events store used to create and save events.
-    public let eventStore: EKEventStore
+    public var eventStore: EKEventStore!
     /// Calendar in which events will be saved.
-    public let calendar: EKCalendar
+    public var calendar: EKCalendar?
 
     // MARK: Initialization
-    /// Initialize parser with event store and calendar.
+    /// Initializes parser with event store and calendar.
     ///
     /// - Parameters:
     ///   - eventStore: Events store used to create and save events.
@@ -63,20 +61,24 @@ public struct EventDictionaryParser: EventParser {
         self.calendar = calendar ?? eventStore.defaultCalendarForNewEvents
     }
 
+    /// Initializes parser without event store and calendar.
+    ///
+    /// - note: EKEventStore is implicitly unwrapped, so it needs to be set anyway
+    /// before parsing attempt.
+    public init() {
+
+    }
     // MARK: Public methods
-    /// Parse JSON dictionary (represented as `Any`) and return parsed even object.
+    /// Parses JSON dictionary and returns parsed `EKEvent` object.
     ///
     /// - Parameter data: JSON dictionary to parse.
     /// - Returns: Parsed event.
     /// - Throws: `ParserError` if the provided data are not of a type `[String: Any]`.
-    public func parse(_ data: Any) throws -> EKEvent {
-        guard let jsonDict = data as? [String: Any] else {
-            throw ParserError(message: "Expected dictionary, given \(data)")
-        }
+    public func parse(_ json: [String: Any]) throws -> EKEvent {
 
         let event = EKEvent(eventStore: eventStore)
-        event.calendar = calendar
-        try event.parse(from: jsonDict)
+        event.calendar = calendar ?? eventStore.defaultCalendarForNewEvents
+        try event.parse(from: json)
 
         return event
     }
@@ -91,12 +93,11 @@ public struct EventDictionaryParser: EventParser {
 public protocol ReminderParser: Parser {
 
     // MARK: Typealiases
-    typealias T = Any
     typealias U = EKReminder
 
     // MARK: Properties
     /// `EKEventStore` in which parsed `EKReminder`s will be created and saved.
-    var eventStore: EKEventStore { get }
+    var eventStore: EKEventStore! { get set }
 }
 
 // MARK: - Reminder Dictionary Parser
@@ -139,36 +140,41 @@ public struct ReminderDictionaryParser: ReminderParser {
 
     // MARK: Properties
     /// Events store used to create and save reminders.
-    public let eventStore: EKEventStore
+    public var eventStore: EKEventStore!
     /// Calendar in which reminders will be saved.
-    public let calendar: EKCalendar
+    public var calendar: EKCalendar?
 
     // MARK: Initialization
-    /// Initialize parser with event store and calendar.
+    /// Initializes parser with event store and calendar.
     ///
     /// - Parameters:
-    ///   - eventStore: Events store used to create and save reminders.
-    ///   - calendar: Calendar in which reminders will be saved.
-    ///     If `nil`, the `defaultCalendarForNewReminders()` will be used.
+    ///   - eventStore: Events store used to create and save events.
+    ///   - calendar: Calendar in which events will be saved.
+    ///     If `nil`, the `defaultCalendarForNewEvents` will be used.
     public init(with eventStore: EKEventStore, calendar: EKCalendar? = nil) {
         self.eventStore = eventStore
-        self.calendar = calendar ?? eventStore.defaultCalendarForNewReminders()
+        self.calendar = calendar ?? eventStore.defaultCalendarForNewEvents
+    }
+
+    /// Initializes parser without event store and calendar.
+    ///
+    /// - note: EKEventStore is implicitly unwrapped, so it needs to be set anyway
+    /// before parsing attempt.
+    public init() {
+
     }
 
     // MARK: Public methods
-    /// Parse JSON dictionary (represented as `Any`) and return parsed reminder object.
+    /// Parse JSON dictionary and return parsed `EKReminder` object.
     ///
     /// - Parameter data: JSON dictionary to parse.
     /// - Returns: Parsed reminder.
     /// - Throws: `ParserError` if the provided data are not of a type `[String: Any]`.
-    public func parse(_ data: Any) throws -> EKReminder {
-        guard let jsonDict = data as? [String: Any] else {
-            throw ParserError(message: "Expected dictionary, given \(data)")
-        }
+    public func parse(_ json: [String: Any]) throws -> EKReminder {
 
         let reminder = EKReminder(eventStore: eventStore)
-        reminder.calendar = calendar
-        try reminder.parse(from: jsonDict)
+        reminder.calendar = calendar ?? eventStore.defaultCalendarForNewReminders()
+        try reminder.parse(from: json)
 
         return reminder
     }

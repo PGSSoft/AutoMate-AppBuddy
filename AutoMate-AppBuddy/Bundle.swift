@@ -35,12 +35,12 @@ public extension Bundle {
     ///
     /// - Parameter name: JSON file name without extenstion.
     /// - Returns: Array of objects, or `nil` if an error occurs.
-    public func jsonArray(with name: String) -> [Any]? {
+    public func jsonArray<T>(with name: String) -> [T]? {
 
         guard let url = url(forResource: name, withExtension: "json"),
             let data = try? Data(contentsOf: url),
             let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments),
-            let jsonArray = json as? [Any] else {
+            let jsonArray = json as? [T] else {
                 return nil
         }
 

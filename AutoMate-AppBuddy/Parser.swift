@@ -40,7 +40,7 @@ public protocol Parser {
 }
 
 // MARK: - Default implementations
-public extension Parser where T == Any {
+public extension Parser {
 
     // MARK: Methods
     /// Extension of the `parse(_:)` method, which reads JSON arrays from `LaunchEnvironmentResource`
@@ -50,7 +50,7 @@ public extension Parser where T == Any {
     /// - Returns: A list of converted objects.
     /// - Throws: Rethrow an error throwed by `parse(_:)` method.
     public func parsed(resources: [LaunchEnvironmentResource]) throws -> [Self.U] {
-        let jsonsData = resources.flatMap { $0.bundle.jsonArray(with: $0.name) }
+        let jsonsData: [[T]] = resources.flatMap { $0.bundle.jsonArray(with: $0.name) }
         let flattenData = jsonsData.reduce([], +)
         return try flattenData.flatMap { try parse($0) }
     }

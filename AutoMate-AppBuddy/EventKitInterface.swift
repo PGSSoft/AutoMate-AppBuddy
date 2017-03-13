@@ -35,7 +35,8 @@ public protocol EventKitInterfaceProtocol {
     /// - Parameters:
     ///   - type: Type of entity to request access.
     ///   - completion: Completion closure.
-    func requestAccess(forType type: EKEntityType, completion: @escaping CompletionBlock)
+    func requestAccess(forType type: EKEntityType, completion: @escaping (Bool, Error?, EKEventStore?) -> Void)
+    static func authorized(forType type: EKEntityType) -> Bool
 }
 
 /// Provides a basic mechanism for interacting with the `EventKit` framework.
@@ -46,7 +47,7 @@ public protocol EventKitInterfaceProtocol {
 public class EventKitInterface: EventKitInterfaceProtocol {
 
     // MARK: Properties
-    private let eventStore: EKEventStore
+    private var eventStore: EKEventStore!
     private let eventSpan: EKSpan
     private let eventStartDate: Date
     private let eventEndDate: Date
@@ -62,8 +63,7 @@ public class EventKitInterface: EventKitInterfaceProtocol {
     ///   - eventSpan: Indicates whether modifications should apply to a single event or all future events of a recurring event.
     ///   - eventStartDate: A start date for items filtering. By default a year ago.
     ///   - eventEndDate: An end date for items filtering. By default next year.
-    public init(eventStore: EKEventStore = EKEventStore(), eventSpan: EKSpan = .futureEvents, eventStartDate: Date = Date.yearAgo, eventEndDate: Date = Date.nextYear) {
-        self.eventStore = eventStore
+    public init(eventSpan: EKSpan = .futureEvents, eventStartDate: Date = Date.yearAgo, eventEndDate: Date = Date.nextYear) {
         self.eventSpan = eventSpan
         self.eventStartDate = eventStartDate
         self.eventEndDate = eventEndDate
@@ -108,14 +108,30 @@ public class EventKitInterface: EventKitInterfaceProtocol {
     /// - Parameters:
     ///   - type: Type of entity to request access.
     ///   - completion: Completion closure.
-    public func requestAccess(forType type: EKEntityType, completion: @escaping EventKitInterfaceProtocol.CompletionBlock) {
-        eventStore.requestAccess(to: type, completion: completion)
+    public func requestAccess(forType type: EKEntityType, completion: @escaping (Bool, Error?, EKEventStore?) -> Void) {
+        guard EKEventStore.authorizationStatus(for: type) != .authorized else {
+            self.eventStore = EKEventStore()
+            completion(true, nil, self.eventStore)
+            return
+        }
+        EKEventStore().requestAccess(to: type) { authorized, error in
+            DispatchQueue.main.async {
+                self.eventStore = EKEventStore()
+                completion(authorized, error, self.eventStore)
+            }
+        }
+    }
+
+    public static func authorized(forType type: EKEntityType) -> Bool {
+        return EKEventStore.authorizationStatus(for: type) == .authorized
     }
 
     private func save(item: EKCalendarItem, ofType type: EKEntityType) throws {
         switch (type, item) {
-        case let (.event, event as EKEvent): try eventStore.save(event, span: eventSpan, commit: false)
-        case let (.reminder, reminder as EKReminder): try eventStore.save(reminder, commit: false)
+        case let (.event, event as EKEvent):
+            try eventStore.save(event, span: eventSpan, commit: false)
+        case let (.reminder, reminder as EKReminder):
+            try eventStore.save(reminder, commit: false)
         default: throw ParserError(message: "")
         }
     }
