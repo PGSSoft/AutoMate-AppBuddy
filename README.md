@@ -47,13 +47,21 @@ github "PGSSoft/AutoMate-AppBuddy"
 Full documentation is available at [CocoaDocs.org](http://cocoadocs.org/docsets/AutoMate-AppBuddy).
 
 1. Duplicate existing application target.
-2. Import `AutoMate_AppBuddy` framework to app delegate:
+2. Import `AutoMate_AppBuddy` framework to app delegate.
 
     ```swift
     import AutoMate_AppBuddy
     ```
 
-3. ... TODO
+3. Setup `LaunchEnvironmentManager` in `application(_:didFinishLaunchingWithOptions:)`.
+
+    ```swift
+    let launchEnvironmentManager = LaunchEnvironmentManager()
+    launchEnvironmentManager.add(handler: defaultEventKitHander, for: .events)
+    launchEnvironmentManager.add(handler: defaultEventKitHander, for: .reminders)
+    launchEnvironmentManager.add(handler: defaultContactsHander, for: .contacts)
+    launchEnvironmentManager.setup()
+    ```
 
 ## Features (or ToDo)
 
@@ -75,7 +83,19 @@ Full documentation is available at [CocoaDocs.org](http://cocoadocs.org/docsets/
 
 Full documentation is available at [CocoaDocs.org](http://cocoadocs.org/docsets/AutoMate-AppBuddy).
 
-TODO
+If you want to handle your custom launch environments, you have to implement `Handler` protocol. Example:
+
+```swift
+struct CustomHandler: Handler {
+    func handle(key: String, value: String) {
+        if value == "production" {
+
+        }
+    }
+}
+
+launchEnvironmentManager.add(handler: CustomHandler(), for: "SERVER")
+```
 
 ## Contributing
 
