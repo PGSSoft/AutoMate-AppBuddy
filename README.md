@@ -83,7 +83,7 @@ Full documentation is available at [CocoaDocs.org](http://cocoadocs.org/docsets/
 
 Full documentation is available at [CocoaDocs.org](http://cocoadocs.org/docsets/AutoMate-AppBuddy).
 
-If you want to handle your custom launch environments, you have to implement `Handler` protocol. Example:
+If you want to handle your custom launch environments, you have to implement `Handler` protocol, e.g.
 
 ```swift
 struct CustomHandler: Handler {
