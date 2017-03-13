@@ -12,7 +12,7 @@ import AutoMate_AppBuddy
 
 class MockEventsParser: EventParser {
 
-    let eventStore = EKEventStore()
+    var eventStore: EKEventStore! = EKEventStore()
     lazy var calendar: EKCalendar = {
         return self.eventStore.defaultCalendarForNewEvents
     }()
@@ -31,7 +31,7 @@ class MockEventsParser: EventParser {
 
 class MockRemindersParser: ReminderParser {
 
-    let eventStore = EKEventStore()
+    var eventStore: EKEventStore! = EKEventStore()
     lazy var calendar: EKCalendar = {
         return self.eventStore.defaultCalendarForNewEvents
     }()

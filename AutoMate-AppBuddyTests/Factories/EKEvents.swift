@@ -7,10 +7,25 @@
 //
 
 import EventKit
-import AutoMate_AppBuddy
 
 enum EventFactory {
 
+    // MARK: Static properties
+    private static var instancesCount = 0
+    private static let eventStore = EKEventStore()
+
+    // MARK: Methods
+    static func mock() -> EKEvent {
+        defer { instancesCount += 1 }
+
+        let event = EKEvent(eventStore: eventStore)
+        event.title = "Mock event \(instancesCount)"
+        event.calendar = eventStore.defaultCalendarForNewEvents
+
+        return event
+    }
+
+    // MARK: Static data
     static let eventDictWithMinimalInformations: [String: Any] = {
         return [
             "title": "Minimal Event Title",

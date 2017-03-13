@@ -35,6 +35,8 @@
 		E431922A1E2E113B00B019C1 /* EventKitParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43192291E2E113B00B019C1 /* EventKitParser.swift */; };
 		E437D7B01E572C43001C6477 /* EventKitParsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E437D7AF1E572C43001C6477 /* EventKitParsers.swift */; };
 		E442564B1E3B7B7200B2D83B /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E442564A1E3B7B7200B2D83B /* Bundle.swift */; };
+		E4611C851E7672A80039433F /* EventKitInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4611C841E7672A80039433F /* EventKitInterface.swift */; };
+		E4611C871E76810C0039433F /* EventKitHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4611C861E76810C0039433F /* EventKitHandlerTests.swift */; };
 		E46B79A11E28ECEF00BC36B4 /* AutoMate-AppBuddy.h in Headers */ = {isa = PBXBuildFile; fileRef = E46B79931E28ECEF00BC36B4 /* AutoMate-AppBuddy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E46B79AB1E28F3D800BC36B4 /* EventKitHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46B79AA1E28F3D800BC36B4 /* EventKitHandler.swift */; };
 		E47CE9BF1E52E3F2004B0BB3 /* EventKit+Parsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47CE9BE1E52E3F2004B0BB3 /* EventKit+Parsers.swift */; };
@@ -90,6 +92,8 @@
 		E43192291E2E113B00B019C1 /* EventKitParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventKitParser.swift; sourceTree = "<group>"; };
 		E437D7AF1E572C43001C6477 /* EventKitParsers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventKitParsers.swift; sourceTree = "<group>"; };
 		E442564A1E3B7B7200B2D83B /* Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
+		E4611C841E7672A80039433F /* EventKitInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventKitInterface.swift; sourceTree = "<group>"; };
+		E4611C861E76810C0039433F /* EventKitHandlerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventKitHandlerTests.swift; sourceTree = "<group>"; };
 		E46B79901E28ECEF00BC36B4 /* AutoMate_AppBuddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AutoMate_AppBuddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E46B79931E28ECEF00BC36B4 /* AutoMate-AppBuddy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AutoMate-AppBuddy.h"; sourceTree = "<group>"; };
 		E46B79941E28ECEF00BC36B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -239,6 +243,7 @@
 				E42C2FA61E530D7D000F1D7C /* EKReminders.swift */,
 				E437D7AF1E572C43001C6477 /* EventKitParsers.swift */,
 				E49E84851E4B43DF008A13AE /* Handlers.swift */,
+				E4611C841E7672A80039433F /* EventKitInterface.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -253,6 +258,7 @@
 				96D1FA191E4C84B100257883 /* FoundationExtensionsTests.swift */,
 				E49E848A1E4B43DF008A13AE /* LaunchEnvironmentManagerTests.swift */,
 				E49E84891E4B43DF008A13AE /* LaunchEnvironmentResourceTests.swift */,
+				E4611C861E76810C0039433F /* EventKitHandlerTests.swift */,
 			);
 			path = "Test Cases";
 			sourceTree = "<group>";
@@ -441,7 +447,9 @@
 				96420E061E4C801400901C50 /* AnimationHandlerTests.swift in Sources */,
 				96D1FA1A1E4C84B100257883 /* FoundationExtensionsTests.swift in Sources */,
 				E42C2FAD1E5447BE000F1D7C /* XCTestCase+AssertionHelpers.swift in Sources */,
+				E4611C851E7672A80039433F /* EventKitInterface.swift in Sources */,
 				E437D7B01E572C43001C6477 /* EventKitParsers.swift in Sources */,
+				E4611C871E76810C0039433F /* EventKitHandlerTests.swift in Sources */,
 				E42C2FA91E5440A1000F1D7C /* EKRecurrenceParserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

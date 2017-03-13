@@ -6,9 +6,26 @@
 //  Copyright © 2017 PGS Software. All rights reserved.
 //
 
-import Foundation
+import EventKit
 
 enum ReminderFactory {
+
+    // MARK: Static properties
+    private static var instancesCount = 0
+    private static let eventStore = EKEventStore()
+
+    // MARK: Methods
+    static func mock() -> EKReminder {
+        defer { instancesCount += 1 }
+
+        let reminder = EKReminder(eventStore: eventStore)
+        reminder.title = "Mock event \(instancesCount)"
+        reminder.calendar = eventStore.defaultCalendarForNewEvents
+
+        return reminder
+    }
+
+    // MARK: Static data
     static let reminderWithAllInfo: [String: Any] = {
         return [
             "title": "All Info Event Title",

@@ -38,13 +38,13 @@ import EventKit
 ///
 /// - seealso: `LaunchEnvironmentManager`
 /// - seealso: `LaunchEnvironmentResource`
-public struct EventKitHandler<E: EventParser, R: ReminderParser, I: EventKitInterfaceProtocol>: Handler {
+public class EventKitHandler<E: EventParser, R: ReminderParser, I: EventKitInterfaceProtocol>: Handler {
 
     // MARK: Properties
     /// Events parser, an instance of the `EventParser` protocol.
-    public let eventsParser: E
+    public var eventsParser: E
     /// Reminders parser, an instance of the `ReminderParser` protocol.
-    public let remindersParser: R
+    public var remindersParser: R
     /// EventKit interface, an instance of the `EventKitInterfaceProtocol` protocol.
     public let eventKitInterface: EventKitInterfaceProtocol
     /// Supported keys. 
@@ -85,20 +85,34 @@ public struct EventKitHandler<E: EventParser, R: ReminderParser, I: EventKitInte
 
         switch amKey {
         case .events:
-            let items = (try? self.eventsParser.parsed(resources: resources)) ?? []
-            handle(items, forType: .event, clean: cleanFlag)
+            handle(try? self.eventsParser.parsed(resources: resources),
+                   forType: .event,
+                   clean: cleanFlag)
         case .reminders:
-            let items = (try? self.remindersParser.parsed(resources: resources)) ?? []
-            handle(items, forType: .reminder, clean: cleanFlag)
+            handle(try? self.remindersParser.parsed(resources: resources),
+                   forType: .reminder,
+                   clean: cleanFlag)
         default:
             preconditionFailure("Not supported key")
         }
     }
 
-    private func handle(_ items: [EKCalendarItem], forType type: EKEntityType, clean: Bool) {
-        eventKitInterface.requestAccess(forType: .event) { _, _ in
-            self.cleanCalendars(ifNeeded: clean, ofType: type) { _, _ in
-                self.eventKitInterface.addAll(items, forType: .event, completion: { _, _ in })
+    private func handle(_ items: @escaping @autoclosure () -> [EKCalendarItem]?, forType type: EKEntityType, clean: Bool) {
+        requestAccessIfNeeded(forType: type) { authorized, error in
+            guard authorized, error == nil else {
+                preconditionFailure("Access request for type \(type) failed with error \(error).")
+            }
+
+            self.cleanCalendars(ifNeeded: clean, ofType: type) { _, error in
+                guard authorized, error == nil else {
+                    preconditionFailure("Clean calendar items of type \(type) failed with error \(error).")
+                }
+
+                self.saveIfNeeded(items(), ofType: type) { saved, error in
+                    guard saved, error == nil else {
+                        preconditionFailure("Saving calendar items \(items()) of type \(type) failed with error \(error).")
+                    }
+                }
             }
         }
     }
@@ -110,6 +124,26 @@ public struct EventKitHandler<E: EventParser, R: ReminderParser, I: EventKitInte
         }
 
         eventKitInterface.removeAll(ofType: type, completion: completion)
+    }
+
+    private func requestAccessIfNeeded(forType type: EKEntityType, completion: @escaping (Bool, Error?) -> Void) {
+
+        eventKitInterface.requestAccess(forType: type) { authorized, error, eventStore in
+            switch type {
+            case .event: self.eventsParser.eventStore = eventStore
+            case .reminder: self.remindersParser.eventStore = eventStore
+            }
+            completion(authorized, error)
+        }
+    }
+
+    private func saveIfNeeded(_ items: [EKCalendarItem]?, ofType type: EKEntityType, completion: @escaping (Bool, Error?) -> Void) {
+        guard let calendarItems = items else {
+            completion(false, nil)
+            return
+        }
+
+        eventKitInterface.addAll(calendarItems, forType: type, completion: completion)
     }
 }
 
@@ -124,5 +158,7 @@ public struct EventKitHandler<E: EventParser, R: ReminderParser, I: EventKitInte
 /// launchManager.add(handler: defaultEventKitHander, for: .reminders)
 /// launchManager.setup()
 /// ```
-public let defaultEventKitHander = EventKitHandler(withParsers: EventDictionaryParser(with: EKEventStore()),
-                                                   ReminderDictionaryParser(with: EKEventStore()), eventKitInterface: EventKitInterface())
+public typealias DefaultEventKitHander = EventKitHandler<EventDictionaryParser, ReminderDictionaryParser, EventKitInterface>
+
+public let defaultEventKitHander: DefaultEventKitHander = EventKitHandler(withParsers: EventDictionaryParser(), ReminderDictionaryParser(),
+                                                                          eventKitInterface: EventKitInterface())
