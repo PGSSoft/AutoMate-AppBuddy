@@ -60,6 +60,7 @@ Full documentation is available at [CocoaDocs.org](http://cocoadocs.org/docsets/
     launchEnvironmentManager.add(handler: defaultEventKitHander, for: .events)
     launchEnvironmentManager.add(handler: defaultEventKitHander, for: .reminders)
     launchEnvironmentManager.add(handler: defaultContactsHander, for: .contacts)
+    launchEnvironmentManager.add(handler: AnimationHandler(), for: .animation)
     launchEnvironmentManager.setup()
     ```
 

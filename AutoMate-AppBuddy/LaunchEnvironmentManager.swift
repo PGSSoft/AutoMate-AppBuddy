@@ -19,7 +19,10 @@ import Foundation
 ///
 /// ```swift
 /// let launchManager = aunchEnvironmentManager()
-/// launchManager.add(handler: defaultContactsHander, .contacts)
+/// launchManager.add(handler: defaultEventKitHander, for: .events)
+/// launchManager.add(handler: defaultEventKitHander, for: .reminders)
+/// launchManager.add(handler: defaultContactsHander, for: .contacts)
+/// launchManager.add(handler: AnimationHandler(), for: .animation)
 /// launchManager.setup()
 /// ```
 public final class LaunchEnvironmentManager {

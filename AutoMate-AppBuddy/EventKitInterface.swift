@@ -36,6 +36,11 @@ public protocol EventKitInterfaceProtocol {
     ///   - type: Type of entity to request access.
     ///   - completion: Completion closure.
     func requestAccess(forType type: EKEntityType, completion: @escaping (Bool, Error?, EKEventStore?) -> Void)
+
+    /// Checks if the application is authorized to use events or reminders.
+    ///
+    /// - Parameter type: The type of entity (events or reminders)  to check.
+    /// - Returns: `true` if the application was authorized, `false` otherwise.
     static func authorized(forType type: EKEntityType) -> Bool
 }
 
@@ -122,6 +127,10 @@ public class EventKitInterface: EventKitInterfaceProtocol {
         }
     }
 
+    /// Checks if the application is authorized to use events or reminders.
+    ///
+    /// - Parameter type: The type of entity (events or reminders)  to check.
+    /// - Returns: `true` if the application was authorized, `false` otherwise.
     public static func authorized(forType type: EKEntityType) -> Bool {
         return EKEventStore.authorizationStatus(for: type) == .authorized
     }

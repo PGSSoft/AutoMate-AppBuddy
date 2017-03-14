@@ -148,6 +148,8 @@ public class EventKitHandler<E: EventParser, R: ReminderParser, I: EventKitInter
 }
 
 // MARK: - Default Event Kit Handler
+public typealias DefaultEventKitHander = EventKitHandler<EventDictionaryParser, ReminderDictionaryParser, EventKitInterface>
+
 /// Default `EventKitHandler` with default `EventParser`, `ReminderParser` and `EventKitInterfaceProtocol`.
 ///
 /// **Example:**
@@ -158,7 +160,5 @@ public class EventKitHandler<E: EventParser, R: ReminderParser, I: EventKitInter
 /// launchManager.add(handler: defaultEventKitHander, for: .reminders)
 /// launchManager.setup()
 /// ```
-public typealias DefaultEventKitHander = EventKitHandler<EventDictionaryParser, ReminderDictionaryParser, EventKitInterface>
-
 public let defaultEventKitHander: DefaultEventKitHander = EventKitHandler(withParsers: EventDictionaryParser(), ReminderDictionaryParser(),
                                                                           eventKitInterface: EventKitInterface())
