@@ -72,7 +72,7 @@ Full documentation is available at [CocoaDocs.org](http://cocoadocs.org/docsets/
 - [ ] Stubbing network requests
 - [ ] Stubbing contacts, events and reminders
 - [ ] Stubbing notifications
-- [ ] Making screenshots
+- [ ] Taking screenshots
 - [ ] Clearing application data
 - [ ] Simulating push notifications
 
