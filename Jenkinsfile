@@ -4,7 +4,7 @@ node("ios_ui") {
       env.LANG = "en_US.UTF-8"
       env.RBENV_VERSION = env.RBENV_2_4
       env.NSUnbufferedIO = "YES"
-      env.DEVELOPER_DIR = "/Applications/Xcode.app"
+      env.DEVELOPER_DIR = "/Applications/Xcode_8.3.app"
       env.DANGER_BITBUCKETSERVER_HOST = "bitbucket.pgs-soft.com"
 
       //
@@ -105,22 +105,22 @@ node("ios_ui") {
             bundle exec fastlane install_plugins
 
             # Reset simulators
-            bundle exec fastlane snapshot reset_simulators --force --ios 10.2
+            bundle exec fastlane snapshot reset_simulators --force --ios 10.3
           '''
         }
 
         // Tests
         try {
-          stage("iPhone SE, 10.2") {
-            test("iPhone SE", "10.2")
+          stage("iPhone SE, 10.3") {
+            test("iPhone SE", "10.3")
           }
 
-          stage("iPhone 7, 10.2") {
-            test("iPhone 7", "10.2")
+          stage("iPhone 7, 10.3") {
+            test("iPhone 7", "10.3")
           }
 
-          stage("iPhone 7 Plus, 10.2") {
-            test("iPhone 7 Plus", "10.2")
+          stage("iPhone 7 Plus, 10.3") {
+            test("iPhone 7 Plus", "10.3")
           }
 
           stage("CocoaPods lint") {
