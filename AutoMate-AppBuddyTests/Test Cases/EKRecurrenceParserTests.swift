@@ -72,7 +72,7 @@ class EKRecurrenceParserTests: XCTestCase {
         assert(array: rule.weeksOfTheYear, isEqual: expected["weeksOfTheYear"])
         assert(array: rule.setPositions, isEqual: expected["setPositions"])
         assert(countOf: rule.daysOfTheWeek?.map { $0.dayOfTheWeek.rawValue }, isEqual: expected["daysOfTheWeek"])
-        XCTAssertEqual(rule.recurrenceEnd != nil, expected["endDate"] != nil || expected["occurrenceCount"] != nil, "\(rule.recurrenceEnd) is not equal to expected \(expected["endDate"]) nor \(expected["occurrenceCount"])")
+        XCTAssertEqual(rule.recurrenceEnd != nil, expected["endDate"] != nil || expected["occurrenceCount"] != nil, "\(String(describing: rule.recurrenceEnd)) is not equal to expected \(String(describing: expected["endDate"])) nor \(String(describing: expected["occurrenceCount"]))")
     }
 
     func assert(recurrenceEnd: EKRecurrenceEnd, isEqual expected: [String: Any]) {

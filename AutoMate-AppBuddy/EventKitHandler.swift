@@ -85,11 +85,13 @@ public class EventKitHandler<E: EventParser, R: ReminderParser, I: EventKitInter
 
         switch amKey {
         case .events:
-            handle(try? self.eventsParser.parsed(resources: resources),
+            // Swift 3.1 workaround with flatMap
+            handle(try? self.eventsParser.parsed(resources: resources).flatMap({$0 as? EKEvent}),
                    forType: .event,
                    clean: cleanFlag)
         case .reminders:
-            handle(try? self.remindersParser.parsed(resources: resources),
+            // Swift 3.1 workaround with flatMap
+            handle(try? self.remindersParser.parsed(resources: resources).flatMap({$0 as? EKReminder}),
                    forType: .reminder,
                    clean: cleanFlag)
         default:
@@ -100,17 +102,17 @@ public class EventKitHandler<E: EventParser, R: ReminderParser, I: EventKitInter
     private func handle(_ items: @escaping @autoclosure () -> [EKCalendarItem]?, forType type: EKEntityType, clean: Bool) {
         requestAccessIfNeeded(forType: type) { authorized, error in
             guard authorized, error == nil else {
-                preconditionFailure("Access request for type \(type) failed with error \(error).")
+                preconditionFailure("Access request for type \(type) failed with error \(String(describing: error)).")
             }
 
             self.cleanCalendars(ifNeeded: clean, ofType: type) { _, error in
                 guard authorized, error == nil else {
-                    preconditionFailure("Clean calendar items of type \(type) failed with error \(error).")
+                    preconditionFailure("Clean calendar items of type \(type) failed with error \(String(describing: error)).")
                 }
 
                 self.saveIfNeeded(items(), ofType: type) { saved, error in
                     guard saved, error == nil else {
-                        preconditionFailure("Saving calendar items \(items()) of type \(type) failed with error \(error).")
+                        preconditionFailure("Saving calendar items \(String(describing: items())) of type \(type) failed with error \(String(describing: error)).")
                     }
                 }
             }

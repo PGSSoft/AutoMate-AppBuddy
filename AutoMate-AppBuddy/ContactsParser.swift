@@ -34,7 +34,8 @@ public extension ContactParser {
     /// - Throws: `ParserError` if data has unexpected format or standard `Error` for saving and committing in CNContactStore.
     public func parseAndSave(resources: [LaunchEnvironmentResource]) throws {
         let saveRequest = CNSaveRequest()
-        try parsed(resources: resources).forEach { saveRequest.add($0, toContainerWithIdentifier: nil) }
+        // Swift 3.1 workaround with flatMap
+        try parsed(resources: resources).flatMap({$0 as? CNMutableContact}).forEach { saveRequest.add($0, toContainerWithIdentifier: nil) }
         try store.execute(saveRequest)
     }
 }

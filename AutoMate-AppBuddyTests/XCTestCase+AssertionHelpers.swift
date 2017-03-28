@@ -32,40 +32,40 @@ extension XCTestCase {
     func assert<T: Equatable>(_ argument: T?, isEqual expected: Any?) {
         switch expected {
         case .none:
-            XCTAssertNil(argument, "Argument is \(argument) while expected is .none.")
+            XCTAssertNil(argument, "Argument is \(String(describing: argument)) while expected is .none.")
         case let expectedT as T:
-            XCTAssertEqual(expectedT, argument, "Value \(argument) is not equal to \(expectedT)")
+            XCTAssertEqual(expectedT, argument, "Value \(String(describing: argument)) is not equal to \(expectedT)")
         default:
-            XCTFail("Types \(argument) and \(expected) do not match.")
+            XCTFail("Types \(String(describing: argument)) and \(String(describing: expected)) do not match.")
         }
     }
 
     func assert<T: Equatable>(array: [T]?, isEqual expected: Any?) {
         switch expected {
         case .none:
-            XCTAssertNil(array, "Argument is \(array) while expected is empty.")
+            XCTAssertNil(array, "Argument is \(String(describing: array)) while expected is empty.")
         case let expectedArr as [T]:
-            XCTAssertTrue(array?.elementsEqual(expectedArr) ?? false, "Elements of \(array) are not equal to \(expectedArr)")
+            XCTAssertTrue(array?.elementsEqual(expectedArr) ?? false, "Elements of \(String(describing: array)) are not equal to \(expectedArr)")
         default:
-            XCTFail("Types \(array) and \(expected) do not match.")
+            XCTFail("Types \(String(describing: array)) and \(String(describing: expected)) do not match.")
         }
     }
 
     func assert<C: Collection>(countOf argument: C?, isEqual expected: Any?) {
         switch expected {
         case .none:
-            XCTAssertNil(argument, "Argument is \(argument) while expected is .none")
+            XCTAssertNil(argument, "Argument is \(String(describing: argument)) while expected is .none")
         case let aCollection as C:
-            XCTAssertEqual(aCollection.count, argument?.count, "Value count \(argument?.count) is not equal to expected \(aCollection.count).")
+            XCTAssertEqual(aCollection.count, argument?.count, "Value count \(String(describing: argument?.count)) is not equal to expected \(aCollection.count).")
         case .some:
-            XCTFail("Types \(argument) and \(expected) do not match.")
+            XCTFail("Types \(String(describing: argument)) and \(String(describing: expected)) do not match.")
         }
     }
 
     @nonobjc func assert(dateComponents: DateComponents?, isEqual expected: Any?) {
         switch expected {
         case .none:
-            XCTAssertNil(dateComponents, "Argument is \(dateComponents) while expected is .none")
+            XCTAssertNil(dateComponents, "Argument is \(String(describing: dateComponents)) while expected is .none")
         case let expectedT as [String: Any]:
             do {
                 let expectedDateComponents = try DateComponents.parse(from: expectedT)
@@ -74,7 +74,7 @@ extension XCTestCase {
                 XCTFail("Failed with unexpected error \(error).")
             }
         case .some:
-            XCTFail("Types \(dateComponents) and \(expected) do not match.")
+            XCTFail("Types \(String(describing: dateComponents)) and \(String(describing: expected)) do not match.")
         }
     }
 
@@ -90,7 +90,7 @@ extension XCTestCase {
         case let dateString as String:
             return Date.from(representation: dateString)
         case .some:
-            XCTFail("Wrong type of value \(value)")
+            XCTFail("Wrong type of value \(String(describing: value))")
             return nil
         }
     }

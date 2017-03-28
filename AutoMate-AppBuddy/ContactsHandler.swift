@@ -68,7 +68,8 @@ public struct ContactsHandler<C: ContactParser, I: ContactsInterface>: Handler {
     ///   - value: `LaunchEnvironmentResource` resources representation as a string.
     public func handle(key: String, value: String) {
         let (resources, cleanFlag) = LaunchEnvironmentResource.resources(from: value)
-        let contacts = (try? self.contactParser.parsed(resources: resources)) ?? []
+        // Swift 3.1 workaround with flatMap
+        let contacts = (try? self.contactParser.parsed(resources: resources).flatMap({$0 as? CNMutableContact})) ?? []
         contactsInterface.requestAccess { (authenticated, error) in
             guard error == nil, authenticated else { return }
             self.removeAll(ifNeeded: cleanFlag) { (_, _) in

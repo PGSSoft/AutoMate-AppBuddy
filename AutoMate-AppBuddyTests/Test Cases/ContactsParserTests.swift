@@ -214,7 +214,7 @@ class ContactsParserTests: XCTestCase {
             let contactTypeT = try? CNContactType.parse(from: expectedT)
             XCTAssertEqual(contactType, contactTypeT, "Value \(contactType) is not equal to \(expectedT)")
         default:
-            XCTFail("Types \(contactType) and \(expected) do not match.")
+            XCTFail("Types \(contactType) and \(String(describing: expected)) do not match.")
         }
     }
 
@@ -225,7 +225,7 @@ class ContactsParserTests: XCTestCase {
         }
 
         guard let expectedT = expected as? [[String: Any]] else {
-            XCTFail("Types \(dates) and \(expected) do not match.")
+            XCTFail("Types \(dates) and \(String(describing: expected)) do not match.")
             return
         }
 
@@ -254,7 +254,7 @@ class ContactsParserTests: XCTestCase {
         }
 
         guard let expectedT = expected as? [[String: Any]] else {
-            XCTFail("Types \(socialProfiles) and \(expected) do not match.")
+            XCTFail("Types \(socialProfiles) and \(String(describing: expected)) do not match.")
             return
         }
 
@@ -284,7 +284,7 @@ class ContactsParserTests: XCTestCase {
             let socialProfileT = try? CNSocialProfile.parse(from: expectedT)
             XCTAssertEqual(socialProfile, socialProfileT, "Value \(socialProfile) is not equal to \(expectedT)")
         default:
-            XCTFail("Types \(socialProfile) and \(expected) do not match.")
+            XCTFail("Types \(socialProfile) and \(String(describing: expected)) do not match.")
         }
     }
 
@@ -295,7 +295,7 @@ class ContactsParserTests: XCTestCase {
         }
 
         guard let expectedT = expected as? [[String: Any]] else {
-            XCTFail("Types \(phoneNumbers) and \(expected) do not match.")
+            XCTFail("Types \(phoneNumbers) and \(String(describing: expected)) do not match.")
             return
         }
 
@@ -326,7 +326,7 @@ class ContactsParserTests: XCTestCase {
             let phoneNumberT = try? CNPhoneNumber.parse(from: expectedT)
             XCTAssertEqual(phoneNumber, phoneNumberT, "Value \(phoneNumber) is not equal to \(expectedT)")
         default:
-            XCTFail("Types \(phoneNumber) and \(expected) do not match.")
+            XCTFail("Types \(phoneNumber) and \(String(describing: expected)) do not match.")
         }
     }
 
@@ -337,7 +337,7 @@ class ContactsParserTests: XCTestCase {
         }
 
         guard let expectedT = expected as? [[String: NSString]] else {
-            XCTFail("Types \(strings) and \(expected) do not match.")
+            XCTFail("Types \(strings) and \(String(describing: expected)) do not match.")
             return
         }
 
@@ -366,7 +366,7 @@ class ContactsParserTests: XCTestCase {
         }
 
         guard let expectedT = expected as? [[String: Any]] else {
-            XCTFail("Types \(postalAddresses) and \(expected) do not match.")
+            XCTFail("Types \(postalAddresses) and \(String(describing: expected)) do not match.")
             return
         }
 
@@ -396,23 +396,23 @@ class ContactsParserTests: XCTestCase {
             let postalAddressT = try? CNMutablePostalAddress.parse(from: expectedT)
             XCTAssertEqual(postalAddress, postalAddressT, "Value \(postalAddress) is not equal to \(expectedT)")
         default:
-            XCTFail("Types \(postalAddress) and \(expected) do not match.")
+            XCTFail("Types \(postalAddress) and \(String(describing: expected)) do not match.")
         }
     }
 
     func assert(imageData: Data?, isEqual expected: Any?) {
         switch expected {
         case .none:
-            XCTAssertNil(imageData, "Argument is \(imageData) while expected is .none.")
+            XCTAssertNil(imageData, "Argument is \(String(describing: imageData)) while expected is .none.")
         case let expectedT as String:
             guard let resource = LaunchEnvironmentResource.resource(from: expectedT),
                 let data = resource.bundle.data(with: resource.name) else {
                 XCTFail("Cannot find resource \(expectedT)")
                 return
             }
-            XCTAssertEqual(imageData, data, "Value \(imageData) is not equal to \(expectedT)")
+            XCTAssertEqual(imageData, data, "Value \(String(describing: imageData)) is not equal to \(expectedT)")
         default:
-            XCTFail("Types \(imageData) and \(expected) do not match.")
+            XCTFail("Types \(String(describing: imageData)) and \(String(describing: expected)) do not match.")
         }
     }
 
@@ -423,7 +423,7 @@ class ContactsParserTests: XCTestCase {
         }
 
         guard let expectedT = expected as? [[String: Any]] else {
-            XCTFail("Types \(contactRelations) and \(expected) do not match.")
+            XCTFail("Types \(contactRelations) and \(String(describing: expected)) do not match.")
             return
         }
 
@@ -454,7 +454,7 @@ class ContactsParserTests: XCTestCase {
             let contactRelationT = try? CNContactRelation.parse(from: expectedT)
             XCTAssertEqual(contactRelation, contactRelationT, "Value \(contactRelation) is not equal to \(expectedT)")
         default:
-            XCTFail("Types \(contactRelation) and \(expected) do not match.")
+            XCTFail("Types \(contactRelation) and \(String(describing: expected)) do not match.")
         }
     }
 
@@ -465,7 +465,7 @@ class ContactsParserTests: XCTestCase {
         }
 
         guard let expectedT = expected as? [[String: Any]] else {
-            XCTFail("Types \(instantMessageAddresses) and \(expected) do not match.")
+            XCTFail("Types \(instantMessageAddresses) and \(String(describing: expected)) do not match.")
             return
         }
 
@@ -495,7 +495,7 @@ class ContactsParserTests: XCTestCase {
             let instantMessageAddressT = try? CNInstantMessageAddress.parse(from: expectedT)
             XCTAssertEqual(instantMessageAddress, instantMessageAddressT, "Value \(instantMessageAddress) is not equal to \(expectedT)")
         default:
-            XCTFail("Types \(instantMessageAddress) and \(expected) do not match.")
+            XCTFail("Types \(instantMessageAddress) and \(String(describing: expected)) do not match.")
         }
     }
 }

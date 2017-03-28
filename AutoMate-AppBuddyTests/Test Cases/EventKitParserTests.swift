@@ -101,29 +101,29 @@ class EventKitParserTests: XCTestCase {
         assert(calendarItem: reminder, with: dictionary)
         assert(reminder.completionDate, isEqual: date(from: dictionary["completionDate"]))
         assert(reminder.isCompleted, isEqual: dictionary["isCompleted"] ?? false)
-        XCTAssertEqual(reminder.startDateComponents != nil, dictionary["startDateComponents"] != nil, "Expected startDateComponents to be \(dictionary["startDateComponents"]) instead of result \(reminder.startDateComponents)")
-        XCTAssertEqual(reminder.dueDateComponents != nil, dictionary["dueDateComponents"] != nil, "Expected dueDateComponents to be \(dictionary["dueDateComponents"]) instead of result \(reminder.dueDateComponents)")
+        XCTAssertEqual(reminder.startDateComponents != nil, dictionary["startDateComponents"] != nil, "Expected startDateComponents to be \(String(describing: dictionary["startDateComponents"])) instead of result \(String(describing: reminder.startDateComponents))")
+        XCTAssertEqual(reminder.dueDateComponents != nil, dictionary["dueDateComponents"] != nil, "Expected dueDateComponents to be \(String(describing: dictionary["dueDateComponents"])) instead of result \(String(describing: reminder.dueDateComponents))")
     }
 
     func assert(location argument: String?, isEqual expected: Any?) {
         switch expected {
         case .none:
-            XCTAssertEqual(argument, "", "Argument is \(argument) while expected is empty.")
+            XCTAssertEqual(argument, "", "Argument is \(String(describing: argument)) while expected is empty.")
         case let expectedT as String:
-            XCTAssertEqual(expectedT, argument, "Value \(argument) is not equal to \(expectedT)")
+            XCTAssertEqual(expectedT, argument, "Value \(String(describing: argument)) is not equal to \(expectedT)")
         default:
-            XCTFail("Types \(argument) and \(expected) do not match.")
+            XCTFail("Types \(String(describing: argument)) and \(String(describing: expected)) do not match.")
         }
     }
 
     func assert(countOf argument: [EKRecurrenceRule]?, isEqual expected: Any?) {
         switch expected {
         case .none:
-            XCTAssertEqual(argument?.count, 0, "Argument is \(argument) while expected is .none")
+            XCTAssertEqual(argument?.count, 0, "Argument is \(String(describing: argument)) while expected is .none")
         case let aCollection as [Any]:
-            XCTAssertEqual(aCollection.count, argument?.count, "Value count \(argument?.count) is not equal to expected \(aCollection.count).")
+            XCTAssertEqual(aCollection.count, argument?.count, "Value count \(String(describing: argument?.count)) is not equal to expected \(aCollection.count).")
         case .some:
-            XCTFail("Types \(argument) and \(expected) do not match.")
+            XCTFail("Types \(String(describing: argument)) and \(String(describing: expected)) do not match.")
         }
     }
 }

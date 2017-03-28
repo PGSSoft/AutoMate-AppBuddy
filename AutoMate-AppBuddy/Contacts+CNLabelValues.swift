@@ -99,6 +99,7 @@ enum InstantMessageServices: String {
     case icq
     case jabber
     case msn
+    // swiftlint:disable:next identifier_name
     case qq
     case skype
     case yahoo
