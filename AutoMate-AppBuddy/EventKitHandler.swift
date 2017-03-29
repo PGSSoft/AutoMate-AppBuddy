@@ -38,7 +38,11 @@ import EventKit
 ///
 /// - seealso: `LaunchEnvironmentManager`
 /// - seealso: `LaunchEnvironmentResource`
-public class EventKitHandler<E: EventParser, R: ReminderParser, I: EventKitInterfaceProtocol>: Handler {
+public class EventKitHandler<E: EventParser, R: ReminderParser, I: EventKitInterfaceProtocol>: Handler
+    where E.T == [String: Any],
+        R.T == [String: Any],
+        E.U == EKEvent,
+        R.U == EKReminder {
 
     // MARK: Properties
     /// Events parser, an instance of the `EventParser` protocol.
@@ -85,13 +89,11 @@ public class EventKitHandler<E: EventParser, R: ReminderParser, I: EventKitInter
 
         switch amKey {
         case .events:
-            // Swift 3.1 workaround with flatMap
-            handle(try? self.eventsParser.parsed(resources: resources).flatMap({$0 as? EKEvent}),
+            handle(try? self.eventsParser.parsed(resources: resources),
                    forType: .event,
                    clean: cleanFlag)
         case .reminders:
-            // Swift 3.1 workaround with flatMap
-            handle(try? self.remindersParser.parsed(resources: resources).flatMap({$0 as? EKReminder}),
+            handle(try? self.remindersParser.parsed(resources: resources),
                    forType: .reminder,
                    clean: cleanFlag)
         default:

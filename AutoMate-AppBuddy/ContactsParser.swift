@@ -16,16 +16,12 @@ import Contacts
 /// - seealso: `ContactsHandler`
 public protocol ContactParser: Parser {
 
-    // MARK: Typealiases
-    typealias T = Any
-    typealias U = CNMutableContact
-
     // MARK: Properties
     /// Contact store used for saving contacts.
     var store: CNContactStore { get }
 }
 
-public extension ContactParser {
+public extension ContactParser where T == Any, U == CNMutableContact {
 
     /// Reads JSON arrays from `LaunchEnvironmentResource` then parse the data
     /// to `CNMutableContact`s and save them to the `CNContactStore`.
@@ -34,8 +30,7 @@ public extension ContactParser {
     /// - Throws: `ParserError` if data has unexpected format or standard `Error` for saving and committing in CNContactStore.
     public func parseAndSave(resources: [LaunchEnvironmentResource]) throws {
         let saveRequest = CNSaveRequest()
-        // Swift 3.1 workaround with flatMap
-        try parsed(resources: resources).flatMap({$0 as? CNMutableContact}).forEach { saveRequest.add($0, toContainerWithIdentifier: nil) }
+        try parsed(resources: resources).forEach { saveRequest.add($0, toContainerWithIdentifier: nil) }
         try store.execute(saveRequest)
     }
 }
