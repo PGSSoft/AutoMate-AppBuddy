@@ -19,7 +19,7 @@ class MockEventsParser: EventParser {
     let span = EKSpan.futureEvents
     var dataRecived: [Any] = []
 
-    func parse(_ data: Any) throws -> EKEvent {
+    func parse(_ data: [String: Any]) throws -> EKEvent {
         dataRecived.append(data)
         return EKEvent(eventStore: eventStore)
     }
@@ -38,7 +38,7 @@ class MockRemindersParser: ReminderParser {
     let span = EKSpan.futureEvents
     var dataRecived: [Any] = []
 
-    func parse(_ data: Any) throws -> EKReminder {
+    func parse(_ data: [String: Any]) throws -> EKReminder {
         dataRecived.append(data)
         return EKReminder(eventStore: eventStore)
     }
