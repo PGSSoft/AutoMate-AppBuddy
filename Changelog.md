@@ -1,7 +1,7 @@
 # Changelog
 
 ## [1.1.0](https://github.com/PGSSoft/AutoMate/releases/tag/1.1.0)
-Released on ????-??-??.
+Released on 2017-03-29.
 
 #### Added
 - Compatibility with Xcode 8.3 and Swift 3.1.
