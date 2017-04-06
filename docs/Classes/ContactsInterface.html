@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ContactsInterface Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/ContactsInterface" class="dashAnchor"></a>
+    <a title="ContactsInterface Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">AutoMate_AppBuddy Docs</a> (100% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">AutoMate_AppBuddy Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        ContactsInterface Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Handlers.html">Handlers</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/LaunchEnvironmentManager.html">LaunchEnvironmentManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/AnimationHandler.html">AnimationHandler</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ContactsHandler.html">ContactsHandler</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/EventKitHandler.html">EventKitHandler</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Handler.html">Handler</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Parsers.html">Parsers</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/ContactDictionaryParser.html">ContactDictionaryParser</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EventDictionaryParser.html">EventDictionaryParser</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ReminderDictionaryParser.html">ReminderDictionaryParser</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Parser.html">Parser</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ContactParser.html">ContactParser</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/EventParser.html">EventParser</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ReminderParser.html">ReminderParser</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Interfaces.html">Interfaces</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/ContactsInterface.html">ContactsInterface</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/EventKitInterface.html">EventKitInterface</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ContactsInterfaceProtocol.html">ContactsInterfaceProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/EventKitInterfaceProtocol.html">EventKitInterfaceProtocol</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Other Global Variables.html">Other Global Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Other Global Variables.html#/s:v17AutoMate_AppBuddy21defaultContactsHanderGVS_15ContactsHandlerVS_23ContactDictionaryParserCS_17ContactsInterface_">defaultContactsHander</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Global Variables.html#/s:v17AutoMate_AppBuddy21defaultEventKitHanderGCS_15EventKitHandlerVS_21EventDictionaryParserVS_24ReminderDictionaryParserCS_17EventKitInterface_">defaultEventKitHander</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Other Enums.html">Other Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/AutoMateLaunchOptionKey.html">AutoMateLaunchOptionKey</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Other Extensions.html">Other Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Bundle.html">Bundle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Dictionary.html">Dictionary</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Other Structs.html">Other Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/LaunchEnvironmentResource.html">LaunchEnvironmentResource</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Structs.html#/s:V17AutoMate_AppBuddy11ParserError">ParserError</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>ContactsInterface</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">ContactsInterface</span><span class="p">:</span> <span class="kt"><a href="../Protocols/ContactsInterfaceProtocol.html">ContactsInterfaceProtocol</a></span></code></pre>
+
+                </div>
+              </div>
+            <p>Provides a basic mechanism for interacting with the <code>Contacts</code> framework.</p>
+
+<p>Conforms to the <code><a href="../Protocols/ContactsInterfaceProtocol.html">ContactsInterfaceProtocol</a></code> protocol.</p>
+
+<div class="aside aside-seealso">
+    <p class="aside-title">Seealso</p>
+    <code><a href="../Structs/ContactsHandler.html">ContactsHandler</a></code>
+
+</div>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Initialization"></a>
+                <a name="//apple_ref/swift/Section/Initialization" class="dashAnchor"></a>
+                <a href="#/Initialization">
+                  <h3 class="section-name">Initialization</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC17AutoMate_AppBuddy17ContactsInterfacecFT12contactStoreCSo14CNContactStore12fetchRequestGSqCSo21CNContactFetchRequest__S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(contactStore:fetchRequest:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC17AutoMate_AppBuddy17ContactsInterfacecFT12contactStoreCSo14CNContactStore12fetchRequestGSqCSo21CNContactFetchRequest__S0_">init(contactStore:fetchRequest:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initialize object with the <code>CNContactStore</code> and a fetch request.</p>
+
+<p>If the contact store is not provided a new one is created.
+The fetch request is used for contacts removal. If not provided, the default fetch request will be used
+which will match to all contacts on a device.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">contactStore</span><span class="p">:</span> <span class="kt">CNContactStore</span> <span class="o">=</span> <span class="kt">CNContactStore</span><span class="p">(),</span> <span class="nv">fetchRequest</span><span class="p">:</span> <span class="kt">CNContactFetchRequest</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>contactStore</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A contact store used to communicate.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>fetchRequest</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A fetch request used for contacts removal.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Methods"></a>
+                <a name="//apple_ref/swift/Section/Methods" class="dashAnchor"></a>
+                <a href="#/Methods">
+                  <h3 class="section-name">Methods</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC17AutoMate_AppBuddy17ContactsInterface6addAllFTGSaCSo16CNMutableContact_10completionFTSbGSqPs5Error___T__T_"></a>
+                    <a name="//apple_ref/swift/Method/addAll(_:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC17AutoMate_AppBuddy17ContactsInterface6addAllFTGSaCSo16CNMutableContact_10completionFTSbGSqPs5Error___T__T_">addAll(_:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Adds all contacts to the <code>CNContactStore</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">addAll</span><span class="p">(</span><span class="n">_</span> <span class="nv">contacts</span><span class="p">:</span> <span class="p">[</span><span class="kt">CNMutableContact</span><span class="p">],</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="../Protocols/ContactsInterfaceProtocol.html">ContactsInterfaceProtocol</a></span><span class="o">.</span><span class="kt">CompletionBlock</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>contacts</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>List of contacts.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Completion closure called after contacts were saved to the store.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC17AutoMate_AppBuddy17ContactsInterface9removeAllFT10completionFTSbGSqPs5Error___T__T_"></a>
+                    <a name="//apple_ref/swift/Method/removeAll(completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC17AutoMate_AppBuddy17ContactsInterface9removeAllFT10completionFTSbGSqPs5Error___T__T_">removeAll(completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Remove all contacts from the <code>CNContactStore</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">removeAll</span><span class="p">(</span><span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="../Protocols/ContactsInterfaceProtocol.html">ContactsInterfaceProtocol</a></span><span class="o">.</span><span class="kt">CompletionBlock</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Completion closure called after contacts were removed from the store.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC17AutoMate_AppBuddy17ContactsInterface13requestAccessFT10completionFTSbGSqPs5Error___T__T_"></a>
+                    <a name="//apple_ref/swift/Method/requestAccess(completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC17AutoMate_AppBuddy17ContactsInterface13requestAccessFT10completionFTSbGSqPs5Error___T__T_">requestAccess(completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Request access to the <code>Contacts</code> framework.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">requestAccess</span><span class="p">(</span><span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="../Protocols/ContactsInterfaceProtocol.html">ContactsInterfaceProtocol</a></span><span class="o">.</span><span class="kt">CompletionBlock</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Completion closure.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="https://github.com/PGSSoft/AutoMate-AppBuddy" target="_blank" rel="external">Joanna Bednarz and Bartosz Janda</a>. All rights reserved. (Last updated: 2017-04-06)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.5</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

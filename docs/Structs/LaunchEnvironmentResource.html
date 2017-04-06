@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>LaunchEnvironmentResource Struct Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Struct/LaunchEnvironmentResource" class="dashAnchor"></a>
+    <a title="LaunchEnvironmentResource Struct Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">AutoMate_AppBuddy Docs</a> (100% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">AutoMate_AppBuddy Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        LaunchEnvironmentResource Struct Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Handlers.html">Handlers</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/LaunchEnvironmentManager.html">LaunchEnvironmentManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/AnimationHandler.html">AnimationHandler</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ContactsHandler.html">ContactsHandler</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/EventKitHandler.html">EventKitHandler</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Handler.html">Handler</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Parsers.html">Parsers</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/ContactDictionaryParser.html">ContactDictionaryParser</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EventDictionaryParser.html">EventDictionaryParser</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ReminderDictionaryParser.html">ReminderDictionaryParser</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Parser.html">Parser</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ContactParser.html">ContactParser</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/EventParser.html">EventParser</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ReminderParser.html">ReminderParser</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Interfaces.html">Interfaces</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/ContactsInterface.html">ContactsInterface</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/EventKitInterface.html">EventKitInterface</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ContactsInterfaceProtocol.html">ContactsInterfaceProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/EventKitInterfaceProtocol.html">EventKitInterfaceProtocol</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Other Global Variables.html">Other Global Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Other Global Variables.html#/s:v17AutoMate_AppBuddy21defaultContactsHanderGVS_15ContactsHandlerVS_23ContactDictionaryParserCS_17ContactsInterface_">defaultContactsHander</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Global Variables.html#/s:v17AutoMate_AppBuddy21defaultEventKitHanderGCS_15EventKitHandlerVS_21EventDictionaryParserVS_24ReminderDictionaryParserCS_17EventKitInterface_">defaultEventKitHander</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Other Enums.html">Other Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/AutoMateLaunchOptionKey.html">AutoMateLaunchOptionKey</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Other Extensions.html">Other Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Bundle.html">Bundle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Dictionary.html">Dictionary</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Other Structs.html">Other Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/LaunchEnvironmentResource.html">LaunchEnvironmentResource</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Structs.html#/s:V17AutoMate_AppBuddy11ParserError">ParserError</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>LaunchEnvironmentResource</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">LaunchEnvironmentResource</span></code></pre>
+
+                </div>
+              </div>
+            <p>Stores <q>resource</q> as a name of the resource and <code>Bundle</code> in which the resource is available.</p>
+
+<p>Resource is initialized with a bundle description (a bundle name or a bundle identifier) and a name of the resource.
+If bundle name is <code>nil</code> then <code>Bundle.main</code> is used.</p>
+
+<p>Resource can be parsed from string.</p>
+
+<p>Resources representation: is made of <q>resource representation</q> separated by comma.
+In addition, the <code>CleanFlag</code> can be used as first element.</p>
+
+<p>Resource representation: is made of a bundle name (or a bundle identifier) and a resource name
+separated with colon. Bundle name can be a <code>nil</code> string then the <code>Bundle.main</code> will be used.</p>
+
+<p><strong>Example:</strong></p>
+
+<pre class="highlight plaintext"><code>Test data:events,nil:contacts
+AM_CLEAN_DATA_FLAG,Test data:events,nil:contacts
+</code></pre>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Properties"></a>
+                <a name="//apple_ref/swift/Section/Properties" class="dashAnchor"></a>
+                <a href="#/Properties">
+                  <h3 class="section-name">Properties</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV17AutoMate_AppBuddy25LaunchEnvironmentResource9CleanFlagSS"></a>
+                    <a name="//apple_ref/swift/Variable/CleanFlag" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV17AutoMate_AppBuddy25LaunchEnvironmentResource9CleanFlagSS">CleanFlag</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Clean flag indicating that existing data should be removed (eg. contacts) before adding new one.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">CleanFlag</span> <span class="o">=</span> <span class="s">"AM_CLEAN_DATA_FLAG"</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV17AutoMate_AppBuddy25LaunchEnvironmentResource6bundleCSo6Bundle"></a>
+                    <a name="//apple_ref/swift/Property/bundle" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV17AutoMate_AppBuddy25LaunchEnvironmentResource6bundleCSo6Bundle">bundle</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>Bundle</code> object where resource is available.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">bundle</span><span class="p">:</span> <span class="kt">Bundle</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV17AutoMate_AppBuddy25LaunchEnvironmentResource4nameSS"></a>
+                    <a name="//apple_ref/swift/Property/name" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV17AutoMate_AppBuddy25LaunchEnvironmentResource4nameSS">name</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Resource name.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Initialization"></a>
+                <a name="//apple_ref/swift/Section/Initialization" class="dashAnchor"></a>
+                <a href="#/Initialization">
+                  <h3 class="section-name">Initialization</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FV17AutoMate_AppBuddy25LaunchEnvironmentResourcecFT6bundleGSqSS_4nameSS_GSqS0__"></a>
+                    <a name="//apple_ref/swift/Method/init(bundle:name:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FV17AutoMate_AppBuddy25LaunchEnvironmentResourcecFT6bundleGSqSS_4nameSS_GSqS0__">init(bundle:name:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initialize the resource with a bundle description (a bundle name or a bundle identifier) and a name of the resource.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">?(</span><span class="n"><a href="../Structs/LaunchEnvironmentResource.html#/s:vV17AutoMate_AppBuddy25LaunchEnvironmentResource6bundleCSo6Bundle">bundle</a></span> <span class="nv">bundleDescription</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>bundleDescription</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Bundle name or bundle identifier. If <code>nil</code> <code>Bundle.main</code> will be used.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Name of the resource.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>nil</code> if cannot find a bundle with given name or identifier.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Static%20methods"></a>
+                <a name="//apple_ref/swift/Section/Static methods" class="dashAnchor"></a>
+                <a href="#/Static%20methods">
+                  <h3 class="section-name">Static methods</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFV17AutoMate_AppBuddy25LaunchEnvironmentResource8resourceFT4fromSS_GSqS0__"></a>
+                    <a name="//apple_ref/swift/Method/resource(from:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFV17AutoMate_AppBuddy25LaunchEnvironmentResource8resourceFT4fromSS_GSqS0__">resource(from:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Parse resource from string.</p>
+
+<p>String representation is made of a bundle name (or a bundle identifier) and a resource name
+separated with colon. Bundle name can be a <code>nil</code> string then the <code>Bundle.main</code> will be used.</p>
+
+<p><strong>Example:</strong></p>
+
+<pre class="highlight plaintext"><code>Test data:events
+nil:contacts
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">resource</span><span class="p">(</span><span class="n">from</span> <span class="nv">resourceString</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">LaunchEnvironmentResource</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>resourceString</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>String representation of the resource.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>nil</code> if cannot find a bundle with given name or identifier.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFV17AutoMate_AppBuddy25LaunchEnvironmentResource9resourcesFT4fromSS_TGSaS0__Sb_"></a>
+                    <a name="//apple_ref/swift/Method/resources(from:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFV17AutoMate_AppBuddy25LaunchEnvironmentResource9resourcesFT4fromSS_TGSaS0__Sb_">resources(from:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Parse resources from string.</p>
+
+<p>String representation is made of <q>resource representation</q> separated by comma.
+In addition, the <code><a href="../Structs/LaunchEnvironmentResource.html#/s:ZvV17AutoMate_AppBuddy25LaunchEnvironmentResource9CleanFlagSS">CleanFlag</a></code> can be used as first element.</p>
+
+<p>Resource representation: is made of a bundle name (or a bundle identifier) and a resource name
+separated with colon. Bundle name can be a <code>nil</code> string then the <code>Bundle.main</code> will be used.</p>
+
+<p><strong>Example:</strong></p>
+
+<pre class="highlight plaintext"><code>Test data:events,nil:contacts
+AM_CLEAN_DATA_FLAG,Test data:events,nil:contacts
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">resources</span><span class="p">(</span><span class="n">from</span> <span class="nv">resourcesString</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">([</span><span class="kt">LaunchEnvironmentResource</span><span class="p">],</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>resourcesString</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>String representation of the resources.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>List of resources and <code>clean</code> flag.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="https://github.com/PGSSoft/AutoMate-AppBuddy" target="_blank" rel="external">Joanna Bednarz and Bartosz Janda</a>. All rights reserved. (Last updated: 2017-04-06)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.5</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

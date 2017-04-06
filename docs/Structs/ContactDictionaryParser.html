@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ContactDictionaryParser Struct Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Struct/ContactDictionaryParser" class="dashAnchor"></a>
+    <a title="ContactDictionaryParser Struct Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">AutoMate_AppBuddy Docs</a> (100% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">AutoMate_AppBuddy Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        ContactDictionaryParser Struct Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Handlers.html">Handlers</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/LaunchEnvironmentManager.html">LaunchEnvironmentManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/AnimationHandler.html">AnimationHandler</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ContactsHandler.html">ContactsHandler</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/EventKitHandler.html">EventKitHandler</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Handler.html">Handler</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Parsers.html">Parsers</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/ContactDictionaryParser.html">ContactDictionaryParser</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EventDictionaryParser.html">EventDictionaryParser</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ReminderDictionaryParser.html">ReminderDictionaryParser</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Parser.html">Parser</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ContactParser.html">ContactParser</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/EventParser.html">EventParser</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ReminderParser.html">ReminderParser</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Interfaces.html">Interfaces</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/ContactsInterface.html">ContactsInterface</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/EventKitInterface.html">EventKitInterface</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ContactsInterfaceProtocol.html">ContactsInterfaceProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/EventKitInterfaceProtocol.html">EventKitInterfaceProtocol</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Other Global Variables.html">Other Global Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Other Global Variables.html#/s:v17AutoMate_AppBuddy21defaultContactsHanderGVS_15ContactsHandlerVS_23ContactDictionaryParserCS_17ContactsInterface_">defaultContactsHander</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Global Variables.html#/s:v17AutoMate_AppBuddy21defaultEventKitHanderGCS_15EventKitHandlerVS_21EventDictionaryParserVS_24ReminderDictionaryParserCS_17EventKitInterface_">defaultEventKitHander</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Other Enums.html">Other Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/AutoMateLaunchOptionKey.html">AutoMateLaunchOptionKey</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Other Extensions.html">Other Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Bundle.html">Bundle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Dictionary.html">Dictionary</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Other Structs.html">Other Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/LaunchEnvironmentResource.html">LaunchEnvironmentResource</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Structs.html#/s:V17AutoMate_AppBuddy11ParserError">ParserError</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>ContactDictionaryParser</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">ContactDictionaryParser</span><span class="p">:</span> <span class="kt"><a href="../Protocols/ContactParser.html">ContactParser</a></span></code></pre>
+
+                </div>
+              </div>
+            <p>Default implementation of the <code><a href="../Protocols/ContactParser.html">ContactParser</a></code> protocol.</p>
+
+<p>Parse contact data from json. Each key from JSON represents property name from <code>CNMutableContact</code> type.</p>
+
+<p><strong>Example:</strong></p>
+
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"contactType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"person"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"givenName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Michael"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p><code>DateComponents</code> is represented as a JSON dictionary:</p>
+
+<p><strong>Example:</strong></p>
+
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"birthday"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"year"</span><span class="p">:</span><span class="w"> </span><span class="mi">2016</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"month"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"day"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p><code>CNLabeledValue</code> is represented as a JSON dictionary.
+The dictionary key is used as <code>label</code>.
+The value from the dictionary for the key is used as <code>value</code>.</p>
+
+<p><strong>Example:</strong></p>
+
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"date1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"year"</span><span class="p">:</span><span class="w"> </span><span class="mi">2017</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"month"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"day"</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>Dates, social profiles, phone numbers, email addresses, url addresses,
+postal addresses, contact relationships and instant message addresses
+are constructed as a list of dictionaries.</p>
+
+<p><strong>Example:</strong> </p>
+
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"phoneNumbers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"work"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"stringValue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0 1234567890"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"mobile"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"stringValue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0 1234567890"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"nil"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"stringValue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0 1234567890"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p><code>&quot;nil&quot;</code> in the dictionary keys are converted to <code>nil</code> value.</p>
+
+</div>
+
+<div class="aside aside-seealso">
+    <p class="aside-title">Seealso</p>
+    <p><code><a href="../Structs/ContactsHandler.html">ContactsHandler</a></code></p>
+
+</div>
+
+<div class="aside aside-seealso">
+    <p class="aside-title">Seealso</p>
+    <p>For full example check <code>contacts.json</code> file in the test project.</p>
+
+</div>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Properties"></a>
+                <a name="//apple_ref/swift/Section/Properties" class="dashAnchor"></a>
+                <a href="#/Properties">
+                  <h3 class="section-name">Properties</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV17AutoMate_AppBuddy23ContactDictionaryParser5storeCSo14CNContactStore"></a>
+                    <a name="//apple_ref/swift/Property/store" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV17AutoMate_AppBuddy23ContactDictionaryParser5storeCSo14CNContactStore">store</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Contact store used for saving contacts.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">store</span><span class="p">:</span> <span class="kt">CNContactStore</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Initialization"></a>
+                <a name="//apple_ref/swift/Section/Initialization" class="dashAnchor"></a>
+                <a href="#/Initialization">
+                  <h3 class="section-name">Initialization</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FV17AutoMate_AppBuddy23ContactDictionaryParsercFT4withCSo14CNContactStore_S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(with:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FV17AutoMate_AppBuddy23ContactDictionaryParsercFT4withCSo14CNContactStore_S0_">init(with:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initialize parser with contact store.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">with</span> <span class="nv">store</span><span class="p">:</span> <span class="kt">CNContactStore</span> <span class="o">=</span> <span class="kt">CNContactStore</span><span class="p">())</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>store</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Contact store used for saving contacts.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Public%20methods"></a>
+                <a name="//apple_ref/swift/Section/Public methods" class="dashAnchor"></a>
+                <a href="#/Public%20methods">
+                  <h3 class="section-name">Public methods</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FV17AutoMate_AppBuddy23ContactDictionaryParser5parseFzP_CSo16CNMutableContact"></a>
+                    <a name="//apple_ref/swift/Method/parse(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FV17AutoMate_AppBuddy23ContactDictionaryParser5parseFzP_CSo16CNMutableContact">parse(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Parse JSON dictionary (represented as <code>Any</code>) and return parsed contact object.</p>
+
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    <code><a href="../Other Structs.html#/s:V17AutoMate_AppBuddy11ParserError">ParserError</a></code> if the provided data are not of a type <code>[String: Any]</code>.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">parse</span><span class="p">(</span><span class="n">_</span> <span class="nv">data</span><span class="p">:</span> <span class="kt">Any</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">CNMutableContact</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>data</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>JSON dictionary to parse.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Parsed contact.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="https://github.com/PGSSoft/AutoMate-AppBuddy" target="_blank" rel="external">Joanna Bednarz and Bartosz Janda</a>. All rights reserved. (Last updated: 2017-04-06)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.5</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
