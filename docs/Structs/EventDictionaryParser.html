@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>EventDictionaryParser Struct Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Struct/EventDictionaryParser" class="dashAnchor"></a>
+    <a title="EventDictionaryParser Struct Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">AutoMate_AppBuddy Docs</a> (100% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">AutoMate_AppBuddy Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        EventDictionaryParser Struct Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Handlers.html">Handlers</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/LaunchEnvironmentManager.html">LaunchEnvironmentManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/AnimationHandler.html">AnimationHandler</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ContactsHandler.html">ContactsHandler</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/EventKitHandler.html">EventKitHandler</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Handler.html">Handler</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Parsers.html">Parsers</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/ContactDictionaryParser.html">ContactDictionaryParser</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EventDictionaryParser.html">EventDictionaryParser</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ReminderDictionaryParser.html">ReminderDictionaryParser</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Parser.html">Parser</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ContactParser.html">ContactParser</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/EventParser.html">EventParser</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ReminderParser.html">ReminderParser</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Interfaces.html">Interfaces</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/ContactsInterface.html">ContactsInterface</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/EventKitInterface.html">EventKitInterface</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ContactsInterfaceProtocol.html">ContactsInterfaceProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/EventKitInterfaceProtocol.html">EventKitInterfaceProtocol</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Other Global Variables.html">Other Global Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Other Global Variables.html#/s:v17AutoMate_AppBuddy21defaultContactsHanderGVS_15ContactsHandlerVS_23ContactDictionaryParserCS_17ContactsInterface_">defaultContactsHander</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Global Variables.html#/s:v17AutoMate_AppBuddy21defaultEventKitHanderGCS_15EventKitHandlerVS_21EventDictionaryParserVS_24ReminderDictionaryParserCS_17EventKitInterface_">defaultEventKitHander</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Other Enums.html">Other Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/AutoMateLaunchOptionKey.html">AutoMateLaunchOptionKey</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Other Extensions.html">Other Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Bundle.html">Bundle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Dictionary.html">Dictionary</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Other Structs.html">Other Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/LaunchEnvironmentResource.html">LaunchEnvironmentResource</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Structs.html#/s:V17AutoMate_AppBuddy11ParserError">ParserError</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>EventDictionaryParser</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">EventDictionaryParser</span><span class="p">:</span> <span class="kt"><a href="../Protocols/EventParser.html">EventParser</a></span></code></pre>
+
+                </div>
+              </div>
+            <p>Default implementation of the <code><a href="../Protocols/EventParser.html">EventParser</a></code> protocol.</p>
+
+<p>Parse event data from json. Each key from JSON represents property name from the the <code>EKEvent</code> type.</p>
+
+<p><strong>Example:</strong></p>
+
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Minimal Event Title"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-22 13:45:00"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"endDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-22 14:30:00"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<div class="aside aside-seealso">
+    <p class="aside-title">Seealso</p>
+    <code><a href="../Classes/EventKitHandler.html">EventKitHandler</a></code>
+
+</div>
+
+<div class="aside aside-seealso">
+    <p class="aside-title">Seealso</p>
+    For full example check <code>events.json</code> file in the test project.
+
+</div>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Properties"></a>
+                <a name="//apple_ref/swift/Section/Properties" class="dashAnchor"></a>
+                <a href="#/Properties">
+                  <h3 class="section-name">Properties</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV17AutoMate_AppBuddy21EventDictionaryParser10eventStoreGSQCSo12EKEventStore_"></a>
+                    <a name="//apple_ref/swift/Property/eventStore" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV17AutoMate_AppBuddy21EventDictionaryParser10eventStoreGSQCSo12EKEventStore_">eventStore</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Events store used to create and save events.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">eventStore</span><span class="p">:</span> <span class="kt">EKEventStore</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV17AutoMate_AppBuddy21EventDictionaryParser8calendarGSqCSo10EKCalendar_"></a>
+                    <a name="//apple_ref/swift/Property/calendar" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV17AutoMate_AppBuddy21EventDictionaryParser8calendarGSqCSo10EKCalendar_">calendar</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Calendar in which events will be saved.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">calendar</span><span class="p">:</span> <span class="kt">EKCalendar</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Initialization"></a>
+                <a name="//apple_ref/swift/Section/Initialization" class="dashAnchor"></a>
+                <a href="#/Initialization">
+                  <h3 class="section-name">Initialization</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FV17AutoMate_AppBuddy21EventDictionaryParsercFT4withCSo12EKEventStore8calendarGSqCSo10EKCalendar__S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(with:calendar:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FV17AutoMate_AppBuddy21EventDictionaryParsercFT4withCSo12EKEventStore8calendarGSqCSo10EKCalendar__S0_">init(with:calendar:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initializes parser with event store and calendar.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">with</span> <span class="nv">eventStore</span><span class="p">:</span> <span class="kt">EKEventStore</span><span class="p">,</span> <span class="nv">calendar</span><span class="p">:</span> <span class="kt">EKCalendar</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>eventStore</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Events store used to create and save events.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>calendar</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Calendar in which events will be saved. If <code>nil</code>, the <code>defaultCalendarForNewEvents</code> will be used.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FV17AutoMate_AppBuddy21EventDictionaryParsercFT_S0_"></a>
+                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FV17AutoMate_AppBuddy21EventDictionaryParsercFT_S0_">init()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initializes parser without event store and calendar.</p>
+
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    EKEventStore is implicitly unwrapped, so it needs to be set anyway
+before parsing attempt.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Public%20methods"></a>
+                <a name="//apple_ref/swift/Section/Public methods" class="dashAnchor"></a>
+                <a href="#/Public%20methods">
+                  <h3 class="section-name">Public methods</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FV17AutoMate_AppBuddy21EventDictionaryParser5parseFzGVs10DictionarySSP__CSo7EKEvent"></a>
+                    <a name="//apple_ref/swift/Method/parse(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FV17AutoMate_AppBuddy21EventDictionaryParser5parseFzGVs10DictionarySSP__CSo7EKEvent">parse(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Parses JSON dictionary and returns parsed <code>EKEvent</code> object.</p>
+
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    <code><a href="../Other Structs.html#/s:V17AutoMate_AppBuddy11ParserError">ParserError</a></code> if the provided data are not of a type <code>[String: Any]</code>.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">parse</span><span class="p">(</span><span class="n">_</span> <span class="nv">json</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">Any</span><span class="p">])</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">EKEvent</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>data</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>JSON dictionary to parse.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Parsed event.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="https://github.com/PGSSoft/AutoMate-AppBuddy" target="_blank" rel="external">Joanna Bednarz and Bartosz Janda</a>. All rights reserved. (Last updated: 2017-04-06)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.5</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
