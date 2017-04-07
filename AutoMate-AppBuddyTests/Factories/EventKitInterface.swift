@@ -14,8 +14,8 @@ class MockEventKitInterface: EventKitInterfaceProtocol {
 
     public var events = [EKEvent]()
     public var reminders = [EKReminder]()
-    public var eventsCleand = false
-    public var remindersCleand = false
+    public var eventsCleaned = false
+    public var remindersCleaned = false
 
     static func authorized(forType type: EKEntityType) -> Bool {
         return true
@@ -43,10 +43,10 @@ class MockEventKitInterface: EventKitInterfaceProtocol {
         switch type {
         case .event:
             events.removeAll()
-            eventsCleand = true
+            eventsCleaned = true
         case .reminder:
             reminders.removeAll()
-            remindersCleand = true
+            remindersCleaned = true
         }
         completion(true, nil)
     }

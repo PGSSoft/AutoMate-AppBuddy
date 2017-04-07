@@ -35,12 +35,12 @@ class EventKitHandlerWithoutCleanTests: XCTestCase {
     }
 
     func testEventsAreSaved() {
-        XCTAssertFalse(EventKitHandlerWithoutCleanTests.eventKitInterface.eventsCleand)
+        XCTAssertFalse(EventKitHandlerWithoutCleanTests.eventKitInterface.eventsCleaned)
         XCTAssertEqual(EventKitHandlerWithoutCleanTests.eventKitInterface.events.count, 5)
     }
 
     func testRemindersAreSaved() {
-        XCTAssertFalse(EventKitHandlerWithoutCleanTests.eventKitInterface.remindersCleand)
+        XCTAssertFalse(EventKitHandlerWithoutCleanTests.eventKitInterface.remindersCleaned)
         XCTAssertEqual(EventKitHandlerWithoutCleanTests.eventKitInterface.reminders.count, 4)
     }
 }
@@ -62,12 +62,12 @@ class EventKitHandlerWithCleanTests: XCTestCase {
     }
 
     func testEventsAreSaved() {
-        XCTAssertTrue(EventKitHandlerWithCleanTests.eventKitInterface.eventsCleand)
+        XCTAssertTrue(EventKitHandlerWithCleanTests.eventKitInterface.eventsCleaned)
         XCTAssertEqual(EventKitHandlerWithCleanTests.eventKitInterface.events.count, 3)
     }
 
     func testRemindersAreSaved() {
-        XCTAssertTrue(EventKitHandlerWithCleanTests.eventKitInterface.remindersCleand)
+        XCTAssertTrue(EventKitHandlerWithCleanTests.eventKitInterface.remindersCleaned)
         XCTAssertEqual(EventKitHandlerWithCleanTests.eventKitInterface.reminders.count, 3)
     }
 }
@@ -89,12 +89,12 @@ class EventKitHandlerWithCleanOnlyTests: XCTestCase {
     }
 
     func testEventsAreSaved() {
-        XCTAssertTrue(EventKitHandlerWithCleanOnlyTests.eventKitInterface.eventsCleand)
+        XCTAssertTrue(EventKitHandlerWithCleanOnlyTests.eventKitInterface.eventsCleaned)
         XCTAssertEqual(EventKitHandlerWithCleanOnlyTests.eventKitInterface.events.count, 0)
     }
 
     func testRemindersAreSaved() {
-        XCTAssertTrue(EventKitHandlerWithCleanOnlyTests.eventKitInterface.remindersCleand)
+        XCTAssertTrue(EventKitHandlerWithCleanOnlyTests.eventKitInterface.remindersCleaned)
         XCTAssertEqual(EventKitHandlerWithCleanOnlyTests.eventKitInterface.reminders.count, 0)
     }
 }
