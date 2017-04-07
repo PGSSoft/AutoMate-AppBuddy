@@ -35,10 +35,12 @@ class EventKitHandlerWithoutCleanTests: XCTestCase {
     }
 
     func testEventsAreSaved() {
+        XCTAssertFalse(EventKitHandlerWithoutCleanTests.eventKitInterface.eventsCleand)
         XCTAssertEqual(EventKitHandlerWithoutCleanTests.eventKitInterface.events.count, 5)
     }
 
     func testRemindersAreSaved() {
+        XCTAssertFalse(EventKitHandlerWithoutCleanTests.eventKitInterface.remindersCleand)
         XCTAssertEqual(EventKitHandlerWithoutCleanTests.eventKitInterface.reminders.count, 4)
     }
 }
@@ -60,10 +62,39 @@ class EventKitHandlerWithCleanTests: XCTestCase {
     }
 
     func testEventsAreSaved() {
+        XCTAssertTrue(EventKitHandlerWithCleanTests.eventKitInterface.eventsCleand)
         XCTAssertEqual(EventKitHandlerWithCleanTests.eventKitInterface.events.count, 3)
     }
 
     func testRemindersAreSaved() {
+        XCTAssertTrue(EventKitHandlerWithCleanTests.eventKitInterface.remindersCleand)
         XCTAssertEqual(EventKitHandlerWithCleanTests.eventKitInterface.reminders.count, 3)
+    }
+}
+
+class EventKitHandlerWithCleanOnlyTests: XCTestCase {
+
+    private static let eventKitInterface = MockEventKitInterface()
+    private static var eventKitHandler: EventKitHandler<EventDictionaryParser, ReminderDictionaryParser, MockEventKitInterface>!
+
+    override class func setUp() {
+        super.setUp()
+
+        eventKitInterface.events.append(contentsOf: events)
+        eventKitInterface.reminders.append(contentsOf: reminders)
+
+        eventKitHandler = EventKitHandler(withParsers: EventDictionaryParser(), ReminderDictionaryParser(), eventKitInterface: eventKitInterface)
+        eventKitHandler.handle(key: eventsKey, value: "AM_CLEAN_DATA_FLAG,")
+        eventKitHandler.handle(key: remindersKey, value: "AM_CLEAN_DATA_FLAG,")
+    }
+
+    func testEventsAreSaved() {
+        XCTAssertTrue(EventKitHandlerWithCleanOnlyTests.eventKitInterface.eventsCleand)
+        XCTAssertEqual(EventKitHandlerWithCleanOnlyTests.eventKitInterface.events.count, 0)
+    }
+
+    func testRemindersAreSaved() {
+        XCTAssertTrue(EventKitHandlerWithCleanOnlyTests.eventKitInterface.remindersCleand)
+        XCTAssertEqual(EventKitHandlerWithCleanOnlyTests.eventKitInterface.reminders.count, 0)
     }
 }

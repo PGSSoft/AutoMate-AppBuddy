@@ -241,9 +241,9 @@
 				E49E84841E4B43DF008A13AE /* EKEvents.swift */,
 				E42C2FAA1E5441F3000F1D7C /* EKRecurrence.swift */,
 				E42C2FA61E530D7D000F1D7C /* EKReminders.swift */,
+				E4611C841E7672A80039433F /* EventKitInterface.swift */,
 				E437D7AF1E572C43001C6477 /* EventKitParsers.swift */,
 				E49E84851E4B43DF008A13AE /* Handlers.swift */,
-				E4611C841E7672A80039433F /* EventKitInterface.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -254,11 +254,11 @@
 				96420E051E4C801400901C50 /* AnimationHandlerTests.swift */,
 				9606D1641E55E26500FC5130 /* ContactsParserTests.swift */,
 				E42C2FA81E5440A1000F1D7C /* EKRecurrenceParserTests.swift */,
+				E4611C861E76810C0039433F /* EventKitHandlerTests.swift */,
 				E49E84881E4B43DF008A13AE /* EventKitParserTests.swift */,
 				96D1FA191E4C84B100257883 /* FoundationExtensionsTests.swift */,
 				E49E848A1E4B43DF008A13AE /* LaunchEnvironmentManagerTests.swift */,
 				E49E84891E4B43DF008A13AE /* LaunchEnvironmentResourceTests.swift */,
-				E4611C861E76810C0039433F /* EventKitHandlerTests.swift */,
 			);
 			path = "Test Cases";
 			sourceTree = "<group>";
