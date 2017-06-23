@@ -6,6 +6,7 @@
 //  Copyright © 2017 PGS Software. All rights reserved.
 //
 
+#if !os(tvOS)
 import Contacts
 
 /// Define metohods required to interact with `Contacts` framework.
@@ -110,3 +111,5 @@ public class ContactsInterface: ContactsInterfaceProtocol {
         contactStore.requestAccess(for: .contacts, completionHandler: completion)
     }
 }
+
+#endif

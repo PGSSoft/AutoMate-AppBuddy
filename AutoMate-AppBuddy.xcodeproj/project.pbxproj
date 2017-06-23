@@ -20,6 +20,50 @@
 		96D1FA1A1E4C84B100257883 /* FoundationExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D1FA191E4C84B100257883 /* FoundationExtensionsTests.swift */; };
 		96EA13041E5DBEED001DE308 /* ContactsParsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EA13031E5DBEED001DE308 /* ContactsParsers.swift */; };
 		96EA13061E5DC26E001DE308 /* contacts.json in Resources */ = {isa = PBXBuildFile; fileRef = 96EA13051E5DC26E001DE308 /* contacts.json */; };
+		96F4608D1EFD104C00AE05A2 /* Either.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968837D31E5DA1FF00ED7CF0 /* Either.swift */; };
+		96F4608E1EFD104C00AE05A2 /* Either.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968837D31E5DA1FF00ED7CF0 /* Either.swift */; };
+		96F460931EFD107C00AE05A2 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E442564A1E3B7B7200B2D83B /* Bundle.swift */; };
+		96F460941EFD107C00AE05A2 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49E84721E487D5A008A13AE /* Date.swift */; };
+		96F460951EFD107C00AE05A2 /* DateComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42C2FA41E52FB55000F1D7C /* DateComponents.swift */; };
+		96F460961EFD107C00AE05A2 /* Dictionary+SafeAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43192251E2E102900B019C1 /* Dictionary+SafeAccess.swift */; };
+		96F460971EFD107C00AE05A2 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB73F61E44CDD800FA811A /* String.swift */; };
+		96F460981EFD107C00AE05A2 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E442564A1E3B7B7200B2D83B /* Bundle.swift */; };
+		96F460991EFD107C00AE05A2 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49E84721E487D5A008A13AE /* Date.swift */; };
+		96F4609A1EFD107C00AE05A2 /* DateComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42C2FA41E52FB55000F1D7C /* DateComponents.swift */; };
+		96F4609B1EFD107C00AE05A2 /* Dictionary+SafeAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43192251E2E102900B019C1 /* Dictionary+SafeAccess.swift */; };
+		96F4609C1EFD107C00AE05A2 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB73F61E44CDD800FA811A /* String.swift */; };
+		96F4609D1EFD108800AE05A2 /* LaunchEnviromentResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40226601E685285007D15AB /* LaunchEnviromentResource.swift */; };
+		96F4609E1EFD108800AE05A2 /* LaunchEnviromentResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40226601E685285007D15AB /* LaunchEnviromentResource.swift */; };
+		96F4609F1EFD109500AE05A2 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43192271E2E108E00B019C1 /* Parser.swift */; };
+		96F460A01EFD109500AE05A2 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43192271E2E108E00B019C1 /* Parser.swift */; };
+		96F460A11EFD10B200AE05A2 /* EventKitParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43192291E2E113B00B019C1 /* EventKitParser.swift */; };
+		96F460A21EFD10B300AE05A2 /* EventKitParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43192291E2E113B00B019C1 /* EventKitParser.swift */; };
+		96F460A31EFD10C300AE05A2 /* ContactsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9606D1681E55EC4000FC5130 /* ContactsParser.swift */; };
+		96F460A41EFD10C400AE05A2 /* ContactsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9606D1681E55EC4000FC5130 /* ContactsParser.swift */; };
+		96F460A51EFD10CD00AE05A2 /* EKReccurrence+Parsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42C2FA21E52FAAF000F1D7C /* EKReccurrence+Parsers.swift */; };
+		96F460A61EFD10CD00AE05A2 /* EventKit+Parsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47CE9BE1E52E3F2004B0BB3 /* EventKit+Parsers.swift */; };
+		96F460A71EFD10CD00AE05A2 /* EKReccurrence+Parsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42C2FA21E52FAAF000F1D7C /* EKReccurrence+Parsers.swift */; };
+		96F460A81EFD10CD00AE05A2 /* EventKit+Parsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47CE9BE1E52E3F2004B0BB3 /* EventKit+Parsers.swift */; };
+		96F460A91EFD10D800AE05A2 /* Contacts+CNLabelValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968837D11E5D9E3100ED7CF0 /* Contacts+CNLabelValues.swift */; };
+		96F460AA1EFD10D800AE05A2 /* Contacts+Parsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9606D1621E55E0F600FC5130 /* Contacts+Parsers.swift */; };
+		96F460AB1EFD10D900AE05A2 /* Contacts+CNLabelValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968837D11E5D9E3100ED7CF0 /* Contacts+CNLabelValues.swift */; };
+		96F460AC1EFD10D900AE05A2 /* Contacts+Parsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9606D1621E55E0F600FC5130 /* Contacts+Parsers.swift */; };
+		96F460AD1EFD122300AE05A2 /* LaunchEnvironmentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4932BB01E2E40A000FB8244 /* LaunchEnvironmentManager.swift */; };
+		96F460AE1EFD122300AE05A2 /* LaunchEnvironmentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4932BB01E2E40A000FB8244 /* LaunchEnvironmentManager.swift */; };
+		96F460AF1EFD122A00AE05A2 /* LaunchOptionsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4932BB21E2E467D00FB8244 /* LaunchOptionsKeys.swift */; };
+		96F460B01EFD122A00AE05A2 /* LaunchOptionsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4932BB21E2E467D00FB8244 /* LaunchOptionsKeys.swift */; };
+		96F460B11EFD123B00AE05A2 /* EventKitInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4E04D1E66B4F0006AE3B7 /* EventKitInterface.swift */; };
+		96F460B21EFD123B00AE05A2 /* EventKitInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4E04D1E66B4F0006AE3B7 /* EventKitInterface.swift */; };
+		96F460B31EFD125200AE05A2 /* EventKitHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46B79AA1E28F3D800BC36B4 /* EventKitHandler.swift */; };
+		96F460B41EFD125200AE05A2 /* EventKitHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46B79AA1E28F3D800BC36B4 /* EventKitHandler.swift */; };
+		96F460B51EFD126C00AE05A2 /* ContactsInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40226591E68191A007D15AB /* ContactsInterface.swift */; };
+		96F460B61EFD126C00AE05A2 /* ContactsInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40226591E68191A007D15AB /* ContactsInterface.swift */; };
+		96F460B71EFD126F00AE05A2 /* ContactsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EA13071E5DC3DC001DE308 /* ContactsHandler.swift */; };
+		96F460B81EFD126F00AE05A2 /* ContactsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EA13071E5DC3DC001DE308 /* ContactsHandler.swift */; };
+		96F460B91EFD128C00AE05A2 /* AnimationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB73F41E44C83300FA811A /* AnimationHandler.swift */; };
+		96F460BA1EFD128E00AE05A2 /* AnimationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AB73F41E44C83300FA811A /* AnimationHandler.swift */; };
+		96F5551C1EFD093900393409 /* AutoMate-AppBuddy.h in Headers */ = {isa = PBXBuildFile; fileRef = E46B79931E28ECEF00BC36B4 /* AutoMate-AppBuddy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		96F5552A1EFD0CCA00393409 /* AutoMate-AppBuddy.h in Headers */ = {isa = PBXBuildFile; fileRef = E46B79931E28ECEF00BC36B4 /* AutoMate-AppBuddy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		96FB38011E5DC4F40073620F /* ContactsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EA13071E5DC3DC001DE308 /* ContactsHandler.swift */; };
 		E402265A1E68191A007D15AB /* ContactsInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40226591E68191A007D15AB /* ContactsInterface.swift */; };
 		E40226611E685285007D15AB /* LaunchEnviromentResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40226601E685285007D15AB /* LaunchEnviromentResource.swift */; };
@@ -78,6 +122,8 @@
 		96EA13031E5DBEED001DE308 /* ContactsParsers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsParsers.swift; sourceTree = "<group>"; };
 		96EA13051E5DC26E001DE308 /* contacts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = contacts.json; sourceTree = "<group>"; };
 		96EA13071E5DC3DC001DE308 /* ContactsHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsHandler.swift; sourceTree = "<group>"; };
+		96F555141EFD091500393409 /* AutoMate_AppBuddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AutoMate_AppBuddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		96F555221EFD0C9700393409 /* AutoMate_AppBuddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AutoMate_AppBuddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E40226591E68191A007D15AB /* ContactsInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsInterface.swift; sourceTree = "<group>"; };
 		E40226601E685285007D15AB /* LaunchEnviromentResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchEnviromentResource.swift; sourceTree = "<group>"; };
 		E42C2FA01E52F52B000F1D7C /* reminders.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = reminders.json; sourceTree = "<group>"; };
@@ -114,6 +160,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		96F555101EFD091500393409 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96F5551E1EFD0C9700393409 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E46B798C1E28ECEF00BC36B4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -190,6 +250,8 @@
 			children = (
 				E46B79901E28ECEF00BC36B4 /* AutoMate_AppBuddy.framework */,
 				E49E84561E434389008A13AE /* AutoMate-AppBuddyTests.xctest */,
+				96F555141EFD091500393409 /* AutoMate_AppBuddy.framework */,
+				96F555221EFD0C9700393409 /* AutoMate_AppBuddy.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -276,6 +338,22 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		96F555111EFD091500393409 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96F5551C1EFD093900393409 /* AutoMate-AppBuddy.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96F5551F1EFD0C9700393409 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96F5552A1EFD0CCA00393409 /* AutoMate-AppBuddy.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E46B798D1E28ECEF00BC36B4 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -287,9 +365,47 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		E46B798F1E28ECEF00BC36B4 /* AutoMate-AppBuddy */ = {
+		96F555131EFD091500393409 /* AutoMate-AppBuddy tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E46B79A41E28ECEF00BC36B4 /* Build configuration list for PBXNativeTarget "AutoMate-AppBuddy" */;
+			buildConfigurationList = 96F5551B1EFD091500393409 /* Build configuration list for PBXNativeTarget "AutoMate-AppBuddy tvOS" */;
+			buildPhases = (
+				96F5550F1EFD091500393409 /* Sources */,
+				96F555101EFD091500393409 /* Frameworks */,
+				96F555111EFD091500393409 /* Headers */,
+				96F555121EFD091500393409 /* Resources */,
+				96F460BB1EFD12B200AE05A2 /* SwiftLint */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "AutoMate-AppBuddy tvOS";
+			productName = "AutoMate-AppBuddy tvOS";
+			productReference = 96F555141EFD091500393409 /* AutoMate_AppBuddy.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		96F555211EFD0C9700393409 /* AutoMate-AppBuddy macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96F555271EFD0C9700393409 /* Build configuration list for PBXNativeTarget "AutoMate-AppBuddy macOS" */;
+			buildPhases = (
+				96F5551D1EFD0C9700393409 /* Sources */,
+				96F5551E1EFD0C9700393409 /* Frameworks */,
+				96F5551F1EFD0C9700393409 /* Headers */,
+				96F555201EFD0C9700393409 /* Resources */,
+				96F460BC1EFD12BF00AE05A2 /* SwiftLint */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "AutoMate-AppBuddy macOS";
+			productName = "AutoMate-AppBuddy macOS";
+			productReference = 96F555221EFD0C9700393409 /* AutoMate_AppBuddy.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E46B798F1E28ECEF00BC36B4 /* AutoMate-AppBuddy iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E46B79A41E28ECEF00BC36B4 /* Build configuration list for PBXNativeTarget "AutoMate-AppBuddy iOS" */;
 			buildPhases = (
 				E46B798B1E28ECEF00BC36B4 /* Sources */,
 				E46B798C1E28ECEF00BC36B4 /* Frameworks */,
@@ -301,8 +417,8 @@
 			);
 			dependencies = (
 			);
-			name = "AutoMate-AppBuddy";
-			productName = "AutoMate-AppBuddy";
+			name = "AutoMate-AppBuddy iOS";
+			productName = "AutoMate-AppBuddy iOS";
 			productReference = E46B79901E28ECEF00BC36B4 /* AutoMate_AppBuddy.framework */;
 			productType = "com.apple.product-type.framework";
 		};
@@ -334,6 +450,14 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "PGS Software";
 				TargetAttributes = {
+					96F555131EFD091500393409 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+					96F555211EFD0C9700393409 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
 					E46B798F1E28ECEF00BC36B4 = {
 						CreatedOnToolsVersion = 8.2.1;
 						LastSwiftMigration = 0820;
@@ -357,13 +481,29 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E46B798F1E28ECEF00BC36B4 /* AutoMate-AppBuddy */,
+				E46B798F1E28ECEF00BC36B4 /* AutoMate-AppBuddy iOS */,
+				96F555131EFD091500393409 /* AutoMate-AppBuddy tvOS */,
+				96F555211EFD0C9700393409 /* AutoMate-AppBuddy macOS */,
 				E49E84551E434389008A13AE /* AutoMate-AppBuddyTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		96F555121EFD091500393409 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96F555201EFD0C9700393409 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E46B798E1E28ECEF00BC36B4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -399,9 +539,93 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
+		96F460BB1EFD12B200AE05A2 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		96F460BC1EFD12BF00AE05A2 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		96F5550F1EFD091500393409 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96F460AD1EFD122300AE05A2 /* LaunchEnvironmentManager.swift in Sources */,
+				96F460B11EFD123B00AE05A2 /* EventKitInterface.swift in Sources */,
+				96F460971EFD107C00AE05A2 /* String.swift in Sources */,
+				96F4608D1EFD104C00AE05A2 /* Either.swift in Sources */,
+				96F4609D1EFD108800AE05A2 /* LaunchEnviromentResource.swift in Sources */,
+				96F460A51EFD10CD00AE05A2 /* EKReccurrence+Parsers.swift in Sources */,
+				96F460AF1EFD122A00AE05A2 /* LaunchOptionsKeys.swift in Sources */,
+				96F460961EFD107C00AE05A2 /* Dictionary+SafeAccess.swift in Sources */,
+				96F460B51EFD126C00AE05A2 /* ContactsInterface.swift in Sources */,
+				96F460B71EFD126F00AE05A2 /* ContactsHandler.swift in Sources */,
+				96F460B91EFD128C00AE05A2 /* AnimationHandler.swift in Sources */,
+				96F4609F1EFD109500AE05A2 /* Parser.swift in Sources */,
+				96F460A31EFD10C300AE05A2 /* ContactsParser.swift in Sources */,
+				96F460941EFD107C00AE05A2 /* Date.swift in Sources */,
+				96F460A11EFD10B200AE05A2 /* EventKitParser.swift in Sources */,
+				96F460931EFD107C00AE05A2 /* Bundle.swift in Sources */,
+				96F460A91EFD10D800AE05A2 /* Contacts+CNLabelValues.swift in Sources */,
+				96F460B31EFD125200AE05A2 /* EventKitHandler.swift in Sources */,
+				96F460A61EFD10CD00AE05A2 /* EventKit+Parsers.swift in Sources */,
+				96F460951EFD107C00AE05A2 /* DateComponents.swift in Sources */,
+				96F460AA1EFD10D800AE05A2 /* Contacts+Parsers.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96F5551D1EFD0C9700393409 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96F460AE1EFD122300AE05A2 /* LaunchEnvironmentManager.swift in Sources */,
+				96F460B21EFD123B00AE05A2 /* EventKitInterface.swift in Sources */,
+				96F4609C1EFD107C00AE05A2 /* String.swift in Sources */,
+				96F4608E1EFD104C00AE05A2 /* Either.swift in Sources */,
+				96F4609E1EFD108800AE05A2 /* LaunchEnviromentResource.swift in Sources */,
+				96F460A71EFD10CD00AE05A2 /* EKReccurrence+Parsers.swift in Sources */,
+				96F460B01EFD122A00AE05A2 /* LaunchOptionsKeys.swift in Sources */,
+				96F4609B1EFD107C00AE05A2 /* Dictionary+SafeAccess.swift in Sources */,
+				96F460B61EFD126C00AE05A2 /* ContactsInterface.swift in Sources */,
+				96F460B81EFD126F00AE05A2 /* ContactsHandler.swift in Sources */,
+				96F460BA1EFD128E00AE05A2 /* AnimationHandler.swift in Sources */,
+				96F460A01EFD109500AE05A2 /* Parser.swift in Sources */,
+				96F460A41EFD10C400AE05A2 /* ContactsParser.swift in Sources */,
+				96F460991EFD107C00AE05A2 /* Date.swift in Sources */,
+				96F460A21EFD10B300AE05A2 /* EventKitParser.swift in Sources */,
+				96F460981EFD107C00AE05A2 /* Bundle.swift in Sources */,
+				96F460AB1EFD10D900AE05A2 /* Contacts+CNLabelValues.swift in Sources */,
+				96F460B41EFD125200AE05A2 /* EventKitHandler.swift in Sources */,
+				96F460A81EFD10CD00AE05A2 /* EventKit+Parsers.swift in Sources */,
+				96F4609A1EFD107C00AE05A2 /* DateComponents.swift in Sources */,
+				96F460AC1EFD10D900AE05A2 /* Contacts+Parsers.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E46B798B1E28ECEF00BC36B4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -459,12 +683,104 @@
 /* Begin PBXTargetDependency section */
 		E49E845D1E434389008A13AE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E46B798F1E28ECEF00BC36B4 /* AutoMate-AppBuddy */;
+			target = E46B798F1E28ECEF00BC36B4 /* AutoMate-AppBuddy iOS */;
 			targetProxy = E49E845C1E434389008A13AE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		96F555191EFD091500393409 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "AutoMate-AppBuddy/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pgs-soft.AutoMate-AppBuddy";
+				PRODUCT_NAME = AutoMate_AppBuddy;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Debug;
+		};
+		96F5551A1EFD091500393409 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "AutoMate-AppBuddy/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pgs-soft.AutoMate-AppBuddy";
+				PRODUCT_NAME = AutoMate_AppBuddy;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Release;
+		};
+		96F555281EFD0C9700393409 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "AutoMate-AppBuddy/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pgs-soft.AutoMate-AppBuddy";
+				PRODUCT_NAME = AutoMate_AppBuddy;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		96F555291EFD0C9700393409 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "AutoMate-AppBuddy/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pgs-soft.AutoMate-AppBuddy";
+				PRODUCT_NAME = AutoMate_AppBuddy;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		E46B79A21E28ECEF00BC36B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -507,6 +823,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -554,6 +871,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -628,6 +946,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		96F5551B1EFD091500393409 /* Build configuration list for PBXNativeTarget "AutoMate-AppBuddy tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96F555191EFD091500393409 /* Debug */,
+				96F5551A1EFD091500393409 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		96F555271EFD0C9700393409 /* Build configuration list for PBXNativeTarget "AutoMate-AppBuddy macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96F555281EFD0C9700393409 /* Debug */,
+				96F555291EFD0C9700393409 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E46B798A1E28ECEF00BC36B4 /* Build configuration list for PBXProject "AutoMate-AppBuddy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -637,7 +973,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E46B79A41E28ECEF00BC36B4 /* Build configuration list for PBXNativeTarget "AutoMate-AppBuddy" */ = {
+		E46B79A41E28ECEF00BC36B4 /* Build configuration list for PBXNativeTarget "AutoMate-AppBuddy iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E46B79A51E28ECEF00BC36B4 /* Debug */,

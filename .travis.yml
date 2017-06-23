@@ -5,7 +5,7 @@ env:
   global:
     - NSUnbufferedIO=YES
   matrix:
-    - DESTINATION_NAME="iPhone 7"       DESTINATION_OS="10.3"
+    - SCHEME="AutoMate-AppBuddy iOS" PLATFORM="iOS Simulator"  DESTINATION_NAME="iPhone 7"       DESTINATION_OS="10.3.1"
 
 before_install:
   - brew update
@@ -15,9 +15,9 @@ before_script:
   - swiftlint version
   - bundle exec pod --version
   - bundle exec fastlane --version
-  - bundle exec fastlane snapshot reset_simulators --force --ios ${DESTINATION_OS}
+  - bundle exec fastlane snapshot reset_simulators --force --ios 10.3
 
 script:
-  - bundle exec fastlane test "destination:platform=iOS Simulator,name=${DESTINATION_NAME},OS=${DESTINATION_OS}"
+  - bundle exec fastlane test "scheme:${SCHEME}" "destination:platform=${PLATFORM},name=${DESTINATION_NAME},OS=${DESTINATION_OS}"
   - bundle exec danger
   - bundle exec pod lib lint

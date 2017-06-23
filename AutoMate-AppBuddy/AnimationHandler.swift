@@ -6,6 +6,7 @@
 //  Copyright © 2017 PGS Software. All rights reserved.
 //
 
+#if !os(macOS)
 import UIKit
 
 // MARK: - AnimationHandler
@@ -76,3 +77,5 @@ public struct AnimationHandler: Handler {
         UIView.setAnimationsEnabled(animation)
     }
 }
+
+#endif

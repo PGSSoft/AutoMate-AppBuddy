@@ -6,6 +6,7 @@
 //  Copyright © 2017 PGS Software. All rights reserved.
 //
 
+#if !os(tvOS)
 import EventKit
 
 extension EKCalendarItem {
@@ -49,3 +50,5 @@ extension EKReminder {
         completionDate = try data.fetchOptional("completionDate") { Date.from(representation: $0) }
     }
 }
+
+#endif

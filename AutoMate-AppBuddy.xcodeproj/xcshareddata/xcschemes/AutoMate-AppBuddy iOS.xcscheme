@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E46B798F1E28ECEF00BC36B4"
                BuildableName = "AutoMate_AppBuddy.framework"
-               BlueprintName = "AutoMate-AppBuddy"
+               BlueprintName = "AutoMate-AppBuddy iOS"
                ReferencedContainer = "container:AutoMate-AppBuddy.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,7 +45,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E46B798F1E28ECEF00BC36B4"
             BuildableName = "AutoMate_AppBuddy.framework"
-            BlueprintName = "AutoMate-AppBuddy"
+            BlueprintName = "AutoMate-AppBuddy iOS"
             ReferencedContainer = "container:AutoMate-AppBuddy.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -67,7 +67,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E46B798F1E28ECEF00BC36B4"
             BuildableName = "AutoMate_AppBuddy.framework"
-            BlueprintName = "AutoMate-AppBuddy"
+            BlueprintName = "AutoMate-AppBuddy iOS"
             ReferencedContainer = "container:AutoMate-AppBuddy.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -85,7 +85,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E46B798F1E28ECEF00BC36B4"
             BuildableName = "AutoMate_AppBuddy.framework"
-            BlueprintName = "AutoMate-AppBuddy"
+            BlueprintName = "AutoMate-AppBuddy iOS"
             ReferencedContainer = "container:AutoMate-AppBuddy.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

@@ -6,6 +6,7 @@
 //  Copyright © 2017 PGS Software. All rights reserved.
 //
 
+#if !os(tvOS)
 import EventKit
 
 // MARK: - Event Parser
@@ -173,3 +174,4 @@ public struct ReminderDictionaryParser: ReminderParser {
         return reminder
     }
 }
+#endif

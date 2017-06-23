@@ -6,6 +6,7 @@
 //  Copyright © 2017 PGS Software. All rights reserved.
 //
 
+#if !os(tvOS)
 import EventKit
 
 extension EKRecurrenceRule {
@@ -49,3 +50,5 @@ extension EKRecurrenceEnd {
         return nil
     }
 }
+
+#endif

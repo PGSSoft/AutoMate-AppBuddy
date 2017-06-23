@@ -8,6 +8,7 @@
 
 // swiftlint:disable file_length
 
+#if !os(tvOS)
 import Foundation
 import Contacts
 
@@ -159,3 +160,5 @@ func ?= <T>(variable: inout T, value: T?) {
         variable = value
     }
 }
+
+#endif

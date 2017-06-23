@@ -6,6 +6,7 @@
 //  Copyright © 2017 PGS Software. All rights reserved.
 //
 
+#if !os(tvOS)
 import Foundation
 import Contacts
 
@@ -100,3 +101,5 @@ public struct ContactsHandler<C: ContactParser, I: ContactsInterface>: Handler
 /// launchManager.setup()
 /// ```
 public let defaultContactsHander = ContactsHandler(withParser: ContactDictionaryParser(with: CNContactStore()), contactsInterface: ContactsInterface())
+
+#endif

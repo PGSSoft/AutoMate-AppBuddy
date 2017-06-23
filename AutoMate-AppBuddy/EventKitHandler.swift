@@ -6,6 +6,7 @@
 //  Copyright © 2017 PGS Software. All rights reserved.
 //
 
+#if !os(tvOS)
 import EventKit
 
 // MARK: - Event Kit Handler
@@ -166,3 +167,5 @@ public typealias DefaultEventKitHander = EventKitHandler<EventDictionaryParser, 
 /// ```
 public let defaultEventKitHander: DefaultEventKitHander = EventKitHandler(withParsers: EventDictionaryParser(), ReminderDictionaryParser(),
                                                                           eventKitInterface: EventKitInterface())
+
+#endif

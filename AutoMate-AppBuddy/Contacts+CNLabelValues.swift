@@ -6,6 +6,7 @@
 //  Copyright © 2017 PGS Software. All rights reserved.
 //
 
+#if !os(tvOS)
 import Foundation
 import Contacts
 
@@ -118,3 +119,5 @@ enum InstantMessageServices: String {
         }
     }
 }
+
+#endif

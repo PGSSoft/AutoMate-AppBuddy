@@ -6,6 +6,7 @@
 //  Copyright © 2017 PGS Software. All rights reserved.
 //
 
+#if !os(tvOS)
 import EventKit
 
 /// Define metohods required to interact with `EventKit` framework.
@@ -166,3 +167,5 @@ public class EventKitInterface: EventKitInterfaceProtocol {
         }
     }
 }
+
+#endif

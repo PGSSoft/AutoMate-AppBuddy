@@ -6,6 +6,7 @@
 //  Copyright © 2017 PGS Software. All rights reserved.
 //
 
+#if !os(tvOS)
 import Contacts
 
 // MARK: - Contact Parser
@@ -142,3 +143,5 @@ public struct ContactDictionaryParser: ContactParser {
         return contact
     }
 }
+
+#endif

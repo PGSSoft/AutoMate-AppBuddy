@@ -1,10 +1,11 @@
-.PHONY: docs push_github check check-podspec check-carthage
+.PHONY: docs push_github check-podspec check-carthage check
 
 # Create documentation
 docs:
 	jazzy -c
 	rsync -ahvL --delete "assets" "docs"
 
+# Push master, develop and tags to GitHub
 push_github:
 	git push github develop
 	git push github master
