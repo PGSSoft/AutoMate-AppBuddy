@@ -168,7 +168,6 @@ Launch environments passed by the <a href="https://github.com/PGSSoft/AutoMate">
 in method <code>application(_:didFinishLaunchingWithOptions:)</code>.</p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">launchManager</span> <span class="o">=</span> <span class="nf">aunchEnvironmentManager</span><span class="p">()</span>
 <span class="n">launchManager</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">handler</span><span class="p">:</span> <span class="n">defaultEventKitHander</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">events</span><span class="p">)</span>
 <span class="n">launchManager</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">handler</span><span class="p">:</span> <span class="n">defaultEventKitHander</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">reminders</span><span class="p">)</span>
@@ -232,26 +231,22 @@ in method <code>application(_:didFinishLaunchingWithOptions:)</code>.</p>
 </ul>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">launchManager</span> <span class="o">=</span> <span class="kt">LaunchEnvironmentManager</span><span class="p">()</span>
 <span class="n">launchManager</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">handler</span><span class="p">:</span> <span class="kt">AnimationHandler</span><span class="p">(),</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">animation</span><span class="p">)</span>
 <span class="n">launchManager</span><span class="o">.</span><span class="nf">setup</span><span class="p">()</span>
 </code></pre>
-
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
     <p>Launch environment for the handler can be set by the <code>AnimationLaunchEnvironment</code>
 from the <a href="https://github.com/PGSSoft/AutoMate">AutoMate</a> project.</p>
 
 </div>
-
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
     <p><code>AnimationHandler</code> should be used with the <code>AM_ANIMATION_KEY</code> key, but its implementation doesn&rsquo;t require to use it.
 Any key provided to the <code><a href="Classes/LaunchEnvironmentManager.html#/s:FC17AutoMate_AppBuddy24LaunchEnvironmentManager3addFT7handlerPS_7Handler_3forSS_T_">LaunchEnvironmentManager.add(handler:for:)</a></code> method will be handled correctly.</p>
 
 </div>
-
 <div class="aside aside-seealso">
     <p class="aside-title">Seealso</p>
     <p><code><a href="Classes/LaunchEnvironmentManager.html">LaunchEnvironmentManager</a></code></p>
@@ -304,33 +299,28 @@ Any key provided to the <code><a href="Classes/LaunchEnvironmentManager.html#/s:
 <p>Supported values: <code><a href="Structs/LaunchEnvironmentResource.html">LaunchEnvironmentResource</a></code> resources representation as a string.</p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">launchManager</span> <span class="o">=</span> <span class="kt">LaunchEnvironmentManager</span><span class="p">()</span>
 <span class="k">let</span> <span class="nv">contactsHander</span> <span class="o">=</span> <span class="kt">ContactsHandler</span><span class="p">(</span><span class="nv">withParser</span><span class="p">:</span> <span class="kt">ContactDictionaryParser</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="kt">CNContactStore</span><span class="p">()),</span> <span class="nv">contactsInterface</span><span class="p">:</span> <span class="kt">ContactsInterface</span><span class="p">())</span>
 <span class="n">launchManager</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">handler</span><span class="p">:</span> <span class="n">contactsHander</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">contacts</span><span class="p">)</span>
 <span class="n">launchManager</span><span class="o">.</span><span class="nf">setup</span><span class="p">()</span>
 </code></pre>
-
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
     <p>Launch environment for the handler can be set by the <code>ContactLaunchEnvironment</code>
 from the <a href="https://github.com/PGSSoft/AutoMate">AutoMate</a> project.</p>
 
 </div>
-
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
     <p><code>ContactsHandler</code> should be used with the <code>AM_CONTACTS_KEY</code> key, but its implementation doesn&rsquo;t require to use it.
 Any key provided to the <code><a href="Classes/LaunchEnvironmentManager.html#/s:FC17AutoMate_AppBuddy24LaunchEnvironmentManager3addFT7handlerPS_7Handler_3forSS_T_">LaunchEnvironmentManager.add(handler:for:)</a></code> method will be handled correctly.</p>
 
 </div>
-
 <div class="aside aside-seealso">
     <p class="aside-title">Seealso</p>
     <p><code><a href="Classes/LaunchEnvironmentManager.html">LaunchEnvironmentManager</a></code></p>
 
 </div>
-
 <div class="aside aside-seealso">
     <p class="aside-title">Seealso</p>
     <p><code><a href="Structs/LaunchEnvironmentResource.html">LaunchEnvironmentResource</a></code></p>
@@ -385,7 +375,6 @@ Any key provided to the <code><a href="Classes/LaunchEnvironmentManager.html#/s:
 <p>Supported values: <code><a href="Structs/LaunchEnvironmentResource.html">LaunchEnvironmentResource</a></code> resources representation as a string.</p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">launchManager</span> <span class="o">=</span> <span class="kt">LaunchEnvironmentManager</span><span class="p">()</span>
 <span class="k">let</span> <span class="nv">eventsHander</span> <span class="o">=</span> <span class="kt">EventKitHandler</span><span class="p">(</span><span class="nv">withParsers</span><span class="p">:</span> <span class="kt">EventDictionaryParser</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="kt">EKEventStore</span><span class="p">()),</span> <span class="kt">ReminderDictionaryParser</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="kt">EKEventStore</span><span class="p">()),</span>
                                    <span class="nv">eventKitInterface</span><span class="p">:</span> <span class="kt">EventKitInterface</span><span class="p">())</span>
@@ -393,27 +382,23 @@ Any key provided to the <code><a href="Classes/LaunchEnvironmentManager.html#/s:
 <span class="n">launchManager</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">handler</span><span class="p">:</span> <span class="n">eventsHander</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">reminders</span><span class="p">)</span>
 <span class="n">launchManager</span><span class="o">.</span><span class="nf">setup</span><span class="p">()</span>
 </code></pre>
-
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
     <p>Launch environment for the handler can be set by the <code>EventLaunchEnvironment</code>
 and <code>ReminderLaunchEnvironment</code> from the <a href="https://github.com/PGSSoft/AutoMate">AutoMate</a> project.</p>
 
 </div>
-
 <div class="aside aside-warning">
     <p class="aside-title">Warning</p>
     <p><code>EventKitHandler</code> is working only with the <code>AM_EVENTS_KEY</code> and <code>AM_REMINDERS_KEY</code> key.
 If any other key will be used handler will throw an exception.</p>
 
 </div>
-
 <div class="aside aside-seealso">
     <p class="aside-title">Seealso</p>
     <p><code><a href="Classes/LaunchEnvironmentManager.html">LaunchEnvironmentManager</a></code></p>
 
 </div>
-
 <div class="aside aside-seealso">
     <p class="aside-title">Seealso</p>
     <p><code><a href="Structs/LaunchEnvironmentResource.html">LaunchEnvironmentResource</a></code></p>
@@ -462,7 +447,6 @@ If any other key will be used handler will throw an exception.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Protocol defining necessary methods required by the <code><a href="Classes/LaunchEnvironmentManager.html">LaunchEnvironmentManager</a></code> to handle launch environments.</p>
-
 <div class="aside aside-seealso">
     <p class="aside-title">Seealso</p>
     <code><a href="Classes/LaunchEnvironmentManager.html">LaunchEnvironmentManager</a></code>
@@ -487,8 +471,8 @@ If any other key will be used handler will throw an exception.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://github.com/PGSSoft/AutoMate-AppBuddy" target="_blank" rel="external">Joanna Bednarz and Bartosz Janda</a>. All rights reserved. (Last updated: 2017-04-06)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.5</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2017 <a class="link" href="https://github.com/PGSSoft/AutoMate-AppBuddy" target="_blank" rel="external">Joanna Bednarz and Bartosz Janda</a>. All rights reserved. (Last updated: 2017-06-26)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

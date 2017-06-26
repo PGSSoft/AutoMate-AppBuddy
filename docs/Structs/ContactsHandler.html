@@ -154,33 +154,28 @@
 <p>Supported values: <code><a href="../Structs/LaunchEnvironmentResource.html">LaunchEnvironmentResource</a></code> resources representation as a string.</p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">launchManager</span> <span class="o">=</span> <span class="kt">LaunchEnvironmentManager</span><span class="p">()</span>
 <span class="k">let</span> <span class="nv">contactsHander</span> <span class="o">=</span> <span class="kt">ContactsHandler</span><span class="p">(</span><span class="nv">withParser</span><span class="p">:</span> <span class="kt">ContactDictionaryParser</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="kt">CNContactStore</span><span class="p">()),</span> <span class="nv">contactsInterface</span><span class="p">:</span> <span class="kt">ContactsInterface</span><span class="p">())</span>
 <span class="n">launchManager</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">handler</span><span class="p">:</span> <span class="n">contactsHander</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">contacts</span><span class="p">)</span>
 <span class="n">launchManager</span><span class="o">.</span><span class="nf">setup</span><span class="p">()</span>
 </code></pre>
-
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
     <p>Launch environment for the handler can be set by the <code>ContactLaunchEnvironment</code>
 from the <a href="https://github.com/PGSSoft/AutoMate">AutoMate</a> project.</p>
 
 </div>
-
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
     <p><code>ContactsHandler</code> should be used with the <code>AM_CONTACTS_KEY</code> key, but its implementation doesn&rsquo;t require to use it.
 Any key provided to the <code><a href="../Classes/LaunchEnvironmentManager.html#/s:FC17AutoMate_AppBuddy24LaunchEnvironmentManager3addFT7handlerPS_7Handler_3forSS_T_">LaunchEnvironmentManager.add(handler:for:)</a></code> method will be handled correctly.</p>
 
 </div>
-
 <div class="aside aside-seealso">
     <p class="aside-title">Seealso</p>
     <p><code><a href="../Classes/LaunchEnvironmentManager.html">LaunchEnvironmentManager</a></code></p>
 
 </div>
-
 <div class="aside aside-seealso">
     <p class="aside-title">Seealso</p>
     <p><code><a href="../Structs/LaunchEnvironmentResource.html">LaunchEnvironmentResource</a></code></p>
@@ -300,8 +295,8 @@ and interface (which is responsible for interacting with <code>Contacts</code> f
                               </td>
                               <td>
                                 <div>
-                                  <p>Contact parser, an instance of type that conforms to the <code>ContactParser</code> protocol. Responsible for transforing <code>Dictionary</code> to <code>CNMutableContact</code>.</p>
-
+                                  <p>Contact parser, an instance of type that conforms to the <code>ContactParser</code> protocol.
+Responsible for transforing <code>Dictionary</code> to <code>CNMutableContact</code>.</p>
                                 </div>
                               </td>
                             </tr>
@@ -313,8 +308,8 @@ and interface (which is responsible for interacting with <code>Contacts</code> f
                               </td>
                               <td>
                                 <div>
-                                  <p>Contact interface, an instance of type that conforms to the <code>ContactsInterface</code> protocol. Responsible for interacting with <code>Contacts</code> framework</p>
-
+                                  <p>Contact interface, an instance of type that conforms to the <code>ContactsInterface</code> protocol.
+Responsible for interacting with <code>Contacts</code> framework</p>
                                 </div>
                               </td>
                             </tr>
@@ -372,7 +367,6 @@ and interface (which is responsible for interacting with <code>Contacts</code> f
                               <td>
                                 <div>
                                   <p><code>AM_CONTACTS_KEY</code> / <code>AutoMateLaunchOptionKey.contacts</code>.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -385,7 +379,6 @@ and interface (which is responsible for interacting with <code>Contacts</code> f
                               <td>
                                 <div>
                                   <p><code>LaunchEnvironmentResource</code> resources representation as a string.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -400,8 +393,8 @@ and interface (which is responsible for interacting with <code>Contacts</code> f
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://github.com/PGSSoft/AutoMate-AppBuddy" target="_blank" rel="external">Joanna Bednarz and Bartosz Janda</a>. All rights reserved. (Last updated: 2017-04-06)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.5</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2017 <a class="link" href="https://github.com/PGSSoft/AutoMate-AppBuddy" target="_blank" rel="external">Joanna Bednarz and Bartosz Janda</a>. All rights reserved. (Last updated: 2017-06-26)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

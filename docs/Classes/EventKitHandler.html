@@ -156,7 +156,6 @@
 <p>Supported values: <code><a href="../Structs/LaunchEnvironmentResource.html">LaunchEnvironmentResource</a></code> resources representation as a string.</p>
 
 <p><strong>Example:</strong></p>
-
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">launchManager</span> <span class="o">=</span> <span class="kt">LaunchEnvironmentManager</span><span class="p">()</span>
 <span class="k">let</span> <span class="nv">eventsHander</span> <span class="o">=</span> <span class="kt">EventKitHandler</span><span class="p">(</span><span class="nv">withParsers</span><span class="p">:</span> <span class="kt">EventDictionaryParser</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="kt">EKEventStore</span><span class="p">()),</span> <span class="kt">ReminderDictionaryParser</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="kt">EKEventStore</span><span class="p">()),</span>
                                    <span class="nv">eventKitInterface</span><span class="p">:</span> <span class="kt">EventKitInterface</span><span class="p">())</span>
@@ -164,27 +163,23 @@
 <span class="n">launchManager</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">handler</span><span class="p">:</span> <span class="n">eventsHander</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">reminders</span><span class="p">)</span>
 <span class="n">launchManager</span><span class="o">.</span><span class="nf">setup</span><span class="p">()</span>
 </code></pre>
-
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
     <p>Launch environment for the handler can be set by the <code>EventLaunchEnvironment</code>
 and <code>ReminderLaunchEnvironment</code> from the <a href="https://github.com/PGSSoft/AutoMate">AutoMate</a> project.</p>
 
 </div>
-
 <div class="aside aside-warning">
     <p class="aside-title">Warning</p>
     <p><code>EventKitHandler</code> is working only with the <code>AM_EVENTS_KEY</code> and <code>AM_REMINDERS_KEY</code> key.
 If any other key will be used handler will throw an exception.</p>
 
 </div>
-
 <div class="aside aside-seealso">
     <p class="aside-title">Seealso</p>
     <p><code><a href="../Classes/LaunchEnvironmentManager.html">LaunchEnvironmentManager</a></code></p>
 
 </div>
-
 <div class="aside aside-seealso">
     <p class="aside-title">Seealso</p>
     <p><code><a href="../Structs/LaunchEnvironmentResource.html">LaunchEnvironmentResource</a></code></p>
@@ -360,8 +355,8 @@ and interface which is responsible for interacting with <code>EventKit</code>.</
                               </td>
                               <td>
                                 <div>
-                                  <p>Events parser, an instance of type that conforms to the <code>EventParser</code> protocol. Responsible for transforming <code>Dictionary</code> to <code>EKEvent</code>.</p>
-
+                                  <p>Events parser, an instance of type that conforms to the <code>EventParser</code> protocol.
+Responsible for transforming <code>Dictionary</code> to <code>EKEvent</code>.</p>
                                 </div>
                               </td>
                             </tr>
@@ -373,8 +368,8 @@ and interface which is responsible for interacting with <code>EventKit</code>.</
                               </td>
                               <td>
                                 <div>
-                                  <p>Reminders parser, an instance of type that conforms to the <code>ReminderParser</code> protocol. Responsible for transforming <code>Dictionary</code> to <code>EKReminder</code>.</p>
-
+                                  <p>Reminders parser, an instance of type that conforms to the <code>ReminderParser</code> protocol.
+Responsible for transforming <code>Dictionary</code> to <code>EKReminder</code>.</p>
                                 </div>
                               </td>
                             </tr>
@@ -386,8 +381,8 @@ and interface which is responsible for interacting with <code>EventKit</code>.</
                               </td>
                               <td>
                                 <div>
-                                  <p>EventKit interface, an instance of type that conforms to the <code>EventKitInterfaceProtocol</code> protocol. responsible for interacting with <code>EventKit</code>.</p>
-
+                                  <p>EventKit interface, an instance of type that conforms to the <code>EventKitInterfaceProtocol</code> protocol.
+responsible for interacting with <code>EventKit</code>.</p>
                                 </div>
                               </td>
                             </tr>
@@ -445,7 +440,6 @@ and interface which is responsible for interacting with <code>EventKit</code>.</
                               <td>
                                 <div>
                                   <p><code>AM_EVENTS_KEY</code>, <code>AM_REMINDERS_KEY</code> / <code>AutoMateLaunchOptionKey.events</code>, <code>AutoMateLaunchOptionKey.reminders</code>.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -458,7 +452,6 @@ and interface which is responsible for interacting with <code>EventKit</code>.</
                               <td>
                                 <div>
                                   <p><code>LaunchEnvironmentResource</code> resources representation as a string.</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -473,8 +466,8 @@ and interface which is responsible for interacting with <code>EventKit</code>.</
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://github.com/PGSSoft/AutoMate-AppBuddy" target="_blank" rel="external">Joanna Bednarz and Bartosz Janda</a>. All rights reserved. (Last updated: 2017-04-06)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.5</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2017 <a class="link" href="https://github.com/PGSSoft/AutoMate-AppBuddy" target="_blank" rel="external">Joanna Bednarz and Bartosz Janda</a>. All rights reserved. (Last updated: 2017-06-26)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
