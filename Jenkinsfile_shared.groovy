@@ -72,6 +72,18 @@ def stegeTests() {
       test("AutoMate-AppBuddy iOS", "iOS Simulator", "iPhone 7 Plus", "10.3.1")
     }
 
+    stage("iPad Air 2, 10.3") {
+      test("AutoMate-AppBuddy iOS", "iOS Simulator", "iPad Air 2", "10.3.1")
+    }
+
+    stage("iPad Pro (10.5-inch), 10.3") {
+      test("AutoMate-AppBuddy iOS", "iOS Simulator", "iPad Pro (10.5-inch)", "10.3.1")
+    }
+
+    stage("iPad Pro (12.9-inch) (2nd generation), 10.3") {
+      test("AutoMate-AppBuddy iOS", "iOS Simulator", "iPad Pro (12.9-inch) (2nd generation)", "10.3.1")
+    }
+
     stage("CocoaPods lint") {
       sh '''
         bundle exec pod lib lint
