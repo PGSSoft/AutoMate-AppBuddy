@@ -130,7 +130,7 @@ def carthageLintBranch() {
 def branches(unlockDanger) {
   return [
     "iPhone SE, 10.3.1": {
-      testBranch("AutoMate-AppBuddy iOS", "iOS Simulator", "iPhone 7 Plus", "10.3.1")
+      testBranch("AutoMate-AppBuddy iOS", "iOS Simulator", "iPhone SE", "10.3.1")
     },
     "iPhone 7, 10.3.1": {
       testBranch("AutoMate-AppBuddy iOS", "iOS Simulator", "iPhone 7", "10.3.1", unlockDanger)
@@ -140,6 +140,9 @@ def branches(unlockDanger) {
     },
     "iPad Air 2, 10.3.1": {
       testBranch("AutoMate-AppBuddy iOS", "iOS Simulator", "iPad Air 2", "10.3.1")
+    },
+    "iPad Pro (9.7-inch), 10.3.1": {
+      testBranch("AutoMate-AppBuddy iOS", "iOS Simulator", "iPad Pro (9.7-inch)", "10.3.1")
     },
     "iPad Pro (10.5-inch), 10.3.1": {
       testBranch("AutoMate-AppBuddy iOS", "iOS Simulator", "iPad Pro (10.5-inch)", "10.3.1")
