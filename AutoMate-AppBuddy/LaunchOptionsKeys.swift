@@ -16,6 +16,7 @@ import Foundation
 /// - `contacts`: Used to manage contacs by the `ContactsHandler`.
 /// - `events`: Used to manage events by the `EventKitHandler`.
 /// - `reminders`: Used to manage reminders by the `EventKitHandler`.
+/// - `isInUITest`: Used to manege UI test environment information by the `IsInUITestHandler`.
 public enum AutoMateLaunchOptionKey: LaunchOptionKey {
 
     /// Used to enable / disable animation, used by the `AnimationHandler`.
@@ -29,4 +30,7 @@ public enum AutoMateLaunchOptionKey: LaunchOptionKey {
 
     /// Used to manage reminders by the `EventKitHandler`.
     case reminders = "AM_REMINDERS_KEY"
+
+    /// Used to manege UI test environment information by the `IsInUITestHandler`.
+    case isInUITest = "AM_IS_IN_UI_TEST"
 }

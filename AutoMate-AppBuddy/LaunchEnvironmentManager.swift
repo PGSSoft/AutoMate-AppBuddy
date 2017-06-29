@@ -22,6 +22,7 @@ import Foundation
 /// launchManager.add(handler: defaultEventKitHander, for: .events)
 /// launchManager.add(handler: defaultEventKitHander, for: .reminders)
 /// launchManager.add(handler: defaultContactsHander, for: .contacts)
+/// launchManager.add(handler: defaultIsInUITestHandler, for: .isInUITest)
 /// launchManager.add(handler: AnimationHandler(), for: .animation)
 /// launchManager.setup()
 /// ```

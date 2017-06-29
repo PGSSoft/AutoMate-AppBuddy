@@ -29,6 +29,9 @@ import Contacts
 /// ```
 ///
 /// - note:
+///   `defaultContactsHander` singleton could be used intead of creating new instance of the `ContactsHandler`.
+///
+/// - note:
 ///   Launch environment for the handler can be set by the `ContactLaunchEnvironment`
 ///   from the [AutoMate](https://github.com/PGSSoft/AutoMate) project.
 ///
@@ -38,6 +41,7 @@ import Contacts
 ///
 /// - seealso: `LaunchEnvironmentManager`
 /// - seealso: `LaunchEnvironmentResource`
+/// - seealso: `defaultContactsHander`
 public struct ContactsHandler<C: ContactParser, I: ContactsInterface>: Handler
     where C.T == Any,
         C.U == CNMutableContact {
@@ -100,6 +104,8 @@ public struct ContactsHandler<C: ContactParser, I: ContactsInterface>: Handler
 /// launchManager.add(handler: defaultContactsHander, for: .contacts)
 /// launchManager.setup()
 /// ```
+///
+/// - seealso: `ContactsHandler`
 public let defaultContactsHander = ContactsHandler(withParser: ContactDictionaryParser(with: CNContactStore()), contactsInterface: ContactsInterface())
 
 #endif

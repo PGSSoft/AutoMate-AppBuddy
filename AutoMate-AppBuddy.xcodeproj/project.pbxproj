@@ -20,6 +20,10 @@
 		96D1FA1A1E4C84B100257883 /* FoundationExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D1FA191E4C84B100257883 /* FoundationExtensionsTests.swift */; };
 		96EA13041E5DBEED001DE308 /* ContactsParsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EA13031E5DBEED001DE308 /* ContactsParsers.swift */; };
 		96EA13061E5DC26E001DE308 /* contacts.json in Resources */ = {isa = PBXBuildFile; fileRef = 96EA13051E5DC26E001DE308 /* contacts.json */; };
+		96F1A7571F05023200EDCD14 /* IsInUITestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F1A7561F05023200EDCD14 /* IsInUITestHandler.swift */; };
+		96F1A7581F05023200EDCD14 /* IsInUITestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F1A7561F05023200EDCD14 /* IsInUITestHandler.swift */; };
+		96F1A7591F05023300EDCD14 /* IsInUITestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F1A7561F05023200EDCD14 /* IsInUITestHandler.swift */; };
+		96F1A75C1F050C3F00EDCD14 /* IsInUITestHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F1A75B1F050C3F00EDCD14 /* IsInUITestHandlerTests.swift */; };
 		96F4608D1EFD104C00AE05A2 /* Either.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968837D31E5DA1FF00ED7CF0 /* Either.swift */; };
 		96F4608E1EFD104C00AE05A2 /* Either.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968837D31E5DA1FF00ED7CF0 /* Either.swift */; };
 		96F460931EFD107C00AE05A2 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E442564A1E3B7B7200B2D83B /* Bundle.swift */; };
@@ -122,6 +126,8 @@
 		96EA13031E5DBEED001DE308 /* ContactsParsers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsParsers.swift; sourceTree = "<group>"; };
 		96EA13051E5DC26E001DE308 /* contacts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = contacts.json; sourceTree = "<group>"; };
 		96EA13071E5DC3DC001DE308 /* ContactsHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsHandler.swift; sourceTree = "<group>"; };
+		96F1A7561F05023200EDCD14 /* IsInUITestHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsInUITestHandler.swift; sourceTree = "<group>"; };
+		96F1A75B1F050C3F00EDCD14 /* IsInUITestHandlerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsInUITestHandlerTests.swift; sourceTree = "<group>"; };
 		96F555141EFD091500393409 /* AutoMate_AppBuddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AutoMate_AppBuddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96F555221EFD0C9700393409 /* AutoMate_AppBuddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AutoMate_AppBuddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E40226591E68191A007D15AB /* ContactsInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsInterface.swift; sourceTree = "<group>"; };
@@ -219,6 +225,7 @@
 				E40226591E68191A007D15AB /* ContactsInterface.swift */,
 				E46B79AA1E28F3D800BC36B4 /* EventKitHandler.swift */,
 				E4D4E04D1E66B4F0006AE3B7 /* EventKitInterface.swift */,
+				96F1A7561F05023200EDCD14 /* IsInUITestHandler.swift */,
 				E4932BB01E2E40A000FB8244 /* LaunchEnvironmentManager.swift */,
 			);
 			name = Managers;
@@ -319,6 +326,7 @@
 				E4611C861E76810C0039433F /* EventKitHandlerTests.swift */,
 				E49E84881E4B43DF008A13AE /* EventKitParserTests.swift */,
 				96D1FA191E4C84B100257883 /* FoundationExtensionsTests.swift */,
+				96F1A75B1F050C3F00EDCD14 /* IsInUITestHandlerTests.swift */,
 				E49E848A1E4B43DF008A13AE /* LaunchEnvironmentManagerTests.swift */,
 				E49E84891E4B43DF008A13AE /* LaunchEnvironmentResourceTests.swift */,
 			);
@@ -595,6 +603,7 @@
 				96F460A61EFD10CD00AE05A2 /* EventKit+Parsers.swift in Sources */,
 				96F460951EFD107C00AE05A2 /* DateComponents.swift in Sources */,
 				96F460AA1EFD10D800AE05A2 /* Contacts+Parsers.swift in Sources */,
+				96F1A7581F05023200EDCD14 /* IsInUITestHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -623,6 +632,7 @@
 				96F460A81EFD10CD00AE05A2 /* EventKit+Parsers.swift in Sources */,
 				96F4609A1EFD107C00AE05A2 /* DateComponents.swift in Sources */,
 				96F460AC1EFD10D900AE05A2 /* Contacts+Parsers.swift in Sources */,
+				96F1A7591F05023300EDCD14 /* IsInUITestHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -651,6 +661,7 @@
 				E42C2FA31E52FAAF000F1D7C /* EKReccurrence+Parsers.swift in Sources */,
 				968837D21E5D9E3100ED7CF0 /* Contacts+CNLabelValues.swift in Sources */,
 				96AB73F51E44C83300FA811A /* AnimationHandler.swift in Sources */,
+				96F1A7571F05023200EDCD14 /* IsInUITestHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -663,6 +674,7 @@
 				E49E84911E4B43DF008A13AE /* LaunchEnvironmentResourceTests.swift in Sources */,
 				96EA13041E5DBEED001DE308 /* ContactsParsers.swift in Sources */,
 				E42C2FAB1E5441F3000F1D7C /* EKRecurrence.swift in Sources */,
+				96F1A75C1F050C3F00EDCD14 /* IsInUITestHandlerTests.swift in Sources */,
 				9606D1651E55E26500FC5130 /* ContactsParserTests.swift in Sources */,
 				E49E84901E4B43DF008A13AE /* EventKitParserTests.swift in Sources */,
 				E49E848E1E4B43DF008A13AE /* Handlers.swift in Sources */,

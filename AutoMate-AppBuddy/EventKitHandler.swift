@@ -30,6 +30,9 @@ import EventKit
 /// ```
 ///
 /// - note:
+///   `defaultEventKitHander` singleton could be used intead of creating new instance of the `EventKitHandler`.
+///
+/// - note:
 ///   Launch environment for the handler can be set by the `EventLaunchEnvironment`
 ///   and `ReminderLaunchEnvironment` from the [AutoMate](https://github.com/PGSSoft/AutoMate) project.
 ///
@@ -39,6 +42,7 @@ import EventKit
 ///
 /// - seealso: `LaunchEnvironmentManager`
 /// - seealso: `LaunchEnvironmentResource`
+/// - seealso: `defaultEventKitHander`
 public class EventKitHandler<E: EventParser, R: ReminderParser, I: EventKitInterfaceProtocol>: Handler
     where E.T == [String: Any],
         R.T == [String: Any],
@@ -165,6 +169,8 @@ public typealias DefaultEventKitHander = EventKitHandler<EventDictionaryParser, 
 /// launchManager.add(handler: defaultEventKitHander, for: .reminders)
 /// launchManager.setup()
 /// ```
+///
+/// - seealso: `EventKitHandler`
 public let defaultEventKitHander: DefaultEventKitHander = EventKitHandler(withParsers: EventDictionaryParser(), ReminderDictionaryParser(),
                                                                           eventKitInterface: EventKitInterface())
 

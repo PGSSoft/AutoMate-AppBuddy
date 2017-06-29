@@ -3,6 +3,7 @@ custom_categories:
     children:
       - LaunchEnvironmentManager
       - AnimationHandler
+      - IsInUITestHandler
       - ContactsHandler
       - EventKitHandler
       - Handler

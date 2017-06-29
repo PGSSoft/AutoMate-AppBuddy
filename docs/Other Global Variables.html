@@ -36,6 +36,9 @@
                 <a href="Structs/AnimationHandler.html">AnimationHandler</a>
               </li>
               <li class="nav-group-task">
+                <a href="Classes/IsInUITestHandler.html">IsInUITestHandler</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Structs/ContactsHandler.html">ContactsHandler</a>
               </li>
               <li class="nav-group-task">
@@ -97,6 +100,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="Other Global Variables.html#/s:v17AutoMate_AppBuddy21defaultEventKitHanderGCS_15EventKitHandlerVS_21EventDictionaryParserVS_24ReminderDictionaryParserCS_17EventKitInterface_">defaultEventKitHander</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Other Global Variables.html#/s:v17AutoMate_AppBuddy24defaultIsInUITestHandlerCS_17IsInUITestHandler">defaultIsInUITestHandler</a>
               </li>
             </ul>
           </li>
@@ -170,6 +176,11 @@
 <span class="n">launchManager</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">handler</span><span class="p">:</span> <span class="n">defaultEventKitHander</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">reminders</span><span class="p">)</span>
 <span class="n">launchManager</span><span class="o">.</span><span class="nf">setup</span><span class="p">()</span>
 </code></pre>
+<div class="aside aside-seealso">
+    <p class="aside-title">Seealso</p>
+    <code><a href="Classes/EventKitHandler.html">EventKitHandler</a></code>
+
+</div>
 
                       </div>
                       <div class="declaration">
@@ -214,6 +225,11 @@
 <span class="n">launchManager</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">handler</span><span class="p">:</span> <span class="n">defaultContactsHander</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">contacts</span><span class="p">)</span>
 <span class="n">launchManager</span><span class="o">.</span><span class="nf">setup</span><span class="p">()</span>
 </code></pre>
+<div class="aside aside-seealso">
+    <p class="aside-title">Seealso</p>
+    <code><a href="Structs/ContactsHandler.html">ContactsHandler</a></code>
+
+</div>
 
                       </div>
                       <div class="declaration">
@@ -229,10 +245,59 @@
                 </li>
               </ul>
             </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Default%20IsInUITestHandler"></a>
+                <a name="//apple_ref/swift/Section/Default IsInUITestHandler" class="dashAnchor"></a>
+                <a href="#/Default%20IsInUITestHandler">
+                  <h3 class="section-name">Default IsInUITestHandler</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:v17AutoMate_AppBuddy24defaultIsInUITestHandlerCS_17IsInUITestHandler"></a>
+                    <a name="//apple_ref/swift/Global/defaultIsInUITestHandler" class="dashAnchor"></a>
+                    <a class="token" href="#/s:v17AutoMate_AppBuddy24defaultIsInUITestHandlerCS_17IsInUITestHandler">defaultIsInUITestHandler</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Default <code><a href="Classes/IsInUITestHandler.html">IsInUITestHandler</a></code> instance. Singleton which will store information whether the application is running in UI test environment.</p>
+
+<p><strong>Example:</strong></p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">launchManager</span> <span class="o">=</span> <span class="kt">LaunchEnvironmentManager</span><span class="p">()</span>
+<span class="n">launchManager</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">handler</span><span class="p">:</span> <span class="n">defaultIsInUITestHandler</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">isInUITest</span><span class="p">)</span>
+<span class="n">launchManager</span><span class="o">.</span><span class="nf">setup</span><span class="p">()</span>
+</code></pre>
+<div class="aside aside-seealso">
+    <p class="aside-title">Seealso</p>
+    <code><a href="Classes/IsInUITestHandler.html">IsInUITestHandler</a></code>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">defaultIsInUITestHandler</span> <span class="o">=</span> <span class="kt"><a href="Classes/IsInUITestHandler.html">IsInUITestHandler</a></span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://github.com/PGSSoft/AutoMate-AppBuddy" target="_blank" rel="external">Joanna Bednarz and Bartosz Janda</a>. All rights reserved. (Last updated: 2017-06-26)</p>
+          <p>&copy; 2017 <a class="link" href="https://github.com/PGSSoft/AutoMate-AppBuddy" target="_blank" rel="external">Joanna Bednarz and Bartosz Janda</a>. All rights reserved. (Last updated: 2017-06-29)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
