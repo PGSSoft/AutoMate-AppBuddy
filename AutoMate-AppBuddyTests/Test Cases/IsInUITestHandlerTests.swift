@@ -18,12 +18,6 @@ class IsInUITestHandlerTests: XCTestCase {
     override func setUp() {
         super.setUp()
         isInUITestHandler = IsInUITestHandler()
-        UIView.setAnimationsEnabled(true)
-    }
-
-    override func tearDown() {
-        UIView.setAnimationsEnabled(true)
-        super.tearDown()
     }
 
     // MARK: Tests
