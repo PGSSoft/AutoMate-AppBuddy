@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.2.0](https://github.com/PGSSoft/AutoMate/releases/tag/1.2.0)
+Released on XXXX-XX-XX.
+
+#### Added
+- Information whether the application is running in the UI test environment.
+
 ## [1.1.0](https://github.com/PGSSoft/AutoMate/releases/tag/1.1.0)
 Released on 2017-03-29.
 
