@@ -10,15 +10,6 @@ import XCTest
 import Contacts
 @testable import AutoMate_AppBuddy
 
-extension Optional: CustomStringConvertible {
-    public var description: String {
-        switch self {
-        case .none: return "nil"
-        case let .some(value): return "\(value)"
-        }
-    }
-}
-
 // swiftlint:disable type_body_length file_length
 class ContactsParserTests: XCTestCase {
 
