@@ -1,11 +1,11 @@
 language: objective-c
-osx_image: xcode8.3
+osx_image: xcode9
 
 env:
   global:
     - NSUnbufferedIO=YES
   matrix:
-    - SCHEME="AutoMate-AppBuddy iOS" PLATFORM="iOS Simulator"  DESTINATION_NAME="iPhone 7"       DESTINATION_OS="10.3.1"
+    - SCHEME="AutoMate-AppBuddy iOS" PLATFORM="iOS Simulator"  DESTINATION_NAME="iPhone 7"       DESTINATION_OS="11.0"
 
 before_install:
   - brew update
@@ -15,7 +15,7 @@ before_script:
   - swiftlint version
   - bundle exec pod --version
   - bundle exec fastlane --version
-  - bundle exec fastlane snapshot reset_simulators --force --ios 10.3
+  - bundle exec fastlane snapshot reset_simulators --force --ios 11.0
 
 script:
   - bundle exec fastlane test "scheme:${SCHEME}" "destination:platform=${PLATFORM},name=${DESTINATION_NAME},OS=${DESTINATION_OS}"
