@@ -15,9 +15,8 @@ import EventKit
 ///
 /// - seealso: `EventDictionaryParser`
 /// - seealso: `EventKitHandler`
-public protocol EventParser: Parser {
-
-    // MARK: Properties
+public protocol EventParser: Parser where U == EKEvent {
+   // MARK: Properties
     /// `EKEventStore` in which parsed `EKEvent`s will be created and saved.
     var eventStore: EKEventStore! { get set }
 }
@@ -88,8 +87,7 @@ public struct EventDictionaryParser: EventParser {
 ///
 /// - seealso: `ReminderDictionaryParser`
 /// - seealso: `EventKitHandler`
-public protocol ReminderParser: Parser {
-
+public protocol ReminderParser: Parser where U == EKReminder {
     // MARK: Properties
     /// `EKEventStore` in which parsed `EKReminder`s will be created and saved.
     var eventStore: EKEventStore! { get set }

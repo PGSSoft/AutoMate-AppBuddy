@@ -10,23 +10,23 @@ import Foundation
 
 extension Date {
 
-    static func from(representation string: String) -> Date? {
-        return DateFormatter.defaultJsonDateFormatter.date(from: string)
-    }
-
-    static let yearAgo: Date = {
+    public static let yearAgo: Date = {
         guard let date = Calendar(identifier: .gregorian).date(byAdding: .year, value: -1, to: Date()) else {
             preconditionFailure("Date could not be calculated with the given input.")
         }
         return date
     }()
 
-    static let nextYear: Date = {
+    public static let nextYear: Date = {
         guard let date = Calendar(identifier: .gregorian).date(byAdding: .year, value: 1, to: Date()) else {
             preconditionFailure("Date could not be calculated with the given input.")
         }
         return date
     }()
+
+    static func from(representation string: String) -> Date? {
+        return DateFormatter.defaultJsonDateFormatter.date(from: string)
+    }
 }
 
 extension DateFormatter {

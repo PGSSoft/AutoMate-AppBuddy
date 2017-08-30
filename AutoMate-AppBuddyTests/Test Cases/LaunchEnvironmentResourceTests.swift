@@ -25,7 +25,7 @@ class LaunchEnvironmentResourceTests: XCTestCase {
 
         let resource = resources.first!
         XCTAssertEqual(resource.name, "resource_from_main_bundle", "Resource \(mainBundleResource) has unexpected name \(resource.name)")
-        XCTAssertEqual(resource.bundle, Bundle.main, "Expected main bundle, found \(String(describing: resource.bundle.bundleIdentifier))")
+        XCTAssertEqual(resource.bundle, Bundle.main, "Expected main bundle, found \(resource.bundle.bundleIdentifier ?? "bundle without identifier")")
     }
 
     func testParsingLaunchEnvironmentValueToResourceInExternalBundle() {
@@ -35,7 +35,7 @@ class LaunchEnvironmentResourceTests: XCTestCase {
 
         let resource = resources.first!
         XCTAssertEqual(resource.name, "resource_from_test_bundle", "Resource \(testBundleResource) has unexpected name \(resource.name)")
-        XCTAssertEqual(resource.bundle, Bundle(identifier: "com.pgs-soft.AutoMate-AppBuddyTests"), "Bundle has unexpected identifier, \(String(describing: resource.bundle.bundleIdentifier)) instead of com.pgs-soft.AutoMate-AppBuddyTests")
+        XCTAssertEqual(resource.bundle, Bundle(identifier: "com.pgs-soft.AutoMate-AppBuddyTests"), "Bundle has unexpected identifier, \(resource.bundle.bundleIdentifier ?? "bundle without identifier") instead of com.pgs-soft.AutoMate-AppBuddyTests")
     }
 
     func testParsingLaunchEnvironmentValueToResourceInExternalBundleWithCleanFlag() {
@@ -45,7 +45,7 @@ class LaunchEnvironmentResourceTests: XCTestCase {
 
         let resource = resources.first!
         XCTAssertEqual(resource.name, "resource_from_test_bundle", "Resource \(testBundleResourceWithClean) has unexpected name \(resource.name)")
-        XCTAssertEqual(resource.bundle, Bundle(identifier: "com.pgs-soft.AutoMate-AppBuddyTests"), "Bundle has unexpected identifier, \(String(describing: resource.bundle.bundleIdentifier)) instead of com.pgs-soft.AutoMate-AppBuddyTests")
+        XCTAssertEqual(resource.bundle, Bundle(identifier: "com.pgs-soft.AutoMate-AppBuddyTests"), "Bundle has unexpected identifier, \(resource.bundle.bundleIdentifier ?? "bundle without identifier") instead of com.pgs-soft.AutoMate-AppBuddyTests")
     }
 
     func testParsingLaunchEnvironmentValueToResourceInNotExistingBundle() {
@@ -61,10 +61,10 @@ class LaunchEnvironmentResourceTests: XCTestCase {
 
         var resource = resources.first!
         XCTAssertEqual(resource.name, "resource_from_test_bundle", "Resource \(testBundleResource) has unexpected name \(resource.name)")
-        XCTAssertEqual(resource.bundle, Bundle(identifier: "com.pgs-soft.AutoMate-AppBuddyTests"), "Bundle has unexpected identifier, \(String(describing: resource.bundle.bundleIdentifier)) instead of com.pgs-soft.AutoMate-AppBuddyTests")
+        XCTAssertEqual(resource.bundle, Bundle(identifier: "com.pgs-soft.AutoMate-AppBuddyTests"), "Bundle has unexpected identifier, \(resource.bundle.bundleIdentifier ?? "bundle without identifier") instead of com.pgs-soft.AutoMate-AppBuddyTests")
 
         resource = resources.last!
         XCTAssertEqual(resource.name, "resource_from_main_bundle", "Resource \(mainBundleResource) has unexpected name \(resource.name)")
-        XCTAssertEqual(resource.bundle, Bundle.main, "Expected main bundle, found \(String(describing: resource.bundle.bundleIdentifier))")
+        XCTAssertEqual(resource.bundle, Bundle.main, "Expected main bundle, found \(resource.bundle.bundleIdentifier ?? "bundle without identifier")")
     }
 }

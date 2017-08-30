@@ -36,7 +36,7 @@ class FoundationExtensionsTests: XCTestCase {
     }
 
     func testDateComponentsParsing01() {
-        let data: [String : Any] = [:]
+        let data: [String: Any] = [:]
 
         var dc: DateComponents!
         assertNotThrows(expr: try dc = DateComponents.parse(from: data), "Cannot create DateComponents")
@@ -62,7 +62,7 @@ class FoundationExtensionsTests: XCTestCase {
     }
 
     func testDateComponentsParsing02() {
-        let data: [String : Any] = [
+        let data: [String: Any] = [
             "timeZone": [
                 "secondsFromGMT": 3000
             ],
@@ -105,7 +105,7 @@ class FoundationExtensionsTests: XCTestCase {
     }
 
     func testDateComponentsParsing03() {
-        let data: [String : Any] = [
+        let data: [String: Any] = [
             "timeZone": [
                 "identifier": "America/Los_Angeles"
             ],

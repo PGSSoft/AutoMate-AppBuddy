@@ -45,14 +45,14 @@ public class ContactsInterface: ContactsInterfaceProtocol {
     private let contactStore: CNContactStore
     private var fetchRequest: CNContactFetchRequest = {
         return CNContactFetchRequest(keysToFetch: [
-                                         CNContactEmailAddressesKey,
-                                         CNContactFormatter.descriptorForRequiredKeys(for: .fullName),
-                                         CNContactPhoneNumbersKey,
-                                         CNContactUrlAddressesKey,
-                                         CNContactSocialProfilesKey,
-                                         CNContactThumbnailImageDataKey,
-                                         CNContactNicknameKey
-                                     ].flatMap { $0 as? CNKeyDescriptor })
+            CNContactEmailAddressesKey,
+            CNContactFormatter.descriptorForRequiredKeys(for: .fullName),
+            CNContactPhoneNumbersKey,
+            CNContactUrlAddressesKey,
+            CNContactSocialProfilesKey,
+            CNContactThumbnailImageDataKey,
+            CNContactNicknameKey
+        ].flatMap { $0 as? CNKeyDescriptor })
     }()
 
     // MARK: Initialization
@@ -94,7 +94,7 @@ public class ContactsInterface: ContactsInterfaceProtocol {
         do {
             let saveRequest = CNSaveRequest()
             var contacts = [CNContact]()
-            try contactStore.enumerateContacts(with: fetchRequest) { contacts.append($0.0) }
+            try contactStore.enumerateContacts(with: fetchRequest) { contact, _ in contacts.append(contact) }
 
             contacts.flatMap { $0.mutableCopy() as? CNMutableContact }.forEach { saveRequest.delete($0) }
             try contactStore.execute(saveRequest)

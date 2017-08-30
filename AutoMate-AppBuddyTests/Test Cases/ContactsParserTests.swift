@@ -10,6 +10,15 @@ import XCTest
 import Contacts
 @testable import AutoMate_AppBuddy
 
+extension Optional: CustomStringConvertible {
+    public var description: String {
+        switch self {
+        case .none: return "nil"
+        case let .some(value): return "\(value)"
+        }
+    }
+}
+
 // swiftlint:disable type_body_length file_length
 class ContactsParserTests: XCTestCase {
 
@@ -174,62 +183,62 @@ class ContactsParserTests: XCTestCase {
     }
 
     // MARK: Helpers
-    func assert(contact: CNContact, with dictionary: [String: Any]) {
-        assert(contactType: contact.contactType, isEqual: dictionary["contactType"])
-        assert(dateComponents: contact.birthday, isEqual: dictionary["birthday"])
-        assert(dateComponents: contact.nonGregorianBirthday, isEqual: dictionary["nonGregorianBirthday"])
-        assert(dates: contact.dates, isEqual: dictionary["dates"])
-        assert(contact.namePrefix, isEqual: dictionary["namePrefix"] ?? "")
-        assert(contact.givenName, isEqual: dictionary["givenName"] ?? "")
-        assert(contact.middleName, isEqual: dictionary["middleName"] ?? "")
-        assert(contact.familyName, isEqual: dictionary["familyName"] ?? "")
-        assert(contact.previousFamilyName, isEqual: dictionary["previousFamilyName"] ?? "")
-        assert(contact.nameSuffix, isEqual: dictionary["nameSuffix"] ?? "")
-        assert(contact.nickname, isEqual: dictionary["nickname"] ?? "")
-        assert(contact.phoneticGivenName, isEqual: dictionary["phoneticGivenName"] ?? "")
-        assert(contact.phoneticMiddleName, isEqual: dictionary["phoneticMiddleName"] ?? "")
-        assert(contact.phoneticFamilyName, isEqual: dictionary["phoneticFamilyName"] ?? "")
-        assert(contact.organizationName, isEqual: dictionary["organizationName"] ?? "")
-        assert(contact.departmentName, isEqual: dictionary["departmentName"] ?? "")
-        assert(contact.jobTitle, isEqual: dictionary["jobTitle"] ?? "")
-        assert(socialProfiles: contact.socialProfiles, isEqual: dictionary["socialProfiles"])
-        assert(phoneNumbers: contact.phoneNumbers, isEqual: dictionary["phoneNumbers"])
-        assert(strings: contact.urlAddresses, isEqual: dictionary["urlAddresses"])
-        assert(postalAddresses: contact.postalAddresses, isEqual: dictionary["postalAddresses"])
-        assert(strings: contact.emailAddresses, isEqual: dictionary["emailAddresses"])
-        assert(contact.note, isEqual: dictionary["note"] ?? "")
-        assert(imageData: contact.imageData, isEqual: dictionary["imageData"])
-        assert(contactRelations: contact.contactRelations, isEqual: dictionary["contactRelations"])
-        assert(instantMessageAddresses: contact.instantMessageAddresses, isEqual: dictionary["instantMessageAddresses"])
+    func assert(contact: CNContact, with dictionary: [String: Any], file: StaticString = #file, line: UInt = #line) {
+        assert(contactType: contact.contactType, isEqual: dictionary["contactType"], file: file, line: line)
+        assert(dateComponents: contact.birthday, isEqual: dictionary["birthday"], file: file, line: line)
+        assert(dateComponents: contact.nonGregorianBirthday, isEqual: dictionary["nonGregorianBirthday"], file: file, line: line)
+        assert(dates: contact.dates, isEqual: dictionary["dates"], file: file, line: line)
+        assert(contact.namePrefix, isEqual: dictionary["namePrefix"] ?? "", file: file, line: line)
+        assert(contact.givenName, isEqual: dictionary["givenName"] ?? "", file: file, line: line)
+        assert(contact.middleName, isEqual: dictionary["middleName"] ?? "", file: file, line: line)
+        assert(contact.familyName, isEqual: dictionary["familyName"] ?? "", file: file, line: line)
+        assert(contact.previousFamilyName, isEqual: dictionary["previousFamilyName"] ?? "", file: file, line: line)
+        assert(contact.nameSuffix, isEqual: dictionary["nameSuffix"] ?? "", file: file, line: line)
+        assert(contact.nickname, isEqual: dictionary["nickname"] ?? "", file: file, line: line)
+        assert(contact.phoneticGivenName, isEqual: dictionary["phoneticGivenName"] ?? "", file: file, line: line)
+        assert(contact.phoneticMiddleName, isEqual: dictionary["phoneticMiddleName"] ?? "", file: file, line: line)
+        assert(contact.phoneticFamilyName, isEqual: dictionary["phoneticFamilyName"] ?? "", file: file, line: line)
+        assert(contact.organizationName, isEqual: dictionary["organizationName"] ?? "", file: file, line: line)
+        assert(contact.departmentName, isEqual: dictionary["departmentName"] ?? "", file: file, line: line)
+        assert(contact.jobTitle, isEqual: dictionary["jobTitle"] ?? "", file: file, line: line)
+        assert(socialProfiles: contact.socialProfiles, isEqual: dictionary["socialProfiles"], file: file, line: line)
+        assert(phoneNumbers: contact.phoneNumbers, isEqual: dictionary["phoneNumbers"], file: file, line: line)
+        assert(strings: contact.urlAddresses, isEqual: dictionary["urlAddresses"], file: file, line: line)
+        assert(postalAddresses: contact.postalAddresses, isEqual: dictionary["postalAddresses"], file: file, line: line)
+        assert(strings: contact.emailAddresses, isEqual: dictionary["emailAddresses"], file: file, line: line)
+        assert(contact.note, isEqual: dictionary["note"] ?? "", file: file, line: line)
+        assert(imageData: contact.imageData, isEqual: dictionary["imageData"], file: file, line: line)
+        assert(contactRelations: contact.contactRelations, isEqual: dictionary["contactRelations"], file: file, line: line)
+        assert(instantMessageAddresses: contact.instantMessageAddresses, isEqual: dictionary["instantMessageAddresses"], file: file, line: line)
         if #available(iOS 10.0, *) {
-            assert(contact.phoneticOrganizationName, isEqual: dictionary["phoneticOrganizationName"] ?? "")
+            assert(contact.phoneticOrganizationName, isEqual: dictionary["phoneticOrganizationName"] ?? "", file: file, line: line)
         }
     }
 
-    func assert(contactType: CNContactType, isEqual expected: Any?) {
+    func assert(contactType: CNContactType, isEqual expected: Any?, file: StaticString = #file, line: UInt = #line) {
         switch expected {
         case .none:
-            XCTFail("`contactType` cannot be empty.")
+            XCTFail("`contactType` cannot be empty.", file: file, line: line)
         case let expectedT as String:
             let contactTypeT = try? CNContactType.parse(from: expectedT)
-            XCTAssertEqual(contactType, contactTypeT, "Value \(contactType) is not equal to \(expectedT)")
+            XCTAssertEqual(contactType, contactTypeT, "Value \(contactType) is not equal to \(expectedT)", file: file, line: line)
         default:
-            XCTFail("Types \(contactType) and \(String(describing: expected)) do not match.")
+            XCTFail("Types \(contactType) and \(expected.debugDescription) do not match.", file: file, line: line)
         }
     }
 
-    func assert(dates: [CNLabeledValue<NSDateComponents>], isEqual expected: Any?) {
+    func assert(dates: [CNLabeledValue<NSDateComponents>], isEqual expected: Any?, file: StaticString = #file, line: UInt = #line) {
         // Special case
         guard expected != nil || dates.count != 0 else {
             return
         }
 
         guard let expectedT = expected as? [[String: Any]] else {
-            XCTFail("Types \(dates) and \(String(describing: expected)) do not match.")
+            XCTFail("Types \(dates) and \(expected.debugDescription) do not match.", file: file, line: line)
             return
         }
 
-        XCTAssertEqual(dates.count, expectedT.count)
+        XCTAssertEqual(dates.count, expectedT.count, file: file, line: line)
         guard dates.count == expectedT.count else {
             return
         }
@@ -238,27 +247,27 @@ class ContactsParserTests: XCTestCase {
             let date = dates[i]
             let expected = expectedT[i]
             guard let key = expected.keys.first else {
-                XCTFail("Missing key")
+                XCTFail("Missing key", file: file, line: line)
                 continue
             }
 
-            XCTAssertEqual(date.label, key != "nil" ? key : nil)
-            assert(dateComponents: date.value, isEqual: expected[key])
+            XCTAssertEqual(date.label, key != "nil" ? key : nil, file: file, line: line)
+            assert(dateComponents: date.value, isEqual: expected[key], file: file, line: line)
         }
     }
 
-    func assert(socialProfiles: [CNLabeledValue<CNSocialProfile>], isEqual expected: Any?) {
+    func assert(socialProfiles: [CNLabeledValue<CNSocialProfile>], isEqual expected: Any?, file: StaticString = #file, line: UInt = #line) {
         // Special case
         guard expected != nil || socialProfiles.count != 0 else {
             return
         }
 
         guard let expectedT = expected as? [[String: Any]] else {
-            XCTFail("Types \(socialProfiles) and \(String(describing: expected)) do not match.")
+            XCTFail("Types \(socialProfiles) and \(expected.debugDescription) do not match.", file: file, line: line)
             return
         }
 
-        XCTAssertEqual(socialProfiles.count, expectedT.count)
+        XCTAssertEqual(socialProfiles.count, expectedT.count, file: file, line: line)
         guard socialProfiles.count == expectedT.count else {
             return
         }
@@ -267,39 +276,39 @@ class ContactsParserTests: XCTestCase {
             let socialProfile = socialProfiles[i]
             let expected = expectedT[i]
             guard let key = expected.keys.first else {
-                XCTFail("Missing key")
+                XCTFail("Missing key", file: file, line: line)
                 continue
             }
 
-            XCTAssertEqual(socialProfile.label, key != "nil" ? key : nil)
-            assert(socialProfile: socialProfile.value, isEqual: expected[key])
+            XCTAssertEqual(socialProfile.label, key != "nil" ? key : nil, file: file, line: line)
+            assert(socialProfile: socialProfile.value, isEqual: expected[key], file: file, line: line)
         }
     }
 
-    func assert(socialProfile: CNSocialProfile, isEqual expected: Any?) {
+    func assert(socialProfile: CNSocialProfile, isEqual expected: Any?, file: StaticString = #file, line: UInt = #line) {
         switch expected {
         case .none:
-            XCTFail("`socialProfile` cannot be empty.")
+            XCTFail("`socialProfile` cannot be empty.", file: file, line: line)
         case let expectedT as [String: Any]:
             let socialProfileT = try? CNSocialProfile.parse(from: expectedT)
-            XCTAssertEqual(socialProfile, socialProfileT, "Value \(socialProfile) is not equal to \(expectedT)")
+            XCTAssertEqual(socialProfile, socialProfileT, "Value \(socialProfile) is not equal to \(expectedT)", file: file, line: line)
         default:
-            XCTFail("Types \(socialProfile) and \(String(describing: expected)) do not match.")
+            XCTFail("Types \(socialProfile) and \(expected.debugDescription) do not match.", file: file, line: line)
         }
     }
 
-    func assert(phoneNumbers: [CNLabeledValue<CNPhoneNumber>], isEqual expected: Any?) {
+    func assert(phoneNumbers: [CNLabeledValue<CNPhoneNumber>], isEqual expected: Any?, file: StaticString = #file, line: UInt = #line) {
         // Special case
         guard expected != nil || phoneNumbers.count != 0 else {
             return
         }
 
         guard let expectedT = expected as? [[String: Any]] else {
-            XCTFail("Types \(phoneNumbers) and \(String(describing: expected)) do not match.")
+            XCTFail("Types \(phoneNumbers) and \(expected.debugDescription) do not match.", file: file, line: line)
             return
         }
 
-        XCTAssertEqual(phoneNumbers.count, expectedT.count)
+        XCTAssertEqual(phoneNumbers.count, expectedT.count, file: file, line: line)
         guard phoneNumbers.count == expectedT.count else {
             return
         }
@@ -308,40 +317,40 @@ class ContactsParserTests: XCTestCase {
             let phoneNumber = phoneNumbers[i]
             let expected = expectedT[i]
             guard let key = expected.keys.first else {
-                XCTFail("Missing key")
+                XCTFail("Missing key", file: file, line: line)
                 continue
             }
 
             let label = Either<PhoneNumberLabels>(string: key).stringValue
-            XCTAssertEqual(phoneNumber.label, label != "nil" ? label : nil)
-            assert(phoneNumber: phoneNumber.value, isEqual: expected[key])
+            XCTAssertEqual(phoneNumber.label, label != "nil" ? label : nil, file: file, line: line)
+            assert(phoneNumber: phoneNumber.value, isEqual: expected[key], file: file, line: line)
         }
     }
 
-    func assert(phoneNumber: CNPhoneNumber, isEqual expected: Any?) {
+    func assert(phoneNumber: CNPhoneNumber, isEqual expected: Any?, file: StaticString = #file, line: UInt = #line) {
         switch expected {
         case .none:
-            XCTFail("`phoneNumber` cannot be empty.")
+            XCTFail("`phoneNumber` cannot be empty.", file: file, line: line)
         case let expectedT as [String: Any]:
             let phoneNumberT = try? CNPhoneNumber.parse(from: expectedT)
-            XCTAssertEqual(phoneNumber, phoneNumberT, "Value \(phoneNumber) is not equal to \(expectedT)")
+            XCTAssertEqual(phoneNumber, phoneNumberT, "Value \(phoneNumber) is not equal to \(expectedT)", file: file, line: line)
         default:
-            XCTFail("Types \(phoneNumber) and \(String(describing: expected)) do not match.")
+            XCTFail("Types \(phoneNumber) and \(expected.debugDescription) do not match.", file: file, line: line)
         }
     }
 
-    func assert(strings: [CNLabeledValue<NSString>], isEqual expected: Any?) {
+    func assert(strings: [CNLabeledValue<NSString>], isEqual expected: Any?, file: StaticString = #file, line: UInt = #line) {
         // Special case
         guard expected != nil || strings.count != 0 else {
             return
         }
 
         guard let expectedT = expected as? [[String: NSString]] else {
-            XCTFail("Types \(strings) and \(String(describing: expected)) do not match.")
+            XCTFail("Types \(strings) and \(expected.debugDescription) do not match.", file: file, line: line)
             return
         }
 
-        XCTAssertEqual(strings.count, expectedT.count)
+        XCTAssertEqual(strings.count, expectedT.count, file: file, line: line)
         guard strings.count == expectedT.count else {
             return
         }
@@ -350,27 +359,27 @@ class ContactsParserTests: XCTestCase {
             let string = strings[i]
             let expected = expectedT[i]
             guard let key = expected.keys.first else {
-                XCTFail("Missing key")
+                XCTFail("Missing key", file: file, line: line)
                 continue
             }
 
-            XCTAssertEqual(string.label, key != "nil" ? key : nil)
-            XCTAssertEqual(string.value, expected[key])
+            XCTAssertEqual(string.label, key != "nil" ? key : nil, file: file, line: line)
+            XCTAssertEqual(string.value, expected[key], file: file, line: line)
         }
     }
 
-    func assert(postalAddresses: [CNLabeledValue<CNPostalAddress>], isEqual expected: Any?) {
+    func assert(postalAddresses: [CNLabeledValue<CNPostalAddress>], isEqual expected: Any?, file: StaticString = #file, line: UInt = #line) {
         // Special case
         guard expected != nil || postalAddresses.count != 0 else {
             return
         }
 
         guard let expectedT = expected as? [[String: Any]] else {
-            XCTFail("Types \(postalAddresses) and \(String(describing: expected)) do not match.")
+            XCTFail("Types \(postalAddresses) and \(expected.debugDescription) do not match.", file: file, line: line)
             return
         }
 
-        XCTAssertEqual(postalAddresses.count, expectedT.count)
+        XCTAssertEqual(postalAddresses.count, expectedT.count, file: file, line: line)
         guard postalAddresses.count == expectedT.count else {
             return
         }
@@ -379,55 +388,55 @@ class ContactsParserTests: XCTestCase {
             let postalAddress = postalAddresses[i]
             let expected = expectedT[i]
             guard let key = expected.keys.first else {
-                XCTFail("Missing key")
+                XCTFail("Missing key", file: file, line: line)
                 continue
             }
 
-            XCTAssertEqual(postalAddress.label, key != "nil" ? key : nil)
+            XCTAssertEqual(postalAddress.label, key != "nil" ? key : nil, file: file, line: line)
             assert(postalAddress: postalAddress.value, isEqual: expected[key])
         }
     }
 
-    func assert(postalAddress: CNPostalAddress, isEqual expected: Any?) {
+    func assert(postalAddress: CNPostalAddress, isEqual expected: Any?, file: StaticString = #file, line: UInt = #line) {
         switch expected {
         case .none:
-            XCTFail("`postalAddress` cannot be empty.")
+            XCTFail("`postalAddress` cannot be empty.", file: file, line: line)
         case let expectedT as [String: Any]:
             let postalAddressT = try? CNMutablePostalAddress.parse(from: expectedT)
-            XCTAssertEqual(postalAddress, postalAddressT, "Value \(postalAddress) is not equal to \(expectedT)")
+            XCTAssertEqual(postalAddress, postalAddressT, "Value \(postalAddress) is not equal to \(expectedT)", file: file, line: line)
         default:
-            XCTFail("Types \(postalAddress) and \(String(describing: expected)) do not match.")
+            XCTFail("Types \(postalAddress) and \(expected.debugDescription) do not match.", file: file, line: line)
         }
     }
 
-    func assert(imageData: Data?, isEqual expected: Any?) {
+    func assert(imageData: Data?, isEqual expected: Any?, file: StaticString = #file, line: UInt = #line) {
         switch expected {
         case .none:
-            XCTAssertNil(imageData, "Argument is \(String(describing: imageData)) while expected is .none.")
+            XCTAssertNil(imageData, "Argument is \(imageData.debugDescription) while expected is .none.", file: file, line: line)
         case let expectedT as String:
             guard let resource = LaunchEnvironmentResource.resource(from: expectedT),
                 let data = resource.bundle.data(with: resource.name) else {
                 XCTFail("Cannot find resource \(expectedT)")
                 return
             }
-            XCTAssertEqual(imageData, data, "Value \(String(describing: imageData)) is not equal to \(expectedT)")
+            XCTAssertEqual(imageData, data, "Value \(imageData.debugDescription) is not equal to \(expectedT)", file: file, line: line)
         default:
-            XCTFail("Types \(String(describing: imageData)) and \(String(describing: expected)) do not match.")
+            XCTFail("Types \(imageData.debugDescription) and \(expected.debugDescription) do not match.", file: file, line: line)
         }
     }
 
-    func assert(contactRelations: [CNLabeledValue<CNContactRelation>], isEqual expected: Any?) {
+    func assert(contactRelations: [CNLabeledValue<CNContactRelation>], isEqual expected: Any?, file: StaticString = #file, line: UInt = #line) {
         // Special case
         guard expected != nil || contactRelations.count != 0 else {
             return
         }
 
         guard let expectedT = expected as? [[String: Any]] else {
-            XCTFail("Types \(contactRelations) and \(String(describing: expected)) do not match.")
+            XCTFail("Types \(contactRelations) and \(expected.debugDescription) do not match.", file: file, line: line)
             return
         }
 
-        XCTAssertEqual(contactRelations.count, expectedT.count)
+        XCTAssertEqual(contactRelations.count, expectedT.count, file: file, line: line)
         guard contactRelations.count == expectedT.count else {
             return
         }
@@ -436,40 +445,40 @@ class ContactsParserTests: XCTestCase {
             let contactRelation = contactRelations[i]
             let expected = expectedT[i]
             guard let key = expected.keys.first else {
-                XCTFail("Missing key")
+                XCTFail("Missing key", file: file, line: line)
                 continue
             }
 
             let label = Either<RelatedContactsLabels>(string: key).stringValue
-            XCTAssertEqual(contactRelation.label, label != "nil" ? label : nil)
-            assert(contactRelation: contactRelation.value, isEqual: expected[key])
+            XCTAssertEqual(contactRelation.label, label != "nil" ? label : nil, file: file, line: line)
+            assert(contactRelation: contactRelation.value, isEqual: expected[key], file: file, line: line)
         }
     }
 
-    func assert(contactRelation: CNContactRelation, isEqual expected: Any?) {
+    func assert(contactRelation: CNContactRelation, isEqual expected: Any?, file: StaticString = #file, line: UInt = #line) {
         switch expected {
         case .none:
-            XCTFail("`contactRelation` cannot be empty.")
+            XCTFail("`contactRelation` cannot be empty.", file: file, line: line)
         case let expectedT as [String: Any]:
             let contactRelationT = try? CNContactRelation.parse(from: expectedT)
-            XCTAssertEqual(contactRelation, contactRelationT, "Value \(contactRelation) is not equal to \(expectedT)")
+            XCTAssertEqual(contactRelation, contactRelationT, "Value \(contactRelation) is not equal to \(expectedT)", file: file, line: line)
         default:
-            XCTFail("Types \(contactRelation) and \(String(describing: expected)) do not match.")
+            XCTFail("Types \(contactRelation) and \(expected.debugDescription) do not match.", file: file, line: line)
         }
     }
 
-    func assert(instantMessageAddresses: [CNLabeledValue<CNInstantMessageAddress>], isEqual expected: Any?) {
+    func assert(instantMessageAddresses: [CNLabeledValue<CNInstantMessageAddress>], isEqual expected: Any?, file: StaticString = #file, line: UInt = #line) {
         // Special case
         guard expected != nil || instantMessageAddresses.count != 0 else {
             return
         }
 
         guard let expectedT = expected as? [[String: Any]] else {
-            XCTFail("Types \(instantMessageAddresses) and \(String(describing: expected)) do not match.")
+            XCTFail("Types \(instantMessageAddresses) and \(expected.debugDescription) do not match.", file: file, line: line)
             return
         }
 
-        XCTAssertEqual(instantMessageAddresses.count, expectedT.count)
+        XCTAssertEqual(instantMessageAddresses.count, expectedT.count, file: file, line: line)
         guard instantMessageAddresses.count == expectedT.count else {
             return
         }
@@ -478,24 +487,24 @@ class ContactsParserTests: XCTestCase {
             let instantMessageAddress = instantMessageAddresses[i]
             let expected = expectedT[i]
             guard let key = expected.keys.first else {
-                XCTFail("Missing key")
+                XCTFail("Missing key", file: file, line: line)
                 continue
             }
 
-            XCTAssertEqual(instantMessageAddress.label, key != "nil" ? key : nil)
-            assert(instantMessageAddress: instantMessageAddress.value, isEqual: expected[key])
+            XCTAssertEqual(instantMessageAddress.label, key != "nil" ? key : nil, file: file, line: line)
+            assert(instantMessageAddress: instantMessageAddress.value, isEqual: expected[key], file: file, line: line)
         }
     }
 
-    func assert(instantMessageAddress: CNInstantMessageAddress, isEqual expected: Any?) {
+    func assert(instantMessageAddress: CNInstantMessageAddress, isEqual expected: Any?, file: StaticString = #file, line: UInt = #line) {
         switch expected {
         case .none:
-            XCTFail("`contactRelation` cannot be empty.")
+            XCTFail("`contactRelation` cannot be empty.", file: file, line: line)
         case let expectedT as [String: Any]:
             let instantMessageAddressT = try? CNInstantMessageAddress.parse(from: expectedT)
-            XCTAssertEqual(instantMessageAddress, instantMessageAddressT, "Value \(instantMessageAddress) is not equal to \(expectedT)")
+            XCTAssertEqual(instantMessageAddress, instantMessageAddressT, "Value \(instantMessageAddress) is not equal to \(expectedT)", file: file, line: line)
         default:
-            XCTFail("Types \(instantMessageAddress) and \(String(describing: expected)) do not match.")
+            XCTFail("Types \(instantMessageAddress) and \(expected.debugDescription) do not match.", file: file, line: line)
         }
     }
 }

@@ -63,20 +63,20 @@ class EKRecurrenceParserTests: XCTestCase {
     }
 
     // MARK: Helpers
-    func assert(rule: EKRecurrenceRule, isEqual expected: [String: Any]) {
-        assert(rule.frequency.rawValue, isEqual: expected["frequency"])
-        assert(rule.interval, isEqual: expected["interval"])
-        assert(array: rule.daysOfTheMonth, isEqual: expected["daysOfTheMonth"])
-        assert(array: rule.daysOfTheYear, isEqual: expected["daysOfTheYear"])
-        assert(array: rule.monthsOfTheYear, isEqual: expected["monthsOfTheYear"])
-        assert(array: rule.weeksOfTheYear, isEqual: expected["weeksOfTheYear"])
-        assert(array: rule.setPositions, isEqual: expected["setPositions"])
-        assert(countOf: rule.daysOfTheWeek?.map { $0.dayOfTheWeek.rawValue }, isEqual: expected["daysOfTheWeek"])
-        XCTAssertEqual(rule.recurrenceEnd != nil, expected["endDate"] != nil || expected["occurrenceCount"] != nil, "\(String(describing: rule.recurrenceEnd)) is not equal to expected \(String(describing: expected["endDate"])) nor \(String(describing: expected["occurrenceCount"]))")
+    func assert(rule: EKRecurrenceRule, isEqual expected: [String: Any], file: StaticString = #file, line: UInt = #line) {
+        assert(rule.frequency.rawValue, isEqual: expected["frequency"], file: file, line: line)
+        assert(rule.interval, isEqual: expected["interval"], file: file, line: line)
+        assert(array: rule.daysOfTheMonth, isEqual: expected["daysOfTheMonth"], file: file, line: line)
+        assert(array: rule.daysOfTheYear, isEqual: expected["daysOfTheYear"], file: file, line: line)
+        assert(array: rule.monthsOfTheYear, isEqual: expected["monthsOfTheYear"], file: file, line: line)
+        assert(array: rule.weeksOfTheYear, isEqual: expected["weeksOfTheYear"], file: file, line: line)
+        assert(array: rule.setPositions, isEqual: expected["setPositions"], file: file, line: line)
+        assert(countOf: rule.daysOfTheWeek?.map { $0.dayOfTheWeek.rawValue }, isEqual: expected["daysOfTheWeek"], file: file, line: line)
+        XCTAssertEqual(rule.recurrenceEnd != nil, expected["endDate"] != nil || expected["occurrenceCount"] != nil, "\(rule.recurrenceEnd.debugDescription) is not equal to expected \(expected["endDate"].debugDescription) nor \(expected["occurrenceCount"].debugDescription)", file: file, line: line)
     }
 
-    func assert(recurrenceEnd: EKRecurrenceEnd, isEqual expected: [String: Any]) {
-        assert(recurrenceEnd.occurrenceCount, isEqual: expected["occurrenceCount"] ?? 0)
-        assert(recurrenceEnd.endDate, isEqual: date(from: expected["endDate"]))
+    func assert(recurrenceEnd: EKRecurrenceEnd, isEqual expected: [String: Any], file: StaticString = #file, line: UInt = #line) {
+        assert(recurrenceEnd.occurrenceCount, isEqual: expected["occurrenceCount"] ?? 0, file: file, line: line)
+        assert(recurrenceEnd.endDate, isEqual: date(from: expected["endDate"], file: file, line: line), file: file, line: line)
     }
 }

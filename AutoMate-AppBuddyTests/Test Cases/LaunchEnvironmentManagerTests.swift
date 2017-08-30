@@ -85,13 +85,13 @@ class LaunchEnvironmentManagerTests: XCTestCase {
         return launchEnvironmentManager
     }
 
-    private func assert(notNil handler: MockHandler, in environment: [String: String]) {
-        XCTAssertNotNil(handler.received, "Handler with key \(handler.key) wasn't called.")
-        XCTAssertEqual(handler.received!.key, handler.key, "Handler with key \(handler.key) called for environment with key \(handler.received!.key).")
-        XCTAssertEqual(handler.received!.value, environment[handler.key]!, "Handler with key \(handler.key) called with value \(handler.received!.value) instead of \(environment[handler.key]!).")
+    private func assert(notNil handler: MockHandler, in environment: [String: String], file: StaticString = #file, line: UInt = #line) {
+        XCTAssertNotNil(handler.received, "Handler with key \(handler.key) wasn't called.", file: file, line: line)
+        XCTAssertEqual(handler.received!.key, handler.key, "Handler with key \(handler.key) called for environment with key \(handler.received!.key).", file: file, line: line)
+        XCTAssertEqual(handler.received!.value, environment[handler.key]!, "Handler with key \(handler.key) called with value \(handler.received!.value) instead of \(environment[handler.key]!).", file: file, line: line)
     }
 
-    private func assert(nil handler: MockHandler, in environment: [String: String]) {
-        XCTAssertNil(handler.received, "Handler with key \(handler.key) called for environment with key \(handler.received!.key).")
+    private func assert(nil handler: MockHandler, in environment: [String: String], file: StaticString = #file, line: UInt = #line) {
+        XCTAssertNil(handler.received, "Handler with key \(handler.key) called for environment with key \(handler.received!.key).", file: file, line: line)
     }
 }

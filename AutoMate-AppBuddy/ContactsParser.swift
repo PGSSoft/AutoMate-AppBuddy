@@ -15,14 +15,14 @@ import Contacts
 ///
 /// - seealso: `ContactDictionaryParser`
 /// - seealso: `ContactsHandler`
-public protocol ContactParser: Parser {
+public protocol ContactParser: Parser where T == Any, U == CNMutableContact {
 
     // MARK: Properties
     /// Contact store used for saving contacts.
     var store: CNContactStore { get }
 }
 
-public extension ContactParser where T == Any, U == CNMutableContact {
+public extension ContactParser {
 
     /// Reads JSON arrays from `LaunchEnvironmentResource` then parse the data
     /// to `CNMutableContact`s and save them to the `CNContactStore`.
@@ -84,7 +84,7 @@ public extension ContactParser where T == Any, U == CNMutableContact {
 /// postal addresses, contact relationships and instant message addresses
 /// are constructed as a list of dictionaries.
 ///
-/// **Example:** 
+/// **Example:**
 ///
 /// ```json
 /// {

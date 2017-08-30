@@ -160,7 +160,7 @@ public class EventKitInterface: EventKitInterfaceProtocol {
             var events = [EKEvent]()
             eventStore.enumerateEvents(matching: eventStore.predicateForEvents(withStart: eventStartDate,
                                                                                end: eventEndDate,
-                                                                               calendars: nil)) { events.append($0.0) }
+                                                                               calendars: nil)) { event, _ in events.append(event) }
             completion(events)
         case .reminder:
             eventStore.fetchReminders(matching: eventStore.predicateForReminders(in: nil), completion: { completion($0) })

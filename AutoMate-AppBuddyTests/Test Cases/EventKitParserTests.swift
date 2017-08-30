@@ -77,53 +77,53 @@ class EventKitParserTests: XCTestCase {
     }
 
     // MARK: Helpers
-    func assert(calendarItem: EKCalendarItem, with dictionary: [String: Any]) {
+    func assert(calendarItem: EKCalendarItem, with dictionary: [String: Any], file: StaticString = #file, line: UInt = #line) {
 
-        assert(calendarItem.title, isEqual: dictionary["title"])
-        assert(calendarItem.notes, isEqual: dictionary["notes"])
-        assert(calendarItem.creationDate, isEqual: date(from: dictionary["creationDate"]))
-        assert(countOf: calendarItem.attendees, isEqual: dictionary["attendees"])
-        assert(countOf: calendarItem.recurrenceRules, isEqual: dictionary["recurrenceRules"])
+        assert(calendarItem.title, isEqual: dictionary["title"], file: file, line: line)
+        assert(calendarItem.notes, isEqual: dictionary["notes"], file: file, line: line)
+        assert(calendarItem.creationDate, isEqual: date(from: dictionary["creationDate"], file: file, line: line), file: file, line: line)
+        assert(countOf: calendarItem.attendees, isEqual: dictionary["attendees"], file: file, line: line)
+        assert(countOf: calendarItem.recurrenceRules, isEqual: dictionary["recurrenceRules"], file: file, line: line)
         // Location needs special handling because if set to .none it remains empty String.
-        assert(location: calendarItem.location, isEqual: dictionary["location"])
-        XCTAssertEqual(calendarItem.calendar, calendar, "Event assigned to wrong calendar.")
+        assert(location: calendarItem.location, isEqual: dictionary["location"], file: file, line: line)
+        XCTAssertEqual(calendarItem.calendar, calendar, "Event assigned to wrong calendar.", file: file, line: line)
     }
 
-    func assert(event: EKEvent, with dictionary: [String: Any]) {
+    func assert(event: EKEvent, with dictionary: [String: Any], file: StaticString = #file, line: UInt = #line) {
 
-        assert(calendarItem: event, with: dictionary)
-        assert(event.startDate, isEqual: date(from: dictionary["startDate"]))
-        assert(event.endDate, isEqual: date(from: dictionary["endDate"]))
+        assert(calendarItem: event, with: dictionary, file: file, line: line)
+        assert(event.startDate, isEqual: date(from: dictionary["startDate"], file: file, line: line), file: file, line: line)
+        assert(event.endDate, isEqual: date(from: dictionary["endDate"], file: file, line: line), file: file, line: line)
     }
 
-    func assert(reminder: EKReminder, with dictionary: [String: Any]) {
+    func assert(reminder: EKReminder, with dictionary: [String: Any], file: StaticString = #file, line: UInt = #line) {
 
-        assert(calendarItem: reminder, with: dictionary)
-        assert(reminder.completionDate, isEqual: date(from: dictionary["completionDate"]))
-        assert(reminder.isCompleted, isEqual: dictionary["isCompleted"] ?? false)
-        XCTAssertEqual(reminder.startDateComponents != nil, dictionary["startDateComponents"] != nil, "Expected startDateComponents to be \(String(describing: dictionary["startDateComponents"])) instead of result \(String(describing: reminder.startDateComponents))")
-        XCTAssertEqual(reminder.dueDateComponents != nil, dictionary["dueDateComponents"] != nil, "Expected dueDateComponents to be \(String(describing: dictionary["dueDateComponents"])) instead of result \(String(describing: reminder.dueDateComponents))")
+        assert(calendarItem: reminder, with: dictionary, file: file, line: line)
+        assert(reminder.completionDate, isEqual: date(from: dictionary["completionDate"], file: file, line: line), file: file, line: line)
+        assert(reminder.isCompleted, isEqual: dictionary["isCompleted"] ?? false, file: file, line: line)
+        XCTAssertEqual(reminder.startDateComponents != nil, dictionary["startDateComponents"] != nil, "Expected startDateComponents to be \(dictionary["startDateComponents"].debugDescription) instead of result \(reminder.startDateComponents.debugDescription)", file: file, line: line)
+        XCTAssertEqual(reminder.dueDateComponents != nil, dictionary["dueDateComponents"] != nil, "Expected dueDateComponents to be \(dictionary["dueDateComponents"].debugDescription) instead of result \(reminder.dueDateComponents.debugDescription)", file: file, line: line)
     }
 
-    func assert(location argument: String?, isEqual expected: Any?) {
+    func assert(location argument: String?, isEqual expected: Any?, file: StaticString = #file, line: UInt = #line) {
         switch expected {
         case .none:
-            XCTAssertEqual(argument, "", "Argument is \(String(describing: argument)) while expected is empty.")
+            XCTAssertEqual(argument, "", "Argument is \(argument.debugDescription) while expected is empty.", file: file, line: line)
         case let expectedT as String:
-            XCTAssertEqual(expectedT, argument, "Value \(String(describing: argument)) is not equal to \(expectedT)")
+            XCTAssertEqual(expectedT, argument, "Value \(argument.debugDescription) is not equal to \(expectedT.debugDescription)", file: file, line: line)
         default:
-            XCTFail("Types \(String(describing: argument)) and \(String(describing: expected)) do not match.")
+            XCTFail("Types \(argument.debugDescription) and \(expected.debugDescription) do not match.", file: file, line: line)
         }
     }
 
-    func assert(countOf argument: [EKRecurrenceRule]?, isEqual expected: Any?) {
+    func assert(countOf argument: [EKRecurrenceRule]?, isEqual expected: Any?, file: StaticString = #file, line: UInt = #line) {
         switch expected {
         case .none:
-            XCTAssertEqual(argument?.count, 0, "Argument is \(String(describing: argument)) while expected is .none")
+            XCTAssertEqual(argument?.count, 0, "Argument is \(argument.debugDescription) while expected is .none", file: file, line: line)
         case let aCollection as [Any]:
-            XCTAssertEqual(aCollection.count, argument?.count, "Value count \(String(describing: argument?.count)) is not equal to expected \(aCollection.count).")
+            XCTAssertEqual(aCollection.count, argument?.count, "Value count \(argument?.count ?? 0) is not equal to expected \(aCollection.count).", file: file, line: line)
         case .some:
-            XCTFail("Types \(String(describing: argument)) and \(String(describing: expected)) do not match.")
+            XCTFail("Types \(argument.debugDescription) and \(expected.debugDescription) do not match.", file: file, line: line)
         }
     }
 }

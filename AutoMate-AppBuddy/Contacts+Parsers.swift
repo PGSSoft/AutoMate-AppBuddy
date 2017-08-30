@@ -94,15 +94,15 @@ internal extension CNMutableContact {
         phoneticOrganizationName ?= try data.fetchOptional("phoneticOrganizationName")
         departmentName ?= try data.fetchOptional("departmentName")
         jobTitle ?= try data.fetchOptional("jobTitle")
-        socialProfiles ?= try data.fetchOptionalArray("socialProfiles") { try parse(socialProfiles:$0) }
-        phoneNumbers ?= try data.fetchOptionalArray("phoneNumbers") { try parse(phoneNumbers:$0) }
-        emailAddresses ?= try data.fetchOptionalArray("emailAddresses") { try parse(strings:$0) }
-        urlAddresses ?= try data.fetchOptionalArray("urlAddresses") { try parse(strings:$0) }
-        postalAddresses ?= try data.fetchOptionalArray("postalAddresses") { try parse(postalAddresses:$0) }
+        socialProfiles ?= try data.fetchOptionalArray("socialProfiles") { try parse(socialProfiles: $0) }
+        phoneNumbers ?= try data.fetchOptionalArray("phoneNumbers") { try parse(phoneNumbers: $0) }
+        emailAddresses ?= try data.fetchOptionalArray("emailAddresses") { try parse(strings: $0) }
+        urlAddresses ?= try data.fetchOptionalArray("urlAddresses") { try parse(strings: $0) }
+        postalAddresses ?= try data.fetchOptionalArray("postalAddresses") { try parse(postalAddresses: $0) }
         note ?= try data.fetchOptional("note")
-        imageData = try data.fetchOptional("imageData") { try parse(image:$0) }
-        contactRelations ?= try data.fetchOptionalArray("contactRelations") { try parse(contactRelations:$0) }
-        instantMessageAddresses ?= try data.fetchOptionalArray("instantMessageAddresses") { try parse(instantMessageAddresses:$0) }
+        imageData = try data.fetchOptional("imageData") { try parse(image: $0) }
+        contactRelations ?= try data.fetchOptionalArray("contactRelations") { try parse(contactRelations: $0) }
+        instantMessageAddresses ?= try data.fetchOptionalArray("instantMessageAddresses") { try parse(instantMessageAddresses: $0) }
     }
 
     private func normalized(key: String) -> String? {
@@ -132,7 +132,7 @@ internal extension CNMutableContact {
     private func parse(image: String) throws -> Data {
         guard let resource = LaunchEnvironmentResource.resource(from: image),
             let data = resource.bundle.data(with: resource.name) else {
-            throw ParserError(message: "Cannot read image \(image)")
+                throw ParserError(message: "Cannot read image \(image)")
         }
 
         return data
@@ -153,7 +153,7 @@ precedencegroup OptionalAssignment {
     assignment: true
 }
 
-infix operator ?= : OptionalAssignment
+infix operator ?=: OptionalAssignment
 
 func ?= <T>(variable: inout T, value: T?) {
     if let value = value {

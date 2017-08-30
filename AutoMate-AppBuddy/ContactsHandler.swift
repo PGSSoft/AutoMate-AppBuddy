@@ -42,9 +42,7 @@ import Contacts
 /// - seealso: `LaunchEnvironmentManager`
 /// - seealso: `LaunchEnvironmentResource`
 /// - seealso: `defaultContactsHander`
-public struct ContactsHandler<C: ContactParser, I: ContactsInterface>: Handler
-    where C.T == Any,
-        C.U == CNMutableContact {
+public struct ContactsHandler<C: ContactParser, I: ContactsInterface>: Handler {
 
     // MARK: Properties
     /// Contact parser, an instance of the `ContactParser` protocol.

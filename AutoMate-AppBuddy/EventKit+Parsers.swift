@@ -11,7 +11,7 @@ import EventKit
 
 extension EKCalendarItem {
 
-    func parse(from data: [String: Any]) throws {
+    @objc func parse(from data: [String: Any]) throws {
         let creationDate = try data.fetchOptional("creationDate") { Date.from(representation: $0) }
         let recurrenceRules = try data.fetchOptionalArray("recurrenceRules") { try EKRecurrenceRule.parse(from: $0) }
 
@@ -32,9 +32,9 @@ extension EKEvent {
         let endDate = try data.fetch("endDate") { Date.from(representation: $0) }
 
         setValuesForKeys([
-                             #keyPath(EKEvent.startDate): startDate,
-                             #keyPath(EKEvent.endDate): endDate
-                         ])
+            #keyPath(EKEvent.startDate): startDate,
+            #keyPath(EKEvent.endDate): endDate
+        ])
     }
 }
 

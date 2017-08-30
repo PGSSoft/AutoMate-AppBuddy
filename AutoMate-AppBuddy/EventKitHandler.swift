@@ -45,9 +45,7 @@ import EventKit
 /// - seealso: `defaultEventKitHander`
 public class EventKitHandler<E: EventParser, R: ReminderParser, I: EventKitInterfaceProtocol>: Handler
     where E.T == [String: Any],
-        R.T == [String: Any],
-        E.U == EKEvent,
-        R.U == EKReminder {
+        R.T == [String: Any] {
 
     // MARK: Properties
     /// Events parser, an instance of the `EventParser` protocol.
@@ -109,17 +107,17 @@ public class EventKitHandler<E: EventParser, R: ReminderParser, I: EventKitInter
     private func handle(_ items: @escaping @autoclosure () -> [EKCalendarItem]?, forType type: EKEntityType, clean: Bool) {
         requestAccessIfNeeded(forType: type) { authorized, error in
             guard authorized, error == nil else {
-                preconditionFailure("Access request for type \(type) failed with error \(String(describing: error)).")
+                preconditionFailure("Access request for type \(type) failed with error \(error?.localizedDescription ?? "access denied").")
             }
 
             self.cleanCalendars(ifNeeded: clean, ofType: type) { _, error in
-                guard authorized, error == nil else {
-                    preconditionFailure("Clean calendar items of type \(type) failed with error \(String(describing: error)).")
+                guard error == nil else {
+                    preconditionFailure("Clean calendar items of type \(type) failed with error \(error?.localizedDescription ?? "clean failed").")
                 }
 
                 self.saveIfNeeded(items(), ofType: type) { saved, error in
                     guard saved, error == nil else {
-                        preconditionFailure("Saving calendar items \(String(describing: items())) of type \(type) failed with error \(String(describing: error)).")
+                        preconditionFailure("Saving calendar items \(String(describing: items())) of type \(type) failed with error \(error?.localizedDescription ?? "saved failed").")
                     }
                 }
             }
