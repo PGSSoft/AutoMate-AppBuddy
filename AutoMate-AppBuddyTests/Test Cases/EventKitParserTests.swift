@@ -115,15 +115,4 @@ class EventKitParserTests: XCTestCase {
             XCTFail("Types \(argument.debugDescription) and \(expected.debugDescription) do not match.", file: file, line: line)
         }
     }
-
-    func assert(countOf argument: [EKRecurrenceRule]?, isEqual expected: Any?, file: StaticString = #file, line: UInt = #line) {
-        switch expected {
-        case .none:
-            XCTAssertEqual(argument?.count, 0, "Argument is \(argument.debugDescription) while expected is .none", file: file, line: line)
-        case let aCollection as [Any]:
-            XCTAssertEqual(aCollection.count, argument?.count, "Value count \(argument?.count ?? 0) is not equal to expected \(aCollection.count).", file: file, line: line)
-        case .some:
-            XCTFail("Types \(argument.debugDescription) and \(expected.debugDescription) do not match.", file: file, line: line)
-        }
-    }
 }
