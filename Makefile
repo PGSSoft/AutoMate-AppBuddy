@@ -1,10 +1,14 @@
-.PHONY: docs push_github check-podspec check-carthage check
+.PHONY: docs push_cocoapods push_github check-podspec check-carthage check
 
 # Create documentation
 docs:
 	jazzy -c
 	rsync -ahvL --delete "assets" "docs"
 	rm -r build
+
+# Push spec to CocoaPods
+push_cocoapods:
+	pod trunk push AutoMate-AppBuddy.podspec
 
 # Push master, develop and tags to GitHub
 push_github:

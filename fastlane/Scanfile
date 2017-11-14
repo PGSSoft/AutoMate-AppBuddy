@@ -9,6 +9,6 @@
 project "AutoMate-AppBuddy.xcodeproj"
 scheme "AutoMate-AppBuddy iOS"
 
-device "iPhone 7 (10.3)"
+device "iPhone X (11.1)"
 
 formatter "xcpretty-json-formatter"
