@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>ContactsHandler Struct Reference</title>
+    <title>ContactsHandler Structure Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -11,7 +11,7 @@
   </head>
   <body>
     <a name="//apple_ref/swift/Struct/ContactsHandler" class="dashAnchor"></a>
-    <a title="ContactsHandler Struct Reference"></a>
+    <a title="ContactsHandler Structure Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">AutoMate_AppBuddy Docs</a> (100% documented)</p>
@@ -21,7 +21,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">AutoMate_AppBuddy Reference</a>
         <img id="carat" src="../img/carat.png" />
-        ContactsHandler Struct Reference
+        ContactsHandler Structure Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -97,18 +97,18 @@
             <a href="../Other Global Variables.html">Other Global Variables</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Other Global Variables.html#/s:v17AutoMate_AppBuddy21defaultContactsHanderGVS_15ContactsHandlerVS_23ContactDictionaryParserCS_17ContactsInterface_">defaultContactsHander</a>
+                <a href="../Other Global Variables.html#/s:17AutoMate_AppBuddy21defaultContactsHanderAA0F7HandlerVyAA23ContactDictionaryParserVAA0F9InterfaceCGv">defaultContactsHander</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Other Global Variables.html#/s:v17AutoMate_AppBuddy21defaultEventKitHanderGCS_15EventKitHandlerVS_21EventDictionaryParserVS_24ReminderDictionaryParserCS_17EventKitInterface_">defaultEventKitHander</a>
+                <a href="../Other Global Variables.html#/s:17AutoMate_AppBuddy21defaultEventKitHanderAA0fG7HandlerCyAA0F16DictionaryParserVAA08ReminderjK0VAA0fG9InterfaceCGv">defaultEventKitHander</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Other Global Variables.html#/s:v17AutoMate_AppBuddy24defaultIsInUITestHandlerCS_17IsInUITestHandler">defaultIsInUITestHandler</a>
+                <a href="../Other Global Variables.html#/s:17AutoMate_AppBuddy24defaultIsInUITestHandlerAA0fghI0Cv">defaultIsInUITestHandler</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Other Enums.html">Other Enums</a>
+            <a href="../Other Enums.html">Other Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Enums/AutoMateLaunchOptionKey.html">AutoMateLaunchOptionKey</a>
@@ -122,18 +122,21 @@
                 <a href="../Extensions/Bundle.html">Bundle</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Extensions/Date.html">Date</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Extensions/Dictionary.html">Dictionary</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Other Structs.html">Other Structs</a>
+            <a href="../Other Structs.html">Other Structures</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Structs/LaunchEnvironmentResource.html">LaunchEnvironmentResource</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Other Structs.html#/s:V17AutoMate_AppBuddy11ParserError">ParserError</a>
+                <a href="../Other Structs.html#/s:17AutoMate_AppBuddy11ParserErrorV">ParserError</a>
               </li>
             </ul>
           </li>
@@ -145,9 +148,7 @@
             <h1>ContactsHandler</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">ContactsHandler</span><span class="o">&lt;</span><span class="kt">C</span><span class="p">:</span> <span class="kt"><a href="../Protocols/ContactParser.html">ContactParser</a></span><span class="p">,</span> <span class="kt">I</span><span class="p">:</span> <span class="kt"><a href="../Classes/ContactsInterface.html">ContactsInterface</a></span><span class="o">&gt;</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Handler.html">Handler</a></span>
-    <span class="k">where</span> <span class="kt">C</span><span class="o">.</span><span class="kt">T</span> <span class="o">==</span> <span class="kt">Any</span><span class="p">,</span>
-        <span class="kt">C</span><span class="o">.</span><span class="kt">U</span> <span class="o">==</span> <span class="kt">CNMutableContact</span></code></pre>
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">ContactsHandler</span><span class="o">&lt;</span><span class="kt">C</span><span class="p">:</span> <span class="kt"><a href="../Protocols/ContactParser.html">ContactParser</a></span><span class="p">,</span> <span class="kt">I</span><span class="p">:</span> <span class="kt"><a href="../Classes/ContactsInterface.html">ContactsInterface</a></span><span class="o">&gt;</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Handler.html">Handler</a></span></code></pre>
 
                 </div>
               </div>
@@ -155,7 +156,7 @@
 
 <p>Handler should be added to <code><a href="../Classes/LaunchEnvironmentManager.html">LaunchEnvironmentManager</a></code>.</p>
 
-<p>Used key: <code>AM_CONTACTS_KEY</code> / <code><a href="../Enums/AutoMateLaunchOptionKey.html#/s:FO17AutoMate_AppBuddy23AutoMateLaunchOptionKey8contactsFMS0_S0_">AutoMateLaunchOptionKey.contacts</a></code>.</p>
+<p>Used key: <code>AM_CONTACTS_KEY</code> / <code><a href="../Enums/AutoMateLaunchOptionKey.html#/s:17AutoMate_AppBuddy0aB15LaunchOptionKeyO8contactsA2CmF">AutoMateLaunchOptionKey.contacts</a></code>.</p>
 
 <p>Supported values: <code><a href="../Structs/LaunchEnvironmentResource.html">LaunchEnvironmentResource</a></code> resources representation as a string.</p>
 
@@ -167,7 +168,7 @@
 </code></pre>
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
-    <p><code><a href="../Other Global Variables.html#/s:v17AutoMate_AppBuddy21defaultContactsHanderGVS_15ContactsHandlerVS_23ContactDictionaryParserCS_17ContactsInterface_">defaultContactsHander</a></code> singleton could be used intead of creating new instance of the <code>ContactsHandler</code>.</p>
+    <p><code><a href="../Other Global Variables.html#/s:17AutoMate_AppBuddy21defaultContactsHanderAA0F7HandlerVyAA23ContactDictionaryParserVAA0F9InterfaceCGv">defaultContactsHander</a></code> singleton could be used intead of creating new instance of the <code>ContactsHandler</code>.</p>
 
 </div>
 <div class="aside aside-note">
@@ -179,7 +180,7 @@ from the <a href="https://github.com/PGSSoft/AutoMate">AutoMate</a> project.</p>
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
     <p><code>ContactsHandler</code> should be used with the <code>AM_CONTACTS_KEY</code> key, but its implementation doesn&rsquo;t require to use it.
-Any key provided to the <code><a href="../Classes/LaunchEnvironmentManager.html#/s:FC17AutoMate_AppBuddy24LaunchEnvironmentManager3addFT7handlerPS_7Handler_3forSS_T_">LaunchEnvironmentManager.add(handler:for:)</a></code> method will be handled correctly.</p>
+Any key provided to the <code><a href="../Classes/LaunchEnvironmentManager.html#/s:17AutoMate_AppBuddy24LaunchEnvironmentManagerC3addyAA7Handler_p7handler_SS3fortF">LaunchEnvironmentManager.add(handler:for:)</a></code> method will be handled correctly.</p>
 
 </div>
 <div class="aside aside-seealso">
@@ -194,7 +195,7 @@ Any key provided to the <code><a href="../Classes/LaunchEnvironmentManager.html#
 </div>
 <div class="aside aside-seealso">
     <p class="aside-title">Seealso</p>
-    <p><code><a href="../Other Global Variables.html#/s:v17AutoMate_AppBuddy21defaultContactsHanderGVS_15ContactsHandlerVS_23ContactDictionaryParserCS_17ContactsInterface_">defaultContactsHander</a></code></p>
+    <p><code><a href="../Other Global Variables.html#/s:17AutoMate_AppBuddy21defaultContactsHanderAA0F7HandlerVyAA23ContactDictionaryParserVAA0F9InterfaceCGv">defaultContactsHander</a></code></p>
 
 </div>
 
@@ -212,9 +213,9 @@ Any key provided to the <code><a href="../Classes/LaunchEnvironmentManager.html#
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vV17AutoMate_AppBuddy15ContactsHandler13contactParserx"></a>
+                    <a name="/s:17AutoMate_AppBuddy15ContactsHandlerV13contactParserxv"></a>
                     <a name="//apple_ref/swift/Property/contactParser" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vV17AutoMate_AppBuddy15ContactsHandler13contactParserx">contactParser</a>
+                    <a class="token" href="#/s:17AutoMate_AppBuddy15ContactsHandlerV13contactParserxv">contactParser</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -239,9 +240,9 @@ Any key provided to the <code><a href="../Classes/LaunchEnvironmentManager.html#
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vV17AutoMate_AppBuddy15ContactsHandler17contactsInterfaceq_"></a>
+                    <a name="/s:17AutoMate_AppBuddy15ContactsHandlerV17contactsInterfaceq_v"></a>
                     <a name="//apple_ref/swift/Property/contactsInterface" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vV17AutoMate_AppBuddy15ContactsHandler17contactsInterfaceq_">contactsInterface</a>
+                    <a class="token" href="#/s:17AutoMate_AppBuddy15ContactsHandlerV17contactsInterfaceq_v">contactsInterface</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -277,9 +278,9 @@ Any key provided to the <code><a href="../Classes/LaunchEnvironmentManager.html#
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FV17AutoMate_AppBuddy15ContactsHandlercFT10withParserx17contactsInterfaceq__GS0_xq__"></a>
+                    <a name="/s:17AutoMate_AppBuddy15ContactsHandlerVACyxq_Gx10withParser_q_17contactsInterfacetcfc"></a>
                     <a name="//apple_ref/swift/Method/init(withParser:contactsInterface:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FV17AutoMate_AppBuddy15ContactsHandlercFT10withParserx17contactsInterfaceq__GS0_xq__">init(withParser:contactsInterface:)</a>
+                    <a class="token" href="#/s:17AutoMate_AppBuddy15ContactsHandlerVACyxq_Gx10withParser_q_17contactsInterfacetcfc">init(withParser:contactsInterface:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -311,7 +312,7 @@ and interface (which is responsible for interacting with <code>Contacts</code> f
                               </td>
                               <td>
                                 <div>
-                                  <p>Contact parser, an instance of type that conforms to the <code>ContactParser</code> protocol.
+                                  <p>Contact parser, an instance of type that conforms to the <code><a href="../Protocols/ContactParser.html">ContactParser</a></code> protocol.
 Responsible for transforing <code>Dictionary</code> to <code>CNMutableContact</code>.</p>
                                 </div>
                               </td>
@@ -324,7 +325,7 @@ Responsible for transforing <code>Dictionary</code> to <code>CNMutableContact</c
                               </td>
                               <td>
                                 <div>
-                                  <p>Contact interface, an instance of type that conforms to the <code>ContactsInterface</code> protocol.
+                                  <p>Contact interface, an instance of type that conforms to the <code><a href="../Classes/ContactsInterface.html">ContactsInterface</a></code> protocol.
 Responsible for interacting with <code>Contacts</code> framework</p>
                                 </div>
                               </td>
@@ -349,9 +350,9 @@ Responsible for interacting with <code>Contacts</code> framework</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FV17AutoMate_AppBuddy15ContactsHandler6handleFT3keySS5valueSS_T_"></a>
+                    <a name="/s:17AutoMate_AppBuddy15ContactsHandlerV6handleySS3key_SS5valuetF"></a>
                     <a name="//apple_ref/swift/Method/handle(key:value:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FV17AutoMate_AppBuddy15ContactsHandler6handleFT3keySS5valueSS_T_">handle(key:value:)</a>
+                    <a class="token" href="#/s:17AutoMate_AppBuddy15ContactsHandlerV6handleySS3key_SS5valuetF">handle(key:value:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -382,7 +383,7 @@ Responsible for interacting with <code>Contacts</code> framework</p>
                               </td>
                               <td>
                                 <div>
-                                  <p><code>AM_CONTACTS_KEY</code> / <code>AutoMateLaunchOptionKey.contacts</code>.</p>
+                                  <p><code>AM_CONTACTS_KEY</code> / <code><a href="../Enums/AutoMateLaunchOptionKey.html#/s:17AutoMate_AppBuddy0aB15LaunchOptionKeyO8contactsA2CmF">AutoMateLaunchOptionKey.contacts</a></code>.</p>
                                 </div>
                               </td>
                             </tr>
@@ -394,7 +395,7 @@ Responsible for interacting with <code>Contacts</code> framework</p>
                               </td>
                               <td>
                                 <div>
-                                  <p><code>LaunchEnvironmentResource</code> resources representation as a string.</p>
+                                  <p><code><a href="../Structs/LaunchEnvironmentResource.html">LaunchEnvironmentResource</a></code> resources representation as a string.</p>
                                 </div>
                               </td>
                             </tr>
@@ -409,8 +410,8 @@ Responsible for interacting with <code>Contacts</code> framework</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://github.com/PGSSoft/AutoMate-AppBuddy" target="_blank" rel="external">Joanna Bednarz and Bartosz Janda</a>. All rights reserved. (Last updated: 2017-06-29)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2017 <a class="link" href="https://github.com/PGSSoft/AutoMate-AppBuddy" target="_blank" rel="external">Joanna Bednarz and Bartosz Janda</a>. All rights reserved. (Last updated: 2017-11-14)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

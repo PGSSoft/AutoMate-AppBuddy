@@ -8,7 +8,7 @@ docs:
 
 # Push spec to CocoaPods
 push_cocoapods:
-	pod trunk push AutoMate-AppBuddy.podspec
+	bundle exec pod trunk push AutoMate-AppBuddy.podspec
 
 # Push master, develop and tags to GitHub
 push_github:
@@ -18,7 +18,7 @@ push_github:
 
 # Check CocoaPod
 check-podspec:
-	pod lib lint
+	bundle exec pod lib lint
 
 # Check Carthage
 check-carthage:

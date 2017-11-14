@@ -9,14 +9,14 @@
 import XCTest
 import AutoMate_AppBuddy
 
-fileprivate let eventsKey = AutoMateLaunchOptionKey.events.rawValue
-fileprivate let remindersKey = AutoMateLaunchOptionKey.reminders.rawValue
+private let eventsKey = AutoMateLaunchOptionKey.events.rawValue
+private let remindersKey = AutoMateLaunchOptionKey.reminders.rawValue
 
-fileprivate let eventsKeyValue = "com.pgs-soft.AutoMate-AppBuddyTests:events"
-fileprivate let remindersKeyValue = "com.pgs-soft.AutoMate-AppBuddyTests:reminders"
+private let eventsKeyValue = "com.pgs-soft.AutoMate-AppBuddyTests:events"
+private let remindersKeyValue = "com.pgs-soft.AutoMate-AppBuddyTests:reminders"
 
-fileprivate let events = [ EventFactory.mock(), EventFactory.mock()]
-fileprivate let reminders = [ ReminderFactory.mock()]
+private let events = [ EventFactory.mock(), EventFactory.mock()]
+private let reminders = [ ReminderFactory.mock()]
 
 class EventKitHandlerWithoutCleanTests: XCTestCase {
 

@@ -10,6 +10,7 @@ import Foundation
 
 extension Date {
 
+    /// Returns date one year before current date.
     public static let yearAgo: Date = {
         guard let date = Calendar(identifier: .gregorian).date(byAdding: .year, value: -1, to: Date()) else {
             preconditionFailure("Date could not be calculated with the given input.")
@@ -17,6 +18,7 @@ extension Date {
         return date
     }()
 
+    /// Returns date one year after current date.
     public static let nextYear: Date = {
         guard let date = Calendar(identifier: .gregorian).date(byAdding: .year, value: 1, to: Date()) else {
             preconditionFailure("Date could not be calculated with the given input.")

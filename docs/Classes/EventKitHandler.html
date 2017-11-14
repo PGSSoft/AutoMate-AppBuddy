@@ -97,18 +97,18 @@
             <a href="../Other Global Variables.html">Other Global Variables</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Other Global Variables.html#/s:v17AutoMate_AppBuddy21defaultContactsHanderGVS_15ContactsHandlerVS_23ContactDictionaryParserCS_17ContactsInterface_">defaultContactsHander</a>
+                <a href="../Other Global Variables.html#/s:17AutoMate_AppBuddy21defaultContactsHanderAA0F7HandlerVyAA23ContactDictionaryParserVAA0F9InterfaceCGv">defaultContactsHander</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Other Global Variables.html#/s:v17AutoMate_AppBuddy21defaultEventKitHanderGCS_15EventKitHandlerVS_21EventDictionaryParserVS_24ReminderDictionaryParserCS_17EventKitInterface_">defaultEventKitHander</a>
+                <a href="../Other Global Variables.html#/s:17AutoMate_AppBuddy21defaultEventKitHanderAA0fG7HandlerCyAA0F16DictionaryParserVAA08ReminderjK0VAA0fG9InterfaceCGv">defaultEventKitHander</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Other Global Variables.html#/s:v17AutoMate_AppBuddy24defaultIsInUITestHandlerCS_17IsInUITestHandler">defaultIsInUITestHandler</a>
+                <a href="../Other Global Variables.html#/s:17AutoMate_AppBuddy24defaultIsInUITestHandlerAA0fghI0Cv">defaultIsInUITestHandler</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Other Enums.html">Other Enums</a>
+            <a href="../Other Enums.html">Other Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Enums/AutoMateLaunchOptionKey.html">AutoMateLaunchOptionKey</a>
@@ -122,18 +122,21 @@
                 <a href="../Extensions/Bundle.html">Bundle</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Extensions/Date.html">Date</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Extensions/Dictionary.html">Dictionary</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Other Structs.html">Other Structs</a>
+            <a href="../Other Structs.html">Other Structures</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Structs/LaunchEnvironmentResource.html">LaunchEnvironmentResource</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Other Structs.html#/s:V17AutoMate_AppBuddy11ParserError">ParserError</a>
+                <a href="../Other Structs.html#/s:17AutoMate_AppBuddy11ParserErrorV">ParserError</a>
               </li>
             </ul>
           </li>
@@ -147,9 +150,7 @@
                 <div class="language">
                   <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">EventKitHandler</span><span class="o">&lt;</span><span class="kt">E</span><span class="p">:</span> <span class="kt"><a href="../Protocols/EventParser.html">EventParser</a></span><span class="p">,</span> <span class="kt">R</span><span class="p">:</span> <span class="kt"><a href="../Protocols/ReminderParser.html">ReminderParser</a></span><span class="p">,</span> <span class="kt">I</span><span class="p">:</span> <span class="kt"><a href="../Protocols/EventKitInterfaceProtocol.html">EventKitInterfaceProtocol</a></span><span class="o">&gt;</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Handler.html">Handler</a></span>
     <span class="k">where</span> <span class="kt">E</span><span class="o">.</span><span class="kt">T</span> <span class="o">==</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">Any</span><span class="p">],</span>
-        <span class="kt">R</span><span class="o">.</span><span class="kt">T</span> <span class="o">==</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">Any</span><span class="p">],</span>
-        <span class="kt">E</span><span class="o">.</span><span class="kt">U</span> <span class="o">==</span> <span class="kt">EKEvent</span><span class="p">,</span>
-        <span class="kt">R</span><span class="o">.</span><span class="kt">U</span> <span class="o">==</span> <span class="kt">EKReminder</span></code></pre>
+        <span class="kt">R</span><span class="o">.</span><span class="kt">T</span> <span class="o">==</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]</span></code></pre>
 
                 </div>
               </div>
@@ -157,7 +158,7 @@
 
 <p>Handler should be added to <code><a href="../Classes/LaunchEnvironmentManager.html">LaunchEnvironmentManager</a></code>.</p>
 
-<p>Used key: <code>AM_EVENTS_KEY</code>, <code>AM_REMINDERS_KEY</code> / <code><a href="../Enums/AutoMateLaunchOptionKey.html#/s:FO17AutoMate_AppBuddy23AutoMateLaunchOptionKey6eventsFMS0_S0_">AutoMateLaunchOptionKey.events</a></code>, <code><a href="../Enums/AutoMateLaunchOptionKey.html#/s:FO17AutoMate_AppBuddy23AutoMateLaunchOptionKey9remindersFMS0_S0_">AutoMateLaunchOptionKey.reminders</a></code>.</p>
+<p>Used key: <code>AM_EVENTS_KEY</code>, <code>AM_REMINDERS_KEY</code> / <code><a href="../Enums/AutoMateLaunchOptionKey.html#/s:17AutoMate_AppBuddy0aB15LaunchOptionKeyO6eventsA2CmF">AutoMateLaunchOptionKey.events</a></code>, <code><a href="../Enums/AutoMateLaunchOptionKey.html#/s:17AutoMate_AppBuddy0aB15LaunchOptionKeyO9remindersA2CmF">AutoMateLaunchOptionKey.reminders</a></code>.</p>
 
 <p>Supported values: <code><a href="../Structs/LaunchEnvironmentResource.html">LaunchEnvironmentResource</a></code> resources representation as a string.</p>
 
@@ -171,7 +172,7 @@
 </code></pre>
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
-    <p><code><a href="../Other Global Variables.html#/s:v17AutoMate_AppBuddy21defaultEventKitHanderGCS_15EventKitHandlerVS_21EventDictionaryParserVS_24ReminderDictionaryParserCS_17EventKitInterface_">defaultEventKitHander</a></code> singleton could be used intead of creating new instance of the <code>EventKitHandler</code>.</p>
+    <p><code><a href="../Other Global Variables.html#/s:17AutoMate_AppBuddy21defaultEventKitHanderAA0fG7HandlerCyAA0F16DictionaryParserVAA08ReminderjK0VAA0fG9InterfaceCGv">defaultEventKitHander</a></code> singleton could be used intead of creating new instance of the <code>EventKitHandler</code>.</p>
 
 </div>
 <div class="aside aside-note">
@@ -198,7 +199,7 @@ If any other key will be used handler will throw an exception.</p>
 </div>
 <div class="aside aside-seealso">
     <p class="aside-title">Seealso</p>
-    <p><code><a href="../Other Global Variables.html#/s:v17AutoMate_AppBuddy21defaultEventKitHanderGCS_15EventKitHandlerVS_21EventDictionaryParserVS_24ReminderDictionaryParserCS_17EventKitInterface_">defaultEventKitHander</a></code></p>
+    <p><code><a href="../Other Global Variables.html#/s:17AutoMate_AppBuddy21defaultEventKitHanderAA0fG7HandlerCyAA0F16DictionaryParserVAA08ReminderjK0VAA0fG9InterfaceCGv">defaultEventKitHander</a></code></p>
 
 </div>
 
@@ -216,9 +217,9 @@ If any other key will be used handler will throw an exception.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC17AutoMate_AppBuddy15EventKitHandler12eventsParserx"></a>
+                    <a name="/s:17AutoMate_AppBuddy15EventKitHandlerC12eventsParserxv"></a>
                     <a name="//apple_ref/swift/Property/eventsParser" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC17AutoMate_AppBuddy15EventKitHandler12eventsParserx">eventsParser</a>
+                    <a class="token" href="#/s:17AutoMate_AppBuddy15EventKitHandlerC12eventsParserxv">eventsParser</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -243,9 +244,9 @@ If any other key will be used handler will throw an exception.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC17AutoMate_AppBuddy15EventKitHandler15remindersParserq_"></a>
+                    <a name="/s:17AutoMate_AppBuddy15EventKitHandlerC15remindersParserq_v"></a>
                     <a name="//apple_ref/swift/Property/remindersParser" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC17AutoMate_AppBuddy15EventKitHandler15remindersParserq_">remindersParser</a>
+                    <a class="token" href="#/s:17AutoMate_AppBuddy15EventKitHandlerC15remindersParserq_v">remindersParser</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -270,9 +271,9 @@ If any other key will be used handler will throw an exception.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC17AutoMate_AppBuddy15EventKitHandler17eventKitInterfacePS_25EventKitInterfaceProtocol_"></a>
+                    <a name="/s:17AutoMate_AppBuddy15EventKitHandlerC05eventF9InterfaceAA0efI8Protocol_pv"></a>
                     <a name="//apple_ref/swift/Property/eventKitInterface" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC17AutoMate_AppBuddy15EventKitHandler17eventKitInterfacePS_25EventKitInterfaceProtocol_">eventKitInterface</a>
+                    <a class="token" href="#/s:17AutoMate_AppBuddy15EventKitHandlerC05eventF9InterfaceAA0efI8Protocol_pv">eventKitInterface</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -297,9 +298,9 @@ If any other key will be used handler will throw an exception.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC17AutoMate_AppBuddy15EventKitHandler4keysGSaOS_23AutoMateLaunchOptionKey_"></a>
+                    <a name="/s:17AutoMate_AppBuddy15EventKitHandlerC4keysSayAA0aB15LaunchOptionKeyOGv"></a>
                     <a name="//apple_ref/swift/Property/keys" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC17AutoMate_AppBuddy15EventKitHandler4keysGSaOS_23AutoMateLaunchOptionKey_">keys</a>
+                    <a class="token" href="#/s:17AutoMate_AppBuddy15EventKitHandlerC4keysSayAA0aB15LaunchOptionKeyOGv">keys</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -335,9 +336,9 @@ If any other key will be used handler will throw an exception.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC17AutoMate_AppBuddy15EventKitHandlercFT11withParsersxq_17eventKitInterfaceq0__GS0_xq_q0__"></a>
+                    <a name="/s:17AutoMate_AppBuddy15EventKitHandlerCACyxq_q0_Gx11withParsers_q_q0_05eventF9Interfacetcfc"></a>
                     <a name="//apple_ref/swift/Method/init(withParsers:_:eventKitInterface:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC17AutoMate_AppBuddy15EventKitHandlercFT11withParsersxq_17eventKitInterfaceq0__GS0_xq_q0__">init(withParsers:_:eventKitInterface:)</a>
+                    <a class="token" href="#/s:17AutoMate_AppBuddy15EventKitHandlerCACyxq_q0_Gx11withParsers_q_q0_05eventF9Interfacetcfc">init(withParsers:_:eventKitInterface:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -346,8 +347,8 @@ If any other key will be used handler will throw an exception.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Initialize this handler with parsers.
-<code><a href="../Classes/EventKitHandler.html#/s:vC17AutoMate_AppBuddy15EventKitHandler12eventsParserx">eventsParser</a></code> transforms <code>Dictionary</code> to <code>EKEvent</code>,
-<code><a href="../Classes/EventKitHandler.html#/s:vC17AutoMate_AppBuddy15EventKitHandler15remindersParserq_">remindersParser</a></code> transforms <code>Dictionary</code> to <code>EKReminder</code>
+<code><a href="../Classes/EventKitHandler.html#/s:17AutoMate_AppBuddy15EventKitHandlerC12eventsParserxv">eventsParser</a></code> transforms <code>Dictionary</code> to <code>EKEvent</code>,
+<code><a href="../Classes/EventKitHandler.html#/s:17AutoMate_AppBuddy15EventKitHandlerC15remindersParserq_v">remindersParser</a></code> transforms <code>Dictionary</code> to <code>EKReminder</code>
 and interface which is responsible for interacting with <code>EventKit</code>.</p>
 
                       </div>
@@ -371,7 +372,7 @@ and interface which is responsible for interacting with <code>EventKit</code>.</
                               </td>
                               <td>
                                 <div>
-                                  <p>Events parser, an instance of type that conforms to the <code>EventParser</code> protocol.
+                                  <p>Events parser, an instance of type that conforms to the <code><a href="../Protocols/EventParser.html">EventParser</a></code> protocol.
 Responsible for transforming <code>Dictionary</code> to <code>EKEvent</code>.</p>
                                 </div>
                               </td>
@@ -384,7 +385,7 @@ Responsible for transforming <code>Dictionary</code> to <code>EKEvent</code>.</p
                               </td>
                               <td>
                                 <div>
-                                  <p>Reminders parser, an instance of type that conforms to the <code>ReminderParser</code> protocol.
+                                  <p>Reminders parser, an instance of type that conforms to the <code><a href="../Protocols/ReminderParser.html">ReminderParser</a></code> protocol.
 Responsible for transforming <code>Dictionary</code> to <code>EKReminder</code>.</p>
                                 </div>
                               </td>
@@ -397,7 +398,7 @@ Responsible for transforming <code>Dictionary</code> to <code>EKReminder</code>.
                               </td>
                               <td>
                                 <div>
-                                  <p>EventKit interface, an instance of type that conforms to the <code>EventKitInterfaceProtocol</code> protocol.
+                                  <p>EventKit interface, an instance of type that conforms to the <code><a href="../Protocols/EventKitInterfaceProtocol.html">EventKitInterfaceProtocol</a></code> protocol.
 responsible for interacting with <code>EventKit</code>.</p>
                                 </div>
                               </td>
@@ -422,9 +423,9 @@ responsible for interacting with <code>EventKit</code>.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC17AutoMate_AppBuddy15EventKitHandler6handleFT3keySS5valueSS_T_"></a>
+                    <a name="/s:17AutoMate_AppBuddy15EventKitHandlerC6handleySS3key_SS5valuetF"></a>
                     <a name="//apple_ref/swift/Method/handle(key:value:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC17AutoMate_AppBuddy15EventKitHandler6handleFT3keySS5valueSS_T_">handle(key:value:)</a>
+                    <a class="token" href="#/s:17AutoMate_AppBuddy15EventKitHandlerC6handleySS3key_SS5valuetF">handle(key:value:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -455,7 +456,7 @@ responsible for interacting with <code>EventKit</code>.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p><code>AM_EVENTS_KEY</code>, <code>AM_REMINDERS_KEY</code> / <code>AutoMateLaunchOptionKey.events</code>, <code>AutoMateLaunchOptionKey.reminders</code>.</p>
+                                  <p><code>AM_EVENTS_KEY</code>, <code>AM_REMINDERS_KEY</code> / <code><a href="../Enums/AutoMateLaunchOptionKey.html#/s:17AutoMate_AppBuddy0aB15LaunchOptionKeyO6eventsA2CmF">AutoMateLaunchOptionKey.events</a></code>, <code><a href="../Enums/AutoMateLaunchOptionKey.html#/s:17AutoMate_AppBuddy0aB15LaunchOptionKeyO9remindersA2CmF">AutoMateLaunchOptionKey.reminders</a></code>.</p>
                                 </div>
                               </td>
                             </tr>
@@ -467,7 +468,7 @@ responsible for interacting with <code>EventKit</code>.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p><code>LaunchEnvironmentResource</code> resources representation as a string.</p>
+                                  <p><code><a href="../Structs/LaunchEnvironmentResource.html">LaunchEnvironmentResource</a></code> resources representation as a string.</p>
                                 </div>
                               </td>
                             </tr>
@@ -482,8 +483,8 @@ responsible for interacting with <code>EventKit</code>.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://github.com/PGSSoft/AutoMate-AppBuddy" target="_blank" rel="external">Joanna Bednarz and Bartosz Janda</a>. All rights reserved. (Last updated: 2017-06-29)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2017 <a class="link" href="https://github.com/PGSSoft/AutoMate-AppBuddy" target="_blank" rel="external">Joanna Bednarz and Bartosz Janda</a>. All rights reserved. (Last updated: 2017-11-14)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
