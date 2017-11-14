@@ -6,8 +6,6 @@
 //  Copyright © 2017 PGS Software. All rights reserved.
 //
 
-// swiftlint:disable file_length
-
 #if !os(tvOS)
 import Foundation
 import Contacts
