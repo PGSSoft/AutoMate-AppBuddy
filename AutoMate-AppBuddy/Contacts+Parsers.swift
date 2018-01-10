@@ -89,7 +89,9 @@ internal extension CNMutableContact {
         phoneticMiddleName ?= try data.fetchOptional("phoneticMiddleName")
         phoneticFamilyName ?= try data.fetchOptional("phoneticFamilyName")
         organizationName ?= try data.fetchOptional("organizationName")
-        phoneticOrganizationName ?= try data.fetchOptional("phoneticOrganizationName")
+        if #available(iOS 10.0, *) {
+            phoneticOrganizationName ?= try data.fetchOptional("phoneticOrganizationName")
+        }
         departmentName ?= try data.fetchOptional("departmentName")
         jobTitle ?= try data.fetchOptional("jobTitle")
         socialProfiles ?= try data.fetchOptionalArray("socialProfiles") { try parse(socialProfiles: $0) }

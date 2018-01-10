@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
     "Bartosz Janda"    => "bjanda@pgs-soft.com"
   }
 
-  s.ios.deployment_target = '10.3'
+  s.ios.deployment_target = '9.3'
   s.osx.deployment_target = '10.12'
   s.tvos.deployment_target = '9.2'
 
