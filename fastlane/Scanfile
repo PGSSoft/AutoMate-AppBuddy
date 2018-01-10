@@ -7,7 +7,7 @@
 # Remove the # in front of the line to enable the option
 
 project "AutoMate-AppBuddy.xcodeproj"
-scheme "AutoMate-AppBuddy iOS"
+scheme "AutoMate-AppBuddy"
 
 device "iPhone X (11.1)"
 

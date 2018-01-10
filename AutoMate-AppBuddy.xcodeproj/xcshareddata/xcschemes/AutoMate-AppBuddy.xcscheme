@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0900"
+   LastUpgradeVersion = "0920"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E46B798F1E28ECEF00BC36B4"
                BuildableName = "AutoMate_AppBuddy.framework"
-               BlueprintName = "AutoMate-AppBuddy iOS"
+               BlueprintName = "AutoMate-AppBuddy"
                ReferencedContainer = "container:AutoMate-AppBuddy.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,7 +46,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E46B798F1E28ECEF00BC36B4"
             BuildableName = "AutoMate_AppBuddy.framework"
-            BlueprintName = "AutoMate-AppBuddy iOS"
+            BlueprintName = "AutoMate-AppBuddy"
             ReferencedContainer = "container:AutoMate-AppBuddy.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -69,7 +69,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E46B798F1E28ECEF00BC36B4"
             BuildableName = "AutoMate_AppBuddy.framework"
-            BlueprintName = "AutoMate-AppBuddy iOS"
+            BlueprintName = "AutoMate-AppBuddy"
             ReferencedContainer = "container:AutoMate-AppBuddy.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -87,7 +87,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E46B798F1E28ECEF00BC36B4"
             BuildableName = "AutoMate_AppBuddy.framework"
-            BlueprintName = "AutoMate-AppBuddy iOS"
+            BlueprintName = "AutoMate-AppBuddy"
             ReferencedContainer = "container:AutoMate-AppBuddy.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

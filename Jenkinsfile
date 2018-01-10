@@ -1,4 +1,4 @@
-ios.prepareEnv(xcode: "/Applications/Xcode_9.1.app")
+ios.prepareEnv(xcode: "/Applications/Xcode_9.2.app")
 
 // Unlock Bitbucket Server credentials for Danger
 def unlockBitbucketDangerCredentials(block) {
@@ -47,7 +47,7 @@ def testStage(scheme, platform, deviceName, deviceOS) {
       finally {
         try {
           sh '''
-            bundle exec golden_rose generate "output/AutoMate-AppBuddy iOS.test_result"
+            bundle exec golden_rose generate "output/AutoMate-AppBuddy.test_result"
             mv "index.html" "output/index_${DESTINATION_NAME}_${DESTINATION_OS}.html" || true
             mv "output/report.html" "output/report_${DESTINATION_NAME}_${DESTINATION_OS}.html" || true
           '''
@@ -123,28 +123,28 @@ def carthageLintBranch() {
 def branches(unlockDanger) {
   return [
     "iPhone SE, 11.1": {
-      testBranch("AutoMate-AppBuddy iOS", "iOS Simulator", "iPhone SE", "11.1")
+      testBranch("AutoMate-AppBuddy", "iOS Simulator", "iPhone SE", "11.1")
     },
     "iPhone 8, 11.1": {
-      testBranch("AutoMate-AppBuddy iOS", "iOS Simulator", "iPhone 8", "11.1")
+      testBranch("AutoMate-AppBuddy", "iOS Simulator", "iPhone 8", "11.1")
     },
     "iPhone 8 Plus, 11.1": {
-      testBranch("AutoMate-AppBuddy iOS", "iOS Simulator", "iPhone 8 Plus", "11.1")
+      testBranch("AutoMate-AppBuddy", "iOS Simulator", "iPhone 8 Plus", "11.1")
     },
     "iPhone X, 11.1": {
-      testBranch("AutoMate-AppBuddy iOS", "iOS Simulator", "iPhone X", "11.1", unlockDanger)
+      testBranch("AutoMate-AppBuddy", "iOS Simulator", "iPhone X", "11.1", unlockDanger)
     },
     "iPad Air 2, 11.1": {
-      testBranch("AutoMate-AppBuddy iOS", "iOS Simulator", "iPad Air 2", "11.1")
+      testBranch("AutoMate-AppBuddy", "iOS Simulator", "iPad Air 2", "11.1")
     },
     "iPad Pro (9.7-inch), 11.1": {
-      testBranch("AutoMate-AppBuddy iOS", "iOS Simulator", "iPad Pro (9.7-inch)", "11.1")
+      testBranch("AutoMate-AppBuddy", "iOS Simulator", "iPad Pro (9.7-inch)", "11.1")
     },
     "iPad Pro (10.5-inch), 11.1": {
-      testBranch("AutoMate-AppBuddy iOS", "iOS Simulator", "iPad Pro (10.5-inch)", "11.1")
+      testBranch("AutoMate-AppBuddy", "iOS Simulator", "iPad Pro (10.5-inch)", "11.1")
     },
     "iPad Pro (12.9-inch) (2nd generation), 11.1": {
-      testBranch("AutoMate-AppBuddy iOS", "iOS Simulator", "iPad Pro (12.9-inch) (2nd generation)", "11.1")
+      testBranch("AutoMate-AppBuddy", "iOS Simulator", "iPad Pro (12.9-inch) (2nd generation)", "11.1")
     },
     "CocoaPods lint": {
       podLintBranch()
