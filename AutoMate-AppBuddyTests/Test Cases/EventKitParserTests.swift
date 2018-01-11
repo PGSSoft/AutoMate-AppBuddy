@@ -47,7 +47,7 @@ class EventKitParserTests: XCTestCase {
 
         XCTAssertEqual(events.count, 3, "Expected 3 events, got \(events.count)")
     }
-    
+
     func testParseReminderWithMinimalInfo() {
         let reminderDict = ReminderFactory.reminderWithMinimalInfo
         var reminder: EKReminder!
