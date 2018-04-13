@@ -52,7 +52,7 @@ public class ContactsInterface: ContactsInterfaceProtocol {
             CNContactSocialProfilesKey,
             CNContactThumbnailImageDataKey,
             CNContactNicknameKey
-        ].flatMap { $0 as? CNKeyDescriptor })
+        ].compactMap { $0 as? CNKeyDescriptor })
     }()
 
     // MARK: Initialization
@@ -96,7 +96,7 @@ public class ContactsInterface: ContactsInterfaceProtocol {
             var contacts = [CNContact]()
             try contactStore.enumerateContacts(with: fetchRequest) { contact, _ in contacts.append(contact) }
 
-            contacts.flatMap { $0.mutableCopy() as? CNMutableContact }.forEach { saveRequest.delete($0) }
+            contacts.compactMap { $0.mutableCopy() as? CNMutableContact }.forEach { saveRequest.delete($0) }
             try contactStore.execute(saveRequest)
             completion(true, nil)
         } catch let error {

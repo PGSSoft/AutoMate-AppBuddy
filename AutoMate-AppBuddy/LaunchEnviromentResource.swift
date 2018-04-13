@@ -106,6 +106,6 @@ public struct LaunchEnvironmentResource {
             isCleanFlag = true
         }
 
-        return (pairs.flatMap { LaunchEnvironmentResource.resource(from: $0) }, isCleanFlag)
+        return (pairs.compactMap { LaunchEnvironmentResource.resource(from: $0) }, isCleanFlag)
     }
 }

@@ -50,8 +50,8 @@ public extension Parser {
     /// - Returns: A list of converted objects.
     /// - Throws: Rethrow an error throwed by `parse(_:)` method.
     public func parsed(resources: [LaunchEnvironmentResource]) throws -> [Self.U] {
-        let jsonsData: [[T]] = resources.flatMap { $0.bundle.jsonArray(with: $0.name) }
+        let jsonsData: [[T]] = resources.compactMap { $0.bundle.jsonArray(with: $0.name) }
         let flattenData = jsonsData.reduce([], +)
-        return try flattenData.flatMap { try parse($0) }
+        return try flattenData.compactMap { try parse($0) }
     }
 }
