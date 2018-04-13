@@ -234,9 +234,9 @@ class ContactsParserTests: XCTestCase {
             return
         }
 
-        for i in 0..<expectedT.count {
-            let date = dates[i]
-            let expected = expectedT[i]
+        for index in 0..<expectedT.count {
+            let date = dates[index]
+            let expected = expectedT[index]
             guard let key = expected.keys.first else {
                 XCTFail("Missing key", file: file, line: line)
                 continue
@@ -263,9 +263,9 @@ class ContactsParserTests: XCTestCase {
             return
         }
 
-        for i in 0..<expectedT.count {
-            let socialProfile = socialProfiles[i]
-            let expected = expectedT[i]
+        for index in 0..<expectedT.count {
+            let socialProfile = socialProfiles[index]
+            let expected = expectedT[index]
             guard let key = expected.keys.first else {
                 XCTFail("Missing key", file: file, line: line)
                 continue
@@ -304,9 +304,9 @@ class ContactsParserTests: XCTestCase {
             return
         }
 
-        for i in 0..<expectedT.count {
-            let phoneNumber = phoneNumbers[i]
-            let expected = expectedT[i]
+        for index in 0..<expectedT.count {
+            let phoneNumber = phoneNumbers[index]
+            let expected = expectedT[index]
             guard let key = expected.keys.first else {
                 XCTFail("Missing key", file: file, line: line)
                 continue
@@ -346,9 +346,9 @@ class ContactsParserTests: XCTestCase {
             return
         }
 
-        for i in 0..<expectedT.count {
-            let string = strings[i]
-            let expected = expectedT[i]
+        for index in 0..<expectedT.count {
+            let string = strings[index]
+            let expected = expectedT[index]
             guard let key = expected.keys.first else {
                 XCTFail("Missing key", file: file, line: line)
                 continue
@@ -375,9 +375,9 @@ class ContactsParserTests: XCTestCase {
             return
         }
 
-        for i in 0..<expectedT.count {
-            let postalAddress = postalAddresses[i]
-            let expected = expectedT[i]
+        for index in 0..<expectedT.count {
+            let postalAddress = postalAddresses[index]
+            let expected = expectedT[index]
             guard let key = expected.keys.first else {
                 XCTFail("Missing key", file: file, line: line)
                 continue
@@ -432,9 +432,9 @@ class ContactsParserTests: XCTestCase {
             return
         }
 
-        for i in 0..<expectedT.count {
-            let contactRelation = contactRelations[i]
-            let expected = expectedT[i]
+        for index in 0..<expectedT.count {
+            let contactRelation = contactRelations[index]
+            let expected = expectedT[index]
             guard let key = expected.keys.first else {
                 XCTFail("Missing key", file: file, line: line)
                 continue
@@ -474,9 +474,9 @@ class ContactsParserTests: XCTestCase {
             return
         }
 
-        for i in 0..<expectedT.count {
-            let instantMessageAddress = instantMessageAddresses[i]
-            let expected = expectedT[i]
+        for index in 0..<expectedT.count {
+            let instantMessageAddress = instantMessageAddresses[index]
+            let expected = expectedT[index]
             guard let key = expected.keys.first else {
                 XCTFail("Missing key", file: file, line: line)
                 continue

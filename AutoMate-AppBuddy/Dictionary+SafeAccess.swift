@@ -95,7 +95,7 @@ public extension Dictionary {
         guard let fetched: [V] = try fetchOptional(key) else {
             return nil
         }
-        return try fetched.flatMap(transformation)
+        return try fetched.compactMap(transformation)
     }
 
     /// Return first pair (key and value) from dictionary.
