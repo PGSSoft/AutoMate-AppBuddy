@@ -85,7 +85,7 @@ class FoundationExtensionsTests: XCTestCase {
         assertNotThrows(expr: try dateComponents = DateComponents.parse(from: data), "Cannot create DateComponents")
         XCTAssertNotNil(dateComponents.calendar)
         XCTAssertEqual(dateComponents.timeZone, TimeZone(secondsFromGMT: 3000))
-        XCTAssertEqual(dateComponents.date, Date(timeIntervalSinceReferenceDate: -63050662800.0))
+        XCTAssertEqual(dateComponents.date, Date(timeIntervalSince1970: -62072528400))
 
         XCTAssertEqual(dateComponents.era, 1)
         XCTAssertFalse(dateComponents.isLeapMonth!)
