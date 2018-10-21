@@ -155,6 +155,7 @@ public class EventKitHandler<E: EventParser, R: ReminderParser, I: EventKitInter
 }
 
 // MARK: - Default Event Kit Handler
+/// Type of default `EventKitHandler` with all the generic types filled using implementations in the framework.
 public typealias DefaultEventKitHander = EventKitHandler<EventDictionaryParser, ReminderDictionaryParser, EventKitInterface>
 
 /// Default `EventKitHandler` with default `EventParser`, `ReminderParser` and `EventKitInterfaceProtocol`.

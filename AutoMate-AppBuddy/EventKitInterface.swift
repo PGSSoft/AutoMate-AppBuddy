@@ -14,6 +14,9 @@ import EventKit
 /// - seealso: `EventKitInterface`
 /// - seealso: `EventKitHandler`
 public protocol EventKitInterfaceProtocol {
+    /// This closure passes information about a complete asynchronous task.
+    ///
+    /// Depending on the outcome the error may be available, and the success flag changes its value.
     typealias CompletionBlock = (Bool, Error?) -> Void
 
     /// Adds all calendar items to the `EKEventStore`.

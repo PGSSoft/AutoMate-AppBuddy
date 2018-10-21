@@ -97,13 +97,13 @@
             <a href="../Other Global Variables.html">Other Global Variables</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Other Global Variables.html#/s:17AutoMate_AppBuddy21defaultContactsHanderAA0F7HandlerVyAA23ContactDictionaryParserVAA0F9InterfaceCGv">defaultContactsHander</a>
+                <a href="../Other Global Variables.html#/s:17AutoMate_AppBuddy21defaultContactsHanderAA0F7HandlerVyAA23ContactDictionaryParserVAA0F9InterfaceCGvp">defaultContactsHander</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Other Global Variables.html#/s:17AutoMate_AppBuddy21defaultEventKitHanderAA0fG7HandlerCyAA0F16DictionaryParserVAA08ReminderjK0VAA0fG9InterfaceCGv">defaultEventKitHander</a>
+                <a href="../Other Global Variables.html#/s:17AutoMate_AppBuddy21defaultEventKitHanderAA0fG7HandlerCyAA0F16DictionaryParserVAA08ReminderjK0VAA0fG9InterfaceCGvp">defaultEventKitHander</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Other Global Variables.html#/s:17AutoMate_AppBuddy24defaultIsInUITestHandlerAA0fghI0Cv">defaultIsInUITestHandler</a>
+                <a href="../Other Global Variables.html#/s:17AutoMate_AppBuddy24defaultIsInUITestHandlerAA0fghI0Cvp">defaultIsInUITestHandler</a>
               </li>
             </ul>
           </li>
@@ -140,6 +140,17 @@
               </li>
             </ul>
           </li>
+          <li class="nav-group-name">
+            <a href="../Other Typealiases.html">Other Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Other Typealiases.html#/s:17AutoMate_AppBuddy21DefaultEventKitHandera">DefaultEventKitHander</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Typealiases.html#/s:17AutoMate_AppBuddy15LaunchOptionKeya">LaunchOptionKey</a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
       <article class="main-content">
@@ -148,7 +159,7 @@
             <h1>ContactParser</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ContactParser</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Parser.html">Parser</a></span> <span class="k">where</span> <span class="kt">T</span> <span class="o">==</span> <span class="kt">Any</span><span class="p">,</span> <span class="kt">U</span> <span class="o">==</span> <span class="kt">CNMutableContact</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ContactParser</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/Parser.html">Parser</a></span> <span class="k">where</span> <span class="k">Self</span><span class="o">.</span><span class="kt">T</span> <span class="o">==</span> <span class="kt">Any</span><span class="p">,</span> <span class="k">Self</span><span class="o">.</span><span class="kt">U</span> <span class="o">==</span> <span class="kt">CNMutableContact</span></code></pre>
 
                 </div>
               </div>
@@ -179,9 +190,9 @@ Requires the converted object to be an instance of the <code>CNMutableContact</c
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:17AutoMate_AppBuddy13ContactParserP5storeSo14CNContactStoreCv"></a>
+                    <a name="/s:17AutoMate_AppBuddy13ContactParserP5storeSo14CNContactStoreCvp"></a>
                     <a name="//apple_ref/swift/Property/store" class="dashAnchor"></a>
-                    <a class="token" href="#/s:17AutoMate_AppBuddy13ContactParserP5storeSo14CNContactStoreCv">store</a>
+                    <a class="token" href="#/s:17AutoMate_AppBuddy13ContactParserP5storeSo14CNContactStoreCvp">store</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -196,7 +207,7 @@ Requires the converted object to be an instance of the <code>CNMutableContact</c
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">store</span><span class="p">:</span> <span class="kt">CNContactStore</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">store</span><span class="p">:</span> <span class="kt">CNContactStore</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -206,13 +217,20 @@ Requires the converted object to be an instance of the <code>CNMutableContact</c
               </ul>
             </div>
             <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Contact%20Parser"></a>
+                <a name="//apple_ref/swift/Section/Contact Parser" class="dashAnchor"></a>
+                <a href="#/Contact%20Parser">
+                  <h3 class="section-name">Contact Parser</h3>
+                </a>
+              </div>
               <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:17AutoMate_AppBuddy13ContactParserPAAE12parseAndSaveySayAA25LaunchEnvironmentResourceVG9resources_tKF"></a>
+                    <a name="/s:17AutoMate_AppBuddy13ContactParserPAAE12parseAndSave9resourcesySayAA25LaunchEnvironmentResourceVG_tKF"></a>
                     <a name="//apple_ref/swift/Method/parseAndSave(resources:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:17AutoMate_AppBuddy13ContactParserPAAE12parseAndSaveySayAA25LaunchEnvironmentResourceVG9resources_tKF">parseAndSave(resources:)</a>
+                    <a class="token" href="#/s:17AutoMate_AppBuddy13ContactParserPAAE12parseAndSave9resourcesySayAA25LaunchEnvironmentResourceVG_tKF">parseAndSave(resources:)</a>
                     </code>
                       <span class="declaration-note">
                         Extension method
@@ -267,8 +285,8 @@ to <code>CNMutableContact</code>s and save them to the <code>CNContactStore</cod
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://github.com/PGSSoft/AutoMate-AppBuddy" target="_blank" rel="external">Joanna Bednarz and Bartosz Janda</a>. All rights reserved. (Last updated: 2018-01-11)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2018 <a class="link" href="https://github.com/PGSSoft/AutoMate-AppBuddy" target="_blank" rel="external">Joanna Bednarz and Bartosz Janda</a>. All rights reserved. (Last updated: 2018-10-21)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Other Structures  Reference</title>
+    <title>Other Type Aliases  Reference</title>
     <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Section/Other Structures" class="dashAnchor"></a>
-    <a title="Other Structures  Reference"></a>
+    <a name="//apple_ref/swift/Section/Other Type Aliases" class="dashAnchor"></a>
+    <a title="Other Type Aliases  Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="index.html">AutoMate_AppBuddy Docs</a> (100% documented)</p>
@@ -21,7 +21,7 @@
       <p id="breadcrumbs">
         <a href="index.html">AutoMate_AppBuddy Reference</a>
         <img id="carat" src="img/carat.png" />
-        Other Structures  Reference
+        Other Type Aliases  Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -156,26 +156,26 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>Other Structures</h1>
-            <p>The following structures are available globally.</p>
+            <h1>Other Type Aliases</h1>
+            <p>The following type aliases are available globally.</p>
 
           </section>
           <section class="section task-group-section">
             <div class="task-group">
               <div class="task-name-container">
-                <a name="/Launch%20Environment%20Resource"></a>
-                <a name="//apple_ref/swift/Section/Launch Environment Resource" class="dashAnchor"></a>
-                <a href="#/Launch%20Environment%20Resource">
-                  <h3 class="section-name">Launch Environment Resource</h3>
+                <a name="/Default%20Event%20Kit%20Handler"></a>
+                <a name="//apple_ref/swift/Section/Default Event Kit Handler" class="dashAnchor"></a>
+                <a href="#/Default%20Event%20Kit%20Handler">
+                  <h3 class="section-name">Default Event Kit Handler</h3>
                 </a>
               </div>
               <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:17AutoMate_AppBuddy25LaunchEnvironmentResourceV"></a>
-                    <a name="//apple_ref/swift/Struct/LaunchEnvironmentResource" class="dashAnchor"></a>
-                    <a class="token" href="#/s:17AutoMate_AppBuddy25LaunchEnvironmentResourceV">LaunchEnvironmentResource</a>
+                    <a name="/s:17AutoMate_AppBuddy21DefaultEventKitHandera"></a>
+                    <a name="//apple_ref/swift/Alias/DefaultEventKitHander" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17AutoMate_AppBuddy21DefaultEventKitHandera">DefaultEventKitHander</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -183,31 +183,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Stores <q>resource</q> as a name of the resource and <code>Bundle</code> in which the resource is available.</p>
+                        <p>Type of default <code><a href="Classes/EventKitHandler.html">EventKitHandler</a></code> with all the generic types filled using implementations in the framework.</p>
 
-<p>Resource is initialized with a bundle description (a bundle name or a bundle identifier) and a name of the resource.
-If bundle name is <code>nil</code> then <code>Bundle.main</code> is used.</p>
-
-<p>Resource can be parsed from string.</p>
-
-<p>Resources representation: is made of <q>resource representation</q> separated by comma.
-In addition, the <code>CleanFlag</code> can be used as first element.</p>
-
-<p>Resource representation: is made of a bundle name (or a bundle identifier) and a resource name
-separated with colon. Bundle name can be a <code>nil</code> string then the <code>Bundle.main</code> will be used.</p>
-
-<p><strong>Example:</strong></p>
-<pre class="highlight swift"><code><span class="kt">Test</span> <span class="nv">data</span><span class="p">:</span><span class="n">events</span><span class="p">,</span><span class="nv">nil</span><span class="p">:</span><span class="n">contacts</span>
-<span class="kt">AM_CLEAN_DATA_FLAG</span><span class="p">,</span><span class="kt">Test</span> <span class="nv">data</span><span class="p">:</span><span class="n">events</span><span class="p">,</span><span class="nv">nil</span><span class="p">:</span><span class="n">contacts</span>
-</code></pre>
-
-                        <a href="Structs/LaunchEnvironmentResource.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">LaunchEnvironmentResource</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">DefaultEventKitHander</span> <span class="o">=</span> <span class="kt"><a href="Classes/EventKitHandler.html">EventKitHandler</a></span><span class="o">&lt;</span><span class="kt"><a href="Structs/EventDictionaryParser.html">EventDictionaryParser</a></span><span class="p">,</span> <span class="kt"><a href="Structs/ReminderDictionaryParser.html">ReminderDictionaryParser</a></span><span class="p">,</span> <span class="kt"><a href="Classes/EventKitInterface.html">EventKitInterface</a></span><span class="o">&gt;</span></code></pre>
 
                         </div>
                       </div>
@@ -218,19 +201,19 @@ separated with colon. Bundle name can be a <code>nil</code> string then the <cod
             </div>
             <div class="task-group">
               <div class="task-name-container">
-                <a name="/Parser%20Error"></a>
-                <a name="//apple_ref/swift/Section/Parser Error" class="dashAnchor"></a>
-                <a href="#/Parser%20Error">
-                  <h3 class="section-name">Parser Error</h3>
+                <a name="/Launch%20Option%20Key"></a>
+                <a name="//apple_ref/swift/Section/Launch Option Key" class="dashAnchor"></a>
+                <a href="#/Launch%20Option%20Key">
+                  <h3 class="section-name">Launch Option Key</h3>
                 </a>
               </div>
               <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:17AutoMate_AppBuddy11ParserErrorV"></a>
-                    <a name="//apple_ref/swift/Struct/ParserError" class="dashAnchor"></a>
-                    <a class="token" href="#/s:17AutoMate_AppBuddy11ParserErrorV">ParserError</a>
+                    <a name="/s:17AutoMate_AppBuddy15LaunchOptionKeya"></a>
+                    <a name="//apple_ref/swift/Alias/LaunchOptionKey" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17AutoMate_AppBuddy15LaunchOptionKeya">LaunchOptionKey</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -238,14 +221,14 @@ separated with colon. Bundle name can be a <code>nil</code> string then the <cod
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Error used by the <code>AutoMate-AppBuddy</code>.</p>
+                        <p>A type used to represent keys of launch options.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">ParserError</span> <span class="p">:</span> <span class="kt">ErrorWithMessage</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">LaunchOptionKey</span> <span class="o">=</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
