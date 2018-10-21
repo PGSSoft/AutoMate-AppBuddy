@@ -87,4 +87,5 @@ public protocol Handler {
 }
 
 // MARK: - Launch Option Key
+/// A type used to represent keys of launch options.
 public typealias LaunchOptionKey = String

@@ -10,6 +10,7 @@
     
   </head>
   <body>
+    <a name="//apple_ref/swift/Section/Parsers" class="dashAnchor"></a>
     <a title="Parsers  Reference"></a>
     <header>
       <div class="content-wrapper">
@@ -96,13 +97,13 @@
             <a href="Other Global Variables.html">Other Global Variables</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Other Global Variables.html#/s:17AutoMate_AppBuddy21defaultContactsHanderAA0F7HandlerVyAA23ContactDictionaryParserVAA0F9InterfaceCGv">defaultContactsHander</a>
+                <a href="Other Global Variables.html#/s:17AutoMate_AppBuddy21defaultContactsHanderAA0F7HandlerVyAA23ContactDictionaryParserVAA0F9InterfaceCGvp">defaultContactsHander</a>
               </li>
               <li class="nav-group-task">
-                <a href="Other Global Variables.html#/s:17AutoMate_AppBuddy21defaultEventKitHanderAA0fG7HandlerCyAA0F16DictionaryParserVAA08ReminderjK0VAA0fG9InterfaceCGv">defaultEventKitHander</a>
+                <a href="Other Global Variables.html#/s:17AutoMate_AppBuddy21defaultEventKitHanderAA0fG7HandlerCyAA0F16DictionaryParserVAA08ReminderjK0VAA0fG9InterfaceCGvp">defaultEventKitHander</a>
               </li>
               <li class="nav-group-task">
-                <a href="Other Global Variables.html#/s:17AutoMate_AppBuddy24defaultIsInUITestHandlerAA0fghI0Cv">defaultIsInUITestHandler</a>
+                <a href="Other Global Variables.html#/s:17AutoMate_AppBuddy24defaultIsInUITestHandlerAA0fghI0Cvp">defaultIsInUITestHandler</a>
               </li>
             </ul>
           </li>
@@ -136,6 +137,17 @@
               </li>
               <li class="nav-group-task">
                 <a href="Other Structs.html#/s:17AutoMate_AppBuddy11ParserErrorV">ParserError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Other Typealiases.html">Other Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Other Typealiases.html#/s:17AutoMate_AppBuddy21DefaultEventKitHandera">DefaultEventKitHander</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Other Typealiases.html#/s:17AutoMate_AppBuddy15LaunchOptionKeya">LaunchOptionKey</a>
               </li>
             </ul>
           </li>
@@ -254,7 +266,7 @@ are constructed as a list of dictionaries.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">ContactDictionaryParser</span><span class="p">:</span> <span class="kt"><a href="Protocols/ContactParser.html">ContactParser</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">ContactDictionaryParser</span> <span class="p">:</span> <span class="kt"><a href="Protocols/ContactParser.html">ContactParser</a></span></code></pre>
 
                         </div>
                       </div>
@@ -313,7 +325,7 @@ are constructed as a list of dictionaries.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">EventDictionaryParser</span><span class="p">:</span> <span class="kt"><a href="Protocols/EventParser.html">EventParser</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">EventDictionaryParser</span> <span class="p">:</span> <span class="kt"><a href="Protocols/EventParser.html">EventParser</a></span></code></pre>
 
                         </div>
                       </div>
@@ -389,7 +401,7 @@ are constructed as a list of dictionaries.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">ReminderDictionaryParser</span><span class="p">:</span> <span class="kt"><a href="Protocols/ReminderParser.html">ReminderParser</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">ReminderDictionaryParser</span> <span class="p">:</span> <span class="kt"><a href="Protocols/ReminderParser.html">ReminderParser</a></span></code></pre>
 
                         </div>
                       </div>
@@ -478,7 +490,7 @@ Requires the converted object to be an instance of the <code>CNMutableContact</c
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ContactParser</span><span class="p">:</span> <span class="kt"><a href="Protocols/Parser.html">Parser</a></span> <span class="k">where</span> <span class="kt">T</span> <span class="o">==</span> <span class="kt">Any</span><span class="p">,</span> <span class="kt">U</span> <span class="o">==</span> <span class="kt">CNMutableContact</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ContactParser</span> <span class="p">:</span> <span class="kt"><a href="Protocols/Parser.html">Parser</a></span> <span class="k">where</span> <span class="k">Self</span><span class="o">.</span><span class="kt">T</span> <span class="o">==</span> <span class="kt">Any</span><span class="p">,</span> <span class="k">Self</span><span class="o">.</span><span class="kt">U</span> <span class="o">==</span> <span class="kt">CNMutableContact</span></code></pre>
 
                         </div>
                       </div>
@@ -528,7 +540,7 @@ Requires the converted object to be an instance of the <code>EKEvent</code> type
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">EventParser</span><span class="p">:</span> <span class="kt"><a href="Protocols/Parser.html">Parser</a></span> <span class="k">where</span> <span class="kt">U</span> <span class="o">==</span> <span class="kt">EKEvent</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">EventParser</span> <span class="p">:</span> <span class="kt"><a href="Protocols/Parser.html">Parser</a></span> <span class="k">where</span> <span class="k">Self</span><span class="o">.</span><span class="kt">U</span> <span class="o">==</span> <span class="kt">EKEvent</span></code></pre>
 
                         </div>
                       </div>
@@ -578,7 +590,7 @@ Requires the converted object to be an instance of the <code>EKReminder</code> t
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ReminderParser</span><span class="p">:</span> <span class="kt"><a href="Protocols/Parser.html">Parser</a></span> <span class="k">where</span> <span class="kt">U</span> <span class="o">==</span> <span class="kt">EKReminder</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ReminderParser</span> <span class="p">:</span> <span class="kt"><a href="Protocols/Parser.html">Parser</a></span> <span class="k">where</span> <span class="k">Self</span><span class="o">.</span><span class="kt">U</span> <span class="o">==</span> <span class="kt">EKReminder</span></code></pre>
 
                         </div>
                       </div>
@@ -590,8 +602,8 @@ Requires the converted object to be an instance of the <code>EKReminder</code> t
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://github.com/PGSSoft/AutoMate-AppBuddy" target="_blank" rel="external">Joanna Bednarz and Bartosz Janda</a>. All rights reserved. (Last updated: 2018-01-11)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2018 <a class="link" href="https://github.com/PGSSoft/AutoMate-AppBuddy" target="_blank" rel="external">Joanna Bednarz and Bartosz Janda</a>. All rights reserved. (Last updated: 2018-10-21)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

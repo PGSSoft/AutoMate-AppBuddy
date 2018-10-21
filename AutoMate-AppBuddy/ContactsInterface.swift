@@ -14,6 +14,9 @@ import Contacts
 /// - seealso: `ContactsInterface`
 /// - seealso: `ContactsHandler`
 public protocol ContactsInterfaceProtocol {
+    /// This closure passes information about a complete asynchronous task.
+    ///
+    /// Depending on the outcome the error may be available, and the success flag changes its value.
     typealias CompletionBlock = (Bool, Error?) -> Void
 
     /// Adds all contacts to the `CNContactStore`.

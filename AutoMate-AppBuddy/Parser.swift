@@ -27,7 +27,13 @@ public struct ParserError: ErrorWithMessage {
 public protocol Parser {
 
     // MARK: Associatedtypes
+    /// A source type that the parser works with.
+    ///
+    /// A parser takes an instance of type `T` and returns an instance of type `U`.
     associatedtype T
+    /// A result type that the parser works with.
+    ///
+    /// A parser takes an instance of type `T` and returns an instance of type `U`.
     associatedtype U
 
     // MARK: Methods

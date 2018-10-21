@@ -97,13 +97,13 @@
             <a href="../Other Global Variables.html">Other Global Variables</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Other Global Variables.html#/s:17AutoMate_AppBuddy21defaultContactsHanderAA0F7HandlerVyAA23ContactDictionaryParserVAA0F9InterfaceCGv">defaultContactsHander</a>
+                <a href="../Other Global Variables.html#/s:17AutoMate_AppBuddy21defaultContactsHanderAA0F7HandlerVyAA23ContactDictionaryParserVAA0F9InterfaceCGvp">defaultContactsHander</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Other Global Variables.html#/s:17AutoMate_AppBuddy21defaultEventKitHanderAA0fG7HandlerCyAA0F16DictionaryParserVAA08ReminderjK0VAA0fG9InterfaceCGv">defaultEventKitHander</a>
+                <a href="../Other Global Variables.html#/s:17AutoMate_AppBuddy21defaultEventKitHanderAA0fG7HandlerCyAA0F16DictionaryParserVAA08ReminderjK0VAA0fG9InterfaceCGvp">defaultEventKitHander</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Other Global Variables.html#/s:17AutoMate_AppBuddy24defaultIsInUITestHandlerAA0fghI0Cv">defaultIsInUITestHandler</a>
+                <a href="../Other Global Variables.html#/s:17AutoMate_AppBuddy24defaultIsInUITestHandlerAA0fghI0Cvp">defaultIsInUITestHandler</a>
               </li>
             </ul>
           </li>
@@ -140,6 +140,17 @@
               </li>
             </ul>
           </li>
+          <li class="nav-group-name">
+            <a href="../Other Typealiases.html">Other Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Other Typealiases.html#/s:17AutoMate_AppBuddy21DefaultEventKitHandera">DefaultEventKitHander</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Other Typealiases.html#/s:17AutoMate_AppBuddy15LaunchOptionKeya">LaunchOptionKey</a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
       <article class="main-content">
@@ -171,9 +182,38 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:17AutoMate_AppBuddy25EventKitInterfaceProtocolP6addAllySaySo14EKCalendarItemCG_SC12EKEntityTypeO03forN0ySb_s5Error_pSgtc10completiontF"></a>
+                    <a name="/s:17AutoMate_AppBuddy25EventKitInterfaceProtocolP15CompletionBlocka"></a>
+                    <a name="//apple_ref/swift/Alias/CompletionBlock" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17AutoMate_AppBuddy25EventKitInterfaceProtocolP15CompletionBlocka">CompletionBlock</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This closure passes information about a complete asynchronous task.</p>
+
+<p>Depending on the outcome the error may be available, and the success flag changes its value.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">typealias</span> <span class="kt">CompletionBlock</span> <span class="o">=</span> <span class="p">(</span><span class="kt">Bool</span><span class="p">,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17AutoMate_AppBuddy25EventKitInterfaceProtocolP6addAll_7forType10completionySaySo14EKCalendarItemCG_So08EKEntityL0VySb_s5Error_pSgtctF"></a>
                     <a name="//apple_ref/swift/Method/addAll(_:forType:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:17AutoMate_AppBuddy25EventKitInterfaceProtocolP6addAllySaySo14EKCalendarItemCG_SC12EKEntityTypeO03forN0ySb_s5Error_pSgtc10completiontF">addAll(_:forType:completion:)</a>
+                    <a class="token" href="#/s:17AutoMate_AppBuddy25EventKitInterfaceProtocolP6addAll_7forType10completionySaySo14EKCalendarItemCG_So08EKEntityL0VySb_s5Error_pSgtctF">addAll(_:forType:completion:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -188,7 +228,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">addAll</span><span class="p">(</span><span class="n">_</span> <span class="nv">calendarItems</span><span class="p">:</span> <span class="p">[</span><span class="kt">EKCalendarItem</span><span class="p">],</span> <span class="n">forType</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">EKEntityType</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">CompletionBlock</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">addAll</span><span class="p">(</span><span class="n">_</span> <span class="nv">calendarItems</span><span class="p">:</span> <span class="p">[</span><span class="kt">EKCalendarItem</span><span class="p">],</span> <span class="n">forType</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">EKEntityType</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="../Protocols/EventKitInterfaceProtocol.html#/s:17AutoMate_AppBuddy25EventKitInterfaceProtocolP15CompletionBlocka">CompletionBlock</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -241,9 +281,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:17AutoMate_AppBuddy25EventKitInterfaceProtocolP9removeAllySC12EKEntityTypeO02ofL0_ySb_s5Error_pSgtc10completiontF"></a>
+                    <a name="/s:17AutoMate_AppBuddy25EventKitInterfaceProtocolP9removeAll6ofType10completionySo08EKEntityL0V_ySb_s5Error_pSgtctF"></a>
                     <a name="//apple_ref/swift/Method/removeAll(ofType:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:17AutoMate_AppBuddy25EventKitInterfaceProtocolP9removeAllySC12EKEntityTypeO02ofL0_ySb_s5Error_pSgtc10completiontF">removeAll(ofType:completion:)</a>
+                    <a class="token" href="#/s:17AutoMate_AppBuddy25EventKitInterfaceProtocolP9removeAll6ofType10completionySo08EKEntityL0V_ySb_s5Error_pSgtctF">removeAll(ofType:completion:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -258,7 +298,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">removeAll</span><span class="p">(</span><span class="n">ofType</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">EKEntityType</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">CompletionBlock</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">removeAll</span><span class="p">(</span><span class="n">ofType</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">EKEntityType</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="../Protocols/EventKitInterfaceProtocol.html#/s:17AutoMate_AppBuddy25EventKitInterfaceProtocolP15CompletionBlocka">CompletionBlock</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -268,9 +308,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:17AutoMate_AppBuddy25EventKitInterfaceProtocolP13requestAccessySC12EKEntityTypeO03forL0_ySb_s5Error_pSgSo12EKEventStoreCSgtc10completiontF"></a>
+                    <a name="/s:17AutoMate_AppBuddy25EventKitInterfaceProtocolP13requestAccess7forType10completionySo08EKEntityL0V_ySb_s5Error_pSgSo12EKEventStoreCSgtctF"></a>
                     <a name="//apple_ref/swift/Method/requestAccess(forType:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:17AutoMate_AppBuddy25EventKitInterfaceProtocolP13requestAccessySC12EKEntityTypeO03forL0_ySb_s5Error_pSgSo12EKEventStoreCSgtc10completiontF">requestAccess(forType:completion:)</a>
+                    <a class="token" href="#/s:17AutoMate_AppBuddy25EventKitInterfaceProtocolP13requestAccess7forType10completionySo08EKEntityL0V_ySb_s5Error_pSgSo12EKEventStoreCSgtctF">requestAccess(forType:completion:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -326,9 +366,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:17AutoMate_AppBuddy25EventKitInterfaceProtocolP10authorizedSbSC12EKEntityTypeO03forK0_tFZ"></a>
+                    <a name="/s:17AutoMate_AppBuddy25EventKitInterfaceProtocolP10authorized7forTypeSbSo08EKEntityK0V_tFZ"></a>
                     <a name="//apple_ref/swift/Method/authorized(forType:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:17AutoMate_AppBuddy25EventKitInterfaceProtocolP10authorizedSbSC12EKEntityTypeO03forK0_tFZ">authorized(forType:)</a>
+                    <a class="token" href="#/s:17AutoMate_AppBuddy25EventKitInterfaceProtocolP10authorized7forTypeSbSo08EKEntityK0V_tFZ">authorized(forType:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -378,8 +418,8 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://github.com/PGSSoft/AutoMate-AppBuddy" target="_blank" rel="external">Joanna Bednarz and Bartosz Janda</a>. All rights reserved. (Last updated: 2018-01-11)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2018 <a class="link" href="https://github.com/PGSSoft/AutoMate-AppBuddy" target="_blank" rel="external">Joanna Bednarz and Bartosz Janda</a>. All rights reserved. (Last updated: 2018-10-21)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
