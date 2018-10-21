@@ -14,7 +14,7 @@
 
 `AppBuddy` is a helper framework for UI automation tests, designed to work with the [`AutoMate`](https://github.com/PGSSoft/AutoMate). It can disable animations in the application and manage events, reminders and contacts.
 
-[![Swift 4.0](https://img.shields.io/badge/Swift-4.0-orange.svg?style=flat)](https://swift.org)
+[![Swift 4.2](https://img.shields.io/badge/Swift-4.2-orange.svg?style=flat)](https://swift.org)
 [![Travis](https://img.shields.io/travis/PGSSoft/AutoMate-AppBuddy.svg)](https://travis-ci.org/PGSSoft/AutoMate-AppBuddy)
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/AutoMate-AppBuddy.svg)](https://cocoapods.org/pods/AutoMate-AppBuddy)
 [![Documentation](https://img.shields.io/badge/docs-100%25-D15B45.svg?style=flat)](https://pgssoft.github.io/AutoMate-AppBuddy/)
