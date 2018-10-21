@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "AutoMate-AppBuddy"
-  s.version      = "1.3.0"
+  s.version      = "1.4.0"
   s.summary      = "Helper framework for writing UI automation tests with AutoMate."
   s.homepage     = "https://github.com/PGSSoft/AutoMate-AppBuddy"
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
