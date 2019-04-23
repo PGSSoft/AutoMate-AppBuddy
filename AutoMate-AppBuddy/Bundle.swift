@@ -16,7 +16,7 @@ public extension Bundle {
     ///
     /// - Parameter stringDescription: Bundle name or a bundle identifier.
     /// - Returns: `nil` if cannot find a bundle with given name or identifier.
-    public convenience init?(stringDescription: String?) {
+    convenience init?(stringDescription: String?) {
         guard let description = stringDescription else {
             return nil
         }
@@ -35,7 +35,7 @@ public extension Bundle {
     ///
     /// - Parameter name: JSON file name without extenstion.
     /// - Returns: Array of objects, or `nil` if an error occurs.
-    public func jsonArray<T>(with name: String) -> [T]? {
+    func jsonArray<T>(with name: String) -> [T]? {
 
         guard let url = url(forResource: name, withExtension: "json"),
             let data = try? Data(contentsOf: url),
@@ -51,7 +51,7 @@ public extension Bundle {
     ///
     /// - Parameter name: File name, with extension.
     /// - Returns: File contents as `Data` or `nil` if file doesn't exists.
-    public func data(with name: String) -> Data? {
+    func data(with name: String) -> Data? {
         guard let url = url(forResource: name, withExtension: nil),
             let data = try? Data(contentsOf: url) else {
                 return nil
@@ -66,7 +66,7 @@ public extension Bundle {
     /// - Parameter description: Bundle name, a bundle identifier or `nil`.
     /// - Returns: `nil` if cannot find a bundle with given name or identifier.
     ///   `Bundle.main` is `nil` is used as parameter.
-    public static func with(stringDescription description: String?) -> Bundle? {
+    static func with(stringDescription description: String?) -> Bundle? {
         guard let aDescription = description else { return Bundle.main }
         return Bundle(stringDescription: aDescription)
     }

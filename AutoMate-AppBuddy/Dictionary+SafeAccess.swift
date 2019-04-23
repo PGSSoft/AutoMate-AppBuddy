@@ -20,7 +20,7 @@ public extension Dictionary {
     /// - Parameter key: The key to find in the dictionary.
     /// - Returns: The value associated with `key`.
     /// - Throws: `ParserError` if `key` doesn't exists in the dictionary or it is not of the type `V`.
-    public func fetch<V>(_ key: Key) throws -> V {
+    func fetch<V>(_ key: Key) throws -> V {
         let fetchedOptional = self[key]
 
         guard let fetched = fetchedOptional else {
@@ -40,7 +40,7 @@ public extension Dictionary {
     /// - Parameter key: The key to find in the dictionary.
     /// - Returns: The value associated with `key`, or `nil` if key doesn't exists in the dictionary.
     /// - Throws: `ParserError` if value is not of the type `V`.
-    public func fetchOptional<V>(_ key: Key) throws -> V? {
+    func fetchOptional<V>(_ key: Key) throws -> V? {
         let fetchedOptional = self[key]
 
         guard let fetched = fetchedOptional else {
@@ -61,7 +61,7 @@ public extension Dictionary {
     ///   - transformation: Transformation closure. Transorms from type `V` to `U`.
     /// - Returns: The value associated with `key`.
     /// - Throws: `ParserError` if `key` doesn't exists in the dictionary or it is not of the type `V`, or it couldn't be transformed to type `U`.
-    public func fetch<V, U>(_ key: Key, transformation: (V) throws -> U?) throws -> U {
+    func fetch<V, U>(_ key: Key, transformation: (V) throws -> U?) throws -> U {
         let fetched: V = try fetch(key)
 
         guard let transformed = try transformation(fetched) else {
@@ -78,7 +78,7 @@ public extension Dictionary {
     ///   - transformation: Transformation closure. Transorms from type `V` to `U`.
     /// - Returns: The value associated with `key`.
     /// - Throws: `ParserError` if value is not of the type `V`, or it couldn't be transformed to type `U`.
-    public func fetchOptional<V, U>(_ key: Key, transformation: (V) throws -> U?) throws -> U? {
+    func fetchOptional<V, U>(_ key: Key, transformation: (V) throws -> U?) throws -> U? {
 
         return try fetchOptional(key).flatMap(transformation)
     }
@@ -90,7 +90,7 @@ public extension Dictionary {
     ///   - transformation: Transformation closure. Transorms from type `V` to `U`.
     /// - Returns: An optional array of values associated with `key`.
     /// - Throws: `ParserError` if objects cannot be transformed to type `U`.
-    public func fetchOptionalArray<V, U>(_ key: Key, transformation: (V) throws -> U?) throws -> [U]? {
+    func fetchOptionalArray<V, U>(_ key: Key, transformation: (V) throws -> U?) throws -> [U]? {
 
         guard let fetched: [V] = try fetchOptional(key) else {
             return nil
@@ -102,7 +102,7 @@ public extension Dictionary {
     ///
     /// - Returns: First pair (key and value) from dictionary.
     /// - Throws: `ParserError` if dictionary is empty.
-    public func fetchFirst() throws -> (key: Key, value: Value) {
+    func fetchFirst() throws -> (key: Key, value: Value) {
         guard let fetched = first else {
             throw ParserError(message: "Missing key or value")
         }
@@ -114,7 +114,7 @@ public extension Dictionary {
     /// - Parameter transformation: Transformation closure. Transorms key and value to the type `T`.
     /// - Returns: First pair (key and value) transformed to type `T`.
     /// - Throws: `ParserError` if dictionary is empty.
-    public func fetchFirst<T>(transformation: (Key, Value) throws -> T) throws -> T {
+    func fetchFirst<T>(transformation: (Key, Value) throws -> T) throws -> T {
         let fetched = try fetchFirst()
         return try transformation(fetched.key, fetched.value)
     }
