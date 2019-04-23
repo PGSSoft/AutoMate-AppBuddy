@@ -1,4 +1,4 @@
-ios.prepareEnv(xcode: "/Applications/Xcode_10.0.app")
+ios.prepareEnv(xcode: "/Applications/Xcode_10.2.app")
 
 // Unlock Bitbucket Server credentials for Danger
 def unlockBitbucketDangerCredentials(block) {
