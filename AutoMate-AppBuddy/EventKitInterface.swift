@@ -167,6 +167,8 @@ public class EventKitInterface: EventKitInterfaceProtocol {
             completion(events)
         case .reminder:
             eventStore.fetchReminders(matching: eventStore.predicateForReminders(in: nil), completion: { completion($0) })
+        @unknown default:
+            fatalError()
         }
     }
 }
