@@ -139,6 +139,7 @@ public class EventKitHandler<E: EventParser, R: ReminderParser, I: EventKitInter
             switch type {
             case .event: self.eventsParser.eventStore = eventStore
             case .reminder: self.remindersParser.eventStore = eventStore
+            @unknown default: fatalError()
             }
             completion(authorized, error)
         }
