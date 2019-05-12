@@ -29,7 +29,7 @@ public extension ContactParser {
     ///
     /// - Parameter resources: An array of resources describing a path to data to parse.
     /// - Throws: `ParserError` if data has unexpected format or standard `Error` for saving and committing in CNContactStore.
-    public func parseAndSave(resources: [LaunchEnvironmentResource]) throws {
+    func parseAndSave(resources: [LaunchEnvironmentResource]) throws {
         let saveRequest = CNSaveRequest()
         try parsed(resources: resources).forEach { saveRequest.add($0, toContainerWithIdentifier: nil) }
         try store.execute(saveRequest)

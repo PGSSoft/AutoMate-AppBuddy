@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.5.0](https://github.com/PGSSoft/AutoMate-AppBuddy/releases/tag/1.5.0)
+Released on 2019-05-12.
+
+#### Updated
+- Compatibility with Swift 5
+
 ## [1.4.0](https://github.com/PGSSoft/AutoMate-AppBuddy/releases/tag/1.4.0)
 Released on 2018-10-21.
 

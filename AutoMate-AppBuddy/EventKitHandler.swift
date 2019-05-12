@@ -100,7 +100,7 @@ public class EventKitHandler<E: EventParser, R: ReminderParser, I: EventKitInter
                    forType: .reminder,
                    clean: cleanFlag)
         default:
-            preconditionFailure("Not supported key")
+            preconditionFailure("Unknown key \(amKey). If you consider this an issue, please report it at github.com/PGSSoft/AutoMate-AppBuddy.")
         }
     }
 
@@ -139,6 +139,8 @@ public class EventKitHandler<E: EventParser, R: ReminderParser, I: EventKitInter
             switch type {
             case .event: self.eventsParser.eventStore = eventStore
             case .reminder: self.remindersParser.eventStore = eventStore
+            @unknown default:
+                preconditionFailure("Unknown type \(type). If you consider this an issue, please report it at https://github.com/PGSSoft/AutoMate-AppBuddy.")
             }
             completion(authorized, error)
         }

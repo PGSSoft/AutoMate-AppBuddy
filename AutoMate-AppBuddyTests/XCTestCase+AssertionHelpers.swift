@@ -12,7 +12,7 @@ import XCTest
 extension XCTestCase {
 
     // MARK: Assertions
-    func assertNotThrows(expr expression: (@autoclosure () throws -> Void), _ message: (@autoclosure () -> String), file: StaticString = #file, line: UInt = #line) {
+    func assertNotThrows(expr expression: @autoclosure () throws -> Void, _ message: @autoclosure () -> String, file: StaticString = #file, line: UInt = #line) {
         do {
             try expression()
         } catch let error {
@@ -20,7 +20,7 @@ extension XCTestCase {
         }
     }
 
-    func assertThrows<E: ErrorWithMessage>(expr expression: (@autoclosure () throws -> Void), errorType: E.Type, _ message: (@autoclosure () -> String), file: StaticString = #file, line: UInt = #line) {
+    func assertThrows<E: ErrorWithMessage>(expr expression: @autoclosure () throws -> Void, errorType: E.Type, _ message: @autoclosure () -> String, file: StaticString = #file, line: UInt = #line) {
         do {
             try expression()
             XCTFail("\(message()) Expressions didn't throw.", file: file, line: line)
