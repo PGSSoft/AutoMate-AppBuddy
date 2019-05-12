@@ -122,28 +122,28 @@ def carthageLintBranch() {
 // Branches
 def branches(unlockDanger) {
   return [
-    "iPhone SE, 11.1": {
+    "iPhone SE, 12.0": {
       testBranch("AutoMate-AppBuddy", "iOS Simulator", "iPhone SE", "12.0")
     },
-    "iPhone 8, 11.1": {
+    "iPhone 8, 12.0": {
       testBranch("AutoMate-AppBuddy", "iOS Simulator", "iPhone 8", "12.0")
     },
-    "iPhone 8 Plus, 11.1": {
+    "iPhone 8 Plus, 12.0": {
       testBranch("AutoMate-AppBuddy", "iOS Simulator", "iPhone 8 Plus", "12.0")
     },
-    "iPhone X, 11.1": {
+    "iPhone X, 12.0": {
       testBranch("AutoMate-AppBuddy", "iOS Simulator", "iPhone X", "12.0", unlockDanger)
     },
-    "iPad Air 2, 11.1": {
+    "iPad Air 2, 12.0": {
       testBranch("AutoMate-AppBuddy", "iOS Simulator", "iPad Air 2", "12.0")
     },
-    "iPad Pro (9.7-inch), 11.1": {
+    "iPad Pro (9.7-inch), 12.0": {
       testBranch("AutoMate-AppBuddy", "iOS Simulator", "iPad Pro (9.7-inch)", "12.0")
     },
-    "iPad Pro (10.5-inch), 11.1": {
+    "iPad Pro (10.5-inch), 12.0": {
       testBranch("AutoMate-AppBuddy", "iOS Simulator", "iPad Pro (10.5-inch)", "12.0")
     },
-    "iPad Pro (12.9-inch) (2nd generation), 11.1": {
+    "iPad Pro (12.9-inch) (2nd generation), 12.0": {
       testBranch("AutoMate-AppBuddy", "iOS Simulator", "iPad Pro (12.9-inch) (2nd generation)", "12.0")
     },
     "CocoaPods lint": {
