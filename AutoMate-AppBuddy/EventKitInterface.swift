@@ -145,7 +145,7 @@ public class EventKitInterface: EventKitInterfaceProtocol {
             try eventStore.save(event, span: eventSpan, commit: false)
         case let (.reminder, reminder as EKReminder):
             try eventStore.save(reminder, commit: false)
-        default: throw ParserError(message: "")
+        default: throw ParserError(message: "Unknown type \(type) or unexpected item type \(Swift.type(of: item)). If you consider this an issue, please report it at https://github.com/PGSSoft/AutoMate-AppBuddy.")
         }
     }
 
@@ -153,7 +153,7 @@ public class EventKitInterface: EventKitInterfaceProtocol {
         switch (type, item) {
         case let (.event, event as EKEvent): try eventStore.remove(event, span: eventSpan, commit: false)
         case let (.reminder, reminder as EKReminder): try eventStore.remove(reminder, commit: false)
-        default: throw ParserError(message: "")
+        default: throw ParserError(message: "Unknown type \(type) or unexpected item type \(Swift.type(of: item)). If you consider this an issue, please report it at https://github.com/PGSSoft/AutoMate-AppBuddy.")
         }
     }
 
@@ -168,7 +168,7 @@ public class EventKitInterface: EventKitInterfaceProtocol {
         case .reminder:
             eventStore.fetchReminders(matching: eventStore.predicateForReminders(in: nil), completion: { completion($0) })
         @unknown default:
-            fatalError()
+            preconditionFailure("Unknown type \(type). If you consider this an issue, please report it at https://github.com/PGSSoft/AutoMate-AppBuddy.")
         }
     }
 }

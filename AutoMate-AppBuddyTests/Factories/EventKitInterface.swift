@@ -35,6 +35,8 @@ class MockEventKitInterface: EventKitInterfaceProtocol {
                 return
             }
             reminders.append(contentsOf: items)
+        @unknown default:
+            preconditionFailure("Unknown type \(type). If you consider this an issue, please report it at https://github.com/PGSSoft/AutoMate-AppBuddy.")
         }
         completion(true, nil)
     }
@@ -47,6 +49,8 @@ class MockEventKitInterface: EventKitInterfaceProtocol {
         case .reminder:
             reminders.removeAll()
             remindersCleaned = true
+        @unknown default:
+            preconditionFailure("Unknown type \(type). Please, report the issue at https://github.com/PGSSoft/AutoMate-AppBuddy.")
         }
         completion(true, nil)
     }
