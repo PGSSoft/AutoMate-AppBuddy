@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "AutoMate-AppBuddy"
-  s.version      = "1.5.0"
+  s.version      = "1.5.1"
   s.summary      = "Helper framework for writing UI automation tests with AutoMate."
   s.homepage     = "https://github.com/PGSSoft/AutoMate-AppBuddy"
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
@@ -13,6 +13,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '9.3'
   s.osx.deployment_target = '10.12'
   s.tvos.deployment_target = '9.2'
+  s.swift_versions = ['5.0']
 
   s.source          = { :git => "https://github.com/PGSSoft/AutoMate-AppBuddy.git", :tag => "#{s.version}" }
 

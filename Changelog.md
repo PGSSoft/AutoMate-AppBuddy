@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.5.1](https://github.com/PGSSoft/AutoMate-AppBuddy/releases/tag/1.5.1)
+Released on 2019-07-20.
+
+#### Updated
+- Updated Ruby dependencies.
+
 ## [1.5.0](https://github.com/PGSSoft/AutoMate-AppBuddy/releases/tag/1.5.0)
 Released on 2019-05-12.
 
