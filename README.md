@@ -24,19 +24,29 @@
 
 ## Installation
 
+### CocoaPods
+
 The most convenient way to install it is by using [CocoaPods](https://cocoapods.org) with Podfile:
 
 ```ruby
 pod 'AutoMate-AppBuddy'
 ```
 
-or using [Carthage](https://github.com/Carthage/Carthage) and add a line to `Cartfile.private`:
+### Carthage
+For Carthage [Carthage](https://github.com/Carthage/Carthage) add a line to `Cartfile.private`:
 
 ```
 github "PGSSoft/AutoMate-AppBuddy"
 ```
 
 `Cartfile.private` should be used because AutoMate framework will be used by UI Tests target only not by the tested application.
+
+### Swift Package Manager
+You can just add AutoMate AppBuddy package to your project by entering it's repository URL
+
+```
+https://github.com/PGSSoft/AutoMate-AppBuddy
+```
 
 ### Note
 
